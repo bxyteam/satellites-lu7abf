@@ -1,0 +1,162 @@
+                               KCT-EC2
+
+               KCT-Subset-Compatible Driver for EasyComm 2
+
+Alpha Version 0.03
+Copyright 1997-2002 Paul Williamson, KB5MU.
+Document updated June 27, 2002.
+
+
+The Kansas City Tracker defined a software interface to be used by 
+application programs in accessing an antenna rotor controller. This 
+interface is a DOS TSR which handles software interrupts, as defined in 
+ftp://ftp.amsat.org/amsat/software/PC/rotor-control/drvsvc.doc. 
+Applications such as InstantTrack use a small subset of this interface, as 
+defined in ftp://ftp.amsat.org/amsat/software/PC/InstantTrack/intspec.txt.
+
+Chris Jackson defined a command interface called EasyComm 2 to be used by 
+applications running in host computers in accessing a smart (but not 
+autonomous) antenna rotor controller via serial port, as defined in 
+ftp://ftp.amsat.org/amsat/software/win32/wisp/easycomm.txt. Smart trackers 
+such as the forthcoming TAPR EasyTrak implement this command set.
+
+This program is an adapter, or interface, between the two standards. It is 
+a DOS TSR that implements the KCT subset used by InstantTrack. Instead of 
+directly controlling a rotor, it uses a serial port to send EasyComm 2 
+formatted commands to an external standalone controller.
+
+
+Installation
+============
+
+Just unpack the files into a convenient directory, preferably a directory 
+on the DOS PATH.
+
+
+Invocation
+==========
+
+Three steps are required:
+
+1. Load the TSR, KCT-EC2.COM.
+2. Configure the COM port you wish to use.
+3. Run EC2START to activate the TSR and tell it which COM port to use.
+
+
+Step 1: Load the TSR
+
+Just run KCT-EC2.COM. This can be done from AUTOEXEC.BAT if you wish, or 
+from any batch file you run ONCE per reboot. The program should not be run 
+a second time unless you have removed it between runs (using a utility 
+program you supply).
+
+KCT-EC2
+
+
+Step 2: Configure the COM port
+
+If your COM port is a standard one, you can just use the DOS command 
+"MODE", like this:
+
+MODE COM1:9600,n,8,1
+
+Choose the parameters that match the configuration of your EasyComm2 
+controller, of course.
+
+If your COM port is non-standard, use any program you have that can use 
+that COM port. Just set it up the way you want it, and exit the program. 
+This assumes that the program leaves the COM port configured the way it 
+used it; most do.
+
+Step 3: Activate the TSR
+
+Run EC2START, and specify the COM port you wish to use on the command 
+line. If your COM port is a standard one, you can run it like this:
+
+EC2START COM1
+
+or
+
+EC2START COM2
+
+If your COM port is non-standard, you can specify the hex I/O base address 
+of the UART. It might look something like this:
+
+EC2START 0A90
+
+If you wish to temporarily disable the TSR, you can say:
+
+EC2START OFF
+
+or
+
+EC2START STOP
+
+Then you can reactivate it later using one of the above EC2START commands. 
+While the TSR is temporarily disabled, it will respond to status queries 
+as if the hardware were not responding.
+
+You can also switch COM ports whenever you wish, by just running EC2START
+again with the new COM port number.
+
+
+Hardware Requirements
+=====================
+
+To make this program easier to get working, it DOES NOT USE INTERRUPTS. 
+So, you don't have to worry about whether your non-standard COM port uses 
+some non-standard interrupt or not. You also don't have to worry about 
+whether your COM port shares an interrupt with some other COM port, which 
+is usually a problem. Typically COM3 conflicts with COM1, and COM4 
+conflicts with COM2, but not with this program. You can use COM3 or COM4 
+with KCT-EC2 even while simultaneously using COM1 or COM2 for something 
+else.
+
+The catch is this: your COM port must have a 16550A type UART, or 
+compatible. This is always the case on modern COM ports, but older 
+machines may or may not be so equipped. If you don't have a UART with the 
+16-byte FIFO provided by 16550A type UARTs, this program will not work.
+Even after you run EC2START, the TSR will continue to report that the 
+hardware is not responding.
+
+
+
+Operating System Compatibility
+==============================
+
+The program works in DOS. It probably also works in full-screen mode of 
+Windows 3.1, Windows 95, and Windows 98.
+
+It probably does NOT work in Windows NT or Windows 2000, because it 
+accesses I/O ports directly.
+
+
+
+Software Interface
+==================
+
+This program adds a unique software interrupt call to the KCT standard:
+
+
+Set Port
+
+AH = 70h
+DX = I/O base address of the 16550A UART to use
+
+Output: None.
+
+
+License
+=======
+
+This program is Copyright 2001 Paul Williamson, All Rights Reserved.
+You may use this program freely for non-commercial purposes.
+
+Source code will be released after completion of alpha testing.
+
+
+Contact Info
+============
+
+Please send any comments or questions to the author at kb5mu@amsat.org.
+

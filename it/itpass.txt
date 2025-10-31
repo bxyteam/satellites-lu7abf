@@ -1,0 +1,300 @@
+		 ITPASS: InstantTrack AOS/LOS Finder
+                 ===================================
+
+Revised 25 April 2004 for version 0.88
+
+Copyright 1990-2004 Paul Williamson, KB5MU.  All rights reserved.
+
+ITPASS is Copyright 1989-2004 Paul Williamson, KB5MU.  All rights reserved.
+You may use ITPASS freely for non-commercial purposes. You may distribute
+unmodified copies of the ITPASS distribution archive.
+
+ITPASS is a program for InstantTrack users that predicts satellite passes.
+It fills two needs:
+
+	1. Station automation software (like for a PacSat gateway)
+	   can run ITPASS to determine what satellite will be
+           available at what time, for scheduling purposes.
+
+	2. Satellite users can get a quick summary of what satellites
+	   will be available when, without running InstantTrack.
+
+ITPASS is controlled from the DOS command line.  It doesn't have any
+fancy screen displays like InstantTrack does.  If you run ITPASS
+without any arguments (that is, you just type "ITPASS" at the DOS
+command prompt) it gives you a little summary of the options you
+can type on the ITPASS command line.
+
+You can control the following things:
+
+	1. What satellites ITPASS reports on,
+	2. What station QTH ITPASS reports for,
+	3. How many times ITPASS reports on each satellite,
+	4. What date and time ITPASS calculates from, and
+	5. What output format ITPASS uses.
+	6. How long a pass must be for ITPASS to report it.
+        7. How high above the horizon a pass must be.
+        8. How far into the future ITPASS should search for the next pass.
+
+I'll tell you about how to control each of those things in the next
+few paragraphs.
+
+Which Satellites
+================
+ITPASS finds information about satellites in InstantTrack's
+satellites database file, IT.ORB.  This file is found using the same
+rules InstantTrack uses (see ITMANUAL.TXT for details).
+There is no way to run ITPASS on a satellite that is not in InstantTrack's
+database.
+
+There are two ways to select satellites:
+	1. Give their names on the command line, or
+	2. Specify a group name on the command line.
+
+To select satellites by name, just mention them on the command line.
+Example:
+
+	ITPASS AO-16
+
+will display the AOS and LOS times of the next AO-16 pass.  You can
+mention several satellites at once if you like.  Example:
+
+	ITPASS AO-16 DO-17 WO-18 LO-19
+
+ITPASS will report the AOS and LOS times of the next pass for each
+satellite you mention.  If the satellite name contains a space, you
+must enclose the satellite name in quotation marks.  Example:
+
+	ITPASS "SPOT 1" "SPOT 2"
+
+If you use any of the command flags (which all begin with "-") you
+must put them BEFORE any satellites you name.
+
+
+To select satellites by group, put "-g" on the command line and
+follow it with one or more letters specifying which group or groups
+you are interested in.  Example:
+
+	ITPASS -g a
+
+asks ITPASS to report on every satellite in group "a".
+
+	ITPASS -g ar
+
+asks ITPASS to report on every satellite in group "a" or group "r". 
+If the satellite is in both groups, it will only be reported once.
+Satellites found by group will always be reported on in the order
+they appear in the InstantTrack database.
+
+You can use both methods.  Remember to put the group flag ("-g xxx")
+before the satellite name(s).  The satellite(s) you mention
+specifically will be reported on first, then the ones in the group(s)
+you specify.  If a satellite you mention specifically is also in a
+group, it will be reported on twice.  Example:
+
+	ITPASS -g a Mir
+
+will report on Mir and all satellites in group "a".
+
+
+What Station
+============
+ITPASS finds information about station locations in InstantTrack's
+station database file, IT.QTH.  This file is found using the same
+rules InstantTrack uses (see ITMANUAL.TXT for details). There is
+no way to run ITPASS for a station location that is not in
+InstantTrack's database.
+
+By default, ITPASS will use the first station in the InstantTrack
+station database.  This station is normally set to your home QTH.  If
+you wish to run ITPASS for some other QTH (for instance, to check for
+mutual windows) you can specify a station name by using the "-s"
+flag.  Example:
+
+	ITPASS -s KB5MU ao-13
+
+will report AOS and LOS times for the next AO-13 pass at my QTH.
+
+If the station name contains a space, you must enclose the station
+name in quotation marks.  Example:
+
+	ITPASS -s "New York" ao-13
+
+How Many Times
+==============
+If you are interested in more than just the next pass, you can ask
+ITPASS to report on more passes by using the "-n" flag.  Example:
+
+	ITPASS -n 5 ao-13
+
+will report AOS and LOS times for the next five passes of AO-13.
+
+
+If you use the "-n" flag with multiple satellites, ITPASS will report
+on each satellite the number of times you specify, then leave a blank
+line, then go on to the next satellite.
+
+
+What Date and Time
+==================
+There is a way to control the time from which ITPASS computes the
+satellite passes.  However, you will not find it very useful for
+interactive use.  It is intended primarily for use by programs that
+are trying to schedule satellite passes.  The time is specified as a
+floating point modified Julian date, in days, with the "-t" flag.
+Example:
+
+	ITPASS -t 47941.21243125 lo-19
+
+means report passes starting from the modified Julian date
+47941.21243125, which is approximately 19 Feb 90 at 05:05Z.
+
+
+What Output Format
+==================
+ITPASS supports two different output formats.  One is designed to be
+easy for humans to read, and the other is designed to be easy for
+computers to read.  The human-readable format looks like this:
+
+    Satellite         AOS Time (UTC)      LOS Time (UTC)    Max El
+==================  ==================  ==================  ======
+ao-16                5 Mar 93 07:06:54   5 Mar 93 07:21:28    37ø
+
+Date/times are shown in DD MMM YY HH:MM:SS format.  If the satellite
+is already in view at the time you run ITPASS (or the time you
+specify with the "-t" flag) it will say "Up now!" instead of the AOS
+time.  If the satellite won't rise or set during the next two days
+(or the number of days you set with the "-o" flag, see below) from
+that time, a message to that effect will replace both AOS and LOS
+times.  The Max El column shows the maximum elevation angle during
+the pass, in degrees.  You get this format by default.
+
+You can make it output the date/time values in your local time zone,
+if ITPASS can determine your local time zone. ITPASS uses the same
+procedures as InstantTrack to determine time zone. See ITMANUAL.TXT
+for details. ITPASS honors the "timezone" and "timezone_offset_seconds"
+variables in the IT.INI configuration file. If it can't find that file
+or if those variables are not set, it checks the DOS environment
+variable TZ.
+
+To see times displayed in your local time zone, just use the "-z" flag.
+Example:
+
+	ITPASS -z uo-14
+
+
+To get the computer-readable format, just put "-d" on the command
+line.  Example:
+
+	ITPASS -d ao-13
+
+The computer-readable format looks like this:
+
+ao-16                49051.29646478 49051.30658757 37
+
+(sat name)           (aos time)     (los time)     (maximum elevation)
+Date/times are shown as floating point modified Julian dates, in days.
+The maximum elevation is in degrees.
+
+If the satellite is already in view, the AOS time will be reported as
+the present (or reference) time.  If the satellite is not in view and
+will not be in view during the next two days (or the number of days you
+set with the "-o" flag, see below), the AOS time and LOS times are
+reported as 999999, and the maximum elevation is reporte as -1.  If
+the satellite is in view and will remain in view for the next two days
+(or the number of days you set with the "-o" flag, see below), the AOS
+time will be reported as the present (or reference) time, and the LOS
+time will be reported as 999999, and the maximum elevation is reported
+as -1.  The satellites are not separated by a blank line in the
+computer-readable mode, nor are any headers or banners output.
+
+If an error occurs, the AOS and LOS times will be replaced by an
+error message.  So, a program that reads this format should be
+prepared to deal with lines that don't parse as shown above.
+
+Minimum Pass Duration
+=====================
+If you're only interested in passes longer than a certain minimum
+duration, you can tell ITPASS to ignore shorter passes.  Use the
+-L flag and specify how many minutes the pass must last.  Example:
+
+	ITPASS -L 10 AO-16
+
+will report the next pass that's at least 10 minutes long.
+
+Minimum Pass Elevation
+======================
+If you're only interested in passes that reach a certain minimum
+elevation angle above the horizon, you can tell ITPASS to ignore
+lower passes.  Use the -E flag and specify the minimum elevation
+angle, in degrees, that you want to see.  Example:
+
+        ITPASS -E 10 AO-16
+
+will report the next pass that reaches a maximum elevation angle
+above 10 degrees.  Note that the AOS and LOS times reported are
+still relative to a 0ø horizon.
+
+Maximum Forward Search Time
+===========================
+By default, ITPASS will search forward 48 hours (two days) for
+the next pass. In most cases, that will be sufficient for any
+satellite. If the satellite is in a near-equatorial orbit and
+the ground station is at a high latitude (North or South) this
+limit may need to be increased. Use the -o flag and specify the
+new limit, in days. Example:
+
+        ITPASS -o 10 SO-33
+        
+will search forward ten days each time it looks for a pass.
+
+Mixing Options
+==============
+You can use more than one option at the same time.  Example:
+
+        ITPASS -g a -s "New York" -n 5 -z -L 4 -e 7 -o 10 Mir
+
+will report on Mir and satellites in the "a" group, relative to
+the station New York, listing five passes each of which must be
+at least four minutes in duration and reach an elevation angle
+of seven degrees, searching forward up to ten days for each pass,
+and report in local time.  Whew!
+
+=======================================================================
+OS/2 Version
+
+ITPASS has been ported to an OS/2 native version, but since OS/2 usage
+has fallen to nearly zero, I don't intend to release or maintain that
+version. If you have a need for the OS/2 version, please let me know.
+
+
+=======================================================================
+
+Source Code
+===========
+I generally release source code for my programs.  However, ITPASS
+contains proprietary InstantTrack code, and source code for
+InstantTrack is not freely available.  So, I must also control the
+source to ITPASS.  If you really need access to source code, contact
+me about the possibility of a source code license.
+
+ITPASS is written entirely in C.  I used the Microsoft 6.00A compiler
+under DOS, and formerly the IBM C/Set++ 2.1 compiler for OS/2.
+
+Most of the math routines used in ITPASS were lifted directly from
+InstantTrack.
+
+=======================
+
+That's all there is to it.  If you have questions, comments, bug
+reports, or items for the wish list, please contact me by email
+at:
+                kb5mu@amsat.org
+
+---------------------------------------------------------------------
+
+For more information on InstantTrack, see
+http://www.amsat.org/amsat/instanttrack/
+
+For the latest on ITPASS, see
+http://www.mustbeart.com/software/itpass.html

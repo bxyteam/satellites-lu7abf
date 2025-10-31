@@ -1,0 +1,553 @@
+                           InstantTrack 1.22
+                   Initialization File Documentation
+       Copyright (c) 1990, 1998, 1999 Franklin Antonio.  All Rights Reserved.
+       Copyright (c) 2000 Paul Williamson. All Rights Reserved.
+
+
+At startup, InstantTrack reads the file IT.INI to determine the values of
+several customizable parameters.  This documentation file explains the 
+purpose of each parameter in the IT.INI file, and how to alter it for your
+specific installation.
+
+The IT.INI file supplied with InstantTrack contains reasonable default 
+values for each of these parameters, so MANY USERS CAN USE THE FILE AS IS
+WITHOUT ANY EDITS AT ALL.  Please read the purpose of each parameter before
+editing your IT.INI file.  It is strongly suggested that you make changes ONE
+parameter AT A TIME, and remember to set a parameter back to the default value
+if the change doesn't do what you want!
+
+Each parameter is specified on a single line in the file.  This line contains
+the name of the parameter (which you must spell exactly correctly), followed
+by an equal sign, then the value of the parameter.  Each line must end in a
+carriage return character.  Lines that begin with # are comments.
+
+
+Parameters which are presently recognized in IT.INI files are...
+
+  Parameters for NIST time service...
+           nist_port
+           nist_port_address
+           nist_port_irq
+           nist_baud
+           nist_dial
+           nist_hangup
+           nist_maxtime
+
+  Parameters for video hardware...
+           vga_resolution
+           cga_mapcolors
+           hgc_mapcolors
+
+  Parameters for non-standard video hardware...
+           force_bios_chargen_g
+           force_greyscale
+           greyscale
+
+  Parameters for rotor/radio-control TSRs...
+           kct_int_number
+           radiodrv_int_number
+
+  Parameters for reading satellite element sets...
+           nasa_checksum_type
+           check_amsat_checksum
+           auto_read_kepsfile
+ 
+  Parameters for controlling fast-forward mode...
+           fast_forward_delay
+
+  Parameters for controlling how we use the printer...
+           printer_lines_per_page
+           printer_formfeed_at_end
+
+  Parameters for controlling time...
+           timezone
+           timezone_offset_seconds
+
+  Parameters for modifying how the maps are drawn...
+           orthographic_latlon
+           win98_idledetect_workaround
+           
+
+Each of these parameters is described below.  
+
+
+nist_port
+---------
+This parameter tells InstantTrack which serial port on your computer to use to
+talk to your modem.  The possibilities are COM1, COM2, COM3, or COM4.
+
+The default IT.INI file contains the statement...
+              nist_port = COM2
+
+
+nist_port_address
+-----------------
+This parameter tells InstantTrack the hardware i/o address of the serial port.
+You should leave this zero, unless you have a non-standard serial port.  A value
+of zero will cause the standard addresses to be used.  If you specify this
+value, you must specify it in hexadecimal.
+
+The default IT.INI file contains the statement...
+              nist_port_address = 0
+
+
+nist_port_irq
+-------------
+This parameter tells InstantTrack the hardware interrupt request number of
+the serial port.  You should leave this zero, unless you have a non-standard
+serial port.  A value of zero will cause the standard irq to be used.  <Note:
+many computers contain non-standard ports COM3 and COM4.>
+
+The default IT.INI file contains the statement...
+              nist_port_irq = 0
+
+
+nist_baud
+---------
+This parameter tells InstantTrack what baud rate to use when communicating
+with your modem.  NIST runs at 1200 baud, so this parameter will normally
+be set to 1200.  A few brands of modems, want us to talk to them at a fixed
+baud rate (sometimes 2400) however, and this parameter allows you to do that.
+The allowable values are: 300, 1200, 2400, 4800, 9600.  Any other value will
+result in 1200 baud operation.
+
+The default IT.INI file contains the statement...
+              nist_baud = 1200
+
+
+nist_dial
+---------
+This parameter tells InstantTrack what command to send to your modem to make
+it dial NIST.
+
+The default IT.INI file contains the statement...
+              nist_dial = ATDT1-303-494-4774
+
+
+nist_hangup
+-----------
+This parameter tells InstantTrack what command to send to your modem to make
+it hangup the phone.
+
+The default IT.INI file contains the statement...
+              nist_hangup = ATH
+
+
+nist_maxtime
+------------
+This parameter sets a maximum duration of a phone call to NIST to avoid
+large phone charges if something goes wrong.  Specified in seconds.  The value
+zero means no limit.  The typical NIST phone call lasts about 20 seconds, but 
+this parameter counts the total time from the start of the dial command.  Some
+folks using pulse dialing, and who dial long distance access codes require
+over a minute.
+
+The default IT.INI file contains the statement...
+              nist_maxtime = 0
+
+
+
+vga_resolution
+--------------
+This parameter controls the resolution of the map display on VGA displays.
+When set to 1, maps are displayed in 640x350 resolution.  When set to 2,
+maps are displayed in 640x480 resolution.  The higher resolution maps look
+nicer, but they are slower to draw, and require about 32K more memory.
+If you have a slow computer, or are short of memory, you might want to stick
+with the lower resolution maps.
+
+This parameter has no effect on displays other than VGA.
+
+The default IT.INI file contains the statement...
+               vga_resolution = 1
+
+
+
+cga_mapcolors
+-------------
+This parameter controls whether maps on a CGA display are displayed in
+black on white or white on black. When set to 0, the maps are black on white.
+When set to 1, the maps are white on black.
+
+This parameter has no effect on displays other than CGA.
+
+The default IT.INI file contains the statement...
+               cga_mapcolors = 0
+
+
+hgc_mapcolors
+-------------
+This parameter controls whether maps on a HGC (Hercules monochrome) display
+are displayed in black on white (or amber or green whatever color your
+monitor is) or white on black. When set to 0, the maps are black on white.
+When set to 1, the maps are white on black.
+
+This parameter has no effect on displays other than Hercules.
+
+The default IT.INI file contains the statement...
+               hgc_mapcolors = 0
+
+
+force_bios_chargen_g
+--------------------
+This parameter is for users who have certain models of EGA or VGA display 
+adapters which do not implement some EGA features correctly, and for users
+running in emulated video environments that aren't quite compatible.  Set this
+variable to 1 if you want to force InstantTrack to use the BIOS character
+generator while in graphics modes (that is, on the map screens).  The
+default value of 0 tells InstantTrack to use its fast internal character
+generator.
+
+There are DISADVANTAGES to using the BIOS character generator, especially on
+older and slower computers.  The BIOS character generator may SLOW DOWN
+InstantTrack by more than a factor of 2 and causes flicker on many older
+machines.  It is also somewhat incompatible with many versions of the mouse
+driver under DOS, which can cause characters to flash white when you move the
+mouse.  The BIOS character generator may not implement some features that
+InstantTrack uses, such as reverse video.  So, don't set this parameter to 1
+unless you really need it.
+  
+You need to set this parameter to 1 if:
+
+  * You see garbage characters at the bottom of the map screen in EGA mode,
+    and can't or don't wish to switch to VGA mode using the vga_resolution = 2
+    parameter setting, or if vga_resolution = 2 doesn't fix it. Or,
+    
+  * You are running under Windows 95 or Windows 98 and are troubled by the
+    cylindrical map screen freezing, going black, or displaying vertical lines
+    when you move the mouse. This behavior happens on most Windows 9x machines,
+    but it may not bother you unless you move the mouse a lot.
+    
+  * You have some other problem that corrupts the display only without
+    otherwise changing the behavior of the program. There is no guarantee that
+    this parameter will fix it, but it costs nothing to try.
+    
+If you don't have any of these problems, you should probably set this parameter
+to 0.
+
+The default IT.INI file contains the statement...
+
+              force_bios_chargen_g = 0
+
+
+
+force_greyscale
+---------------
+greyscale
+---------
+These parameters allow users who have BLACK & WHITE analog displays connected
+to a VGA display adapter to specify which shades of grey are used to represent
+each color.  Usually, the only folks who would want do this are people running
+on laptop computers with liquid-crystal (LCD) displays.  (Or Steve Roberts, 
+N4RVE who has an LCD display on his Winnebiko bicycle!)
+
+This is only guaranteed to work on VGA compatible display adapters.  I know
+many users have EGA LCDs on laptops.  The standard EGA BIOS doesn't have the
+functions to allow me to set the greyscale, but it might be implemented on
+your particular BIOS.  So, EGA users may try this function, but realize that
+it may not work on your machine.
+
+You may set force_greyscale to 1 to force a nonstandard mapping of colors to
+shades of grey.  The default value, 0, lets the BIOS use it's standard
+color or greyscale values.
+
+The default IT.INI file contains the statement...
+              force_greyscale = 0
+
+greyscale specifies the non-standard greyscale values you want to use.
+There must be 16 numbers after the = sign, each separated by a comma.
+Each number is in the range [0,63], with 0 specifying blackest black, and 63 
+specifying brightest white.  These numbers are all base-10.
+
+The IBM standard greyscale values are...
+	      greyscale = 0,5,25,29,13,17,25,42,21,26,46,50,34,38,58,63
+The default IT.INI file contains the statement...
+              greyscale = 0,5,34,29,13,25,30,42,21,20,46,50,40,38,55,63
+
+This is probably a either reasonable on your LCD display, or at least better
+than the standard IBM default grey values.
+
+
+
+kct_int_number
+--------------
+This parameter allows you to specify which software interrupt is used by
+InstantTrack to communicate with the OrbitDRV and RotorDRV TSRs.  The default
+value of 63 (hex) is also the default used by ...
+
+     the OrbitDRV TSR supplied with InstantTrack
+     the DummyKCT TSR supplied with InstantTrack
+     the Kansas City Tracker TSRs which are available from L.L.Grace
+
+You should ONLY alter this parameter IF interrupt 63 is used by some other
+software on your PC, causing a conflict.  We have noticed that a few users 
+have non-standard floppy disk drives which contain a BIOS extension which uses
+interrupt 63, causing a conflict.  This parameter was added to solve that
+specific problem.
+
+If you do have an interrupt conflict, then you must select a new software 
+interrupt number, and specify that number in IT.INI, AND ALSO TO EACH OF THE
+OTHER TSRs involved.  If you are a Kansas City Tracker user, there is 
+additional information in the KCT manual.  The interrupt number is specified
+IN HEXADECIMAL.
+
+It is strongly suggested that you pick an interrupt number from those IBM has
+specifically reserved for users, ie 61 through 66.
+
+The default IT.INI contains the statement...
+              kct_int_number = 63
+
+
+radiodrv_int_number
+-------------------
+This parameter allows you to specify which software interrupt is used by
+InstantTrack to communicate with the RadioDRV TSR. The default value of
+64 (hex) is also the default used by ...
+
+     the OrbitDRV TSR supplied with InstantTrack
+     all radio control TSRs designed to be compatible with InstantTrack
+
+You should ONLY alter this parameter IF interrupt 64 is used by some other
+software on your PC, causing a conflict. We are not aware of any particular
+device or program that causes conflicts with interrupt 64. This parameter
+was added in case you run into one.
+
+If you do have an interrupt conflict, then you must select a new software
+interrupt number, and specify that number in IT.INI, to OrbitDRV, AND ALSO
+TO THE RADIO CONTROL TSR. Check the manual for your radio control TSR. The
+interrupt number is specified IN HEXADECIMAL.
+
+It is strongly suggested that you pick an interrupt number from those IBM has
+specifically reserved for users, ie 61 through 66.
+
+The default IT.INI contains the statement...
+              radiodrv_int_number = 64  
+
+
+nasa_checksum_type
+------------------
+
+The algorithm used to compute the check digit in NASA-format satellite
+orbital element sets has changed twice in recent history.  The changes
+affect they way "+" signs are handled in the checksum computation.  There 
+is some evidence that the original cause of this confusion was a change of
+computer systems at NORAD in 1979.  The new computer used the EBCDIC
+character set.  The old computer used BCD.  This resulted in + signs sent
+by NORAD being received as an illegal character, and discarded, by NASA.
+NASA later attempted to correct for this discrepancy by changing the checksum
+algorithm.  I have not been able to verify this story fully.  NASA
+documentation re the checksum algorithm is incorrect.
+
+Set nasa_checksum_type to one of the following values...
+
+   1    Plus signs have the value 0 in checksum calculations.  This
+        algorithm works for element sets distributed by NASA prior to
+        1989, and after 1991.
+
+   2    Plus signs have the value 2 in checksum calculations.  This
+        algorithm works for element sets distributed by NASA in 1989,
+        1990, and part of 1991.
+
+   3    Last resort.  Don't test the checksum at all.
+
+   4    Plus signs have either value 0 or value 2 in checksum calculations.
+        Either checksum will be accepted.  This algorithm works for all
+        element sets distributed by NASA to date, but is not as good at
+        catching other kinds of errors in the element set.
+
+If you have a problem with checksum errors on lines that contain + signs,
+then you should experiment to see whether changing the value of this
+parameter will help.  Many different sources now generate element sets using
+the NASA format.  Some of these sources may not have changed algorithm at
+the same time NASA did in 1991.
+
+The default IT.INI contains the statement...
+
+              nasa_checksum_type = 4
+
+
+check_amsat_checksum
+--------------------
+Some AMSAT format Keplerian element sets come with a Checksum line added
+to the traditional format. Some sources get this checksum wrong. If you
+encounter such an element set, you can prevent InstantTrack from checking
+the checksum (and rejecting the element set) by setting this parameter
+to 0. Set this parameter to 1 normally, to allow InstantTrack to catch
+corrupted element sets by checking the checksum.
+
+The default IT.INI contains the statement...
+
+              check_amsat_checksum = 1
+              
+
+auto_read_kepsfile
+------------------
+If you want InstantTrack to automatically read in a Keplerian elements
+file (in Update mode) when it starts up, specify the filename in this
+parameter. The filename may be up to 40 characters long, and may not
+include any spaces. This can be useful if you regularly download a fresh
+set of Keplerian elements, and don't want to bother with reading them
+into InstantTrack from the Update Satellite Elements menu. The file can
+be in NASA 2-line format or AMSAT verbose format, or any combination.
+
+The default IT.INI contains the commented-out statement...
+
+              # auto_read_kepsfile = C:\DOWNLOAD\NASA.ALL
+
+
+fast_forward_delay
+------------------
+
+This parameter allows you to control the speed of the fast-forward
+mode on the realtime map and realtime text screens.  Set this value
+to the number of extra milliseconds you'd like InstantTrack to wait
+between each screen update.  If you set this value to zero, the program
+will run as fast as it can.  If you have a fast computer, you will find
+that this is too fast to follow.
+
+The default IT.INI contains the statement...
+              
+			  fast_forward_delay = 100
+
+
+printer_lines_per_page
+----------------------
+
+This parameter allows you to specify how many lines of text your printer
+can fit on a single page, when used in plain text mode. If you set this
+value to match your printer, the satellite position table (ephemeris)
+output can be paginated neatly for your printer, with a header line at
+the top of each page.
+
+The default IT.INI contains the statement...
+
+                          printer_lines_per_page = 59
+
+
+printer_formfeed_at_end
+-----------------------
+
+This parameter allows you to control whether InstantTrack sends a
+formfeed (new page eject) to the printer at the end of each job. If you
+set this parameter to 0, InstantTrack will not send a formfeed at the end
+of the job. If you find a blank page at the end of each print job, you can
+eliminate it by setting this parameter to 0. If, on the other hand, you find
+that the last page of your schedule doesn't come out until you print some
+other document, then you should set this parameter to 1.
+
+The default IT.INI contains the statement...
+
+                          printer_formfeed_at_end = 1
+
+
+timezone
+--------
+This parameter allows you to describe your local timezone to InstantTrack,
+overriding any description from the TZ environment variable. The value
+should be set to a string of characters, as follows:
+  * three letters, the name of your local timezone during the winter
+  * a number, giving the number of hours behind UTC your timezone is
+  * if you keep Daylight Saving Time, three more letters giving the name
+    of your timezone during the summer.
+
+For example, if you live in the U.S. Eastern Standard Time (EST) timezone,
+you are 5 hours behind UTC. If you keep Eastern Daylight Time (EDT) during
+the summer, your timezone parameter should be set to "EST5EDT". You would
+put this statement in your IT.INI file...
+
+                          timezone = EST5EDT
+
+Another example: if you live in Western Australia in the HST timezone,
+you are 8 hours ahead of UTC, and you don't keep Daylight Saving Time.
+"8 hours ahead" is represented as "negative 8 hours behind", or "-8".
+Your timezone parameter should thus be set to "HST-8". You would put this
+statement in your IT.INI file...
+
+                          timezone = HST-8
+
+Another example: if you keep your computer set on UTC (Coordinated Universal
+Time, also known as Greenwich Mean Time or GMT, also known as "zulu" time)
+all year round, you would put this statement in your IT.INI file ...
+
+                          timezone = UTC0
+
+If you don't put any timezone statement in your IT.INI file, then the value
+is taken from the DOS environment variable "TZ". See the ITMANUAL.TXT file for
+more details on this. And if "TZ" is not set either, the default value is
+"PST8PDT" -- Pacific Standard Time for the west coast of the U.S.
+
+Note that InstantTrack uses U.S. Daylight Saving Time rules. In areas of
+the U.S. that observe Daylight Saving Time, we set our clocks forward
+from 2 AM to 3 AM on the first Sunday of April, and we set our clocks back
+from 2 AM to 1 AM on the last Sunday of October. If your area keeps time
+differently, you should omit the last three letters, and adjust the timezone
+setting in IT.INI every time your local time changes.
+
+If your area keeps time that is not an integer number of hours offset from
+UTC, see the next setting. If you live in South Australia where the timezone
+is called JST and the offset is -9.5 hours, and you are not on Daylight Saving
+Time right now, you should use the timezone_offset_seconds setting (see next
+section) and also put this statement in your IT.INI file ...
+
+                           timezone = JST0
+
+In that case, when you switch to Daylight Saving Time, you'd have to change
+the timezone_offset_seconds setting and change to this statement ...
+
+                           timezone = JDT0
+
+The default IT.INI file contains several commented-out example timezone
+statements, but no active timezone statement. By default, you get the
+timezone set by your "TZ" environment variable.
+
+
+timezone_offset_seconds
+-----------------------
+This parameter allows you to set the offset between your local time and
+UTC, down to one second. This is only useful for one case: when you have
+a local timezone that is not an integer number of hours away from UTC,
+and you run your computer clock on local time. This setting gives the
+number of seconds your timezone is behind UTC. So, if you live in South
+Australia where the local time is 9.5 hours ahead of UTC, you would
+multiple 9.5 hours X 60 X 60 = 34200 seconds, and put this statement in
+your IT.INI file ...
+
+                           timezone_offset_seconds = -34200
+
+This setting overrides the hours offset in the TZ environment variable
+or the timezone setting in IT.INI. It also disables automatic Daylight
+Saving Time switching, since InstantTrack only knows the U.S. rules.
+That means if your local time changes for Daylight Saving, you need to
+recompute timezone_offset_seconds and modify IT.INI at each time change.
+
+
+orthographic_latlon
+-------------------
+This parameter controls whether latitude and longitude lines are drawn on
+the globe on the orthographic projection map. Set it to 1 if you want lines,
+or 0 if you don't. Lines are recommended on VGA, EGA, and HGC screens, but
+you might find it easier to interpret the map on the CGA screen with the
+lines disabled.
+
+The default IT.INI contains the statement...
+
+                          orthographic_latlon = 1
+
+
+win98_idledetect_workaround
+---------------------------
+This parameter tunes an awkward workaround for a compatibility problem
+sometimes found with Windows 95 and Windows 98. The symptom of the problem
+is long pauses during the drawing of the orthographic projection map. The
+cause is Windows mistakenly concluding that the program is idle. If you run
+into this problem, experiment with higher values of this parameter. If you
+run on an older, slower computer, you may wish to set this value to 1 (the
+lowest allowable value) to maximize responsiveness when you interrupt the
+program while it is drawing the map.
+
+The default IT.INI contains the statement...
+
+                          win98_idledetect_workaround = 20
+                          
+
+ --- end of ITINIDOC.TXT ---

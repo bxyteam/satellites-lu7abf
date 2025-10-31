@@ -1,0 +1,1521 @@
+Satellite: MOON
+Catalog number: 00000
+Epoch time:      16152.26050741
+Element set:     9999 
+Inclination:       18.4210 deg
+RA of node:         3.2800 deg
+Eccentricity:    0.0515000
+Arg of perigee:    26.5963 deg
+Mean anomaly:     336.4708 deg
+Mean motion:    0.03660099 rev/day
+Decay rate:          1E-08 rev/day^2
+Epoch rev:               1
+
+Satellite: OSCAR 7 (AO-7)
+Catalog number: 07530
+Epoch time:      16168.18240897
+Element set:     999 
+Inclination:      101.5740 deg
+RA of node:       138.9628 deg
+Eccentricity:    0.0011732
+Arg of perigee:   314.9827 deg
+Mean anomaly:     114.4945 deg
+Mean motion:   12.53621762 rev/day
+Decay rate:       -3.1E-07 rev/day^2
+Epoch rev:           90299
+
+Satellite: PHASE 3B (AO-10)
+Catalog number: 14129
+Epoch time:      16166.69513338
+Element set:     999 
+Inclination:       26.7377 deg
+RA of node:        93.2546 deg
+Eccentricity:    0.6009078
+Arg of perigee:   206.9515 deg
+Mean anomaly:      23.9283 deg
+Mean motion:    2.05870199 rev/day
+Decay rate:      -4.24E-06 rev/day^2
+Epoch rev:           22025
+
+Satellite: UOSAT 2 (UO-11)
+Catalog number: 14781
+Epoch time:      16167.68423888
+Element set:     999 
+Inclination:       97.7495 deg
+RA of node:       219.7345 deg
+Eccentricity:    0.0007610
+Arg of perigee:   328.6500 deg
+Mean anomaly:      31.4260 deg
+Mean motion:   14.82753466 rev/day
+Decay rate:       1.78E-06 rev/day^2
+Epoch rev:           73603
+
+Satellite: LUSAT (LO-19)
+Catalog number: 20442
+Epoch time:      16168.36722634
+Element set:     999 
+Inclination:       98.5434 deg
+RA of node:       103.3204 deg
+Eccentricity:    0.0012395
+Arg of perigee:   143.9145 deg
+Mean anomaly:     216.2878 deg
+Mean motion:   14.32819302 rev/day
+Decay rate:        2.1E-07 rev/day^2
+Epoch rev:           37923
+
+Satellite: EYESAT-1 (AO-27)
+Catalog number: 22825
+Epoch time:      16167.47563249
+Element set:     999 
+Inclination:       98.7589 deg
+RA of node:       123.7113 deg
+Eccentricity:    0.0007832
+Arg of perigee:   330.2089 deg
+Mean anomaly:      29.8646 deg
+Mean motion:   14.29958196 rev/day
+Decay rate:        1.1E-07 rev/day^2
+Epoch rev:           18499
+
+Satellite: ITAMSAT (IO-26)
+Catalog number: 22826
+Epoch time:      16167.87023001
+Element set:     999 
+Inclination:       98.7534 deg
+RA of node:       124.2326 deg
+Eccentricity:    0.0008202
+Arg of perigee:   319.0372 deg
+Mean anomaly:      41.0193 deg
+Mean motion:   14.30283008 rev/day
+Decay rate:        1.5E-07 rev/day^2
+Epoch rev:           18521
+
+Satellite: RADIO ROSTO (RS-15)
+Catalog number: 23439
+Epoch time:      16167.26058047
+Element set:     999 
+Inclination:       64.8180 deg
+RA of node:        92.6473 deg
+Eccentricity:    0.0165616
+Arg of perigee:   308.2135 deg
+Mean anomaly:      50.3975 deg
+Mean motion:   11.27565897 rev/day
+Decay rate:       -3.3E-07 rev/day^2
+Epoch rev:           88420
+
+Satellite: JAS-2 (FO-29)
+Catalog number: 24278
+Epoch time:      16168.20912267
+Element set:     999 
+Inclination:       98.5856 deg
+RA of node:        93.5535 deg
+Eccentricity:    0.0349995
+Arg of perigee:   205.0141 deg
+Mean anomaly:     153.3681 deg
+Mean motion:   13.53067977 rev/day
+Decay rate:       -4.8E-07 rev/day^2
+Epoch rev:           97938
+
+Satellite: NOAA 15
+Catalog number: 25338
+Epoch time:      16168.38056828
+Element set:     999 
+Inclination:       98.7825 deg
+RA of node:       172.5284 deg
+Eccentricity:    0.0010525
+Arg of perigee:   182.0426 deg
+Mean anomaly:     178.0712 deg
+Mean motion:   14.25733610 rev/day
+Decay rate:       1.19E-06 rev/day^2
+Epoch rev:           94087
+
+Satellite: TECHSAT 1B (GO-32)
+Catalog number: 25397
+Epoch time:      16168.08641907
+Element set:     999 
+Inclination:       98.5668 deg
+RA of node:       113.0565 deg
+Eccentricity:    0.0001552
+Arg of perigee:    33.9072 deg
+Mean anomaly:     326.2206 deg
+Mean motion:   14.23596148 rev/day
+Decay rate:         -9E-08 rev/day^2
+Epoch rev:           93170
+
+Satellite: ISS (ZARYA)
+Catalog number: 25544
+Epoch time:      16168.57374037
+Element set:     999 
+Inclination:       51.6437 deg
+RA of node:        61.0911 deg
+Eccentricity:    0.0000349
+Arg of perigee:    11.6086 deg
+Mean anomaly:      56.8321 deg
+Mean motion:   15.54587010 rev/day
+Decay rate:      7.241E-05 rev/day^2
+Epoch rev:             489
+
+Satellite: TERRA
+Catalog number: 25994
+Epoch time:      16168.40288494
+Element set:     999 
+Inclination:       98.2088 deg
+RA of node:       242.7123 deg
+Eccentricity:    0.0001452
+Arg of perigee:    96.4680 deg
+Mean anomaly:     263.6683 deg
+Mean motion:   14.57107305 rev/day
+Decay rate:       -8.7E-07 rev/day^2
+Epoch rev:           87740
+
+Satellite: PCSAT (NO-44)
+Catalog number: 26931
+Epoch time:      16168.42875834
+Element set:     999 
+Inclination:       67.0517 deg
+RA of node:       314.8638 deg
+Eccentricity:    0.0006700
+Arg of perigee:   260.5457 deg
+Mean anomaly:      99.4887 deg
+Mean motion:   14.30411771 rev/day
+Decay rate:       -1.3E-07 rev/day^2
+Epoch rev:           76803
+
+Satellite: AQUA
+Catalog number: 27424
+Epoch time:      16168.09082444
+Element set:     999 
+Inclination:       98.1992 deg
+RA of node:       108.6498 deg
+Eccentricity:    0.0001665
+Arg of perigee:   114.9219 deg
+Mean anomaly:     310.8156 deg
+Mean motion:   14.57122507 rev/day
+Decay rate:       1.72E-06 rev/day^2
+Epoch rev:           75096
+
+Satellite: SAUDISAT 1C (SO-50)
+Catalog number: 27607
+Epoch time:      16167.47035496
+Element set:     999 
+Inclination:       64.5536 deg
+RA of node:       166.0891 deg
+Eccentricity:    0.0068381
+Arg of perigee:   217.4446 deg
+Mean anomaly:     142.1883 deg
+Mean motion:   14.75165657 rev/day
+Decay rate:        8.9E-07 rev/day^2
+Epoch rev:           72501
+
+Satellite: CUTE-1 (CO-55)
+Catalog number: 27844
+Epoch time:      16167.97521842
+Element set:     999 
+Inclination:       98.6920 deg
+RA of node:       176.2791 deg
+Eccentricity:    0.0009078
+Arg of perigee:   333.4522 deg
+Mean anomaly:      26.6190 deg
+Mean motion:   14.21955124 rev/day
+Decay rate:        9.5E-07 rev/day^2
+Epoch rev:           67227
+
+Satellite: CUBESAT XI-IV (CO-57)
+Catalog number: 27848
+Epoch time:      16167.66605633
+Element set:     999 
+Inclination:       98.7016 deg
+RA of node:       176.0656 deg
+Eccentricity:    0.0009186
+Arg of perigee:   343.2290 deg
+Mean anomaly:      16.8582 deg
+Mean motion:   14.21580951 rev/day
+Decay rate:        8.3E-07 rev/day^2
+Epoch rev:           67212
+
+Satellite: MOZHAYETS 4 (RS-22)
+Catalog number: 27939
+Epoch time:      16168.44685888
+Element set:     999 
+Inclination:       97.8866 deg
+RA of node:       320.1504 deg
+Eccentricity:    0.0012195
+Arg of perigee:   311.3650 deg
+Mean anomaly:      48.6507 deg
+Mean motion:   14.66411152 rev/day
+Decay rate:       1.41E-06 rev/day^2
+Epoch rev:           67971
+
+Satellite: NOAA 18
+Catalog number: 28654
+Epoch time:      16168.35415473
+Element set:     999 
+Inclination:       99.1968 deg
+RA of node:       175.2637 deg
+Eccentricity:    0.0014697
+Arg of perigee:    21.7782 deg
+Mean anomaly:     338.4011 deg
+Mean motion:   14.12288507 rev/day
+Decay rate:        1.7E-07 rev/day^2
+Epoch rev:           57061
+
+Satellite: CUBESAT XI-V (CO-58)
+Catalog number: 28895
+Epoch time:      16168.41193016
+Element set:     999 
+Inclination:       97.8323 deg
+RA of node:       342.3875 deg
+Eccentricity:    0.0016009
+Arg of perigee:   217.3223 deg
+Mean anomaly:     142.6869 deg
+Mean motion:   14.63205143 rev/day
+Decay rate:       2.98E-06 rev/day^2
+Epoch rev:           56699
+
+Satellite: METOP-A
+Catalog number: 29499
+Epoch time:      16168.13356131
+Element set:     999 
+Inclination:       98.6957 deg
+RA of node:       227.1166 deg
+Eccentricity:    0.0002219
+Arg of perigee:   121.4598 deg
+Mean anomaly:     299.7096 deg
+Mean motion:   14.21494403 rev/day
+Decay rate:        1.8E-07 rev/day^2
+Epoch rev:           50113
+
+Satellite: PEHUENSAT 1 (PO-63)
+Catalog number: 29712
+Epoch time:      16168.02908948
+Element set:     999 
+Inclination:       97.5794 deg
+RA of node:       190.0212 deg
+Eccentricity:    0.0009547
+Arg of perigee:    93.2196 deg
+Mean anomaly:     267.0125 deg
+Mean motion:   15.09677190 rev/day
+Decay rate:      4.716E-05 rev/day^2
+Epoch rev:           51204
+
+Satellite: CUTE-1.7+APD II (CO-65)
+Catalog number: 32785
+Epoch time:      16167.48726812
+Element set:     999 
+Inclination:       97.6028 deg
+RA of node:       201.7745 deg
+Eccentricity:    0.0011880
+Arg of perigee:   306.8914 deg
+Mean anomaly:      53.1214 deg
+Mean motion:   14.87574998 rev/day
+Decay rate:       4.62E-06 rev/day^2
+Epoch rev:           44037
+
+Satellite: AAUSAT-II
+Catalog number: 32788
+Epoch time:      16168.10431354
+Element set:     999 
+Inclination:       97.6035 deg
+RA of node:       211.0122 deg
+Eccentricity:    0.0010500
+Arg of perigee:   274.4214 deg
+Mean anomaly:      85.5807 deg
+Mean motion:   14.93226444 rev/day
+Decay rate:       7.52E-06 rev/day^2
+Epoch rev:           44103
+
+Satellite: DELFI-C3 (DO-64)
+Catalog number: 32789
+Epoch time:      16167.79826278
+Element set:     999 
+Inclination:       97.6043 deg
+RA of node:       227.0490 deg
+Eccentricity:    0.0011970
+Arg of perigee:   265.6658 deg
+Mean anomaly:      94.3200 deg
+Mean motion:   15.03237491 rev/day
+Decay rate:      2.297E-05 rev/day^2
+Epoch rev:           44179
+
+Satellite: CANX-2
+Catalog number: 32790
+Epoch time:      16167.53836499
+Element set:     999 
+Inclination:       97.5988 deg
+RA of node:       200.4841 deg
+Eccentricity:    0.0012590
+Arg of perigee:   307.8580 deg
+Mean anomaly:      52.1496 deg
+Mean motion:   14.87337344 rev/day
+Decay rate:       4.19E-06 rev/day^2
+Epoch rev:           44033
+
+Satellite: SEEDS II (CO-66)
+Catalog number: 32791
+Epoch time:      16168.04719029
+Element set:     999 
+Inclination:       97.6035 deg
+RA of node:       205.4694 deg
+Eccentricity:    0.0012068
+Arg of perigee:   292.5276 deg
+Mean anomaly:      67.4665 deg
+Mean motion:   14.89777645 rev/day
+Decay rate:       7.61E-06 rev/day^2
+Epoch rev:           44062
+
+Satellite: YUBILEINY (RS-30)
+Catalog number: 32953
+Epoch time:      16168.31799896
+Element set:     999 
+Inclination:       82.5025 deg
+RA of node:       107.1937 deg
+Eccentricity:    0.0019782
+Arg of perigee:     7.5000 deg
+Mean anomaly:     352.6373 deg
+Mean motion:   12.43069997 rev/day
+Decay rate:        1.1E-07 rev/day^2
+Epoch rev:           36597
+
+Satellite: PRISM (HITOMI)
+Catalog number: 33493
+Epoch time:      16168.46835408
+Element set:     999 
+Inclination:       98.2175 deg
+RA of node:        28.5300 deg
+Eccentricity:    0.0014514
+Arg of perigee:   204.4396 deg
+Mean anomaly:     155.6110 deg
+Mean motion:   14.94941230 rev/day
+Decay rate:       4.74E-06 rev/day^2
+Epoch rev:           40112
+
+Satellite: STARS (KUKAI)
+Catalog number: 33498
+Epoch time:      16167.43005704
+Element set:     999 
+Inclination:       98.2877 deg
+RA of node:       323.8583 deg
+Eccentricity:    0.0012456
+Arg of perigee:    85.8810 deg
+Mean anomaly:     297.9059 deg
+Mean motion:   14.78247865 rev/day
+Decay rate:       4.64E-06 rev/day^2
+Epoch rev:           39771
+
+Satellite: KKS-1 (KISEKI)
+Catalog number: 33499
+Epoch time:      16167.84825970
+Element set:     999 
+Inclination:       98.2876 deg
+RA of node:       317.5007 deg
+Eccentricity:    0.0010566
+Arg of perigee:   100.1621 deg
+Mean anomaly:     260.0779 deg
+Mean motion:   14.74995887 rev/day
+Decay rate:       2.63E-06 rev/day^2
+Epoch rev:           39735
+
+Satellite: NOAA 19
+Catalog number: 33591
+Epoch time:      16168.37902129
+Element set:     999 
+Inclination:       99.0398 deg
+RA of node:       125.1451 deg
+Eccentricity:    0.0013207
+Arg of perigee:   218.1405 deg
+Mean anomaly:     141.8832 deg
+Mean motion:   14.12081343 rev/day
+Decay rate:       1.18E-06 rev/day^2
+Epoch rev:           37902
+
+Satellite: TATIANA 2
+Catalog number: 35868
+Epoch time:      16168.50482705
+Element set:     999 
+Inclination:       98.4519 deg
+RA of node:       201.1704 deg
+Eccentricity:    0.0005234
+Arg of perigee:   107.5369 deg
+Mean anomaly:     252.6378 deg
+Mean motion:   14.22730666 rev/day
+Decay rate:        3.1E-07 rev/day^2
+Epoch rev:           35024
+
+Satellite: SWISSCUBE
+Catalog number: 35932
+Epoch time:      16167.83053358
+Element set:     999 
+Inclination:       98.4480 deg
+RA of node:       294.8974 deg
+Eccentricity:    0.0006489
+Arg of perigee:   302.0270 deg
+Mean anomaly:      58.0296 deg
+Mean motion:   14.55823993 rev/day
+Decay rate:       2.55E-06 rev/day^2
+Epoch rev:           35701
+
+Satellite: ITUPSAT 1
+Catalog number: 35935
+Epoch time:      16167.77441830
+Element set:     999 
+Inclination:       98.4613 deg
+RA of node:       296.1840 deg
+Eccentricity:    0.0007090
+Arg of perigee:   307.9397 deg
+Mean anomaly:      52.1158 deg
+Mean motion:   14.55175311 rev/day
+Decay rate:       1.81E-06 rev/day^2
+Epoch rev:           35694
+
+Satellite: XIWANG-1 (HOPE-1)
+Catalog number: 36122
+Epoch time:      16168.52635811
+Element set:     999 
+Inclination:      100.1419 deg
+RA of node:       204.4096 deg
+Eccentricity:    0.0007378
+Arg of perigee:     3.6927 deg
+Mean anomaly:     356.4248 deg
+Mean motion:   13.16334407 rev/day
+Decay rate:       -5.9E-07 rev/day^2
+Epoch rev:           31252
+
+Satellite: TISAT 1
+Catalog number: 36799
+Epoch time:      16168.24634795
+Element set:     999 
+Inclination:       98.0303 deg
+RA of node:       278.5088 deg
+Eccentricity:    0.0014041
+Arg of perigee:    89.7951 deg
+Mean anomaly:     270.4875 deg
+Mean motion:   14.89825675 rev/day
+Decay rate:       9.79E-06 rev/day^2
+Epoch rev:           32128
+
+Satellite: AO-71
+Catalog number: 37854
+Epoch time:      16161.84342215
+Element set:     999 
+Inclination:      101.7044 deg
+RA of node:       200.7351 deg
+Eccentricity:    0.0173596
+Arg of perigee:    95.5429 deg
+Mean anomaly:     266.5608 deg
+Mean motion:   15.02167987 rev/day
+Decay rate:      2.889E-05 rev/day^2
+Epoch rev:           25099
+
+Satellite: M-CUBED & EXP-1 PRIME
+Catalog number: 37855
+Epoch time:      16168.38963804
+Element set:     999 
+Inclination:      101.7174 deg
+RA of node:       208.6538 deg
+Eccentricity:    0.0186599
+Arg of perigee:    80.4693 deg
+Mean anomaly:     281.7549 deg
+Mean motion:   15.01134180 rev/day
+Decay rate:      4.434E-05 rev/day^2
+Epoch rev:           25187
+
+Satellite: HORYU 2
+Catalog number: 38340
+Epoch time:      16168.42578331
+Element set:     999 
+Inclination:       98.3546 deg
+RA of node:       153.9545 deg
+Eccentricity:    0.0012238
+Arg of perigee:    21.5940 deg
+Mean anomaly:     338.5782 deg
+Mean motion:   14.75036852 rev/day
+Decay rate:       5.16E-06 rev/day^2
+Epoch rev:           21936
+
+Satellite: RS-40
+Catalog number: 38735
+Epoch time:      16161.65637373
+Element set:     999 
+Inclination:       82.4761 deg
+RA of node:       196.4625 deg
+Eccentricity:    0.0018161
+Arg of perigee:   117.9022 deg
+Mean anomaly:     242.3901 deg
+Mean motion:   12.42572989 rev/day
+Decay rate:        4.1E-07 rev/day^2
+Epoch rev:           17543
+
+Satellite: METOP-B
+Catalog number: 38771
+Epoch time:      16168.17394727
+Element set:     999 
+Inclination:       98.7298 deg
+RA of node:       227.3974 deg
+Eccentricity:    0.0001231
+Arg of perigee:   153.2777 deg
+Mean anomaly:     287.0410 deg
+Mean motion:   14.21488180 rev/day
+Decay rate:        1.7E-07 rev/day^2
+Epoch rev:           19427
+
+Satellite: AIST-2
+Catalog number: 39133
+Epoch time:      16168.54964714
+Element set:     999 
+Inclination:       64.8757 deg
+RA of node:         0.7406 deg
+Eccentricity:    0.0005998
+Arg of perigee:   320.9480 deg
+Mean anomaly:      63.8286 deg
+Mean motion:   15.03906087 rev/day
+Decay rate:       4.37E-06 rev/day^2
+Epoch rev:           17331
+
+Satellite: TURKSAT-3USAT
+Catalog number: 39152
+Epoch time:      16168.13887815
+Element set:     999 
+Inclination:       97.9672 deg
+RA of node:       252.6379 deg
+Eccentricity:    0.0017924
+Arg of perigee:   145.2769 deg
+Mean anomaly:     214.9616 deg
+Mean motion:   14.79981947 rev/day
+Decay rate:       4.71E-06 rev/day^2
+Epoch rev:           16942
+
+Satellite: CUBEBUG-1 (CAPITAN BETO)
+Catalog number: 39153
+Epoch time:      16168.13716567
+Element set:     999 
+Inclination:       97.9982 deg
+RA of node:       256.1978 deg
+Eccentricity:    0.0017960
+Arg of perigee:   149.5427 deg
+Mean anomaly:     210.6831 deg
+Mean motion:   14.79889133 rev/day
+Decay rate:       4.16E-06 rev/day^2
+Epoch rev:           16944
+
+Satellite: ESTCUBE 1
+Catalog number: 39161
+Epoch time:      16168.43730000
+Element set:     999 
+Inclination:       98.0489 deg
+RA of node:       252.7948 deg
+Eccentricity:    0.0008493
+Arg of perigee:   225.5621 deg
+Mean anomaly:     134.4892 deg
+Mean motion:   14.71670996 rev/day
+Decay rate:       3.03E-06 rev/day^2
+Epoch rev:           16695
+
+Satellite: EUTELSAT 25B
+Catalog number: 39233
+Epoch time:      16168.19344101
+Element set:     999 
+Inclination:        0.0442 deg
+RA of node:       354.2704 deg
+Eccentricity:    0.0001766
+Arg of perigee:    85.6366 deg
+Mean anomaly:     280.1149 deg
+Mean motion:    1.00270231 rev/day
+Decay rate:       1.43E-06 rev/day^2
+Epoch rev:            1027
+
+Satellite: PHONESAT 2.4
+Catalog number: 39381
+Epoch time:      16167.01369782
+Element set:     999 
+Inclination:       40.4937 deg
+RA of node:        41.9696 deg
+Eccentricity:    0.0006567
+Arg of perigee:   308.6120 deg
+Mean anomaly:      51.4115 deg
+Mean motion:   15.64772725 rev/day
+Decay rate:     3.0736E-04 rev/day^2
+Epoch rev:           14453
+
+Satellite: ZACUBE-1 (TSHEPISOSAT)
+Catalog number: 39417
+Epoch time:      16167.58873833
+Element set:     999 
+Inclination:       97.6799 deg
+RA of node:       220.5293 deg
+Eccentricity:    0.0060358
+Arg of perigee:    29.4864 deg
+Mean anomaly:     330.9730 deg
+Mean motion:   14.80403671 rev/day
+Decay rate:       4.52E-06 rev/day^2
+Epoch rev:           13853
+
+Satellite: TRITON-1
+Catalog number: 39427
+Epoch time:      16168.06650387
+Element set:     999 
+Inclination:       97.6672 deg
+RA of node:       201.4392 deg
+Eccentricity:    0.0116334
+Arg of perigee:    81.1063 deg
+Mean anomaly:     280.3292 deg
+Mean motion:   14.67195654 rev/day
+Decay rate:       4.81E-06 rev/day^2
+Epoch rev:           13735
+
+Satellite: GOMX 1
+Catalog number: 39430
+Epoch time:      16168.29472634
+Element set:     999 
+Inclination:       97.6696 deg
+RA of node:       189.3093 deg
+Eccentricity:    0.0153749
+Arg of perigee:   118.0215 deg
+Mean anomaly:     243.6638 deg
+Mean motion:   14.58600299 rev/day
+Decay rate:       4.15E-06 rev/day^2
+Epoch rev:           13659
+
+Satellite: EAGLE 2
+Catalog number: 39436
+Epoch time:      16168.18628352
+Element set:     999 
+Inclination:       97.7167 deg
+RA of node:       254.9146 deg
+Eccentricity:    0.0014277
+Arg of perigee:   287.8791 deg
+Mean anomaly:      72.0887 deg
+Mean motion:   15.22098391 rev/day
+Decay rate:     1.7181E-04 rev/day^2
+Epoch rev:           14072
+
+Satellite: CUBEBUG-2 (LO-74)
+Catalog number: 39440
+Epoch time:      16167.79444007
+Element set:     999 
+Inclination:       97.6736 deg
+RA of node:       212.9435 deg
+Eccentricity:    0.0082291
+Arg of perigee:    48.9868 deg
+Mean anomaly:     311.8419 deg
+Mean motion:   14.75165436 rev/day
+Decay rate:       4.74E-06 rev/day^2
+Epoch rev:           13807
+
+Satellite: FUNCUBE-1 (AO-73)
+Catalog number: 39444
+Epoch time:      16168.14759806
+Element set:     999 
+Inclination:       97.6810 deg
+RA of node:       221.6709 deg
+Eccentricity:    0.0059485
+Arg of perigee:    25.8036 deg
+Mean anomaly:     334.6123 deg
+Mean motion:   14.81074089 rev/day
+Decay rate:       5.76E-06 rev/day^2
+Epoch rev:           13742
+
+Satellite: UWE-3
+Catalog number: 39446
+Epoch time:      16167.37604923
+Element set:     999 
+Inclination:       97.6760 deg
+RA of node:       216.2528 deg
+Eccentricity:    0.0071752
+Arg of perigee:    40.3460 deg
+Mean anomaly:     320.3043 deg
+Mean motion:   14.77689395 rev/day
+Decay rate:       4.33E-06 rev/day^2
+Epoch rev:           13702
+
+Satellite: AIST 1
+Catalog number: 39492
+Epoch time:      16168.44991279
+Element set:     999 
+Inclination:       82.4180 deg
+RA of node:       171.8473 deg
+Eccentricity:    0.0020511
+Arg of perigee:   160.4538 deg
+Mean anomaly:     199.7480 deg
+Mean motion:   14.87402837 rev/day
+Decay rate:       3.01E-06 rev/day^2
+Epoch rev:           13385
+
+Satellite: COSMOS 2491
+Catalog number: 39497
+Epoch time:      16167.01467515
+Element set:     999 
+Inclination:       82.4862 deg
+RA of node:       286.3315 deg
+Eccentricity:    0.0018294
+Arg of perigee:   145.5512 deg
+Mean anomaly:     214.6758 deg
+Mean motion:   12.42672237 rev/day
+Decay rate:        2.4E-07 rev/day^2
+Epoch rev:           11195
+
+Satellite: COSMOS 2499
+Catalog number: 39765
+Epoch time:      16167.16237022
+Element set:     999 
+Inclination:       82.4752 deg
+RA of node:       200.2040 deg
+Eccentricity:    0.0227362
+Arg of perigee:   301.7006 deg
+Mean anomaly:      56.2109 deg
+Mean motion:   12.83522434 rev/day
+Decay rate:         -5E-08 rev/day^2
+Epoch rev:            9665
+
+Satellite: SPROUT
+Catalog number: 39770
+Epoch time:      16168.08509407
+Element set:     999 
+Inclination:       97.8713 deg
+RA of node:       265.3262 deg
+Eccentricity:    0.0011035
+Arg of perigee:    88.5774 deg
+Mean anomaly:     271.6708 deg
+Mean motion:   14.85399552 rev/day
+Decay rate:      1.041E-05 rev/day^2
+Epoch rev:           11177
+
+Satellite: UNISAT-6
+Catalog number: 40012
+Epoch time:      16168.25115805
+Element set:     999 
+Inclination:       97.9024 deg
+RA of node:        56.5015 deg
+Eccentricity:    0.0059785
+Arg of perigee:    31.2127 deg
+Mean anomaly:     329.2609 deg
+Mean motion:   14.73348234 rev/day
+Decay rate:       4.51E-06 rev/day^2
+Epoch rev:           10705
+
+Satellite: BUGSAT-1 (TITA)
+Catalog number: 40014
+Epoch time:      16168.42404808
+Element set:     999 
+Inclination:       97.9519 deg
+RA of node:        82.4401 deg
+Eccentricity:    0.0033884
+Arg of perigee:    97.2179 deg
+Mean anomaly:     263.2877 deg
+Mean motion:   14.94334662 rev/day
+Decay rate:         -3E-08 rev/day^2
+Epoch rev:           10857
+
+Satellite: TABLETSAT-AURORA
+Catalog number: 40017
+Epoch time:      16168.30151696
+Element set:     999 
+Inclination:       97.9457 deg
+RA of node:        79.6096 deg
+Eccentricity:    0.0025219
+Arg of perigee:    94.9883 deg
+Mean anomaly:     265.4234 deg
+Mean motion:   14.92333303 rev/day
+Decay rate:       2.01E-06 rev/day^2
+Epoch rev:           10840
+
+Satellite: DUCHIFAT-1
+Catalog number: 40021
+Epoch time:      16168.27544409
+Element set:     999 
+Inclination:       97.9319 deg
+RA of node:        74.8121 deg
+Eccentricity:    0.0014778
+Arg of perigee:    67.7845 deg
+Mean anomaly:     292.4938 deg
+Mean motion:   14.89315024 rev/day
+Decay rate:       9.42E-06 rev/day^2
+Epoch rev:           10812
+
+Satellite: NANOSATC-BR1
+Catalog number: 40024
+Epoch time:      16168.25594068
+Element set:     999 
+Inclination:       97.9293 deg
+RA of node:        74.1932 deg
+Eccentricity:    0.0013997
+Arg of perigee:    68.0439 deg
+Mean anomaly:     292.2264 deg
+Mean motion:   14.88723425 rev/day
+Decay rate:       7.71E-06 rev/day^2
+Epoch rev:           10809
+
+Satellite: QB50P1
+Catalog number: 40025
+Epoch time:      16168.31928813
+Element set:     999 
+Inclination:       97.9288 deg
+RA of node:        73.7804 deg
+Eccentricity:    0.0014147
+Arg of perigee:    69.3408 deg
+Mean anomaly:     290.9324 deg
+Mean motion:   14.88019245 rev/day
+Decay rate:       5.88E-06 rev/day^2
+Epoch rev:           10807
+
+Satellite: QB50P2
+Catalog number: 40032
+Epoch time:      16168.32655482
+Element set:     999 
+Inclination:       97.9274 deg
+RA of node:        73.2500 deg
+Eccentricity:    0.0013492
+Arg of perigee:    64.0926 deg
+Mean anomaly:     296.1679 deg
+Mean motion:   14.87585697 rev/day
+Decay rate:       6.21E-06 rev/day^2
+Epoch rev:           10804
+
+Satellite: ANTELSAT
+Catalog number: 40034
+Epoch time:      16168.34746611
+Element set:     999 
+Inclination:       97.9035 deg
+RA of node:        56.6647 deg
+Eccentricity:    0.0060377
+Arg of perigee:    29.8974 deg
+Mean anomaly:     330.5651 deg
+Mean motion:   14.73393803 rev/day
+Decay rate:       4.41E-06 rev/day^2
+Epoch rev:           10705
+
+Satellite: POLYITAN-1
+Catalog number: 40042
+Epoch time:      16168.39562804
+Element set:     999 
+Inclination:       97.9360 deg
+RA of node:        73.7353 deg
+Eccentricity:    0.0016363
+Arg of perigee:    57.0732 deg
+Mean anomaly:     303.2055 deg
+Mean motion:   14.87580769 rev/day
+Decay rate:       7.46E-06 rev/day^2
+Epoch rev:           10803
+
+Satellite: TIGRISAT
+Catalog number: 40043
+Epoch time:      16168.25106435
+Element set:     999 
+Inclination:       97.9025 deg
+RA of node:        57.1115 deg
+Eccentricity:    0.0061314
+Arg of perigee:    32.0618 deg
+Mean anomaly:     328.4297 deg
+Mean motion:   14.73759429 rev/day
+Decay rate:       3.68E-06 rev/day^2
+Epoch rev:           10693
+
+Satellite: AISAT
+Catalog number: 40054
+Epoch time:      16168.14279040
+Element set:     999 
+Inclination:       98.1945 deg
+RA of node:       256.3932 deg
+Eccentricity:    0.0014262
+Arg of perigee:   134.7581 deg
+Mean anomaly:     225.4791 deg
+Mean motion:   14.76562927 rev/day
+Decay rate:       8.25E-06 rev/day^2
+Epoch rev:           10569
+
+Satellite: VELOX 1
+Catalog number: 40057
+Epoch time:      16168.52189506
+Element set:     999 
+Inclination:       98.1938 deg
+RA of node:       257.3112 deg
+Eccentricity:    0.0011861
+Arg of perigee:   143.6486 deg
+Mean anomaly:     216.5528 deg
+Mean motion:   14.76716412 rev/day
+Decay rate:       5.89E-06 rev/day^2
+Epoch rev:           10578
+
+Satellite: METEOR-M 2
+Catalog number: 40069
+Epoch time:      16168.41618246
+Element set:     999 
+Inclination:       98.7060 deg
+RA of node:       223.6597 deg
+Eccentricity:    0.0005379
+Arg of perigee:   179.0031 deg
+Mean anomaly:     181.1165 deg
+Mean motion:   14.20631160 rev/day
+Decay rate:       -4.2E-07 rev/day^2
+Epoch rev:           10062
+
+Satellite: UKUBE-1
+Catalog number: 40074
+Epoch time:      16168.40138727
+Element set:     999 
+Inclination:       98.3356 deg
+RA of node:       261.4085 deg
+Eccentricity:    0.0005327
+Arg of perigee:   137.5486 deg
+Mean anomaly:     222.6139 deg
+Mean motion:   14.83083517 rev/day
+Decay rate:       5.87E-06 rev/day^2
+Epoch rev:           10495
+
+Satellite: ARSAT 1
+Catalog number: 40272
+Epoch time:      16168.39497473
+Element set:     999 
+Inclination:        0.0106 deg
+RA of node:       306.2963 deg
+Eccentricity:    0.0001000
+Arg of perigee:   136.8791 deg
+Mean anomaly:     252.2995 deg
+Mean motion:    1.00271903 rev/day
+Decay rate:      -2.61E-06 rev/day^2
+Epoch rev:             625
+
+Satellite: CHUBUSAT-1
+Catalog number: 40300
+Epoch time:      16168.41656544
+Element set:     999 
+Inclination:       97.4253 deg
+RA of node:       248.5378 deg
+Eccentricity:    0.0019907
+Arg of perigee:   304.6073 deg
+Mean anomaly:     119.1004 deg
+Mean motion:   15.19839385 rev/day
+Decay rate:      1.485E-05 rev/day^2
+Epoch rev:            8921
+
+Satellite: FIREBIRD 3
+Catalog number: 40377
+Epoch time:      16168.27536265
+Element set:     999 
+Inclination:       99.0859 deg
+RA of node:       274.9238 deg
+Eccentricity:    0.0145005
+Arg of perigee:   132.6410 deg
+Mean anomaly:     228.7147 deg
+Mean motion:   15.12537781 rev/day
+Decay rate:      5.886E-05 rev/day^2
+Epoch rev:            7564
+
+Satellite: FIREBIRD 4
+Catalog number: 40378
+Epoch time:      16168.27176125
+Element set:     999 
+Inclination:       99.0859 deg
+RA of node:       274.9339 deg
+Eccentricity:    0.0145206
+Arg of perigee:   132.5997 deg
+Mean anomaly:     228.7585 deg
+Mean motion:   15.12548621 rev/day
+Decay rate:      5.915E-05 rev/day^2
+Epoch rev:            7564
+
+Satellite: GRIFEX
+Catalog number: 40379
+Epoch time:      16168.27276322
+Element set:     999 
+Inclination:       99.0866 deg
+RA of node:       274.0937 deg
+Eccentricity:    0.0149193
+Arg of perigee:   136.1403 deg
+Mean anomaly:     225.1782 deg
+Mean motion:   15.10776101 rev/day
+Decay rate:      4.348E-05 rev/day^2
+Epoch rev:            7559
+
+Satellite: EXOCUBE
+Catalog number: 40380
+Epoch time:      16168.33582045
+Element set:     999 
+Inclination:       99.0897 deg
+RA of node:       273.6468 deg
+Eccentricity:    0.0151936
+Arg of perigee:   137.3096 deg
+Mean anomaly:     224.0052 deg
+Mean motion:   15.09612714 rev/day
+Decay rate:      3.883E-05 rev/day^2
+Epoch rev:            7556
+
+Satellite: NO-84
+Catalog number: 40654
+Epoch time:      16161.22884362
+Element set:     139 
+Inclination:       54.9952 deg
+RA of node:        93.6621 deg
+Eccentricity:    0.0210969
+Arg of perigee:    53.9968 deg
+Mean anomaly:     308.0249 deg
+Mean motion:   15.25209845 rev/day
+Decay rate:     1.9085E-04 rev/day^2
+Epoch rev:            2282
+
+Satellite: NO-83
+Catalog number: 40655
+Epoch time:      16161.23217614
+Element set:     155 
+Inclination:       54.9850 deg
+RA of node:        87.5678 deg
+Eccentricity:    0.0193855
+Arg of perigee:    56.4006 deg
+Mean anomaly:     305.4973 deg
+Mean motion:   15.30033824 rev/day
+Decay rate:     2.5664E-04 rev/day^2
+Epoch rev:            2288
+
+Satellite: DEORBITSAIL
+Catalog number: 40719
+Epoch time:      16167.66187794
+Element set:     999 
+Inclination:       98.0176 deg
+RA of node:        59.3075 deg
+Eccentricity:    0.0015251
+Arg of perigee:   240.1663 deg
+Mean anomaly:     119.8031 deg
+Mean motion:   14.75550144 rev/day
+Decay rate:       7.47E-06 rev/day^2
+Epoch rev:            5026
+
+Satellite: S-CUBE
+Catalog number: 40898
+Epoch time:      16168.03236780
+Element set:     999 
+Inclination:       51.6341 deg
+RA of node:        43.9954 deg
+Eccentricity:    0.0004304
+Arg of perigee:   204.2128 deg
+Mean anomaly:     155.8669 deg
+Mean motion:   15.75371705 rev/day
+Decay rate:     4.5685E-04 rev/day^2
+Epoch rev:            4254
+
+Satellite: XW-2A
+Catalog number: 40903
+Epoch time:      16168.47952191
+Element set:     999 
+Inclination:       97.4457 deg
+RA of node:       183.6210 deg
+Eccentricity:    0.0017094
+Arg of perigee:   133.3817 deg
+Mean anomaly:       4.3798 deg
+Mean motion:   15.36424523 rev/day
+Decay rate:      3.763E-05 rev/day^2
+Epoch rev:            4144
+
+Satellite: XW-2C
+Catalog number: 40906
+Epoch time:      16168.53276861
+Element set:     999 
+Inclination:       97.4522 deg
+RA of node:       175.6240 deg
+Eccentricity:    0.0016953
+Arg of perigee:    43.8167 deg
+Mean anomaly:      80.6951 deg
+Mean motion:   15.13599382 rev/day
+Decay rate:      1.341E-05 rev/day^2
+Epoch rev:            4090
+
+Satellite: XW-2D
+Catalog number: 40907
+Epoch time:      16168.33572438
+Element set:     999 
+Inclination:       97.4490 deg
+RA of node:       175.3086 deg
+Eccentricity:    0.0016445
+Arg of perigee:    42.6316 deg
+Mean anomaly:      82.1792 deg
+Mean motion:   15.13640976 rev/day
+Decay rate:      1.491E-05 rev/day^2
+Epoch rev:            4087
+
+Satellite: LILACSAT 2
+Catalog number: 40908
+Epoch time:      16168.54186657
+Element set:     999 
+Inclination:       97.4587 deg
+RA of node:       175.5317 deg
+Eccentricity:    0.0017716
+Arg of perigee:    38.0547 deg
+Mean anomaly:      78.2215 deg
+Mean motion:   15.12551466 rev/day
+Decay rate:       9.71E-06 rev/day^2
+Epoch rev:            4088
+
+Satellite: XW-2E
+Catalog number: 40909
+Epoch time:      16161.73991372
+Element set:     999 
+Inclination:       97.4521 deg
+RA of node:       169.2216 deg
+Eccentricity:    0.0016613
+Arg of perigee:    68.1645 deg
+Mean anomaly:      18.2941 deg
+Mean motion:   15.14536473 rev/day
+Decay rate:      2.651E-05 rev/day^2
+Epoch rev:            3989
+
+Satellite: XW-2F
+Catalog number: 40910
+Epoch time:      16168.30267628
+Element set:     999 
+Inclination:       97.4526 deg
+RA of node:       175.4623 deg
+Eccentricity:    0.0017761
+Arg of perigee:    41.4172 deg
+Mean anomaly:      77.7810 deg
+Mean motion:   15.14098551 rev/day
+Decay rate:      2.293E-05 rev/day^2
+Epoch rev:            4076
+
+Satellite: XW-2B
+Catalog number: 40911
+Epoch time:      16168.47438007
+Element set:     999 
+Inclination:       97.4539 deg
+RA of node:       175.6164 deg
+Eccentricity:    0.0016316
+Arg of perigee:    42.6653 deg
+Mean anomaly:     120.0195 deg
+Mean motion:   15.13624654 rev/day
+Decay rate:      1.461E-05 rev/day^2
+Epoch rev:            4079
+
+Satellite: TIANWANG 1C (TW-1C)
+Catalog number: 40926
+Epoch time:      16168.42327208
+Element set:     999 
+Inclination:       97.2756 deg
+RA of node:       205.3484 deg
+Eccentricity:    0.0015673
+Arg of perigee:    56.8346 deg
+Mean anomaly:      67.5888 deg
+Mean motion:   15.36491630 rev/day
+Decay rate:      9.484E-05 rev/day^2
+Epoch rev:            4064
+
+Satellite: TIANWANG 1B (TW-1B)
+Catalog number: 40927
+Epoch time:      16168.37870388
+Element set:     999 
+Inclination:       97.2852 deg
+RA of node:       205.4390 deg
+Eccentricity:    0.0015724
+Arg of perigee:    63.8107 deg
+Mean anomaly:      57.9337 deg
+Mean motion:   15.35619270 rev/day
+Decay rate:      8.071E-05 rev/day^2
+Epoch rev:            4062
+
+Satellite: TIANWANG 1A (TW-1A)
+Catalog number: 40928
+Epoch time:      16168.49583113
+Element set:     999 
+Inclination:       97.2700 deg
+RA of node:       204.5929 deg
+Eccentricity:    0.0015915
+Arg of perigee:    71.7334 deg
+Mean anomaly:      38.0335 deg
+Mean motion:   15.33281251 rev/day
+Decay rate:      4.525E-05 rev/day^2
+Epoch rev:            4061
+
+Satellite: LAPAN-A2 (IO-86)
+Catalog number: 40931
+Epoch time:      16168.40358851
+Element set:     999 
+Inclination:        5.9989 deg
+RA of node:       320.6849 deg
+Eccentricity:    0.0013067
+Arg of perigee:   107.9615 deg
+Mean anomaly:     252.1922 deg
+Mean motion:   14.76463418 rev/day
+Decay rate:       6.28E-06 rev/day^2
+Epoch rev:            3881
+
+Satellite: ARSAT 2
+Catalog number: 40941
+Epoch time:      16167.49158861
+Element set:     999 
+Inclination:        0.0315 deg
+RA of node:       323.9042 deg
+Eccentricity:    0.0001235
+Arg of perigee:    84.7582 deg
+Mean anomaly:     311.3483 deg
+Mean motion:    1.00269453 rev/day
+Decay rate:      -2.26E-06 rev/day^2
+Epoch rev:             268
+
+Satellite: GOMX 3
+Catalog number: 40949
+Epoch time:      16168.16837604
+Element set:     999 
+Inclination:       51.6316 deg
+RA of node:        39.6277 deg
+Eccentricity:    0.0003711
+Arg of perigee:   199.3452 deg
+Mean anomaly:     160.7409 deg
+Mean motion:   15.79186317 rev/day
+Decay rate:     4.5045E-04 rev/day^2
+Epoch rev:            3990
+
+Satellite: LQSAT
+Catalog number: 40958
+Epoch time:      16168.42819806
+Element set:     999 
+Inclination:       98.0140 deg
+RA of node:       243.3329 deg
+Eccentricity:    0.0018768
+Arg of perigee:   152.7001 deg
+Mean anomaly:     207.5193 deg
+Mean motion:   14.72872252 rev/day
+Decay rate:       1.13E-06 rev/day^2
+Epoch rev:            3727
+
+Satellite: AO-85
+Catalog number: 40967
+Epoch time:      16159.69838781
+Element set:     156 
+Inclination:       64.7780 deg
+RA of node:       274.6068 deg
+Eccentricity:    0.0204963
+Arg of perigee:   208.4360 deg
+Mean anomaly:     150.5454 deg
+Mean motion:   14.75018438 rev/day
+Decay rate:       8.04E-06 rev/day^2
+Epoch rev:            2187
+
+Satellite: ATHENOXAT 1
+Catalog number: 41168
+Epoch time:      16168.12874235
+Element set:     999 
+Inclination:       14.9848 deg
+RA of node:       320.4801 deg
+Eccentricity:    0.0012731
+Arg of perigee:   345.6760 deg
+Mean anomaly:     178.3826 deg
+Mean motion:   15.09974704 rev/day
+Decay rate:      2.676E-05 rev/day^2
+Epoch rev:            2759
+
+Satellite: VELOX 2
+Catalog number: 41171
+Epoch time:      16167.03831278
+Element set:     999 
+Inclination:       14.9892 deg
+RA of node:       330.6921 deg
+Eccentricity:    0.0009910
+Arg of perigee:   317.3770 deg
+Mean anomaly:      42.5795 deg
+Mean motion:   15.08728583 rev/day
+Decay rate:      2.328E-05 rev/day^2
+Epoch rev:            2741
+
+Satellite: AGGIESAT 4
+Catalog number: 41313
+Epoch time:      16167.86666317
+Element set:     999 
+Inclination:       51.6464 deg
+RA of node:        61.7569 deg
+Eccentricity:    0.0004117
+Arg of perigee:   187.3116 deg
+Mean anomaly:     172.7816 deg
+Mean motion:   15.59531932 rev/day
+Decay rate:     1.4179E-04 rev/day^2
+Epoch rev:            2152
+
+Satellite: BEVO 2
+Catalog number: 41314
+Epoch time:      16168.14184113
+Element set:     999 
+Inclination:       51.6405 deg
+RA of node:        59.0267 deg
+Eccentricity:    0.0003543
+Arg of perigee:   181.6746 deg
+Mean anomaly:     178.4286 deg
+Mean motion:   15.61953318 rev/day
+Decay rate:     2.3201E-04 rev/day^2
+Epoch rev:            2138
+
+Satellite: CHUBUSAT-2
+Catalog number: 41338
+Epoch time:      16167.52218059
+Element set:     999 
+Inclination:       31.0049 deg
+RA of node:       280.4043 deg
+Eccentricity:    0.0013994
+Arg of perigee:    30.1847 deg
+Mean anomaly:     329.9592 deg
+Mean motion:   14.99394434 rev/day
+Decay rate:       5.61E-06 rev/day^2
+Epoch rev:            1790
+
+Satellite: CHUBUSAT-3
+Catalog number: 41339
+Epoch time:      16168.43538701
+Element set:     999 
+Inclination:       31.0115 deg
+RA of node:       274.3704 deg
+Eccentricity:    0.0013680
+Arg of perigee:    44.7341 deg
+Mean anomaly:     315.4408 deg
+Mean motion:   14.99624572 rev/day
+Decay rate:       5.63E-06 rev/day^2
+Epoch rev:            1801
+
+Satellite: HORYU-IV
+Catalog number: 41340
+Epoch time:      16167.67519951
+Element set:     999 
+Inclination:       31.0071 deg
+RA of node:       278.7529 deg
+Eccentricity:    0.0014341
+Arg of perigee:    42.4231 deg
+Mean anomaly:     317.7511 deg
+Mean motion:   15.00033055 rev/day
+Decay rate:       8.94E-06 rev/day^2
+Epoch rev:            1792
+
+Satellite: OUFTI-1
+Catalog number: 41458
+Epoch time:      16167.81772459
+Element set:     999 
+Inclination:       98.2114 deg
+RA of node:       178.2299 deg
+Eccentricity:    0.0178931
+Arg of perigee:    72.4708 deg
+Mean anomaly:     289.5984 deg
+Mean motion:   15.01049018 rev/day
+Decay rate:      4.339E-05 rev/day^2
+Epoch rev:             757
+
+Satellite: E-ST@R-II
+Catalog number: 41459
+Epoch time:      16168.48403334
+Element set:     999 
+Inclination:       98.2120 deg
+RA of node:       178.9354 deg
+Eccentricity:    0.0178895
+Arg of perigee:    70.2748 deg
+Mean anomaly:     291.7681 deg
+Mean motion:   15.01049765 rev/day
+Decay rate:      4.221E-05 rev/day^2
+Epoch rev:             767
+
+Satellite: AAUSAT 4
+Catalog number: 41460
+Epoch time:      16168.41488900
+Element set:     999 
+Inclination:       98.2109 deg
+RA of node:       178.8684 deg
+Eccentricity:    0.0178172
+Arg of perigee:    70.5790 deg
+Mean anomaly:     291.4620 deg
+Mean motion:   15.01206226 rev/day
+Decay rate:      5.972E-05 rev/day^2
+Epoch rev:             766
+
+Satellite: MINXSS
+Catalog number: 41474
+Epoch time:      16168.29261668
+Element set:     999 
+Inclination:       51.6450 deg
+RA of node:        62.1625 deg
+Eccentricity:    0.0003254
+Arg of perigee:   120.1353 deg
+Mean anomaly:     333.1098 deg
+Mean motion:   15.56874489 rev/day
+Decay rate:     3.0826E-04 rev/day^2
+Epoch rev:             479
+
+Satellite: CADRE
+Catalog number: 41475
+Epoch time:      16168.35261727
+Element set:     999 
+Inclination:       51.6437 deg
+RA of node:        61.7812 deg
+Eccentricity:    0.0003471
+Arg of perigee:   144.6235 deg
+Mean anomaly:     323.6326 deg
+Mean motion:   15.57587410 rev/day
+Decay rate:     3.9371E-04 rev/day^2
+Epoch rev:             480
+
+Satellite: STMSAT-1
+Catalog number: 41476
+Epoch time:      16168.10988987
+Element set:     999 
+Inclination:       51.6446 deg
+RA of node:        63.0721 deg
+Eccentricity:    0.0003045
+Arg of perigee:   125.6443 deg
+Mean anomaly:      25.6910 deg
+Mean motion:   15.56913356 rev/day
+Decay rate:     2.7181E-04 rev/day^2
+Epoch rev:             467
+
+Satellite: NODES 1
+Catalog number: 41477
+Epoch time:      16168.11395894
+Element set:     999 
+Inclination:       51.6441 deg
+RA of node:        63.1017 deg
+Eccentricity:    0.0003862
+Arg of perigee:   137.7915 deg
+Mean anomaly:      13.2746 deg
+Mean motion:   15.56499489 rev/day
+Decay rate:     1.9991E-04 rev/day^2
+Epoch rev:             467
+
+Satellite: NODES 2
+Catalog number: 41478
+Epoch time:      16168.11429572
+Element set:     999 
+Inclination:       51.6456 deg
+RA of node:        63.1028 deg
+Eccentricity:    0.0003150
+Arg of perigee:   121.2173 deg
+Mean anomaly:      29.1664 deg
+Mean motion:   15.56469200 rev/day
+Decay rate:     1.9632E-04 rev/day^2
+Epoch rev:             467
+
+Satellite: ZIYUAN 3-2 (ZY 3-2)
+Catalog number: 41556
+Epoch time:      16168.39376071
+Element set:     999 
+Inclination:       97.4990 deg
+RA of node:       241.5051 deg
+Eccentricity:    0.0010134
+Arg of perigee:   206.1233 deg
+Mean anomaly:     215.2423 deg
+Mean motion:   15.23989005 rev/day
+Decay rate:      1.754E-05 rev/day^2
+Epoch rev:             263
+
+Satellite: NUSAT 1 (FRESCO)
+Catalog number: 41557
+Epoch time:      16168.45835313
+Element set:     999 
+Inclination:       97.4985 deg
+RA of node:       241.5993 deg
+Eccentricity:    0.0013603
+Arg of perigee:   211.3286 deg
+Mean anomaly:     277.1635 deg
+Mean motion:   15.25305077 rev/day
+Decay rate:      2.711E-05 rev/day^2
+Epoch rev:             264
+
+Satellite: NUSAT 2 (BATATA)
+Catalog number: 41558
+Epoch time:      16168.39475256
+Element set:     999 
+Inclination:       97.5003 deg
+RA of node:       241.5366 deg
+Eccentricity:    0.0013146
+Arg of perigee:   209.5797 deg
+Mean anomaly:     281.1517 deg
+Mean motion:   15.25163852 rev/day
+Decay rate:      2.681E-05 rev/day^2
+Epoch rev:             263
+

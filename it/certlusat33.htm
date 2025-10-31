@@ -1,0 +1,226 @@
+<html><head><title>Cert 33 Aniv. LUSAT</title>
+<meta name="TITLE" content="AMSAT Argentina provides usefull info for radio amateurs interested in the amateur satellite program, latest AMSAT bulletins, keps and Argentina AMSAT and LUSAT history.">
+<style TYPE="text/css">
+.detalle {font-family:tahoma,arial,trebuchet;font-size:12;font-weight:bold;}
+.tit3 {font-family:Times New Roman,Tahoma,arial,trebuchet;font-size:34;font-weight:bold;line-height:22px;color:#067ab0;text-align:top;}
+.det1 {font-family:tahoma,arial,trebuchet;font-size:12px;font-weight:bold;}
+.det3 {font-family:tahoma,arial,trebuchet;font-size:19px;font-weight:normal;text-align:justify;line-height:21px;color:#ffffff;}
+.grande {font-family:tahoma,arial,trebuchet;font-size:13px;font-weight:normal;text-align:justify;line-height:14px;text-indent:'5%';}
+.det2 {font-family:tahoma,arial,trebuchet;font-size:12;font-weight:bold;text-align:justify;}
+.foto {width: 200px;height: 200px;border-style: solid;border-width: 4;border-color: #ffffff;}
+.small {font-family:Arial,trebuchet;font-size:5px;line-height:5px;}
+a.propo:hover {background-color:gray;} a.propo:link {background-color:#000000;} a.propo:active {background-color:#000000;}a.propo:visited {background-color:#000000;}
+.propo {font-family:Courier;font-size:18px;line-height:14px;font-weight:bold;color:#ffffff;cursor:pointer;}
+.one {list-style: square;font-size:12px;line-height:12px;color:#ffffff;padding:0;}
+.two {list-style: square;font-size:12px;line-height:12px;color:#ffffff;margin-left:7px;padding-left:7px;}
+a {
+  color:yellow;
+  font-size:13px;
+  line-height:14px;
+  background-color:navy;
+  font-weight:bold;
+}
+a:hover 
+{ 
+	text-decoration:underline;
+	background-color:gray;
+} 
+</style>
+<script src="http://lu7aa.org.ar/certificados/oro.js"></script><script language="javascript">var cuentaoro = certificados.length;</script>
+<script src="http://lu7aa.org.ar/certificados/plata.js"></script><script language="javascript">var cuentaplata = certificados.length;</script>
+<script src="http://lu7aa.org.ar/certificados/lusat.js"></script>
+<script language=javascript>
+var regw;
+function ver (){
+if (regw != null) {regw.close();}
+preferences="toolbar=no,width=357,height=505,center,margintop=0,top=90,left=200,status=no,scrollbars=no,resizable=yes,dependent=yes,z-lock=yes";
+regw=window.open ("images/rx-sstv.gif","regw",preferences);
+regw.setTimeout ('self.close()',120000) ;
+}
+if (screen.availWidth < 1000){
+    document.write ("<style TYPE=\"text\/css\">.foto {width: 200px;height: 200px;border-style: solid;border-width: 4;border-color: #ffffff;}<\/style>"); 
+    document.write ("<style TYPE=\"text\/css\">.det3 {font-family:tahoma,arial,trebuchet;font-size:10px;font-weight:normal;text-align:justify;line-height:11px;color:#ffffff;}<\/style>");
+    document.write ("<style TYPE=\"text\/css\">.det4 {font-family:tahoma,arial,trebuchet;font-size:13px;font-weight:bold;text-align:justify;line-height:12px;color:#ffffff;}<\/style>");
+    }
+    else {
+    document.write ("<style TYPE=\"text\/css\">.foto {width: 300px;height: 300px;border-style: solid;border-width: 6;border-color: #ffffff;}<\/style>") 
+    document.write ("<style TYPE=\"text\/css\">.det3 {font-family:tahoma,arial,trebuchet;font-size:12px;font-weight:normal;text-align:justify;line-height:13px;color:#ffffff;}<\/style>");
+    document.write ("<style TYPE=\"text\/css\">.det4 {font-family:tahoma,arial,trebuchet;font-size:12px;font-weight:bold;line-height:11px;color:#ffffff;}<\/style>");
+    }
+if(!String.prototype.trim){  
+  String.prototype.trim = function(){  
+    return this.replace(/^\s+|\s+$/g,'');  
+  };  
+}
+function fecha(){    
+var mydate=new Date();var year=mydate.getYear();
+if (year < 1000){year+=1900}
+var day=mydate.getDay()
+var month=mydate.getMonth()
+var daym=mydate.getDate()
+var dayarray=new Array("Domingo","Lunes","Martes","Mi&eacute;rcoles","Jueves","Viernes","S&aacute;bado")
+var montharray=new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre")
+document.getElementById("ponefecha").innerHTML = dayarray[day]+" "+daym+" de "+montharray[month]+" de "+year;
+document.getElementById("ponecantidad").innerHTML = certificados.length;document.getElementById("ponecantidad1").innerHTML = certificados.length+cuentaplata+cuentaoro;document.getElementById("ponecantidad2").innerHTML = cuentaplata;document.getElementById("ponecantidad3").innerHTML = cuentaoro;
+var resul = "<center><table width=\"40%\" border=0 cellpadding=0 cellspacing=0 style=\"color:#000000;\">";
+var resul = resul + "<tr><td class=\"det4\" style=\"color:#ffffff;\" align=\"right\">Fecha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N&uacute;mero&nbsp;&nbsp;Licencia&nbsp;&nbsp;&nbsp;<\/td><td class=\"det4\" align=\"left\" width=\"4%\">&nbsp;</td><td class=\"det4\" align=\"left\">&nbsp;&nbsp;Nombre y Apellido,&nbsp;&nbsp;&nbsp;&nbsp;Localidad.</td></tr>";
+for (var i=certificados.length-1;i>-1;i--)
+{
+    if (certificados[i][0].slice(-2) == "21")
+        { resul = resul + "<tr class=\"det4\"><td align=\"right\" class=\"det4\" width=\"40%\" style=\"white-space:nowrap;background-color:#000000;\">" }
+    else
+        { resul = resul + "<tr class=\"det4\"><td align=\"right\" class=\"det4\" width=\"40%\" style=\"white-space:nowrap;\">"}
+    numero = "0000" + certificados[i][1]; nro = numero * 1; numero = numero.substr(numero.length - 4);
+    if (certificados[i][2].length < 8) {token="&nbsp;#&nbsp;"}else{token="#"} 
+    if (certificados[i][2].trim().toUpperCase() == "LU3XXX")
+    {
+        certificados[i][2] = "******"; certificados[i][3] = "An&oacute;nimo, An&oacute;nimo"; certificados[i][5] = "An&oacute;nimo";
+        if (certificados[i][2].trim().toUpperCase().length < 7) { resul = resul + certificados[i][0].trim() + "&nbsp;#&nbsp;<a title=\"Ver Certificado de " + "ANONIMO" + "\" href=http:\/\/lu7aa.org.ar\/certdti.asp?Nro=1 style=\"color:#000000;\">" + numero.trim() + "<\/a>&nbsp;&nbsp;&nbsp;<span class='propo'>" + certificados[i][2].trim().toUpperCase(); }
+        else { resul = resul + certificados[i][0].trim() +  + token + "<a class=propo title=\"Ver Certificado de " + "ANONIMO" + "\" href=http:\/\/lu7aa.org.ar\/certdti.asp?Nro=1 style=\"color:#000000;\">" + numero.trim() + "<\/a>&nbsp;&nbsp;&nbsp;<span class='propo' style='font-size:14px;'>" + certificados[i][2].trim().toUpperCase(); }
+    }
+    else
+    {
+        if (certificados[i][2].trim().toUpperCase().length < 7) { resul = resul + certificados[i][0].trim() + "&nbsp;#&nbsp;<a title=\"Ver Certificado de " + certificados[i][2].trim().toUpperCase() + "\" href=http:\/\/lu7aa.org.ar\/certlusati.asp?Nro=" + nro + " style=\"color:#ffffff;\">" + numero.trim() + "<\/a>&nbsp;&nbsp;&nbsp;<span class='propo'>" + certificados[i][2].trim().toUpperCase(); }
+        else {  resul = resul + certificados[i][0].trim() + token + "<a class=propo title=\"Ver Certificado de " + certificados[i][2].trim().toUpperCase() + "\" href=http:\/\/lu7aa.org.ar\/certlusati.asp?Nro=" + nro + " style=\"color:#ffffff;\">" + numero.trim() + "<\/a>&nbsp;&nbsp;&nbsp;<span class='propo' style='font-size:14px;'>" + certificados[i][2].trim().toUpperCase();}
+    }
+    if (certificados[i][2].length == 5) { resul = resul + "&nbsp;" }
+    if(certificados[i][2].length==4){resul=resul+"&nbsp;&nbsp;"} 
+
+    if (certificados[i][0].slice(-2) == "21")
+        { resul = resul + "<\/span><\/td><td width=\"4%\">&nbsp;</td><td align=\"left\" style=\"white-space:nowrap;background-color:#000000;\" class=\"det4\" width=\"52%\">" }
+    else
+        { resul = resul + "<\/span><\/td><td width=\"4%\">&nbsp;</td><td align=\"left\" style=\"white-space:nowrap;\" class=\"det4\" width=\"52%\">" }
+    resul = resul + "&nbsp;&nbsp;" + (certificados[i][3]).replace(/,/g, ",&nbsp;&nbsp;") + ",&nbsp;&nbsp;" + certificados[i][5] + ".";
+    resul=resul+"<\/td><\/tr>";
+}
+resul=resul+"<\/table><\/center>";
+//alert(resul);
+document.getElementById("resu").innerHTML = resul;
+}
+</script>
+</head>
+<body background="images/stars.gif"  style="background-image:url('images/stars.gif');" onload="fecha();" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0">
+<center><table style="background-color:rgba(0, 0, 0, 0);table-layout:fixed;" border="0" cellpadding="1" cellspacing="1" width="98%" class="det3" bgcolor="white" id="textos" name="textos" cols="2">
+<tr><td width="40%" style="width:40%;line-height:1px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td width="60%" style="width:60%;"><span style="font-size:18px;line-height:17px;font-weight:bold;color:#ffffff;"><center>&nbsp;&nbsp;CERTIFICADO 33 AÑOS LUSAT&nbsp;&nbsp;</center></span></td></tr>
+<tr><td align="center" valign="top" class="det3" width="40%" style="width:40%;color:#ffffff;font-size:14px;line-height:13px;">
+    <center>
+        <img id="imagen" src="http://lu7aa.org/certificados/lusat.jpg" onclick="javascript:document.location.href='http://lu7aa.org.ar/certificados/lusat.jpg'" align=center border=1 width="94%" style="border:8px ridge #ee9966;width:94%;min-width:200px;">
+    </center>
+    <div style="padding:6px;font-size:12px;line-height:14px;">
+        <b>Bases:</b><br style="line-height:5px;" />
+        <br style="line-height:5px;" />
+        <table border="1" cellpadding="5" cellspacing="0" class="det2" style="border-color:#000000;border-radius: 8px;">
+            <tr style="color:#ffffff;font-size:12px;line-height:12px;font-weight:normal;border-color:#000000;">
+                <td style="color:#ffffff;font-size:12px;font-weight:normal;border-color:#000000;">
+                    Para obtener la <b><u>QSL</u></b> debera contactar con una estacion colaboradora, o como radioescucha recibir un QSO entre estaciones relativas al evento 33 aniversario del LUSAT.<br /><br />
+                    Para obtener el <b><u>Certificado</u></b> habr&aacute; que contactar <i>(Radioaficionados)</i> o escuchar <i>(Radioescuchas)</i> por radio al menos 8 estaciones colaboradoras (para estaciones no LU/LW 4 estaciones colaboradoras), en cualquier banda y modo.<br /><br />
+                    Finalizados los contactos o la escucha y luego del 28 de Enero:<br />
+                    <ol class="two">
+                        <li>Para radioaficionados ir a <a href="https://forms.gle/jHy9SmBE2xoVEZcC7" target="_blank">https://forms.gle/jHy9SmBE2xoVEZcC7</a> e informar sus contactos, no es necesario envío de QSLs ni imágenes.</li>
+                        <br />
+                        <li>Para radioescuchas ir a <a href="https://forms.gle/6JXijHEKFQ8dsNkh8" target="_blank">https://forms.gle/6JXijHEKFQ8dsNkh8</a> e informar sus escuchas, no es necesario envío de QSLs ni imágenes.</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+        <br style="line-height:5px;" /><br style="line-height:5px;" />
+        <b>Emisi&oacute;n del Certificado:</b><br />
+        <br style="line-height:5px;" />
+        Se emitir&aacute; el Certificado 33 Aniversario del LUSAT en forma gratuita, digital al email de cada solicitante. El Certificado puede ser impreso por el destinatario si as&iacute; lo desea.
+        <br style="line-height:5px;" /><br style="line-height:5px;" />
+        <hr><br />
+        <center>
+        <span style="font-size:17px;line-height:22px;"><b>33rd LUSAT Anniversary, 1st Argentine Satellite</b></span>
+        <br />
+        From january 21 to 29, 2023 Certificate and LUSAT QSL by Radio
+        </center>
+        <br />
+        During 'LUSAT week', from Saturday-21 to Sunday-29 January 2023, Amsat-LU, several Radio Clubs and collaborators will deliver a QSL commemorative of the 33rd anniversary of LUSAT, see: <a href="lusat33qsl.jpg" target="_blank">lusat33qsl.jpg</a> , and the 33rd anniversary certificate with 8 (eight) contacts for LU/LW stations or 4 (four) contacts for other prefixes, it will not be mandatory to communicate with LU7AA.
+        <br /><br />
+        This Certificate complies with all the requirements of Argentine Resolution 3635-E/2017, articles 4.5.4 and 4.6.4, and therefore having LU7AA in force Legal Status and being recognized by ENACOM is valid for category promotions.
+        <br /><br />
+        It will be operated by radio means of the radio amateur service only, in multiband/multimode, terrestrial HF/VHF/UHF and via active amateur satellites. More information at LU7AA at qrz.com. Collaborators will be calling:
+        'LUxxx collaborating station of Amsat Argentina, grants Commemorative QSL for the 33rd Anniversary of LUSAT'.
+        <br /><br />
+        Do not miss this Certificate or QSL like the previous ones, it will be a pride to have it and for AMSAT your participation.
+        <br /><br />
+        RClubs and radio amateurs were invited to operate as a collaborating station.
+        <br /><br />
+        To sign up as a Collaborating station Click below:<br />
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8zHJGey7tZkOeNV1lZeMsmdb8a12A0do0Vi5x7CRBHvAh7Q/viewform" target="_blank">https://docs.google.com/forms/d/e/1FAIpQLSe8zHJGey7tZkOeNV1lZeMsmdb8a12A0do0Vi5x7CRBHvAh7Q/viewform</a>
+        <br /><br />
+        <b>Bases:</b>
+        <br /><br />
+        To obtain the QSL you must contact a collaborating station, or as a short wave listener receive a QSO between stations related to the 33rd anniversary event of LUSAT.
+        <br /><br />
+        To obtain the Certificate, it will be necessary to contact (Radio amateurs) or listen (Short Wave Listeners) by radio at least 8 collaborating stations (for non-LU/LW stations 4 collaborating stations), in any band and mode.
+        <br /><br />
+        Finalized contacts or listening and after January 29:
+        <br /><br />
+        For radio amateurs, go to <a href="https://forms.gle/jHy9SmBE2xoVEZcC7" target="_blank">https://forms.gle/jHy9SmBE2xoVEZcC7</a> and inform your contacts, it is not necessary to send QSLs or images.
+        <br /><br />
+        For Short Wave Listeners, go to <a href="https://forms.gle/6JXijHEKFQ8dsNkh8" target="_blank">https://forms.gle/6JXijHEKFQ8dsNkh8</a> and report your listen stations, it is not necessary to send QSLs or images.
+        <br /><br />
+        Issuance of the Certificate:
+        <br /><br />
+        The LUSAT 33rd Anniversary Certificate will be issued free of charge, digitally to the email of each applicant. The Certificate can be printed by the recipient if desired.
+        <br /><br />
+        More information and images: <a href="?f=33" target="_blank">http://amsat.org.ar?f=33</a>
+        <br /><br />
+        Celebrating its permanence in space, our LUSAT continues to emit a strong carrier after 33 years, receivable at 437.125 KHz. +/- Doppler.
+        <br /><br />
+        See pass schedules at <a href="pass.htm?satx=LUSAT" target="_blank">http://amsat.org.ar/pass?satx=LUSAT</a>
+        <br /><br />
+        73, LU7AA Amsat-LU<br /><br />
+        info at amsat.org.ar<br />
+        <a href="http://www.amsat.org.ar" target="_blank">http://www.amsat.org.ar</a><br />
+        <a href="http://www.lusat.org.ar" target="_blank">http://www.lusat.org.ar</a>
+        <br /><br />
+        <hr /><br />
+        <b>Validez adicional de los contactos:</b><br />
+        <br style="line-height:5px;" /><br style="line-height:5px;" />
+        Los contactos ser&aacute;n subidos al log del operativo radial y una vez confirmados son v&aacute;lidos para los siguientes certificados permanentes:
+        <ol class="one">
+            <li>Certificado Permanente Amsat Argentina a 5 contactos (C-5-C) por el contacto con LU7AA, cualquiera sea la banda y modo.</li>
+            <li>Certificado Satelital conjunto de LU7AA y LU4AAO para aquellos contactos que se hagan en forma satelital.</li>
+            <li>Diploma Divisiones Pol&iacute;ticas de Argentina de LU4DQ Radio Club Quilmes, por cada divisi&oacute;n pol&iacute;tica contactada.</li>
+            <li>Certificado Argentina Bicontinental de LU1DCB Radio Club Boulogne, por la divisi&oacute;n pol&iacute;tica de cada estaci&oacute;n contactada.</li>
+            <li>Diploma Sufijo 2000, de LU4DQ Radio Club Quilmes: 2 puntos por QSO con cada activante.</li>
+        </ol>
+        Los invitamos a ver las bases de estos y otros Certificados tambi&eacute;n permanentes emitidos por instituciones reconocidas:
+        <a href="http://lu4aao.org/certificados.htm" target="_blank"><b>Bases de estos Certificados</b></a>.<br /><br /><hr />
+    </div>
+</td>
+    <td valign=top style="font-size:13px;line-height:13px;width:60%;color:#ffffff;" class="det3" width="60%">
+        <center>
+            S&aacute;bado 21 a Domingo 29 de Enero de 2023<br style="line-height:9px;"><br style="line-height:9px;">
+            <div style="text-align:justify;color:#ffffff;">
+                <font style="font-size:13px;line-height:14px;font-weight:normal;text-align:center;">
+                    Durante <em><b>'La semana del LUSAT'</b></em>, del s&aacute;bado-21 al domingo-29 de Enero del 2023, Amsat-LU, varios Radio Clubs y colaboradores entregar&aacute;n a un contacto <a href="lusat33qsl.jpg" target="_blank"><b>QSL Conmemorativa</b></a> del 33&ordm; aniversario del LUSAT y con 8 (ocho) contactos (4 para prefijos no LU/LW) se podr&aacute; solicitar este Certificado.<br /><br />
+                    Este Certificado cumple la totalidad de lo requerido por la Resoluci&oacute;n 3635-E/2017, art&iacute;culos 4.5.4 y 4.6.4, y por lo tanto al tener LU7AA Personer&iacute;a Jur&iacute;dica vigente y ser reconocida por ENACOM es v&aacute;lido para ascensos de categor&iacute;a.
+                </font><br style="line-height:9px;">
+                <br style="line-height:9px;">
+                Se operar&aacute; por medios radiales del servicio de radioaficionados solamente, en forma multibanda/multimodo, HF/VHF/UHF terrestre y v&iacute;a <a href='pass.htm?type=ssbfm' target=_blank>sat&eacute;lites amateur</a> activos. M&aacute;s informaci&oacute;n en LU7AA en <a href="https://www.qrz.com/db/lu7aa" target="_blank"><b>qrz.com</b></a> o <a href="https://www.qrzcq.com/call/LU7AA" target="_blank"><b>qrzcq.com</b></a>. Se llamar&aacute;:<br />'LUxxx estaci&oacute;n colaboradora de Amsat Argentina, otorga QSL Conmemorativa por el 33&#176; Aniversario del LUSAT'.<br style="line-height:9px;"><br style="line-height:9px;">
+                No te pierdas este Certificado o QSL como los anteriores, va a ser un orgullo contar con &eacute;l y para AMSAT tu participaci&oacute;n.<br style="line-height:9px;"><br style="line-height:9px;">
+
+
+                Lista de estaciones colaboradoras con día hora frecuencia y modo: <a href="https://docs.google.com/spreadsheets/d/1m8Jh69AeCHw-cnN3rIfWirRETjOh3wXwNFhdYI07KyY/" target="_blank">https://docs.google.com/spreadsheets/d/1m8Jh69AeCHw-cnN3rIfWirRETjOh3wXwNFhdYI07KyY/</a>
+                <br /><br />
+                Se invita a RClubs y radioaficionados a operar como estación colaboradora. Si desea operar como estación colaboradora puede registrarse usando su dirección Gmail, dando click: <a href=https://docs.google.com/forms/d/e/1FAIpQLSe8zHJGey7tZkOeNV1lZeMsmdb8a12A0do0Vi5x7CRBHvAh7Q/viewform target="_blank">Aqui</a>. Bienvenido !
+                <br style="line-height:9px;"><br style="line-height:9px;">
+                Adicionalmente, se reconocer&aacute; a estaciones colaboradoras con un Certificado Especial a quien lo solicite y realice mas de <a href="certplata.htm" target="_self">100 QSOs(Plata)</a> o <a href="certoro.htm" target="_self">200 QSOs(Oro)</a>.<br style="line-height:9px;"><br style="line-height:9px;">
+                Para el 32 aniversario del LUSAT se han inscripto y operaron LU7AA y las siguientes estaciones colaboradoras: LU7AA, LU4AAO, LU5AG, LU7FW, LU4BMG, LU2BB, LW3EB, LW4DRB, LU1DFB, EA4GIG, LU2HW, LU7ART, LU3AJL, LU5JB, LU1JKN, LU4JEA, LU2JE, LU4WCD, LU9TUX, LU8KBH, LU1WL, LU2HYL, LU6RAN, LU4RAD, PY3YD, LU9DX, LU5UFM, LU4ARU/D, LU9EKQ, LU7FMA, LU3UAD, LU3DS, LU9LMD, LW3EMP, LU2JMG, LU7ABF, CX5ACG, LU9VYY, LU5MT, LU9CZP, LW9EUE, CX8ABF, LU1LC, LU2ELZ, LU2AXF, LW2DAF.<br style="line-height:9px;"><br style="line-height:9px;">
+                Festejando su permanencia en el espacio nuestro LUSAT sigue emitiendo luego de 33 años una fuerte portadora pulsada, recibible en 437.125 KHz. +/- Doppler. Ver horarios de pasos en <a href="pass.htm?satx=LUSAT">http://amsat.org.ar/pass?satx=LUSAT</a>
+                <br style="line-height:9px;" /><br style="line-height:9px;" />
+                <b>Informe evento 30 Aniv. LUSAT:</b><br style="line-height:9px;" />Se realizaron <b>3126</b> QSOs, <b>2366</b> con LU/LW, SSB:1898 CW:118 FM:394 FT8:695 SAT:279. Colaboraron <b>23</b> radioclubs+estaciones colaboradoras. Se entregaron ya <b><span id="ponecantidad1"></span></b> Certificados de los cuales <b><span id="ponecantidad2"></span></b> Plata y <b><span id="ponecantidad3"></span></b> Oro. Operaron LU7AA y las siguientes estaciones colaboradoras: LU7ABF, LU2BB, LU5AG, LU4AAO, LU7FMA, LW9EKA, LW3EB, LU2EE, LU3EP, LU7DSU, LU3DEG, LU3AJL, LU9CZP, LU5JU, LU1ESY, LU7DSD, LU1AAT, LU5UFM, LW2DAF, LU7DUE, LW4DRB. A quienes especialmente se agradece y aprecia su compromiso y resultados.<br style="line-height:9px;" /><br style="line-height:9px;" />
+                </font>
+            </div>
+<b>
+                Se otorgaron <span id="ponecantidad"></span> Certificados al <span id="ponefecha"></span><i>&nbsp;(Click Nro p/ver certificado)</i>
+            </b><br /><hr />
+        </center>
+        <div id="resu">Lista de Certificados</div>
+    </td></tr>
+</table></center>
+</body>
+</html>

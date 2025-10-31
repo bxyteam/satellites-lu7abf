@@ -1,0 +1,13 @@
+Satellite: PEHUENSAT 1 [+] 
+Catalog number: 29712
+Epoch time:      07038.87732057
+Element set:     84
+Inclination:       97.9393 deg
+RA of node:        99.7503 deg
+Eccentricity:    0.0014504
+Arg of perigee:   183.8935 deg
+Mean anomaly:     176.2166 deg
+Mean motion:   14.79539546 rev/day
+Decay rate:      .00000909 rev/day^2
+Epoch rev:             421
+Checksum:              326

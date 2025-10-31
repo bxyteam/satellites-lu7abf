@@ -1,0 +1,3768 @@
+                          ============
+                          InstantTrack
+                          Version 1.50
+                          ============
+                                
+                                
+   Satellite Tracking software for the IBM PC and compatibles.
+                                
+                                
+                                
+  Copyright 1989 - 2000 Franklin Antonio and Paul Williamson
+  
+
+
+(This document is also included in PDF format. If you can read
+the PDF file instead of this plain text file, you will find this
+document much easier to read. The PDF file is also more suitable
+for printing.)
+
+
+
+1. Introduction
+
+InstantTrack was designed to assist amateur radio operators who
+need to track a large number of Earth-orbiting satellites, point
+antennas at them in real time, estimate when communications links
+will be possible with operators in other parts of the world, etc.
+
+InstantTrack is copyrighted software. See the copyright and
+distribution information later in this document.
+
+InstantTrack 1.00 introduced in 1989 several features that made
+it unique among satellite tracking programs, and a few features
+which, while not unique, were relatively uncommon among low cost
+satellite tracking programs. While many of these features have
+been added to other programs, no other program matches
+InstantTrack's combination of speed, small size, ease of use, and
+wide compatibility with many different computers.
+
+I've taken the liberty of listing a few of these here.
+     
+     Speed -- InstantTrack is still faster than any other
+          tracking program. Humans should never wait for
+          computers. InstantTrack is fast even on ancient,
+          slow computers.
+     
+     Ease of use -- Most commands are a single keystroke.
+          Usually-tedious functions are fully automated.
+     
+     Automated orbital element entry -- InstantTrack reads
+          the popular NASA and AMSAT format satellite
+          element files and updates its database
+          automatically. You need never again manually enter
+          dozens of 10-digit numbers.
+     
+     Automated time setting -- InstantTrack automatically
+          sets the time on your computer by accessing the
+          NIST time service via your modem.
+     
+     Instant Visibility -- InstantTrack shows you the
+          positions of your "favorite" satellites, even
+          before you issue the first keystroke. The menu of
+          200 satellites shows you which are visible from
+          your location even before you select a satellite.
+          The menu of 1794 cities shows you which cities are
+          visible from the selected satellite even before
+          you choose a city.
+     
+     Graphics -- InstantTrack displays color high resolution
+          (EGA/VGA) maps of the Earth, showing satellite and
+          observers position, two kinds of satellite
+          footprint, grayline, etc. Two map projections are
+          selectable. You can also select either a diagram
+          of the satellite's orbit showing the orientation
+          of the satellite, or a map of the sky, showing the
+          satellite's position against the field of stars.
+          
+          You can move from map to map or satellite to
+          satellite with a single keystroke, instantly.
+     
+     Large Number of Satellites & Stations -- InstantTrack
+          maintains a database of 200 satellites and 50
+          observer locations. A unique grouping feature al
+          lows you to categorize satellites, and perform
+          most operations on either a selected group, or the
+          entire database.
+     
+     City Database -- InstantTrack includes a database of
+          1794 cities worldwide. Locations of the satellite
+          (sub-satellite points) and observers are displayed
+          relative to the nearest city.  Observing stations
+          can be specified by entering as little as their
+          city name.
+     
+     Grid Squares -- InstantTrack understands the gridsquare
+          system.  Observing stations can be specified by
+          typing only their gridsquare.
+     
+     Satellite Covisibility -- InstantTrack shows you when
+          satellites can see other satellites (i.e., when
+          crosslinks are possible), when satellites are in
+          eclipse (in the shadow of the Earth), etc. This
+          display, of course, updates in real-time, so you
+          can see crosslinks appear and disappear.
+     
+     Satellite Offpointing -- (sometimes called Squint
+          Angle) InstantTrack computes the angle by which
+          the satellite's antennas are pointed away from
+          you, for two types of satellite stabilization
+          system. Helps you understand why the quality of
+          communications varies.
+          
+          InstantTrack's graphics show you where a
+          satellite's antennas are pointing. Maps display a
+          contour line of squint angle. Stations within this
+          line have low squint, and typically can establish
+          the best links via such satellites.
+     
+     Path Loss -- InstantTrack shows the path loss between
+          your station and the satellite in real time.
+     
+     Schedules -- InstantTrack can show you the next three
+          week's schedule for a satellite, or one day's
+          schedule for 20 satellites or 4 observers on one
+          easy-to-read screen.
+     
+     Realtime Rotor Control -- InstantTrack supports
+          realtime antenna rotor control via the Kansas City
+          Tracker interface or any interface with a
+          compatible driver.
+     
+     Realtime Radio Control -- InstantTrack supports
+          realtime transceiver control for Doppler
+          compensation via a defined programming interface.
+     
+     Background Mode -- A unique background mode allows you
+          to track satellites, point antennas, and tune
+          radios in real time while you run other programs.
+     
+     Sun and Moon -- InstantTrack tracks the Sun and Moon as
+          well as the satellites in its database.
+     
+     Fast Rise-Time Finder -- InstantTrack rapidly computes
+          the time at which a satellite will rise over the
+          horizon.
+     
+     Tracking Multiple Stations -- You can see the computed
+          parameters (azimuth, elevation, squint, etc.) both
+          from your perspective and from the perspective of
+          the station at the other end of the satellite
+          link.
+     
+     Documentation -- Extensive and Tutorial.
+     
+     Online Help -- InstantTrack contains a context-
+          sensitive online help facility which can be
+          entered from almost any screen.
+
+
+1.1. Required Hardware
+
+Any IBM PC, or AT, PS/2, clone, etc. with at least 512K memory,
+running DOS or a compatible environment such as OS/2, Windows
+3.1, Windows 95, Windows 98, Windows NT, or Windows 2000.
+
+Any display type is OK for the text mode screens. Color maps
+require EGA or VGA display. Minimal monochrome maps are supported
+on HGC and CGA. I'm not particularly fond of the ancient CGA
+boards; if you have one of those, beware that I have taken no
+steps to avoid `CGA snow'.
+
+A numeric coprocessor (8087 or 80287 or 80387) is NOT required,
+but it is recommended. InstantTrack isn't really Instant on an
+old computer without a coprocessor, but it will still probably be
+faster at most things than any other tracking program. If you
+have a Pentium or faster CPU, you have a numeric coprocessor
+built-in and don't need to worry about it.
+
+A mouse is NOT required, but can be used on the map screens.
+
+Due to the large file sizes involved, a hard disk is recommended.
+
+
+1.2. Getting Started
+
+There are only three things you must do to get started:
+
+1.   Set your time zone.
+
+2.   Enter your station "elements", or location.
+
+3.   Update the Keplerian elements database.
+
+These procedures are described in the sections titled "Setting
+Your Time zone", "Station Elements (Where Are You?)", and
+"Satellite Elements (What Are The Orbits?)" which follow.
+
+You then run one of the following two programs:
+     
+     IT     --  if your computer has an 8087, 80287, or 80387
+                numeric co-processor, or uses a 486DX, Pentium,
+                or any other modern Pentium-class CPU
+     
+     ITNCP  --  if your computer has an older processor and does
+                NOT have a numeric co-processor (the letters NCP
+                stand for No Co-Processor)
+
+A few of you with unusual hardware configurations may need to set
+a few more parameters. These are described in the file
+ITINIDOC.TXT.
+
+If InstantTrack's use of your mouse causes problems, you can tell
+InstantTrack not to use the mouse by adding "/M" on the command
+line. This can be helpful under certain older multitaskers.
+
+
+
+2.The Main Menu Screen
+
+
+The main menu is the first screen to appear when you fire up
+InstantTrack. This screen is a simple menu which allows you to
+pick among the basic functions that InstantTrack performs. Each
+of these functions is described in a later section.
+
+At the bottom of the main menu screen, there is a horizontal red
+line, below which appear your present pointing angles
+(azimuth/elevation) to up to seven selected satellites. The Sun
+and Moon also appear if five or fewer satellites are selected.
+Each pair of angles is displayed in yellow if the object is now
+above your horizon, and green if it is below. (These colors are
+consistent in displays throughout InstantTrack)
+
+On very slow computers, it may take a couple of seconds for these
+numbers to appear. On faster machines, they appear instantly. It
+is important for you to realize that you do not have to wait for
+these numbers to appear before making your menu selection. As
+soon as you type a key, this program will jump instantly to the
+desired function. That's how I've tried to make InstantTrack work
+-- you almost never wait for anything.
+
+
+
+3. Online Help Screens
+
+
+InstantTrack contains a modest online help facility. Select Help
+at the main menu (by typing "?") to get a menu of help screens,
+or type ? while in any of the major function screens to jump
+instantly to the help screens that describe that particular
+function.
+
+You may then navigate among the help pages using the PgUp and
+PgDn keys.
+
+Return from a help screen by typing Q or using the "Home" or
+"Esc" key.
+
+Using online help, you can almost use InstantTrack without this
+manual. This is a great help when you need a quick answer, but
+there's still no substitute for actually reading the manual.
+You'd be surprised at the number of people who ask questions,
+when the answer is right here in the manual.
+
+
+
+4. Time and Timezones
+
+
+InstantTrack must know time correctly, before it can locate
+satellites correctly. The program reads your computer's DOS clock
+(which it assumes is set to your local time zone). Local time is
+then converted to UTC (Coordinated Universal Time, also known as
+Greenwich Mean Time) which is used in the orbit calculations.
+
+So, there are two requirements. First, you must set your
+computer's DOS clock with reasonable accuracy. Second, you must
+tell InstantTrack what time zone it is in.
+
+
+4.1. How Accurate?
+
+How accurately must you set your computer's DOS clock? The answer
+depends on orbital mechanics and geometry. Assuming the goal is
+to point an antenna at a satellite, we can determine how much
+time error will produce a certain amount of antenna pointing
+error. There are several sources of antenna pointing error of
+course. Time error is just one contribution.
+
+Low Earth Orbiting (LEO) satellites move the fastest, and
+therefore require the most accurate time. Consider a satellite
+orbiting at 250 km altitude. This is about as low as useful satel
+lites go. The angles change fastest when the satellite is
+directly overhead, so we'll compute that case.
+
+Pointing error for 250km satellite directly overhead:
+
+Time Error   Pointing Error
+ 1 second      1.8 degrees
+10 seconds    17   degrees
+ 1 minute     61   degrees
+
+This is a worst case! In most situations, time accurate to 30
+seconds is probably fine.
+
+There are several ways to set your computer's clock. You can do
+it by hand, of course, getting time information from the phone
+company, or WWV, or a GPS receiver. This works very well.
+
+InstantTrack can also set your computer's clock for you by
+accessing the National Institute of Standards & Technology
+(formerly known as the National Bureau of Standards) telephone
+time service. Your computer uses your modem to make a very quick
+long-distance call to a modem at NIST. This feature is described
+in more detail in a later section.
+
+If your computer is connected to the Internet, you may want to
+consider obtaining a program that sets your computer's clock
+using Network Time Protocol (NTP) or Simple Network Time Protocol
+(SNTP). This will allow your computer to keep its own clock set
+automatically.
+
+
+4.2. Setting Your Time Zone
+
+There are two ways to tell InstantTrack your time zone:
+     
+     -    the DOS environment variable TZ
+     
+     -    in the IT.INI configuration file.
+     
+
+4.2.1. Setting Your Time Zone using TZ
+
+You can tell InstantTrack the name of the local time zone by
+setting a DOS environment variable called "TZ" (short for Time
+Zone). This is the standard DOS method, and may have already been
+done on your computer. You should put the command to set it in
+your AUTOEXEC.BAT file, so that you never forget. You must set TZ
+to your time zone by executing a DOS command like this:
+
+     SET TZ=PST8PDT
+
+The first three letters (PST in this case) are the name of a time
+zone, followed by number indicating the number of hours
+difference between UTC and your time zone, followed by an
+optional three letter name of a daylight saving time timezone.
+There must not be any spaces in this command, except the one
+between "SET" and "TZ".
+
+For Eastern Standard Time with Daylight Saving Time:
+     
+     SET TZ=EST5EDT
+
+For Mountain Standard Time with Daylight Saving Time:
+     
+     SET TZ=MST7MDT
+
+If you live in an area where daylight saving time is not used (or
+where the rules are different from those in the U.S.), you should
+leave off the last three letters. For example, if you live in
+Arizona where they don't have Daylight Saving Time, you should
+use:
+
+     SET TZ=MST7
+
+Or, if you live in Western Australia where they don't have
+Daylight Saving Time, you should use:
+
+     SET TZ=HST-8
+
+Notice in the example above that the number can be negative. Use
+negative numbers if your timezone is ahead of UTC. Use regular
+positive numbers if your timezone is behind UTC. The number has
+to be a whole number, though, so if your timezone is a half hour
+or quarter hour off from UTC, see the next section.
+
+In the U.S., Daylight Saving Time starts at 2 AM on the first
+Sunday of April and ends at 2 AM on the last Sunday of October.
+If you live someplace where Daylight Saving Time is used, but it
+starts and ends on different dates, you must change your timezone
+setting each spring and fall. For example, you might use:
+
+     SET TZ=XST3
+
+in the winter, and when summer comes around manually change this
+to:
+
+     SET TZ=XDT2
+
+If you leave your DOS clock set to UTC (which doesn't have
+Daylight Saving Time), then use
+     
+     SET TZ=UTC0
+
+If you don't set TZ at all, it defaults to PST8PDT. Microsoft is
+located in the Pacific time zone.
+
+You can use any three-letter code you like for your timezone. For
+example, if you think of your local time as "local time" instead
+of "Pacific Standard Time", you can use
+
+     SET TZ=LOC8LOC
+
+if you find that easier to understand.
+
+If you're running under Windows, you might think that setting the
+Windows clock would take care of setting TZ automatically. It
+really ought to, since that's the standard DOS way to tell
+programs what timezone they're in. Unfortunately, Windows doesn't
+do that, so you still have to make this setting manually.
+
+
+4.2.2. Setting Your Time Zone using IT.INI
+
+You can also tell InstantTrack the name of the local time zone by
+setting a variable in the IT.INI configuration file. The setting
+in IT.INI overrides the TZ environment variable.
+
+You may want to use this method if:
+     
+     1.   Some other program wants to use the TZ environment variable
+       differently, or
+     
+     2.   Your timezone is on a half hour or quarter hour offset from
+       UTC, or
+     
+     3.   You just don't like to mess with environment variables.
+
+If any of these applies to you, read the section in this document
+on the IT.INI configuration file, and then read the file
+ITINIDOC.TXT for details on how these settings should be used.
+
+
+4.3. How Time is Displayed and Entered
+
+Many InstantTrack screens display date and time. These dates and
+times may be displayed as either UTC or local time. You get to
+choose. Some users prefer to think in UTC, others become totally
+confused trying to mentally convert back and forth between UTC
+and local time. Most of us are somewhere in between.
+
+When InstantTrack starts up, time display is in UTC. At any time
+on most screens, you can type the "Z" command, which toggles the
+time display mode between UTC and Local. (Z stands for Zone, as
+in timezone.)
+
+You can always tell which mode you're in. A realtime time display
+appears at the top left corner of most screens, and it contains
+the timezone name. For example, the time displayed might be
+"03/01/92 06:22:37 UTC". If I then type Z, the display will
+instantly become "02/29/92 23:22:37 PDT".
+
+What about time entry? A few InstantTrack screens will prompt you
+to enter a time. In most cases, you can just respond by typing
+the Enter key. InstantTrack will accept this to mean "right now".
+If you need to enter some other time, InstantTrack will accept
+any of the following formats...
+
+     mm/dd/yy hh:mm:ss   -- fully specified date & time
+     mm/dd/yy hh:mm      -- seconds default to 00
+     mm/dd/yy            -- time defaults to 00:00:00
+     hh:mm:ss            -- day defaults to today
+     hh:mm               -- and seconds default to 00
+
+The examples above show a 2-digit year. That's all that you
+normally need to type. For example 90 means 1990. IT will assume
+that a 2-digit year is in the range [1950..2049], which is, of
+course, what you normally want. You may type the full 4 digit
+year if you wish.
+
+You may also omit leading zeros. For example 3/2/89 22:0 is a
+legal entry.
+
+Time entry always assumes the same timezone as time display. In
+other words, if you have InstantTrack displaying times in UTC, it
+assumes you will enter times in UTC.
+
+
+
+5. Station Elements (Where Are You?)
+
+
+To tell InstantTrack where you are located, or where your friends
+are located, select "Housekeeping Functions" (by typing the 6
+key) at the main menu. Then select "Update Station Elements" (by
+typing the B key) at the Housekeeping Menu.
+
+You will then be presented with a "Station Selection Menu".
+InstantTrack contains a database which remembers the locations of
+up to 50 stations. The first station (station #1) in this
+database is special. InstantTrack expects the first station to be
+where YOU are located. The other 49 entries can be used to
+specify the location of stations you often communicate with.
+
+The parameters of the stations you enter in the station database
+will be saved on disk (in the file IT.QTH), and will be available
+next time you run InstantTrack. The program also understands the
+concept of a "visiting station". A visiting station is one you
+may want to define for the moment, but which does not get entered
+into the permanent database. More about visitors later.
+
+Pick a station to edit. The first time you run InstantTrack, you
+should edit station #1 so that it represents your station's
+location. Type the number of the station you picked, then hit
+Enter.
+
+The "Edit Station Elements" screen will appear, and the present
+station name, latitude, longitude, and elevation above sea level
+will be displayed. Some computed information is also displayed to
+help you verify that you've entered your station location
+correctly.
+
+Editing station data is simple. Use up-arrow and down-arrow keys
+to move the cursor to the line you want to change. To change a
+value, type the = key followed by the new value. Type the Enter
+key to enter the value.
+
+To exit this screen, type the Q key. (Most screens in
+InstantTrack exit when you type the Q key. Q stands for Quit.)
+
+Latitude is entered in degrees North or South. Longitude are
+entered in degrees East or West. (Not degrees:minutes:seconds).
+Latitude must be in the range [90N,90S]. Longitude must be in the
+range [180E,180W]. You may indicate North, South, East, or West
+by typing N, S, E, or W after the number, or you may use negative
+numbers for South and East. Positive numbers are assumed to be
+North or West. (Many other programs consider East to be positive.
+Don't let that confuse you. Just use the letter E or W and you'll
+be safe.)
+
+Be careful if you have a latitude or longitude specified in
+degrees, minutes, and seconds. It must be converted to degrees
+before you type it in. Use this formula:
+
+     decimal degrees = degrees + (minutes/60) + (seconds/3600)
+
+Altitude is measured in meters above sea-level.
+
+You should try to find your latitude and longitude to at least
+two places after the decimal point. Altitude is not nearly so
+important; you can guess. The US Geological Survey publishes
+detailed maps of the entire US, which show latitude, longitude,
+and altitude to the required accuracy. You can usually find these
+maps at your local major University library or a map store. You
+can also find your location by using a GPS receiver.
+
+You can also type the D key (for Delete) on this screen. This
+deletes the current station settings, so this station will no
+longer appear on the station menu.
+
+
+
+6. Satellite Elements (What Are The Orbits?)
+
+
+Satellite Orbital Elements are numbers that tell us the orbit of
+each satellite. Elements for common satellites are distributed
+through the Internet, on amateur packet radio bulletin boards,
+and other means.
+
+InstantTrack comes with elements for many satellites already
+defined, but these elements are probably out of date by the time
+you install InstantTrack. You can update these elements by
+telling InstantTrack to read in files containing new elements, or
+by entering elements manually. InstantTrack can read satellite
+element files in two common formats.
+
+Entering satellite elements is easy. Understanding them is a bit
+more difficult. I have tried to make the section titled
+"Understanding Satellite Elements" as easy to read as possible.
+Luckily, you don't need to understand the elements in order to
+load and use them.
+
+In addition to the "classical" Orbital Elements, InstantTrack's
+satellite database contains several other pieces of information
+about each satellite (schedule, beacon frequency, etc.). These
+are stored in the same database, and edited the same way that the
+orbital elements are edited. They're described in a separate
+section below, titled "Understanding Satellite Parameters".
+
+
+6.1. Entering Satellite Elements
+
+Satellite elements are widely distributed on the Internet and via
+Amateur Radio bulletin boards of both the telephone and the
+packet radio varieties. Many amateurs involved in satellite
+operation have tuned in to one of these sources. These sources
+have a tremendous advantage over printed sources such as AMSAT
+newsletters, because the elements are available in computer-
+readable form. Here are a few sources to try:
+
+     http://www.amsat.org/amsat/keps/
+     http://www.celestrak.com
+
+There are two common formats in which orbital elements are
+distributed. These are called the "NASA" and "AMSAT" formats.
+NASA format files are also called "NORAD" and "2-line" format
+files. Both are ASCII text files that can be read by both humans
+and computers, although the NASA format is difficult for humans
+to read. InstantTrack can read either format, or any combination
+of the two. Ideally, you will find a source for elements in
+computer-readable form, and never be forced to type in elements
+by hand.
+
+To enter satellite elements, select "Housekeeping Functions" on
+the main menu. Then select "Update Satellite Elements" on the
+Housekeeping Menu. This will take you to the Update Satellite
+Elements menu. Here you can choose from a variety of satellite
+database update functions:
+
+     1. ALL:  Read in elements for ALL satellites in file.
+     2. ONE:  Read in elements for ONE specific satellite.
+     3. UPDATE:    Read in elements for ALL satellites EXCEPT those
+              for which the program already has newer elements.
+     4. OLD:  Delete satellites with old orbital elements.
+     5. CRASH:Delete satellites that have crashed.
+     6. DELETE:    Delete a satellite manually.
+     7. SQUISH:    Compact the satellite elements database.
+     8. EDIT: View / Edit satellite elements by hand.
+
+These functions are described below.
+
+6.1.1. Automatic Satellite Element Entry
+
+In most cases, you will probably specify option 3. Under option
+3, as InstantTrack reads in elements for each satellite, it
+compares the Epoch (that is, effective time) of the element set
+in the database to the Epoch of the element set in the file. The
+element set from the file is only read in if its Epoch is later
+than the Epoch of the element set you already have.
+
+There are some interesting cases where you may wish to update
+only the elements for one particular satellite (option 2). For
+example, shortly after OSCAR 13 was launched, an incorrect NASA
+element set was widely distributed. If you load new elements,
+then find that the orbit for one satellite is fouled up, you can
+use this feature to recover an older set of elements for that
+satellite (assuming you have kept the element files around).
+
+You will be asked the name of the file you want to read. The file
+can be in NASA 2-line format, or in AMSAT verbose format, or any
+combination of the two. Type in the name of the file you
+downloaded. If the file is on a different drive or in a different
+directory than the one you ran InstantTrack from, you'll need to
+specify the complete path. If you're running under OS/2 or
+Windows, remember that InstantTrack is a DOS program and can only
+understand filenames and path names that are up to eight
+characters, plus optionally a dot and up to three more
+characters. Spaces are not allowed in DOS filenames.
+
+If you specify a filename on a floppy disk (like A:\PLAN.OUT) and
+you get one of those annoying "Abort, Retry, Fail?" errors, you
+can choose any of the three reponses. If you choose Abort (by
+typing "A"), InstantTrack will immediately exit. If that's not
+what you want, you should probably choose Fail instead (by typing
+"F"). In that case, InstantTrack will tell you it failed (but you
+knew that already) and ask for a new filename. If you can correct
+the problem (such as by inserting a floppy disk), do so and
+choose Retry (by typing "R"). If things are now working,
+InstantTrack will pick up and continue as if nothing had gone
+wrong.
+
+Examples of the file formats can be found in an appendix at the
+end of this document. InstantTrack doesn't care about extra stuff
+at the beginning or end of the file, or even between sets of
+elements, but it is fairly picky about the element sets
+themselves. It checks most of the numbers for plausibility. In
+NASA format files, it checks the checksum digit at the end of
+each line. In AMSAT format files, if there is a checksum at the
+end of the element set, InstantTrack checks that (unless this has
+been disabled in the IT.INI configuration file). If anything
+doesn't seem right, InstantTrack skips over that element set.
+There is a parameter in the IT.INI configuration file that
+controls how InstantTrack interprets the checksum in a NASA
+format file. See ITINIDOC.TXT for details.
+
+InstantTrack reads the elements file very quickly, almost
+instantly on modern computers. It tells you what it found in the
+file, element set by element set, coded by color. If the screen
+fills up, InstantTrack waits for you to type any key to continue.
+You can also type Esc at this prompt, which causes InstantTrack
+to continue through the file without waiting again. After
+updating satellite elements, the database file (stored in a file
+named IT.ORB) is automatically updated.
+
+
+6.1.2. Manual Satellite Element Entry
+
+To examine orbital elements of satellites in the InstantTrack
+database, or manually enter or edit them, specify option 8
+(View / Edit satellite elements by hand) on the Update Satellite
+Elements screen.
+
+InstantTrack will then present you with a satellite selection
+menu, so that you can specify which satellite elements you want
+to view or edit. Enter the number or the name of the satellite
+you want.
+
+After you pick a satellite, the "Manual Edit Satellite Elements"
+screen will appear, showing the present elements for the
+satellite you picked. For example:
+
+   Satellite:  ao-13
+Object Number: 19216
+NASA Designation:   1988-51b
+Element Set #: 123
+Epoch Time, T0:     88 361.0000000
+                    12/26/1988  00:00:0.00
+Epoch Rev, K0: 377
+Mean Anomaly, M0:   126.35640
+Mean Motion, N0:    2.096985043
+Inclination, I0:    57.40580
+Eccentricity, E0:   0.66206910
+Arg Perigee, W0:    195.23090
+R.A.A.N., O0:  228.38820
+Beacon Frq, F1:     145.8120
+   Decay, N1:  7.00000e-008
+    Attitude:  2,212
+    Diameter:  3.0
+      Groups:  a
+    Schedule:  003B100J150B240
+
+
+The meaning of each of these values is explained in the following
+section labeled "Understanding Satellite Elements".
+
+At this point the following commands can be used...
+
+    up arrow   move cursor to previous element
+  down arrow   move cursor to next element
+  left arrow   move to previous satellite in database
+ right arrow   move to next satellite in database
+         =     edit this element
+         D     view/hide derived values
+         Q     quit editing. go back to main menu
+
+
+To change the value of an element, move the cursor to the
+appropriate line, type the "=" key, then type a new value for the
+element, followed by the Enter key. The program will not allow
+inappropriate values to be entered, but you still need to be
+careful to enter the value correctly.
+
+Note that Epoch Time is displayed on two lines. The first line
+displays epoch as a year and day number. The second line displays
+the same epoch in common units. Epoch may manually entered on
+either of these two lines. Enter on the first line if you are
+typing a time in the year and day number format (don't forget to
+put a space between them), and on the second line if you are
+using the more familiar m/d/y h:m:s form.
+
+As you make changes to the elements, these changes are recorded
+in the copy of the satellite elements database that InstantTrack
+is holding in memory. If you have changed any elements,
+InstantTrack will ask you whether the changes should be written
+to the satellite elements file on disk (when you exit the Manual
+Edit Satellite Elements screen). If you answer no, the changes
+you have made will be temporary, and will be lost when you exit
+InstantTrack. You might want to do that in order to experiment
+with various element values.
+
+The D command causes derived values to appear on the right hand
+side of the screen. These values are explained below, in the
+section labeled "Understanding Derived Values". They will
+disappear temporarily (to make room for parameter entry) if you
+type the "=" key to enter a parameter.
+
+
+6.1.3. Satellite Elements Maintenance Functions
+
+The Update Satellite Elements Menu allows you to do some
+additional things besides the basic functions described above.
+Specifically:
+
+        4. OLD:    Delete satellites with old orbital elements.
+        5. CRASH:  Delete satellites that have crashed.
+        6. DELETE: Delete a satellite manually.
+        7. SQUISH: Compact the satellite elements database.
+
+Because InstantTrack can handle such a large number of
+satellites, you may never need to delete anything from the
+database. My philosophy is that if you don't need to delete
+objects, then you should probably leave them in the database,
+and I urge you to adopt this philosophy.
+
+However, if you often load elements for short-lived objects or
+missions (discarded boosters, shuttle missions, etc.) the
+database may become cluttered with entries which are no longer
+valid, or the database may simply fill up. Selections 4, 5, 6
+allow you to get rid of unwanted objects.
+
+Option 4 "OLD" deletes all satellites with an epoch older than
+some number of days. You can specify the age cutoff. It defaults
+to 100 days. (Elements older than 100 days can still be useful,
+especially for high-orbiting satellites. This threshold assumes
+that a satellite that hasn't been updated in 100 days is no
+longer of interest.)
+
+Option 5 "CRASH" deletes all satellites where InstantTrack
+computes a perigee which is below the surface of the Earth. The
+object may have actually crashed, or the element set you have may
+no longer be valid. The files of NASA elements distributed by
+T.S.Kelso often contain some very short-lived objects. It is not
+uncommon to find a couple of objects that crash within days after
+you get a new file of elements. It is not necessary to delete
+these objects, but InstantTrack will find them and delete them
+for you if you wish.
+
+Option 6 "DELETE" lets you delete a specific satellite.
+
+Option 7 "SQUISH" As you delete satellites from the database, you
+leave holes. In other words, if you delete satellite number 33,
+then number 33 will show as blank on the satellite menu. Option 7
+slides all the satellites up in the database to fill in the
+holes. This is also entirely optional.
+
+
+6.1.4. ITSORT Satellite Database Maintenance Utility
+
+In addition to the built-in features of InstantTrack, you may use
+the included program ITSORT to manage your satellite database.
+See the file ITSORT.TXT for details.
+
+
+6.1.5. Automating Satellite Element Updates
+
+InstantTrack has two ways to further automate the updating of
+Keplerian elements. One method or the other should be easy enough
+to integrate into any automation scheme you may want to use.
+
+In the first method, you specify "/F FILENAME" on the command
+line when you run InstantTrack, like this:
+
+     C:\> it /f c:\download\nasa.all
+
+The "/F" part tells InstantTrack to look for a filename, and the
+next part is the filename itself. When you invoke InstantTrack
+this way, it doesn't display the menu or do any of the normal
+functions. Instead, it just reads the file you specified, in
+Update mode, and then exits. This method is ideal for situations
+where you can easily run a program as part of the download
+process. For example, if your email program has "filters", you
+can program a filter to detect a message containing Keplerian
+elements, and let the filter automatically run InstantTrack with
+the "/F" switch to instantly load the new elements into the
+database.
+
+In the second method, you specify the filename using the
+auto_read_kepsfile parameter in the IT.INI configuration file
+(see ITINIDOC.TXT for details). In this case, InstantTrack reads
+the file on startup, but it then proceeds to display the main
+menu and run normally. With this method, you don't need to run a
+program as part of your automation. Just arrange for the elements
+file to be in a predictable place, and InstantTrack will find it
+there next time it is run.
+
+With either method, InstantTrack doesn't stop for anything during
+the Keplerian file update. Even if there are errors, InstantTrack
+rushes along at full speed. The idea is that you don't want to be
+bothered with any interaction during the fully automated update.
+You might not even be at the computer! However, it does mean that
+if something goes wrong, you might not notice. Check your
+automation setup carefully, and occasionally inspect the elements
+database manually to be sure the elements are up to date.
+
+Since it's now possible for a second InstantTrack to come along
+and change the satellite database while a first InstantTrack is
+still running, InstantTrack will warn you on the Update Satellite
+Elements screen if the database file (IT.ORB) has been modified
+since the last time it was read or written. When you see this
+warning, be careful. If you make changes to the database while
+the warning is displayed, you will overwrite any changes that
+were made by the automated update. To avoid this problem, exit
+InstantTrack and restart it.
+
+There are some third-party programs out there that update the
+InstantTrack database directly. Since the database format has
+changed since version 1.00, these programs probably won't work
+anymore. Instead of updating those programs, you are strongly
+encouraged to use the features of InstantTrack described in this
+section to update the database.
+
+
+6.2. Understanding Satellite Elements
+
+Seven numbers are required to define a satellite orbit. This set
+of seven numbers is called the satellite orbital elements, or
+sometimes "Keplerian" elements (after Johannes Kepler [1571-
+1630]), or just elements. These numbers define an ellipse, orient
+it about the Earth, and place the satellite on the ellipse at a
+particular time. In the Keplerian model, satellites orbit in an
+ellipse of constant shape and orientation.
+
+The real world is slightly more complex than the Keplerian model,
+and InstantTrack compensates for this by introducing minor
+corrections to the Keplerian model. These corrections are known
+as perturbations. The perturbations that InstantTrack knows about
+are due to the lumpiness of the Earth's gravitational field
+(which luckily you don't have to specify), and the "drag" on the
+satellite due to atmosphere. Drag becomes an optional eighth
+orbital element.
+
+Orbital elements remain a mystery to most people. This is due I
+think first to the aversion many people (including me) have to
+thinking in three dimensions, and second to the horrible names
+the ancient astronomers gave these seven simple numbers and a few
+related concepts. To make matters worse, sometimes several
+different names are used to specify the same number. Vocabulary
+is the hardest part of celestial mechanics!
+
+The basic orbital elements are...
+
+               1. Epoch
+               2. Orbital Inclination
+               3. Right Ascension of Ascending Node
+               4. Argument of Perigee
+               5. Eccentricity
+               6. Mean Motion
+               7. Mean Anomaly
+And the optional...
+               8. Drag
+
+The following definitions are intended to be easy to understand.
+More rigorous definitions can be found in almost any book on the
+subject. I've used aka as an abbreviation for "also known as" in
+the following text.
+
+
+Epoch
+[aka "Epoch Time" or "T0"]
+
+A set of orbital elements is a snapshot, at a particular time, of
+the orbit of a satellite. Epoch is simply a number which
+specifies the time at which the snapshot was taken.
+
+
+Orbital Inclination
+[aka "Inclination" or "I0"]
+
+The orbit ellipse lies in a plane known as the orbital plane. The
+orbital plane always goes through the center of the Earth, but
+may be tilted any angle relative to the equator. Inclination is
+the angle between the orbital plane and the equatorial plane. By
+convention, inclination is a number between 0 and 180 degrees.
+
+Some vocabulary: Orbits with inclination near 0 degrees are
+called equatorial orbits (because the satellite stays nearly over
+the equator). Orbits with inclination near 90 degrees are called
+polar (because the satellite crosses over the north and south
+poles). The intersection of the equatorial plane and the orbital
+plane is a line which is called the line of nodes. More about
+that later.
+
+
+Right Ascension of Ascending Node
+[aka "RAAN" or "RA of Node" or "O0", and occasionally called
+"Longitude of Ascending Node"]
+
+RAAN wins the prize for most horribly named orbital element. Two
+numbers orient the orbital plane in space. The first number was
+Inclination. This is the second. After we've specified
+inclination, there are still an infinite number of orbital planes
+possible. The line of nodes can poke out the anywhere along the
+equator. If we specify where along the equator the line of nodes
+pokes out, we will have the orbital plane fully specified. The
+line of nodes pokes out two places, of course. We only need to
+specify one of them. One is called the ascending node (where the
+satellite crosses the equator going from south to north). The
+other is called the descending node (where the satellite crosses
+the equator going from north to south). By convention, we specify
+the location of the ascending node.
+
+Now, the Earth is spinning. This means that we can't use the
+common latitude/longitude coordinate system to specify where the
+line of nodes points. Instead, we use an astronomical coordinate
+system, known as the right ascension / declination coordinate
+system, which does not spin with the Earth. Right ascension is
+another fancy word for an angle, in this case, an angle measured
+in the equatorial plane from a reference point in the sky where
+right ascension is defined to be zero. Astronomers call this
+point the vernal equinox.
+
+Finally, "right ascension of ascending node" is an angle,
+measured at the center of the Earth, from the vernal equinox to
+the ascending node.
+
+I know this is getting complicated. Here's an example. Draw a
+line from the center of the Earth to the point where our
+satellite crosses the equator (going from south to north). If
+this line points directly at the vernal equinox, then RAAN = 0
+degrees.
+
+By convention, RAAN is a number in the range 0 to 360 degrees.
+
+I used the term "vernal equinox" above without really defining
+it. If you can tolerate a minor digression, I'll do that now.
+Teachers have told children for years that the vernal equinox is
+"the place in the sky where the sun rises on the first day of
+Spring". This is a horrible definition. Most teachers, and
+students, have no idea what the first day of spring is (except a
+date on a calendar), and no idea why the sun should be in the
+same place in the sky on that date every year.
+
+You now have enough astronomy vocabulary to get a better
+definition. Consider the orbit of the sun around the Earth. I
+know in school they told you the Earth orbits around the sun, but
+the math is equally valid either way, and it suits our needs at
+this instant to think of the sun orbiting the Earth. The orbit of
+the sun has an inclination of about 23.5 degrees. (Astronomers
+don't usually call this 23.5 degree angle an `inclination', by
+the way. They use an infinitely more obscure name: The Obliquity
+of The Ecliptic.) The orbit of the sun is divided (by humans)
+into four equally sized portions called seasons. The one called
+Spring begins when the sun pops up past the equator. In other
+words, the first day of Spring is the day that the sun crosses
+through the equatorial plane going from South to North. We have a
+name for that! It's the ascending node of the Sun's orbit. So
+finally, the vernal equinox is nothing more than the ascending
+node of the Sun's orbit. The Sun's orbit has RAAN = 0 simply
+because we've defined the Sun's ascending node as the place from
+which all ascending nodes are measured. The RAAN of your
+satellite's orbit is just the angle (measured at the center of
+the Earth) between the place the Sun's orbit pops up past the
+equator, and the place your satellite's orbit pops up past the
+equator.
+
+
+Argument of Perigee
+[aka "ARGP" or "W0"]
+
+Argument is yet another fancy word for angle. Now that we've
+oriented the orbital plane in space, we need to orient the orbit
+ellipse in the orbital plane. We do this by specifying a single
+angle known as argument of perigee.
+
+A few words about elliptical orbits... The point where the
+satellite is closest to the Earth is called perigee, although
+it's sometimes called periapsis or perifocus. We'll call it
+perigee. The point where the satellite is farthest from Earth is
+called apogee (aka apoapsis, or apifocus). If we draw a line from
+perigee to apogee, this line is called the line-of-apsides.
+(Apsides is, of course, the plural of apsis.) I know, this is
+getting complicated again. Sometimes the line-of-apsides is
+called the major axis of the ellipse. It's just a line drawn
+through the ellipse the "long way".
+
+The line-of-apsides passes through the center of the Earth. We've
+already identified another line passing through the center of the
+Earth: the line of nodes. The angle between these two lines is
+called the argument of perigee. Where any two lines intersect,
+they form two complementary angles, so to be specific, we say
+that argument of perigee is the angle (measured at the center of
+the Earth) from the ascending node to perigee.
+
+Example: When ARGP = 0, the perigee occurs at the same place as
+the ascending node. That means that the satellite would be
+closest to Earth just as it rises up over the equator. When ARGP
+= 180 degrees, apogee would occur at the same place as the
+ascending node. That means that the satellite would be farthest
+from Earth just as it rises up over the equator.
+
+By convention, ARGP is an angle between 0 and 360 degrees.
+
+
+Eccentricity
+[aka "ecce" or "E0" or "e"]
+
+This one is simple. In the Keplerian orbit model, the satellite
+orbit is an ellipse. Eccentricity tells us the "shape" of the
+ellipse. When e=0, the ellipse is a circle. When e is very near
+1, the ellipse is very long and skinny.
+
+(To be precise, the Keplerian orbit is a conic section, which can
+be either an ellipse, which includes circles, a parabola, a
+hyperbola, or a straight line! But here, we are only interested
+in elliptical orbits. The other kinds of orbits are not used for
+satellites, at least not on purpose, and InstantTrack isn't pro
+grammed to handle them.) For our purposes, eccentricity must be
+in the range 0 <= e < 1.
+
+
+Mean Motion
+[aka "N0"] (related to "orbit period" and "semimajor axis")
+
+So far we've nailed down the orientation of the orbital plane,
+the orientation of the orbit ellipse in the orbital plane, and
+the shape of the orbit ellipse. Now we need to know the "size" of
+the orbit ellipse. In other words, how far away is the satellite?
+
+Kepler's third law of orbital motion gives us a precise
+relationship between the speed of the satellite and its distance
+from the Earth. Satellites that are close to the Earth orbit very
+quickly. Satellites far away orbit slowly. This means that we
+could accomplish the same thing by specifying either the speed at
+which the satellite is moving, or its distance from the Earth!
+
+Satellites in circular orbits travel at a constant speed. Simple.
+We just specify that speed, and we're done. Satellites in non-
+circular (i.e., eccentricity > 0) orbits move faster when they
+are closer to the Earth, and slower when they are farther away.
+The common practice is to average the speed. You could call this
+number "average speed", but astronomers call it the "Mean
+Motion". Mean Motion is usually given in units of revolutions per
+day.
+
+In this context, a revolution or period is defined as the time
+from one perigee to the next.
+
+Sometimes "orbit period" is specified as an orbital element
+instead of Mean Motion. Period is simply the reciprocal of Mean
+Motion. A satellite with a Mean Motion of 2 revs per day, for
+example, has a period of 12 hours.
+
+Sometimes semi-major axis (SMA) is specified instead of Mean
+Motion. SMA is one-half the length (measured the long way) of the
+orbit ellipse, and is directly related to mean motion by a simple
+equation.
+
+Typically, satellites have Mean Motions in the range of 1 rev/day
+to about 16 rev/day.
+
+
+Mean Anomaly
+[aka "M0" or "MA" or "Phase"]
+
+Now that we have the size, shape, and orientation of the orbit
+firmly established, the only thing left to do is specify where
+exactly the satellite is on this orbit ellipse at some particular
+time. Our very first orbital element (Epoch) specified a
+particular time, so all we need to do now is specify where, on
+the ellipse, our satellite was exactly at the Epoch time.
+
+Anomaly is yet another astronomer-word for angle. Mean anomaly is
+simply an angle that marches uniformly in time from 0 to 360
+degrees during one revolution. It is defined to be 0 degrees at
+perigee, and therefore is 180 degrees at apogee.
+
+If you had a satellite in a circular orbit (therefore moving at
+constant speed) and you stood in the center of the Earth and
+measured this angle from perigee, you would point directly at the
+satellite. Satellites in non-circular orbits move at a non-
+constant speed, so this simple relation doesn't hold. This
+relation does hold for two important points on the orbit,
+however, no matter what the eccentricity. Perigee always occurs
+at MA = 0, and apogee always occurs at MA = 180 degrees.
+
+It has become common practice with radio amateur satellites to
+use Mean Anomaly to schedule satellite operations. Satellites
+commonly change modes or turn on or off at specific places in
+their orbits, specified by Mean Anomaly. Unfortunately, when used
+this way, it is common to specify MA in units of 256ths of a
+circle instead of degrees! To minimize confusion, when
+InstantTrack displays MA in units of 256ths of a circle, it's
+called phase instead of Mean Anomaly. When entering Mean Anomaly
+as an orbital element, it must, however, be specified in degrees,
+between 0 and 360.
+
+Example: Suppose OSCAR-99 has a period of 12 hours, and is turned
+off from Phase 240 to 16. That means it's off for 32 ticks of
+phase. There are 256 of these ticks in the entire 12 hour orbit,
+so it's off for (32/256)x12hrs = 1.5 hours. Note that the off
+time is centered on perigee. Satellites in highly eccentric
+orbits are often turned off near perigee when they're moving the
+fastest, and therefore difficult to use.
+
+
+Drag
+[aka "N1"]
+
+Drag caused by the Earth's atmosphere causes satellites to spiral
+downward. As they spiral downward, they speed up. The Drag
+orbital element simply tells us the rate at which Mean Motion is
+changing due to drag or other related effects. Precisely, Drag is
+one half the first time derivative of Mean Motion.
+
+Its units are revolutions per day per day. It is typically a very
+small number. Common values for low-Earth-orbiting satellites are
+on the order of 10**-4. Common values for high-orbiting satellites
+are on the order of 10**-7 or smaller.
+
+Occasionally, published orbital elements for a high-orbiting
+satellite will show a negative Drag! At first, this may seem
+absurd. Drag due to friction with the Earth's atmosphere can only
+make a satellite spiral downward, never upward.
+
+There are several potential reasons for negative drag. First, the
+measurement which produced the orbital elements may have been in
+error. It is common to estimate orbital elements from a small
+number of observations made over a short period of time. With
+such measurements, it is extremely difficult to estimate Drag.
+Very ordinary small errors in measurement can produce a small
+negative drag.
+
+The second potential cause for a negative drag in published
+elements is a little more complex. A satellite is subject to many
+forces besides the two we have discussed so far (Earth's gravity,
+and atmospheric drag). Some of these forces (for example gravity
+of the sun and moon) may act together to cause a satellite to be
+pulled upward by a very slight amount. This can happen if the Sun
+and Moon are aligned with the satellite's orbit in a particular
+way. If the orbit is measured when this is happening, a small
+negative Drag term may actually provide the best possible `fit'
+to the actual satellite motion over a *short* period of time.
+
+You typically want a set of orbital elements to estimate the
+position of a satellite reasonably well for as long as possible,
+often several months. Negative Drag never accurately reflects
+what's happening over a long period of time. This program will
+accept negative values for Drag, but I don't approve of them.
+Feel free to substitute zero in place of any published negative
+Drag value.
+
+
+6.3. Understanding Satellite Parameters
+
+All the satellite parameters described below are optional. They
+allow InstantTrack to perform some of its more sophisticated (and
+fun) calculations, so you are urged to read this section, even
+though you are not required to enter these parameters.
+
+NASA Designation
+
+This item consists of the year of launch, a serial number within
+the year, and a letter designating this object among the several
+objects placed into orbit by that launch. As the name suggests,
+it is assigned by NASA for reference.
+
+Element Set Number
+
+This number labels a particular element set from a given source.
+It is just copied from the element set file and displayed here
+for your reference.
+
+Epoch Rev
+[aka "Revolution Number at Epoch"]
+
+This tells InstantTrack how many times the satellite has orbited
+from the time it was launched until the time specified by
+"Epoch". Epoch Rev is used by InstantTrack to calculate the revo
+lution number shown on the realtime screens, and to calculate
+satellite age on the Satellite Elements Edit screen. Don't be
+surprised if you find that orbital element sets which come from
+NASA have incorrect values for Epoch Rev. The folks who compute
+satellite orbits don't tend to pay a great deal of attention to
+this number! At the time of this writing, elements from NASA had
+an incorrect Epoch Rev for OSCAR-10 and OSCAR-13. Unless you use
+the revolution number for your own bookkeeping purposes, you
+needn't worry about the accuracy of Epoch Rev.
+
+Beacon Frequency
+
+You can specify a frequency of interest for each satellite. This
+is typically the frequency of a beacon transmitter on the
+satellite. This number is used in the calculation of Doppler,
+path loss and Tsky. (Doppler, path loss, and Tsky are described
+in the section on realtime tracking.)  You can edit this item
+even on the Sun and Moon, in order to enable the Tsky calculation
+to work (for EME).
+
+Schedule
+
+Many satellites have several operating modes, and switch from one
+mode to another at predefined places in their orbits.
+InstantTrack understands satellite schedules which are based on
+"phase" (mean anomaly expressed in units of 256ths of a circle).
+This is one common scheduling technique for amateur radio
+satellites.
+
+If given a schedule, InstantTrack will calculate and display the
+satellite mode. The schedule is a string of numbers and letters.
+A three digit number specifies the phase at which a mode begins,
+then a single letter specifies the mode. This is repeated up to
+12 times. (In other words, a schedule may contain up to twelve
+mode changes, but no more.) The numbers in the string must be in
+an ascending sequence. No spaces are allowed.
+
+For example, at one time OSCAR-13's schedule read...
+
+                  Phase  Mode
+                  000-002     Off
+                  003-099     mode-B
+                  100-149     mode-JL
+                  150-239     mode-B
+                  240-255     Off
+
+The schedule string you would enter into InstantTrack in this
+case is "003B100J150B240O". Read this as, "At phase 003 change to
+mode B. At phase 100 change to mode J.", etc. You are free to use
+whichever letter you find easy to remember for each mode.
+
+Actually, you can use most any character. I recommend you use a
+hyphen ("-") for the Off mode, to improve readability of
+schedules. In that case, you might use "003B100J150B240-" for the
+schedule above. Another trick is to use both upper and lower
+case. For example, Mode B may be represented by "B" when the gain
+antennas are in use, and by "b" when the omnidirectional antennas
+are in use.
+
+Attitude
+[aka "Bahn Coordinates" or "BLAT" and "BLON" or "ALAT" and
+"ALON"]
+
+The spacecraft attitude is a measure of how the satellite is
+oriented in space. Hopefully, it is oriented so that its antennas
+point toward you! There are several orientation schemes used in
+satellites. This program assumes that the satellite is either
+spin-stabilized, or local-vertical. A spin-stabilized satellite
+maintains a constant inertial orientation, i.e., its antennas
+point a fixed direction in space (examples: OSCAR-10, OSCAR-13).
+Local-Vertical satellites, as you might expect, always point
+toward Earth (examples: OSCAR-14, and most geostationary
+satellites).
+
+If spacecraft attitude has not been set, then it will display as
+"None Set" in the satellite element editor. In this case,
+InstantTrack will not know the spacecraft attitude, and therefore
+will not calculate offpointing (squint) angles, or the good
+squint angle regions on the map. This will not affect operation
+of the more basic calculations (Azimuth, Elevation, Doppler,
+etc.). Attitude is optional. You may also enter the value "None
+Set" (or just "N"), to indicate that you don't know the
+spacecraft attitude.
+
+You enter the value "Local Vertical" (or just "L") to indicate
+that a spacecraft is designed to point toward the center of the
+Earth. Note that local-vertical satellites typically have
+antennas that are not designed to have the most gain aiming
+straight down. Instead, they are designed to have gain at some
+angle to the vertical, in order to compensate for the greater
+distance to ground stations not directly below the satellite.
+This means you'll need to learn by experience how what
+offpointing angles are the best for each satellite.
+
+For spin-stabilized satellites, attitude is described by two
+angles, often called Bahn Latitude, and Bahn Longitude or ALAT
+and ALON. These are published from time to time for the
+elliptical-orbit amateur radio satellites in various amateur
+satellite publications. When the satellite is under active
+attitude control, the attitude may change only a few times per
+year. When the satellite's attitude is uncontrolled (as in OSCAR-
+10 since its on-board computer failed), the attitude drifts
+slowly over months of time in orbit. For these satellites, all
+you have to do is enter these two numbers, latitude first, then a
+comma, then longitude. For highly elliptical orbits (OSCAR-10,
+OSCAR-13, etc.) these numbers are usually in the vicinity of:
+0,180. This means that the antennas point directly toward Earth
+when the satellite is at apogee. (Note that some sources list the
+coordinates in the opposite order, usually with a slash between
+them. Example: 180/0.)
+
+These two numbers describe a direction in a spherical coordinate
+system, just as geographic latitude and longitude describe a
+direction from the center of the Earth. In this case, however,
+the primary axis is along the vector from the satellite to the
+center of the Earth when the satellite is at perigee.
+
+An excellent description of Bahn coordinates can be found in Phil
+Karn's "Bahn Coordinates Guide". See the bibliography.
+
+Other spacecraft use attitude control mechanisms that
+InstantTrack can't handle. These include magnetic stabilization
+(AO-16 and similar microsats) and 3-axis stabilization (Phase 3D
+after its successful commissioning). For these satellites, enter
+"None" for the attitude.
+
+Diameter
+
+This parameter gives InstantTrack a rough idea of the size of the
+satellite. Diameter is specified in units of meters. Diameter is
+used to estimate the brightness (which stargazers call magnitude)
+of a satellite for visual observation. InstantTrack is only inter
+ested in knowing the rough amount of area which will reflect
+light. If the satellite is shaped like a sphere, or cube, or
+other symmetrical shape, then diameter means exactly what you
+think. If, on the other hand, the satellite is long and skinny,
+you have to come up with a number which you hope will be
+representative. I've used 10 meters for Mir, 1 meter for OSCAR-
+10, OSCAR-13, 0.25 meters for the AMSAT microsats, etc.
+
+Groups
+
+Because InstantTrack contains such a large database of
+satellites, it is convenient to categorize satellites in the
+database, so that some functions can operate on a subset of the
+database. There are 27 "groups" of satellites that you are
+allowed to define. They are named A through Z, and "!". There are
+also two predefined groups named * and %. Each satellite, and the
+Sun and Moon, may be a member of up to eight user-defined groups.
+
+The following groupnames have special meaning...
+
+     *    This group contains all satellites.
+     
+     !    Your "favorite satellites" group. Displayed on the
+          bottom row.
+          
+     %    All satellites that do not belong to any A-Z group.
+
+Here are some groups that I have defined. You may use these same
+meanings for these letters, or any other meanings you choose.
+
+     A = Amateur Radio Satellites (OSCARs)
+     G = GPS (Navstar) Navigation Satellites
+     L = Low Earth Orbiting Satellites
+     P = Pacsats (Amateur Packet-Radio Satellites)
+     R = Russian Satellites
+     W = Weather Satellites
+
+You specify which groups a satellite is in by entering a "groups"
+string in the satellite element editor. A groups string is just
+all of the group names that apply to the satellite, with no
+intervening spaces.
+
+Example: The satellite RS10 shows Groups: rla
+
+In my convention, this means it is Russian and Low-Earth-Orbiting
+and an Amateur Radio Satellite.
+
+
+6.4.Understanding Derived Values
+
+The D command causes several "derived values" to be displayed on
+the right hand side of the satellite elements edit screen. These
+numbers are derived from the orbital elements of each satellite
+(but are not easily computed in your head). They are intended to
+provide a more convenient description of the orbit than the
+original elements.
+
+Epoch Age
+
+This is simply the time since the "epoch". This tells you how old
+the orbital element set has become.
+
+Satellite Age
+
+This is a quick and dirty estimate of how long ago the satellite
+was launched. It is computed from Epoch Rev and Mean Motion. Of
+course, mean motion changes during a satellite's life, and the
+elements don't give us any historical information, so we just
+assume for this calculation that mean motion has been constant.
+For most satellites, the error in the computed age seems to be
+less than 1%. For low-Earth-orbiting satellites near end-of-life,
+the error will be larger, because mean-motion has been changing.
+For OSCAR-10, the computed age may be completely wrong, depending
+on the source of your elements, because NASA publishes an
+incorrect epoch rev!
+
+Orbital Period
+
+This is the duration of one orbit, measured from perigee to
+perigee. Computed from mean-motion and decay.
+
+Perigee Height
+Apogee Height
+
+These are the distance from the Earth's surface to the satellite
+(i.e., height) when the satellite is closest (i.e., at perigee),
+and farthest (i.e., at apogee).
+
+Latitude of Apogee
+
+Satellites in highly elliptical orbits are usually used when they
+are near apogee. It is therefore useful to picture what part of
+the Earth will be below the satellite at apogee. Latitude of
+apogee is computed from argument of perigee and R.A.A.N. Because
+both of these quantities change with time, latitude of apogee
+also changes with time. Both the present value and rate of change
+are shown.
+
+Argument of Perigee
+R.A.A.N.
+
+These values change with time. (The values contained in the
+orbital elements are the values as they were at Epoch.) Both the
+present value and rate of change are shown on the right hand side
+of the screen.
+
+Longitude Increment
+
+It is sometimes useful to think about just how much a satellite's
+footprint moves (in the longitude direction) from one orbit to
+the next. Especially for high-inclination satellites, each orbit
+of a satellite provides coverage of a different portion of the
+Earth. Mostly this happens because the Earth rotates a certain
+amount during each orbit of the satellite, but the satellite's
+orbit is also slowly changing with time, and this too provides a
+small contribution.
+
+For low-Earth-orbit satellites, increment is often in the range
+of 20 to 30 degrees West per orbit.
+
+For OSCAR-13, the increment was about 172 degrees per orbit --
+almost half way around the Earth. So after two orbits, OSCAR-13
+would move West by twice this amount, 344 degrees, which is just
+16 degrees shy of 360. This means that every other apogee of
+OSCAR-13 occurred in almost the same place over the Earth, moving
+by just 16 degrees East each time.
+
+Sun to Spinplane Angle
+
+This angle is meaningful for spin-stabilized satellites only. If
+you have entered attitude coordinates, InstantTrack assumes that
+the antenna axis and spin axis are the same, then computes the
+angle between the sun and the plane in which the satellite is
+spinning. This may help you visualize how the sun illuminates
+solar panels on the spacecraft. For example, for OSCAR-10 and
+OSCAR-13, the power generated by the panels was roughly pro
+portional to the cosine of this angle. The sun to spinplane angle
+only appears if you have entered attitude coordinates for the
+current satellite.
+
+Sun to Orbitplane Angle
+
+This is another angle which may help you visualize properties of
+an orbit. There are many low-orbiting satellites designed to take
+pictures of Earth. (Satellites designed for: Weather, Earth
+Resources, Spying, etc.) Of course, the position of the sun
+matters to anyone taking pictures! For a satellite aiming its cam
+era "straight down" toward Earth, this angle tells us the angle
+of the shadows that will be formed by mountains, buildings, etc.
+in the pictures. Many satellites that take pictures are in "sun
+synchronous" orbits, i.e., orbits for which this angle has a
+constant value, and in many cases, this value is chosen to be
+around 20 degrees.
+
+
+
+7. Tracking a Satellite in Real Time
+
+
+When you choose either of the "Realtime Track 1 Satellite" items
+on the main menu, you are immediately presented with a satellite
+selection menu. After you choose a satellite, all the information
+about that satellite appears.
+
+
+7.1. Choosing a Satellite
+
+The satellite selection menu appears whenever you enter any mode
+which will display information about one particular satellite.
+Initially, you see the first page of the menu, which contains the
+first 50 satellites. You can use the PgUp and PgDn keys to move
+between pages of the menu.
+
+The satellite names are displayed in one of three colors: white,
+green, or yellow, with the following meanings..
+
+     White     InstantTrack has not recently calculated this
+               satellite's position.
+               
+     Green     This satellite is below the horizon right now.
+     
+     Yellow    This satellite is above the horizon right now.
+
+All are initially white, of course. While waiting for you to make
+your choice, InstantTrack whips through all the satellites in the
+database, calculating their position, turning each name green or
+yellow. This lets you know, even before selecting a satellite,
+whether or not it is above the horizon! On modern computers, this
+happens so fast you may never see a white satellite.
+
+Initially, the selection menu displays all satellites in the
+database. There is also a "group" command which restricts the
+selection menu to display only a certain group of satellites The
+group concept is explained in the section on satellite
+parameters.. The group command is the character "G" followed by a
+one-letter group name. You can type "G" with no following letter
+or "G*" to go back to the full list.
+
+Select your satellite by typing its number on the menu, or its
+exact name as it appears on the menu (unless it starts with a G,
+sigh). After you type Enter, the realtime tracking screen
+appears. You do not need to wait for the names to change color
+before typing your choice.
+
+
+7.2. Understanding The Realtime (Text) Display
+
+This screen contains almost everything you would ever want to
+know about the present location of one satellite, and the view of
+that satellite from one or several observers on Earth. The
+display normally operates in real time, which means that it
+displays information about the satellite which is valid right
+now. It is also possible to enter a specific time, other than
+"right now" using the T command, or run the display in "fast
+forward" mode using the F command.
+
+The numbers on the screen are displayed to lots of decimal
+places. This doesn't mean that the numbers are really accurate to
+that many places, though some of them are. Rather, the extra
+digits are shown so you can visually estimate how fast the value
+is changing.
+
+Included on this screen are:
+
+Azimuth and Elevation.
+
+These are the angles you use to point an antenna at your station
+toward the satellite. When Elevation is negative, the satellite
+is below the horizon, and is not visible from your station.
+
+These figures, along with the other figures on this line, are
+colored green when the satellite is below your horizon, and
+yellow when it is above your horizon.
+
+Range, dR/dt, and Doppler
+
+Range is the distance (in km) from your station to the satellite.
+dR/dt is the rate at which Range is changing, in (km/second).
+dR/dt determines Doppler. If you have entered a beacon frequency
+for the satellite, the current Doppler shift for that frequency
+is shown, in units of Hz.
+
+Offpointing Angle (Offp)
+
+Many satellites use directional antennas. Unfortunately, the
+satellite antenna is seldom pointed directly at you! This angle
+is a measure of how far away from you the satellite antenna is
+pointed. It is 0 degrees when the satellite antenna is pointed
+directly at you. If you know the beamwidth of the satellite an
+tenna you can estimate how much degradation the link will suffer
+due to the offpointing. For example, if the satellite has an
+antenna with a 3dB beamwidth of 24 degrees, (i.e., 12 degree half-
+beamwidth) then you will suffer 3dB of loss when the offpointing
+angle is 12 degrees. When the offpointing is more than twice the
+half-beamwidth, it becomes difficult to predict the satellite
+antenna's performance, because you're in the region where antenna
+sidelobes begin to appear.
+
+OSCAR-10 and OSCAR-13 both had considerable asymmetries in some
+of their directional antennas. Because the satellites were
+spinning, these antenna asymmetries cause the signal to vary in
+amplitude. This is often called spin modulation. The spin
+modulation should be least when the offpointing angle is small.
+
+Some satellites have antennas purposefully designed to radiate in
+directions other than their axis of symmetry. For example, OSCAR-
+10 and OSCAR-13 were equipped with high-gain antennas that
+behaved as described above, and an alternate set of low-gain
+antennas which performed best when the offpointing angle is near
+90 degrees. These satellites were normally commanded to switch
+between the two types of antennas at appropriate points in their
+orbits.
+
+The offpointing angle is only calculated when you have entered
+attitude coordinates (or Local Vertical) for the current
+satellite.
+
+This angle is sometimes called squint.
+
+Path Loss
+
+Path Loss is the amount by which a signal is attenuated as it
+travels from your station to the satellite, or vice versa. This
+is a function of frequency (as set in the satellite element
+database), and range from your station to the satellite. Path
+loss is only displayed if the current satellite is above the
+horizon, and a frequency has been entered for this satellite in
+the database.
+
+Satellites commonly operate on two or more frequencies
+simultaneously. InstantTrack only displays the path loss at one
+frequency. You can scale this number to produce path loss at a
+different frequency if you wish. Path loss increases 1dB for
+every 12.2% increase in frequency. For example, amateur radio
+satellites often use uplink/downlink bands separated in frequency
+by a factor of 3. (e.g. 145MHz / 435MHz) A factor of 3 in
+frequency corresponds to approximately 9.5dB change in path loss.
+
+I suggest you use path loss as a relative indication (for a given
+frequency, mode, Earth station configuration, etc.) of expected
+link quality. Satellite communications links are almost always
+downlink limited. The downlink signal power available at your
+receiver is (all numbers in dB)...
+
+               Transmitter power
+               + Transmit antenna gain
+               + Path Loss
+               + Receive antenna gain
+
+If all other things were constant, receive signal power would
+vary directly with path loss.
+
+Subsatellite Point
+
+If you draw a line from the satellite to the center of the Earth,
+the point where this line intersects the Earth's surface is
+called the subsatellite point. The coordinates of the subsatel
+lite point are displayed three different ways:
+
+Latitude/Longitude
+
+This is the coordinate system in which the subsatellite point is
+traditionally displayed. It is useful when comparing results
+against other programs. Unfortunately, most humans don't think in
+terms of latitude and longitude. These are not user-friendly
+coordinates.
+
+Nearest City
+
+This is the user-friendly way to describe a location on the
+Earth. It displays the distance and direction to the nearest
+city. The nearest city is chosen from InstantTrack's database of
+1794 cities worldwide. For example, the subsatellite point:
+40.0N, 110.0W would be displayed as "142.7 km East of Provo, UT".
+If this display bothers you, you can turn it off by typing C (for
+City).
+
+Gridsquare
+
+Radio Amateur operators sometimes use a gridsquare coordinate
+system to identify places on the Earth. InstantTrack also
+displays the subsatellite point as a gridsquare. Our example
+[40.0N, 110.0W] is in gridsquare DM59ax. An article listed in the
+bibliography describes the gridsquare system.
+
+Altitude
+
+This is the altitude of the satellite above the Earth's surface.
+
+Rev
+
+This is a number that indicates how many times the satellite has
+orbited since launch. Rev increments each time the satellite
+passes through perigee. This value depends on the accuracy of the
+Epoch Rev from the satellite elements, which may or may not be
+reliable.
+
+Phase
+
+This is a number that increments from 0 through 255 during each
+orbit of the satellite. See the discussion of mean anomaly in the
+"Understanding Satellite Elements" section.
+
+Mode
+
+This is the operating mode of the satellite, as determined by the
+satellite schedule. See "Understanding Satellite Parameters" for
+a discussion of schedules. Mode will only be displayed if a valid
+schedule has been entered for this satellite.
+
+XYZ-Coordinates
+
+These are the coordinates of the satellite and the observer in
+the cartesian geocentric inertial coordinate system. These are
+called IJK coordinates in some books. The X axis points from the
+center of the Earth toward the vernal equinox. The Y axis points
+90 degrees to the east of the X axis. The Z axis points straight
+up through the geographic North Pole. Units are kilometers. All
+the other numbers on this screen are calculated from the
+cartesian coordinates of the satellite and observer. If this
+display bothers you, you can turn it off by typing I for IJK.
+
+Next Rise/Set
+
+This is the time at which the satellite is next expected to rise
+or set over the horizon. This is only calculated if you have
+enabled this feature, via the "W" (for When) command.
+
+Skygazer's Information
+
+The following three parameters are related to the sky and to
+visual observation of the satellite. These displays may be turned
+off by typing S for Sky.
+
+R.A. / Decl
+
+These are the Right Ascension and Declination of the satellite as
+viewed from your location. Right Ascension and Declination are
+coordinates used by astronomers to locate objects in the sky.
+They are similar to longitude and latitude, except that they
+represent locations on the celestial sphere instead of the Earth.
+R.A. and Dec are the coordinates shown on star charts.
+
+Tsky
+
+This is the sky noise temperature in the direction of the
+satellite (i.e., the direction in which your antennas are
+pointed). The stars generate radio noise. (That's what Radio
+Astronomy is about.) This noise is largest when your antennas are
+pointed toward the plane of the galaxy (also known as the Milky
+Way), and very large when pointed toward the center of the
+galaxy. Tsky also depends on frequency. Tsky is larger at lower
+frequencies. If you have entered a frequency in the satellite
+database for a particular satellite then InstantTrack will
+compute and display the expected sky temperature. Noise
+temperatures can be added directly. You can therefore add Tsky to
+the temperatures of other noise sources in your receiving system
+(preamp, cable attenuation, sidelobes) when calculating receiving
+system performance. See the ARRL Handbook.
+
+Visibility (Magnitude)
+
+InstantTrack attempts to provide you with an estimate of whether
+a satellite might be visible to the eye. We estimate the
+brightness of reflected sunlight from the satellite, and a one
+letter code which indicates whether all the conditions for
+visibility are met.
+
+Here are the conditions normally required for satellite
+visibility...
+
+      1.    The satellite should be above the horizon.
+      
+      2.    The satellite should be in sunlight (i.e., not
+            eclipsed).
+            
+      3.    The sun should be down, so the observer is in
+            darkness. We use the rule that the sun should be at
+            least 5 degrees below the horizon.
+            
+      4.    The satellite should be bright enough to see.
+            The cutoff here depends heavily on your local
+            situation (city light pollution, etc.).
+
+The code letters are...
+      H -- The satellite is below the Horizon
+      E -- The satellite is in Eclipse
+      S -- The Sun is up
+      V -- The satellite is Visible
+
+Brightness is presented in units of "magnitude", which is a scale
+created by astronomers to categorize the brightness of stars. It
+is a logarithmic scale (like decibels, or wire gauge). Every
+increase of one magnitude means 2.5119 times less light. Bigger
+magnitude numbers correspond to dimmer objects. The nice thing
+about these magnitude units is that star charts usually show the
+magnitude of each star, so you can usually find some nearby
+reference points.
+
+Here's a brief guide to interpretation of visual magnitudes:
+             
+     -4      Wow!
+             
+     0       As bright as the brightest star in the sky
+             
+     4       Barely visible to the naked eye on a clear
+             night in the city
+             
+     6       Barely visible to the naked eye on a clear
+             night in the country, where the sky is dark
+             enough to see the Milky Way clearly
+             
+     9       Barely visible with good binoculars in dark
+             sky
+
+Because many factors affect the brightness of a satellite, you
+should use the number IT calculates only as an estimate. IT takes
+into consideration only the size, range, and sun angle of the
+satellite.
+
+Other considerations affecting brightness are shape and
+reflectivity. If you were building a spy satellite, for example,
+you might consider painting it black, so it would be difficult to
+see. On the other hand, if you were building a satellite
+specifically to be observed, you might cover it with mirrors.
+(Ajisai, also called EGP, is a 2 meter diameter mirrorball built
+by the Japanese for just this purpose). The difference in
+brightness between these two cases could be substantial.
+
+The model in IT has been calibrated against two experienced
+observers, and their observations differ as much as + or - 1.5
+magnitudes from IT's estimates for commonly observed objects such
+as Mir and Salyut-7.
+
+IT will not attempt to calculate brightness of an object unless
+the Diameter parameter has been entered in the satellite
+database.
+
+Two items listed in the bibliography give more information on
+observing satellites.
+
+
+7.3. Commands
+
+While in the realtime tracking (text) screen, the following one-
+character commands apply:
+
+           space  freeze/unfreeze the display.
+               B  enable/disable the bottom-row display
+               C  enable/disable nearest-city display
+               E  look at orbital elements for this satellite
+               F  enable/disable Fast-Forward
+               I  enable/disable display of XYZ coordinates.
+               O  add/delete a station (observer).
+               R  enable/disable antenna rotor and radio control
+               S  enable/disable RA/Dec/Tsky/Magn display
+               T  set a specific time, or return to realtime.
+               W  enable/disable display of next rise/set time.
+               Q  quit tracking. go back to main menu.
+               Z  toggle between local/UTC timezones.
+     right arrow  advance to next satellite.
+      left arrow  go back to previous satellite.
+Ctrl+right arrow  advance to next satellite in this group
+Ctrl+ left arrow  go back to previous satellite in this group
+
+If you don't remember all these commands, remember that you can
+type ? while the realtime text screen is running, and this menu
+of possibilities will appear instantly on your screen. To exit
+that help screen, as usual, type Q.
+
+All these commands should operate in a fairly obvious fashion
+except for the "O" and "T" commands, which are described in the
+following sections.
+
+
+7.4. Setting a Specific Time
+
+InstantTrack normally displays satellite positions in realtime.
+In other words, the calculations assume the position of the Earth
+and satellite "right now". If you want to see the calculations
+for some specific time, type T. You will then be prompted to
+enter a specific time. Here, and all other places that
+InstantTrack prompts for a time, any of several formats will be
+accepted. See the section "How Time is Displayed and Entered" for
+more detail. You can return to realtime calculations by typing T
+followed by Enter.
+
+You may also respond by typing the words rise or set, or aos or
+los, which will cause time to be set to the next time the current
+satellite rises above the horizon, or sets. Any of these keywords
+can be followed by "@" and a location. Any of the observer
+location formats described in the next section can be used here.
+InstantTrack will jump to the next time the current satellites
+rises above the horizon at that location, or sets at that
+location.
+
+Some examples may help:
+     
+     aos @ kb5mu
+     rise @ san diego
+     los @ DM12
+     set @ 32N/117W
+     aos @ s  [ then pick from the menu ]
+     aos @ c  [ then pick from the menu ]
+
+Or, you can enter the word "phase" or "phs" followed by a number
+from 0 to 255, and the time will jump forward to the next point
+in time when the current satellite's "phase" is equal to that
+number.
+
+Or, you can enter the word "mode" followed by a mode letter, and
+the time will jump forward to the next point in time when the
+satellite switches into that mode. If the satellite is already in
+that mode, time will jump forward to the beginning of the next
+session of that mode.
+
+
+7.5. Controlling the Observer-List
+
+The realtime text screen will display station-related parameters
+(azimuth, elevation, squint, path-loss, etc.) for a list of up to
+four stations. When you first fire up the screen, only one
+station is shown. This is always the first station (station #1)
+from the station database. This section describes how you can add
+stations to or delete stations from the station list using the
+"O" command.
+
+After you type O, you will be prompted to specify the station you
+want to add to the list:
+
+     Observer name, city, gridsquare, lat/lon, s, c, or d# :
+
+What this prompt tells you is that you can type almost anything
+you know about the observer you'd like to add, and InstantTrack
+will try to use that information.
+
+Because there are several options here, the explanation begins to
+sound complicated. Stay tuned. It's very simple! We'll take these
+one at a time.
+
+If you know the name (callsign) of the station you'd like to add,
+and that station is in the station database, you can just type
+the callsign. InstantTrack will search the database, and find the
+station information. For example, if you've just started a
+conversation with KB5MU via your favorite satellite, then you can
+just type KB5MU.
+
+If you know the station you want to add is in the database, but
+you can't remember the callsign, then you can type "s", which
+gets you to the station selection menu, which displays all the
+stations which you have defined, and where you can pick the
+station you want.
+
+If the station you want to add is not in the station database,
+and you don't want to take the time to edit the database, you can
+describe a "visiting" station. This can be done several ways! By
+city name, gridsquare, or latitude/longitude.
+
+If you know the gridsquare of the station you want to add, you
+can just type the gridsquare. For example, if you've started a
+conversation with someone who says he's at grid "DM12", then you
+can just type DM12 . Either the four character or six character
+gridsquare will be accepted. Most Amateur Radio operators know
+their gridsquare. Asking "What's your gridsquare?" then typing it
+into InstantTrack is usually a very convenient way to get the
+station at the "other end" of the satellite link into your
+computer. The gridsquare will be displayed with all six
+characters, even if you entered only four.
+
+If you know the name of a reasonably large city (large enough to
+be in InstantTrack's database of 1794 cities) near the fellow you
+want to add, you can just type the name of the city or any part
+of the name. InstantTrack will search the city database, and
+display a menu of cities that matched the string you typed,
+allowing you to select which one you want. For example, if you
+type "Fort", the menu will have several entries, including cities
+such as: "Fort Worth, TX" and "Fort-de-France, Martinique". If
+you have trouble spelling the name of the city -- Is it "Gdansk"
+or "Gadansc" or "Gedansik"? -- you can just type "Poland". All
+the cities InstantTrack knows about in Poland will be displayed,
+and you can pick the one you want.
+
+Or, if you can approximate the spelling, type "%" followed by any
+spelling that would sound more or less similar to the actual city
+name. InstantTrack will search phonetically. Typing "%gdnsk" for
+instance will match Gdansk, "%hewstin" will match Houston.
+
+You can also use a menu of all cities known to InstantTrack by
+typing "c". Once in this menu, you may then scroll among the
+menu's 50 pages, using the PgUp and PgDn keys, then pick a city
+by number.
+
+Finally, if you know the latitude and longitude of the station
+you want to add, you can just type them in. Type latitude first,
+followed by a slash, then longitude. If he's at the north pole,
+for example, you would type 90N/0W . Remember to use the NSEW
+letters to specify the correct hemisphere.
+
+The "O" command can also be used to delete a station from the
+observer list. After the "O", type "d" followed by the position
+in the list of the station you want to delete. You are not
+allowed to delete the first station on the list. That's you! The
+realtime screens show up to three visiting stations, and these
+can be deleted. "D1" would delete the first visitor, etc.
+
+
+7.6. Understanding The Realtime (Map) Display
+
+The Realtime Map Display is similar to the Realtime Text Display
+described above, except that there is a map on the screen, and
+less room for text.
+
+Four different kinds of map can be displayed. Two of these
+(Cylindrical Equidistant and Orthographic) are maps of Earth. The
+third (Orbit-View) is a geometric view of the orbit ellipse and
+Earth. The fourth (Sky-View) is a map of the sky, as viewed from
+your location.
+
+You may switch among these maps at any time, using the P command.
+
+The color map displays are only available if you have an EGA or
+VGA display. The following descriptions apply to the color maps.
+If you have a CGA or Hercules (HGC) graphics board, you can get a
+monochrome rendition of the maps. See appendix 3 for details.
+
+
+7.7. Maps of Earth
+
+The map of the world can be displayed in either a Cylindrical
+Equidistant or Orthographic projection.
+
+Cylindrical Equidistant is a "rectangular looking" map
+projection. It is similar to the Mercator projection, which was
+probably what you first used as a child for your first
+introduction to geography. This projection has the advantage that
+we can display it very quickly, because it always looks the same.
+
+The Orthographic projection is a perspective view of the Earth
+from a long distance away. It resembles photographs of Earth
+taken from the moon, or an Earth globe held at arm's length. It
+has the advantage of a very realistic look and very low
+distortion, except near the edges of the globe. It has the
+disadvantage that it is much slower to draw, because of the
+amount of math required to calculate screen coordinates. This is
+the only operation in InstantTrack that's still somewhat slow on
+modern computers.
+
+Cylindrical maps are (roughly) centered on 0.0 longitude, unless
+you enable scroll mode (by typing S), after which cylindrical
+maps will be centered (roughly) on the satellite. By putting the
+satellite near the center of the screen, the scrolling mode
+minimizing the probability that the satellite footprint will wrap
+around the sides of the screen. I am personally more comfortable
+with the non-scrolling mode. Take your pick.
+
+These maps show the whole Earth, including approximate boundaries
+between countries. Some recent geopolitical changes are not shown
+accurately. No political statement is intended!
+
+Displayed on the map are:
+
+1. The observer. (you!) A yellow "x" marks the location of the
+observer. An additional yellow "x" marks the location of the
+visiting observer, if one has been set. The "x" is red instead of
+yellow if it appears against a yellow country.
+
+2. The Sun. A purple dot appears at the "sub-sun point" on the
+Earth. If you stood at this point on the Earth, the Sun would be
+straight up.
+
+3. The grayline (sometimes called the terminator). This shows
+what parts of the Earth are in sunlight. The grayline is drawn in
+two shades of purple. The lighter purple is the sunlit side of
+the grayline.
+
+4. The satellite. A white dot appears at the "sub-satellite
+point" on the Earth.
+
+5. The satellite's geometric footprint. This shows what parts of
+the Earth are in view of the chosen satellite. I call it the
+geometric footprint because it is determined by geometry alone
+(with no consideration of which direction the satellite's antenna
+may be pointing). Other programs call this simply "the foot
+print". The geometric footprint is drawn in white.
+
+On the Orthographic map, you might wonder why the geometric
+footprint is smaller than the whole globe. That's because you are
+looking at the Earth from a higher vantage point than the
+satellite, much higher in the case of a LEO satellite. The white
+line marks the "horizon" seen by the satellite, which depends on
+the satellite's altitude.
+
+6. The satellite's antenna footprint. This shows what parts of
+the Earth are in the "good" part of the satellite's antenna
+pattern. Specifically, this is a line of constant offpointing
+angle equal to 20 degrees. (See discussion of offpointing angle
+in Understanding the (Text) Display above.) The antenna footprint
+is drawn in light blue.
+
+There are several situations in which the antenna footprint is
+not drawn..
+
+a. No antenna footprint is drawn if the satellite's "attitude"
+has not been set. Some satellites do not have directional
+antennas, and others do not have published attitudes. Yet others
+have attitudes that InstantTrack doesn't know how to calculate.
+If InstantTrack doesn't have all the necessary information to
+compute the attitude, it can't display the footprint.
+
+b. No antenna footprint is drawn in the case where the whole area
+within the geometric footprint has a "good" offpointing angle.
+Think of the antenna pattern as a cone shining down from the
+satellite. The antenna footprint is the intersection of this cone
+with the Earth. If this cone encloses the entire Earth, there is
+no intersection, and the antenna pattern is good everywhere.
+
+c. No antenna footprint is drawn in the case where all area in
+the geometric footprint has a "bad" offpointing angle. If the
+satellite's antenna points away from the Earth (OSCAR 13 near
+perigee, for example), then the antenna pattern "cone" misses the
+Earth entirely, then there is no intersection, hence no antenna
+footprint, and the antenna pattern is bad everywhere.
+
+It is quite common for only a single arc of the antenna footprint
+to be visible. This occurs when the offpointing angle is
+moderate, and the "cone" just barely intersects the Earth.
+
+Because the antenna pattern footprint may be a new concept for
+you, it may be a little confusing. Don't let this bother you. If
+you can't visualize what the antenna footprint means on the
+cylindrical map, switch to the Orthographic map, where things
+seem to be much more obvious.
+
+7. Groundtrack. This shows the track, on the Earth, that the sub-
+satellite point will follow during the next full orbit (or the
+next 24 hours, for the Sun and Moon). Only visible if it's been
+enabled, via the G command. It can also display more than one
+orbit, if the G command is preceded by a digit. In fact, it can
+display up to 60 orbits, if the G command is preceded by two
+digits. A map display with many orbits displayed can be quite
+educational; try "60G" on different kinds of satellites and see
+for yourself. (It is possible to run out of free memory when
+requesting multiple orbit groundtracks. If this happens, try a
+smaller number.)
+
+The sun, satellite, groundtrack, and various footprints are
+redrawn from time to time as the satellite, Earth and sun move.
+
+
+7.8. The Orbit-View
+
+The Orbit-View projection is a simple line diagram showing the
+orbit ellipse, and the Earth, drawn to scale. Similar diagrams
+can be found in any book on orbital mechanics. The satellite is
+shown in its current position on the orbit ellipse, but of course
+the satellite is drawn larger than scale!
+
+This view is designed to help you visualize the relative geometry
+of the orbit, and the satellite attitude.
+
+The orbit ellipse is drawn as if it were in the same plane as
+your computer's display screen, with perigee on the left, and
+apogee on the right. The orbit ellipse is white, the Earth is a
+brown circle, the main observer (you) is a green "x", and the
+satellite is shown as a red dot. The satellite travels
+counterclockwise on this ellipse.
+
+If you have set the satellite's attitude, then the direction of
+the satellite's antennas is shown with a small light-blue arrow.
+Ideally, this blue arrow would point directly at the green x
+(your location)! Because this arrow may not lie in the orbital
+plane (i.e., Bahn Latitude may not be 0), two additional views of
+the orbit appear. These are edge views. The one on the left of
+the screen is a view of the orbit from the direction of perigee.
+In other words it is as if you bent your head around and looked
+at the orbit ellipse from the left side of your screen. The view
+on top is similar, as if you viewed the orbit ellipse from the
+top of your screen looking down.
+
+At the time I am writing this, OSCAR-10 has an unusual attitude
+(62,-26), and is therefore a good example. Select the map screen
+by typing 2 at the main menu, then select OSCAR-10 from the
+satellite menu, then switch to the orbit view by typing 3P.
+
+A note for students of Celestial Mechanics: In the center view,
+the W vector points toward you, out of the screen. In the edge
+view on the left, the P vector, and in the edge view at the top
+the Q vector points out of the screen.
+
+
+7.9. The Sky-View
+
+The sky-view projection is a map of the sky from the perspective
+of an observer at your location, looking toward the satellite.
+The satellite is shown on this map along with the 920 brightest
+stars, and possibly the Sun, the Moon, and the horizon, if they
+happen to be in view.
+
+The map is a Gnomic projection (which is a fancy way of saying
+that it is a perspective projection of the celestial sphere from
+the viewpoint of a person at the center of the sphere), with a
+field-of-view that extends 100 degrees horizontally, and 60
+degrees vertically. The sky-view is always roughly centered on
+the satellite.
+
+The satellite is drawn as a red dot. Stars are small white dots,
+of various sizes, depending on the magnitude of the star. The sun
+(if present) is shown as a big yellow dot. The moon, if present,
+is shown as a gray dot. The horizon, if present, is a horizontal
+brown line.
+
+If you type "G" for "groundtrack", a light-gray line (a "sky
+track") will appear showing the path of the satellite across the
+sky for the next orbit (or the next day for the Sun and Moon). If
+you type a number (1 to 60) before typing "G", the sky track will
+span that number of orbits. If you type "G" again, the sky track
+will disappear.
+
+The map is always drawn right-side-up, so stars shown below the
+horizon line are, in fact, below the horizon. Such stars are not
+blanked, even though you cannot see them through the Earth,
+because they will help you recognize constellations near the
+horizon.
+
+As an aid in locating the correct portion of the sky on star
+charts, etc., the Right Ascension and Declination of the
+satellite are shown at the bottom of the screen. (RA and Dec are
+coordinates used by astronomers to locate objects in the sky.
+They are similar to longitude and latitude, except that they rep
+resent locations on the celestial sphere instead of the Earth.)
+
+Like the other maps, the sky-view is automatically updated, as
+the Earth turns and the satellite moves.
+
+
+7.10. Commands on the Map Screen
+
+While in the realtime tracking (map) screen, the following one-
+character commands apply:
+
+           space  freeze/unfreeze the display
+               C  enable/disable the City dots
+               E  look at orbital elements for this satellite
+               F  start/stop fast-forward mode
+               G  enable/disable ground track display
+              nG  enable n-orbits of ground track display
+               O  add/delete an observer
+               P  change the map projection
+              1P  change to cylindrical equidistant
+              2P  change to orthographic
+              3P  change to orbit-view
+              4P  change to sky-view
+               R  enable/disable antenna rotor control
+               S  toggle scroll mode (for cylindrical map)
+               T  set a specific time, or return to realtime.
+               U  force an update of the map now.
+               V  toggle white-on-black vs. black-on-white (CGA and HGC only)
+               W  enable/disable next Rise/Set time calculation & display.
+               Q  quit tracking. go back to main menu.
+               Z  toggle between local/UTC timezones.
+     right arrow  advance to next satellite.
+      left arrow  go back to previous satellite.
+Ctrl+right arrow  advance to next satellite in this group
+Ctrl+ left arrow  go back to previous satellite in this group
+
+When you initially start up the map screen, it will be running in
+real time, computing the position of the satellite, Earth, etc.
+"right now". There are three commands that can be used to change
+this: space, F, and T.
+
+The spacebar simply stops the screen, like the freeze-frame
+button on a VCR. Typing the spacebar again pops you back to
+realtime.
+
+The T command also produces a screen that stands still, but T
+allows you to enter a specific time for which you want the
+calculations performed. For example, if you are scheduled to use
+OSCAR-10 at 4pm today, and you'd like to see where the Satellite
+will be at that time, you can type T, then respond to the prompt
+by typing "16:00" followed by Enter. InstantTrack will
+immediately calculate and display everything for that specific
+time.
+
+At this time prompt, you may enter a date and time using any of
+the same formats described under "Setting a Specific Time" for
+the real-time text screen, above. Plus, if you have a mouse and a
+ground-track or sky-track is visible, you can click on the track
+to jump forward to the moment when the satellite will pass
+through that place on the track.
+
+Finally, the F command puts the program in a simple fast-forward
+mode. This is useful when you want to see where a satellite is
+going in the next few minutes or hours. (Actually, you probably
+want to see where its footprint, Offpointing Angle, Doppler, etc.
+are going.)
+
+When you type F, this screen will start to move ahead in time
+steps which are approximately 1/100th of an orbital period for
+the chosen satellite. Typing a second F will pop you back to
+realtime. The speed of the fast-forward can be controlled from
+the IT.INI file; see ITINIDOC.TXT for details.
+
+At the risk of belaboring the explanation, I will point out that
+these commands can be used together. You can use T to jump to
+next Tuesday, then F to fast-forward from there, and then space
+to momentarily freeze the fast-forward.
+
+
+
+8. Driving an Antenna Rotor and Radios
+
+
+InstantTrack will optionally drive an automatic antenna rotor con
+troller, to make your antennas track a satellite in real time.
+
+InstantTrack is programmed to communicate with a TSR "rotor
+driver" program that follows the interface conventions defined
+for the "Kansas City Tracker" (KCT) sold by L.L.Grace
+Communications Products (see bibliography). The KCT is a single
+board interface that plugs into an IBM PC style ("ISA") slot.
+However, the software interface used by InstantTrack is generic,
+and can be used to control nearly any kind of hardware. Drivers
+for some popular hardware designs are available for download at
+http://www.amsat.org/amsat/ftpsoft.html#pc-rot. The driver must
+be loaded and run before InstantTrack is run.
+
+When InstantTrack is in one of its realtime screens, the R
+command enables or disables realtime rotor control. If
+InstantTrack cannot locate a valid rotor driver TSR, it simply
+beeps to indicate the error. If InstantTrack finds a rotor driver
+TSR, the indication "RotorDRV" appears on the top text line of
+the screen, to indicate that InstantTrack is directly
+communicating with the rotor driver.
+
+InstantTrack can also work in concert with a TSR program called
+OrbitDRV which allows your computer to track satellites and
+control your antennas "in the background" while you use your
+computer for other things (or visit other screens within
+InstantTrack). OrbitDRV is described in detail in the file
+ORBITDRV.TXT. An alternate command interface for OrbitDRV is
+described in the file ITRACK.TXT. When InstantTrack finds itself
+working through OrbitDRV, the indicator "OrbitDRV" appears, along
+with the name of the satellite being tracked in the background by
+OrbitDRV.
+
+InstantTrack can also work with a radio driver TSR program to
+tune your transceiver(s) to compensate for Doppler shift.
+
+The status of the RotorDRV rotator driver, the OrbitDRV
+background computation module, and the RadioDRV radio interface
+driver can be obtained by selecting "Option Status (TSRs)" from
+the Housekeeping menu.
+
+
+
+9. Satellite Position Table (Ephemeris)
+
+
+When you wish to view a table of the position of a satellite at
+times in the future (which the astronomers call "an Ephemeris"),
+select Satellite Position Table on the main menu by typing "3".
+This display is not realtime. It allows you to examine future (or
+past) satellite passes.
+
+The display has three formats. The first format displays latitude
+and longitude, Doppler and satellite mode information. The second
+displays distance and direction to nearest city, so you can
+visualize the path the satellite takes over the surface of the
+Earth during a pass. The third format displays satellite visual
+observability information. You can switch between them by typing
+C repeatedly.
+
+
+9.1. Entering Parameters
+
+You will be asked to select a satellite, using the standard
+satellite selection menu. After that, you will be asked for a
+starting time, and a time increment. In each case, the program
+provides a reasonable default value which you can select by
+simply typing the Enter key in response to each question. Start
+time defaults to right now, and the time increment defaults to
+100 points per orbit (which means the time increments will be
+smaller for faster moving satellites).
+
+InstantTrack displays the timezone in the "Starting at" prompt,
+but you aren't allowed to enter it yourself. You must use the
+timezone InstantTrack displays. There is no means to switch
+timezones at this prompt.
+
+
+9.2. Understanding The Display
+
+The numeric information presented on this display is a subset of
+the information on the realtime text display. See explanations in
+the text display section.
+
+
+9.3. Commands
+
+While a table of satellite positions is displayed, you can use
+the following commands:
+
+           Enter  display the next page of the table.
+               Q  quit tracking. go back to main menu.
+     right arrow  advance to next satellite.
+      left arrow  go back to previous satellite.
+Ctrl+right arrow  advance to next satellite in this group
+Ctrl+ left arrow  go back to previous satellite in this group
+               C  toggle the display format. (Lat/Lon vs. Cities vs. Visual)
+               F  begin/end capturing output to a file (no page headings)
+               P  begin/end capturing output to a file (with page headings)
+               S  toggle the scroll mode. (Page-at-a-time vs. Scrolling)
+               W  toggle the fast rise-time finder on/off.
+               Z  toggle between local/UTC timezones.
+
+Most of these commands are self-explanatory. The W command is
+here only to help me verify InstantTrack's fast satellite rise-
+time finding algorithm. When this is disabled, the indicator
+"SLO" will appear in the upper left corner of the screen, and the
+program will use the simpler but slower method of stepping time
+and recalculating satellite position until the satellite appears
+above the horizon. Results should always be the same either way.
+The times displayed will be slightly different, because the slow
+method has a fixed time granularity of one time step.
+
+When the default fast algorithm is used, the first line of each
+pass may show the satellite as slightly below the horizon, even
+with an elevation of "-0". This is due to slight precision errors
+in the calculation. You can assume that this error is negligible,
+and that this represents the moment when the satellite comes over
+the horizon.
+
+In the default Page-at-a-time scroll mode, type Enter to see the
+next page.
+
+Switching from satellite to satellite doesn't change the other
+settings. So if you start with a large time increment (because
+you started on a satellite with a high orbit) and then move to
+satellite with a low orbit, the results won't be very useful.
+
+
+9.4 Printing or Capturing to a File
+
+The table of satellite positions can be printed or captured to a
+file for later study. Enter your parameters as usual to bring up
+the first screen of the table. Type "C" if you like to set the
+display format to the one you want.  Type "Z" if you want to
+change the timezone. When you're satisfied that the screen
+displayed is where you want to start the capture, type "F" or
+"P". InstantTrack will prompt you for a file name. Enter the name
+of the file you want InstantTrack to create. You may then page
+forward in time, change satellites, or whatever you like within
+the Satellite Position Table function, and InstantTrack will
+capture everything you see (except you can type "C" without
+capturing the old display). If you want lots of output, you can
+type "S" to enable Scroll mode. When you're done capturing, you
+may simply quit the function (type "Q" as usual) or you can type
+"F" or "P" again to toggle capture off.
+
+When you type "F" for "File", InstantTrack puts one set of column
+headings (just like the ones at the top of the screen) at the top
+of the file. It puts another set of column headings into the file
+when you've changed a setting that invalidates the old column
+headings, but otherwise the rest of the output flows seamlessly
+without any additional headings. This mode is probably best for
+capturing to a file for later editing or analysis.
+
+When you type "P" for "Printer" or "Paged", InstantTrack puts a
+set of column headings on each page of the captured data. This is
+most appropriate if you are printing the output. For this to come
+out right, you need to tell InstantTrack how many lines your
+printer can put on one page. This setting is in the IT.INI
+configuration file. See the file ITINIDOC.TXT for instructions on
+how to set this parameter. The default value will probably work
+for you, but it may leave extra blank space at the bottom of each
+page.
+
+You can use either "F" or "P" for capturing to a file. You can
+also use either "F" or "P" for capturing directly to a printer.
+Use whichever you prefer.
+
+If you don't want a file, but instead want to print the table
+directly to the default printer, enter "PRN" for the file name.
+You can also enter the special DOS name for the port your printer
+is connected to, such as "LPT1" or "LPT2". If your printer is
+connected to a serial port, you can enter "COM1" or "COM2", etc.,
+provided you've previously used the MODE command to set the baud
+rate and other communications parameters. There are a few other
+special file names that don't do anything useful here, and you
+should avoid using them: "NUL" and "CON" for instance.
+
+If you're on a network (under Windows), you should be able to use
+network filenames using the Uniform Naming Convention (UNC)
+syntax, as an alternative to mapping a network drive. These
+filenames look like \\hostname\dir1\dir2\filename.
+
+If you specify a filename on a floppy disk (like A:\PLAN.OUT) and
+you get one of those annoying "Abort, Retry, Fail?" errors, you
+can choose any of the three reponses. If you choose Abort (by
+typing "A"), InstantTrack will immediately exit. If that's not
+what you want, you should probably choose Fail instead (by typing
+"F"). In that case, InstantTrack will tell you it failed (but you
+knew that already) and ask for a new filename. If you can correct
+the problem (such as by inserting a floppy disk), do so and
+choose Retry (by typing "R"). If things are now working,
+InstantTrack will pick up and continue as if nothing had gone
+wrong.
+
+There is one other setting in the IT.INI configuration file
+pertaining to your printer. The setting printer_formfeed_at_end
+controls whether InstantTrack sends one last formfeed (new page
+eject) to the printer at the end of each job. You probably need
+to set this to "1" under DOS, because most printers will hold
+onto the last partial page of output until the computer sends a
+formfeed. If you're running under Windows or OS/2, you probably
+want to set it to "0". Just closing the file is enough to force
+the last page out of the printer under those environments. If you
+find you're getting a blank sheet at the end of every job, change
+this setting from "1" to "0". If you find you're not getting the
+last partial page of output until you print something else,
+change this setting from "0" to "1".
+
+If you are moving rapidly from satellite to satellite using the
+arrow keys, the capture file or printout will only contain as
+much of each satellite as InstantTrack had time to compute and
+put on the screen before you switched to another satellite. The
+other lines on each screen, though still blank, will also appear
+in the output.
+
+This function captures plain ASCII text, in DOS format.
+Exception: the degrees symbol on the R.A./Declination version of
+the display is not a standard ASCII character and may not look
+right on your printer. No attempt is made to do anything fancy
+with the printer, so it should be compatible with any printer
+that can print plain text files. If you have a PostScript
+printer, printing directly from InstantTrack may or may not work,
+depending on the printer and its settings. If you have a printer
+that only works under Windows, but you're not running Windows
+right now, then it probably will not work. In that case, capture
+to a file, and use your usual procedures for printing to print
+the file.
+
+
+
+10. The Satellite Schedule Display
+
+
+This display provides you with a quick indication of when
+satellite operations may be possible. The schedule shows you when
+a satellite will be above the horizon as viewed from your
+station. If you have entered a satellite schedule for this
+satellite (in the satellite database), then the satellite
+operating mode will also be shown whenever the satellite is up.
+
+There are three different forms of the schedule display. You can
+display a single satellite for 20 days, or 20 satellites on a
+single day, or a single satellite for a single day from the
+viewpoint of several observers.
+
+You will be prompted for the starting date and time. As with all
+time prompts in InstantTrack, you may enter date or time, or both
+date and time. You may also type neither, in which case starting
+time will default to right now.
+
+If you have asked for a single-satellite schedule, you will then
+select a satellite on the satellite selection menu. If you have
+asked for a multiple-satellite schedule, you will be prompted
+for the name of a satellite group. If you do not enter a group
+name, the group will default to *, (i.e., all satellites). Groups
+are explained in the section on Satellite Parameters.
+
+If you've asked for the multiple-observer schedule, you will be
+prompted to select the observers. The current observer list will
+be displayed, and you will be allowed to edit it. As with other
+places in InstantTrack where you can specify an observer, this
+prompt accepts city names, callsigns, gridsquares, lat/lon, or S
+or C to pull up the full station or city menus. When you are done
+editing the observer list, type the Enter key.
+
+
+10.1. Understanding The Display
+
+In the first form, each day is shown as a row on the display.
+Each column indicates a 20 minute period during the day. A
+portion of the display looks like this:
+
+Satellite: Oscar-13        Station: N6NKF
+
+                           Hours UTC
+        0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 ... 23
+01/21/90------------oooBBBBBBJJJBBBBB-------------- ... --
+01/22/90------------------BJJJ----------B---------- ... --
+01/23/90----------------BJ----------BBBB----------- ... --
+
+
+In the second form, each satellite is shown as a row on the
+display.  A portion of the display looks like this:
+
+  Day: 01/21/90              Station: N6NKF
+
+                            Hours UTC
+         0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 ... 23
+ Sun     ------------******************************* ... --
+ Moon    -*************************----------------- ... --
+ Oscar 13------------oooBBBBBBJJJBBBBB-------------- ... --
+
+In the third form, each observer is shown as a row on the
+display.  A portion of the display looks like this:
+
+  Day: 01/21/90              Satellite: Oscar-13
+
+                          Hours UTC
+          0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 ... 23
+  N6NKF   --------------oBBBBBBJJJBB----------------- ... --
+  N4OUL   ------oooooooooBBBB------------------------ ... --
+  9Q5EE   --------------------BJJJBBBBBBBBBBB-------- ... --
+
+A green "-" indicates that the satellite is below the horizon.
+Any yellow character indicates that the satellite is above the
+horizon. If you have entered a schedule for this satellite, then
+these characters will correspond to the operating mode. If you
+have not entered a schedule, then "*" is used to indicate above
+horizon.
+
+Even though the display only has room for three columns per hour
+(one point every 20 minutes), this display will reliably indicate
+the presence of satellite passes as small as 1 minute!
+
+As with other displays, yellow and green are used to indicate
+above and below the horizon. I have carefully avoided use of
+special characters which might not appear properly on a printer.
+After the schedule is complete, use Shift-PrtSc to capture a copy
+to your printer.
+
+To try something familiar, display a schedule for the moon.
+
+The idea for this display format came from a program written by
+John Mezak, K2RDX.
+
+
+10.2. Commands
+
+During the schedule display, the following commands apply...
+
+       Z      toggle between local/UTC timezones.
+       Q      quit the schedule. go back to main menu.
+     Enter    go to next day
+
+
+
+11. The Satellite Covisibility Display
+
+
+Some satellites have the capability of establishing a
+communications link directly with another satellite. This is
+called a crosslink. Crosslinks are only possible when one
+satellite can "see" the other, i.e., when the Earth doesn't get
+in the way of the direct line-of-sight path from one satellite to
+the other satellite. This display shows you, in realtime, which
+satellites "see" which satellites, i.e., where crosslinks are
+theoretically possible. Crosslinks are possible an amazingly
+large fraction of the time.
+
+There is growing interest in recent years in very small
+communications satellites in low Earth orbit (LEO). These are
+cheaper to build and launch than large satellites, and many can
+be launched at one time. The AMSAT Microsat project has designed
+a very small (9" cube) amateur radio digital communications
+satellite. A disadvantage of low Earth orbit is that any one low
+satellite can see a very small fraction of the Earth's surface at
+any time, making long distance communication impossible. The
+AMSAT Microsat overcomes this difficulty by operating in a store-
+and-forward mode. An alternative solution would be to design
+microsats with crosslink capabilities.
+
+Looking forward to the day when amateur satellites will support
+crosslinks, this display tells you when such crosslinks are
+possible.
+
+
+11.1. Understanding The Display
+
+The display is a matrix. Each row and column represents a
+satellite. There is a small green dot at the intersection of any
+row & column if the two satellites cannot see each other, and a
+big yellow dot if they can.
+
+Unfortunately, only 20 rows and 58 columns of this matrix fit on
+the screen at any one time. The four arrow keys scroll the
+display in various directions so you can see any part of the
+entire 200 x 200 matrix.
+
+Two additional columns on the left are labeled "O" and "S". These
+stand for "Observer" (that's you), and "Sun". Dots in the O
+column indicate whether the satellite named to the left is
+visible to you at the present time. Dots in the S column indicate
+whether the satellite named to the left can see the sun.
+
+A dot next to the date and time in the upper left of the screen
+blinks once every time that the computer has recomputed the
+positions of all the satellites and updated the display.
+
+
+11.2. Commands
+
+      arrow keys     cause scrolling, so you can view
+                     selected portion of the covisibility display.
+                     
+               Z    toggle between local/UTC timezones.
+               
+               Q    quit this screen.
+
+
+
+12. Setting Time via NIST
+
+
+
+12.1. What is NIST ACTS?
+
+NIST ACTS is the Advanced Computer Time Service provided by the
+US Government National Institute of Standards & Technology. The
+NIST Time Service presently uses an ordinary phone number in the
+303 area code (Colorado), and there's an alternate number in the
+808 area code (Hawaii). The only cost of using the service is the
+cost of a very quick long-distance call. More information is
+currently available at
+http://www.boulder.nist.gov/timefreq/service/acts.htm.
+
+
+12.2. Procedure
+
+To set your computer's DOS clock via NIST ACTS, select
+"Housekeeping Functions" at the main menu, then "Update Time
+(NIST via modem)" at the Housekeeping Menu.
+
+InstantTrack will tell your modem to dial, and all characters
+exchanged between the modem and computer will be displayed on the
+screen. NIST sends one time-stamp every second. As soon as
+InstantTrack has correctly received two time stamps in a row, it
+will hang up the phone, and tell you the results. An example
+session follows. At any time during the modem dialog, you can
+type any key, and the program will hang up the phone and exit
+immediately.
+
+A sample session...
+
+    --- Modem dialog follows --- Type any key to abort. ---
+    ? = HELP
+    National Institute of Standards & Technology
+    Telephone Time Service
+                            D  L D
+
+     MJD  YR MO DA  H  M  S ST S UT1 msADV         OTM
+    47511 88-12-16 06:03:44 00 0 -.1 045.0 UTC(NIST) *
+    47511 88-12-16 06:03:45 00 0 -.1 045.0 UTC(NIST) *
+
+    --- Setting DOS Date & Time to local: 12/15/1988 22:03:44 ---
+    --- Your DOS time was ahead of NIST by 5.22 seconds ---
+    --- Info only: Your hardware real time clock reads:
+12/15/1988 22:04:44 ---
+    --- Done --- Phone call duration was 20.4 seconds. ---
+
+
+Note that your DOS clock is set to your "local" time zone,
+controlled by your setting of the "TZ" environment variable or
+settings in the IT.INI configuration file. This is described
+earlier in this document.
+
+The "Info only" line about your hardware realtime clock (RTC) is
+only printed if you have an IBM AT, or a machine with an AT-
+compatible BIOS. The RTC is the device that remembers time of day
+when your computer is turned off. InstantTrack reads the AT RTC,
+but does not attempt to set it. It makes no attempt to read or
+write the large variety of different third-party aftermarket RTCs
+that are present in many IBM PC's and XT's.
+
+The average phone call duration is about 20 seconds. If there is
+phone line noise that garbles some of the characters, it will
+take a little longer. InstantTrack contains a timeout to prevent
+excessively long phone calls. This is initially disabled, but may
+be enabled by setting the nist_maxtime parameter in the IT.INI
+file to some number of seconds other than zero. NIST provides a
+timeout which hangs up the phone at their end after 55 seconds.
+
+
+12.3. What Can Go Wrong?
+
+The most common thing that can go wrong is that your modem may
+require different commands than the one I've provided, or you may
+have your modem on a different COM port. You may edit the
+configuration file IT.INI to correct these problems. Please read
+instructions in ITINIDOC.TXT before editing IT.INI.
+
+
+12.4. Technical Notes on Dialing modems
+
+One of the challenges when writing any program that attempts to
+dial and interact with a modem is the very large variety of
+different brands and models of modems in use. They all support a
+slightly different set of commands, and handle the various RS-232
+modem control signals in a slightly different way. Furthermore,
+there are an amazing number of different ways that RS-232 cables
+can be wired.
+
+Most commercial communications programs for DOS (Crosstalk,
+MIRROR, ProComm,...) solve this problem by providing a large
+number (as many as 20) different configuration files which tell
+the program how to interact with each different kind of modem.
+These differences include the command set, handling of modem
+control signals (which are required, and which are provided by
+the modem), handshake timing, call progress indications, etc.
+
+I've taken a different approach.
+
+I've written serial I/O routines which are completely oblivious
+to the state of the RS-232 modem-control signals. If your modem
+happens to not provide one of the modem-control signals, or uses
+one of them in an unusual way, InstantTrack doesn't care. (The
+standard IBM BIOS, on the other hand, requires that the modem
+raise DSR and CTS.) For outgoing modem-control signals, I raise
+DTR and RTS, which hopefully, will satisfy all modems that care.
+(The standard IBM BIOS raises DTR, but then toggles RTS, de
+pending on whether you are reading or writing to the serial
+port.)
+
+I've also provided an initialization file, IT.INI, where you can
+specify the exact character strings that should be sent to your
+modem to dial and hang up. The Hayes-type commands that I've in
+cluded by default will probably work with most modems, but if you
+require something different, you can just change it.
+
+The program also raises DTR and RTS before dialing, and drops
+them after dialing. Some modems hang up the phone in response to
+a falling DTR instead of a command.
+
+Finally, while most commercial programs attempt to interact with
+the call progress indications (i.e., detection of dial-tone, busy
+signal, etc.) provided by most modern modems, I have ignored them
+completely. I simply dial, then wait for characters from the
+modem that look like the NIST format. This has the disadvantage
+that if anything goes wrong during the call (say, for example, a
+busy signal) this program will simply wait until its timeout
+occurs. A program that listens for the call-progress info from a
+modem would know what had happened immediately, and tell you.
+This simple-minded approach has the advantage that it is
+compatible with a wide variety of modems, and it has not yet been
+an inconvenience. I have yet to get a busy signal from NIST!  You
+can, of course, immediately abort a call at any time manually, by
+typing any key on the keyboard.
+
+
+12.5. If It Doesn't Work for You .
+
+Nevertheless, experience shows that you may have trouble getting
+the Update Time feature to work. If you are running under
+Windows, you probably should not struggle with this feature of
+InstantTrack for very long. Instead, download one of the many
+easy-to-use programs available for this purpose and use that
+instead. In addition to Windows programs that use NIST ACTS and
+other, similar services, there are programs that use your
+Internet connection to set your computer's clock.
+
+
+
+13. Non-numerical Geography: Maps, Cities and Gridsquares
+
+
+Traditionally, satellite tracking programs have indicated the
+position of a satellite by displaying two numbers: latitude and
+longitude. I don't know about you, but I don't immediately
+recognize a location, or its distance from me or other known
+locations, when presented with latitude / longitude coordinates.
+InstantTrack uses three more human-friendly methods..
+
+Maps
+
+Of course, pointing at a map is the most user-friendly way to
+specify a location. InstantTrack contains a map of the world, and
+a map of the sky, both of which are described above under the
+heading "Understanding the Realtime (Map) Display".
+
+Cities
+
+InstantTrack contains a database of the names and locations of
+1794 cities worldwide. About half of these cities are in the
+United States, and the other half scattered around the rest of
+the world. Data for U.S. cities were obtained from magnetic tapes
+available from the U.S. Geological Survey. The selection criteria
+for U.S. cities was population. West of 99W longitude, all cities
+>20,000 pop are included. East of 99W longitude, all cities
+>32,000 pop are included. I typed in the data for non-U.S. cities
+from atlases and other reference books.
+
+Gridsquares
+
+The Grid Locator System, or gridsquares, (in Europe it's called
+the Maidenhead Locator System, after the place where a meeting
+was held to standardize it) is used by amateur radio operators.
+It is simply an encoding of latitude and longitude into a four or
+six character string. It's quicker to say "DM12it" over the radio
+than "I'm at 32.817 degrees North latitude, 117.267 degrees East
+longitude". See Tyson's article in QST. It's listed in the
+bibliography. Or see http://www.arrl.org/locate/gridinfo.html.
+
+
+
+14. Files used by InstantTrack...
+
+
+Computer readable files used by InstantTrack:
+
+                  IT.EXE    This is the executable program.
+                  
+                  ITNCP.EXE Alternate executable program if you
+                            have No math CoProcessor.
+                  IT.ORB    Library of satellite orbital elements.
+                  IT.QTH    Library of station elements.
+                  IT.CTY    Library of 1794 city locations worldwide.
+                  IT.MP?    Maps of Earth.
+                  IT.STR    Map of 920 bright stars.
+                  IT.HLB    Text for the online help screens.
+
+Human readable files that come with InstantTrack:
+
+     ITMANUAL.PDF The documentation file you are now reading (formatted)
+     ITMANUAL.TXT The documentation file you are now reading (plain text)
+     
+     ITUPDATE.TXT Information about changes to InstantTrack.
+     
+     ITWISH.TXT   Wish list of requested improvements to InstantTrack.
+     
+     ITINIDOC.TXT Documentation describing the IT.INI file.
+     
+     IT.INI       Configuration parameter file.
+     
+     INTSPEC.TXT  Information for programmers on interfacing to InstantTrack.
+     
+     SINCE100.PDF Describes the changes since Version 1.00 (formatted)
+     SINCE100.TXT Describes the changes since Version 1.00 (plain text)
+
+
+Related programs:
+
+     DUMMYKCT.COM   Sample (dummy) rotor driver TSR program.
+     
+     ITRACK.EXE     Command-line user interface for OrbitDRV.
+     
+     ITSORT.EXE     Utility for manipulating the InstantTrack
+                    satellite database.
+                    
+     ORBITDRV.EXE   Background tracking TSR option for InstantTrack.
+     
+     ORBITNCP.EXE   Alternate background tracking TSR if you have
+                    No math CoProcessor.
+                    
+     TEST63.EXE     Test program to evaluate Interrupt 0x63 on your computer
+     
+
+Documentation for related programs:
+
+     ORBITDRV.TXT The documentation file for OrbitDRV.
+     ORBITDRV.UPD Information about changes to OrbitDRV.
+     ITRACK.TXT   The documentation file for ITRACK.
+     ITRACK.UPD   Information about changes to ITRACK.
+     ITSORT.TXT   The documentation file for ITSORT.
+     ITSORT.UPD   Information about changes to ITSORT.
+
+Generally, all the computer-readable files should be placed in
+the same directory, and IT should be run while connected to that
+directory.
+
+If you wish to run InstantTrack while connected to directories
+other than the one in which you have placed these files, you
+should define a DOS environment variable named INSTANTTRACK, and
+make it point at the directory containing the InstantTrack files.
+
+Example: SET INSTANTTRACK=D:\it
+
+You may also wish to put the directory containing the
+InstantTrack .EXE files in your PATH definition, so that DOS will
+know where to find them when you type IT or ITNCP.
+
+Example: SET PATH=C:\bin;D:\it
+
+
+
+Common Questions and Answers
+
+
+These are questions and comments I often receive about
+InstantTrack, and the associated answers:
+
+Question: Why don't you interface to the Heathkit "Most Accurate
+Clock"?
+
+Answer: Calls to NIST cost me about $0.15 each (from San Diego to
+Colorado) in the evening. So if I called NIST every day of the
+year for a period of five years, the total cost would be $273.75
+. (Of course, I would never expect you to call that often!) The
+Heath clock costs over $400, so it won't pay for itself, even
+after five years of daily use!
+
+Question: I can't afford the memory space for the TSRs. What can
+I do?
+
+Answer: Here are some ideas...
+
+1. There are several public domain programs that will allow you
+to load and unload TSRs at will. Possibly one of those could help
+you.
+
+2. If you're running a 286-based machine, and you have EMS
+(expanded) memory, there are utilities such as "Headroom"
+commercially available which can move some TSRs into EMS memory.
+Some InstantTrack users have successfully used Headroom to move
+TSRs (including OrbitDRV) to EMS memory. They swear by it. Users
+of Headroom tell me it's a complex program, so you really need to
+read the manual carefully.
+
+3. If you're running on a 386-based machine or higher, there are
+utilities such as "386-MAX" or "QEMM 386" commercially available
+that can move all of your drivers and TSRs into extended or
+expanded memory. Later versions of MS-DOS included some of these
+capabilities built-in. Look up the LOADHIGH command in your DOS
+5.0 or later manual.
+
+Question: The program bombed and printed out all this stuff on my
+screen. What the heck is it?
+
+Answer: InstantTrack is written in a style where assumptions that
+the program makes about its internal data are tested at critical
+places even though "logically" these assumptions must be correct.
+This is known as "defensive programming". This approach does not
+guarantee that the program will be bug free! It does make
+problems easier to detect, and it makes the task of finding the
+cause of a problem a bit easier once the problem is detected.
+
+No doubt, you have seen programs that malfunction in subtle ways,
+producing incorrect output, or crashing your computer when you
+stumble onto a bug. The goal here was to never do that. If
+something is wrong, my hope is that it will be detected by one of
+the "assertion" tests that I've written into the program. So far,
+about 99.9% of the time, that's exactly what happens. If you
+stumble on one of these, then a "stackdump" will appear on your
+screen. It looks like this.:
+
+   Assertion failed: satp != NULL in file keprmenu.c at line 329
+   Stackdump Follows...
+
+       keprmenu.c: set_sat_elem
+       keprmenu.c: elem_manual_set
+       actmenu.c: action_menu
+       it.c: main
+   Abnormal program termination
+
+The first line tells me what assertion failed, exactly where in
+the program, and the stackdump tells me how I got there.
+
+If you stumble onto a bug in InstantTrack, and a stackdump like
+this appears on your screen, please hit the Shift/PrtSc, or
+whatever key on your computer makes a screen dump on the printer,
+slip it into an envelope, and send it to me. If you're one of the
+first to report a bug your name or callsign will appear next to
+the bug description in the IT.UPD file in future versions.
+
+Question: My modem doesn't hang up the phone after InstantTrack
+calls NIST to update time. What do I do to fix this?
+
+Answer: InstantTrack does two things to hang up the phone. Get
+either one of these mechanisms working right, and the modem
+should hang up properly.
+
+First, InstantTrack sends a command to your modem to tell it to
+hang up the phone. By default, this command is "ATH". Some modems
+need this command changed to "ATH0". Some modems may need yet a
+different command. Read the documentation that came with your
+modem. (If your modem didn't come with any technical
+documentation, complain to the manufacturer or check the
+manufacturer's web site.) You can then edit the IT.INI file to
+tell InstantTrack to use a different command.
+
+Second, InstantTrack drops the DTR signal (Data Terminal Ready)
+at the end of the phone call. This should tell most modems to
+hang up.  Unfortunately, lots of modems ignore the DTR signal
+unless you tell them otherwise. On some modems you do this by
+moving a dip switch. On most modern modems it's a software
+command. Read the documentation that came with your modem. Look
+for a discussion of the Data Terminal Ready signal.
+
+If you figure out how to enable DTR on your modem, but then the
+modem doesn't work at all, check your modem-to-computer cable.
+Make sure the cable actually has a wire to carry the DTR signal!
+It's on pin #20 of a 25 pin RS-232 cable.
+
+Question: Why isn't the Earth round in the orthographic
+projection? On my screen it looks like a watermelon.
+
+Answer: Most EGA/VGA monitors are supposed to "autosize" when the
+EGA or VGA card switches modes. Some don't do it right. Some
+monitors have switches that control autosizing. Sometimes these
+switches are on the back, and sometimes they're on the front,
+under a hidden panel. (My monitor has some switches on the back,
+and some under a panel on the front!) You might just have one of
+these obscure switches in the wrong position.
+
+On a real true-blue IBM computer, and on any EGA/VGA setup where
+autosize works correctly, the Earth should be round.
+
+Question: Can I run InstantTrack under DESQView? How do I set up
+DESQView to make this work?
+
+Answer: InstantTrack will run under DESQView. The secret is to
+set up the DESQView parameters for InstantTrack so that DESQView
+gives InstantTrack enough memory, and knows that InstantTrack
+will write to the screen directly.
+
+Pull up the "change a program" screen in DV, and set the
+following parameters:
+
+     Memory size (in K): 450
+     Writes directly to screen: [Y]
+     Displays graphics Information: [Y]
+
+Then hit the F1 key, to go to the "Change a program -- Advanced
+Options" screen, and set the following parameters...
+
+     Starting Height: 25         Starting row...: 00
+     Starting Width.: 80         Starting column: 00
+
+     Uses its own colors:  [Y]
+     Uses math coprocessor:[Y]
+
+Question: What do I do if InstantTrack seems to freeze sometimes
+when I use my mouse?
+
+Answer: Unfortunately, some versions of the Microsoft mouse
+driver contain bugs that may cause this. Specifically, several
+users have observed these symptoms while using version 7.00,
+7.01, 7.02, or 7.03 of MOUSE.COM. Earlier versions seem to work
+flawlessly, and version 7.04 seems to work for most people. Call
+Microsoft customer service if you need to obtain a copy of the
+7.04 version of the mouse driver.
+
+In the meantime, here's a workaround: When the program appears to
+freeze, it's actually only the screen that's frozen. You can
+still type commands.  Usually typing the U command twice gets
+things working again.
+
+Question: What do I do if little "mouse droppings" are left
+behind when I move the mouse on the map screen?
+
+Answer: Some versions of the Logitech mouse driver can cause
+this. If you have a Logitech mouse, contact Logitech for an
+upgrade to the latest version of their mouse driver.
+
+Question: What do I do if I get the message "Overlay Not Found" ?
+
+Answer: The most common cause of this message is an infection by
+the Jerusalem B virus. Get a virus checker program, and test all
+your disks for a possible virus infection.
+
+Question: How accurate are the Moon predictions?
+
+Answer: The maximum error is approximately 0.05 degrees, more
+than good enough for moonbounce.
+
+
+
+15. Copyright Notice and Distribution Policy
+
+
+This program is Copyright 1989 - 2000 Franklin Antonio and Paul
+Williamson, All Rights Reserved.
+
+Copies of InstantTrack are distributed in the United States from
+AMSAT-NA, a non-profit organization which constructs and launches
+amateur radio satellites. When you obtain a copy of InstantTrack
+from AMSAT-NA, the entire donation goes toward the amateur radio
+space program.
+
+InstantTrack is distributed in the United Kingdom by AMSAT-UK,
+and in Australia by AMSAT-Australia, and in Germany by AMSAT-DL.
+Address information for the AMSAT organizations can be found in
+the bibliography.
+
+Any distribution of InstantTrack requires a license.
+
+
+
+16. No Warranty
+
+
+No warranty is expressed or implied. This software has been
+written as an amateur hobby effort, and I will only support it at
+that level. You are encouraged to report bugs however.
+
+
+
+17. Acknowledgments
+
+
+I've borrowed most of the good ideas from other tracking programs
+I've used. Namely, the W0SL tracking program written by Roy Welch
+(W0SL), which is a derivative of the W3IWI Orbit program by Tom
+Clark (W3IWI), and of course, QuikTrak(tm) by Bob McGwier (N4HY).
+The idea for the compact schedule display came from John Mezak
+(K2RDX). All the code in InstantTrack, however, is my own.
+
+Paul Williamson (KB5MU), provided extensive assistance testing
+version 1.00 of this program. Paul also wrote the "TSR" part of
+OrbitDRV, and all of ITRACK and DUMMYKCT. Other beta-testers of
+version 1.00 included Mike Brock (WB6HHV), Dave Guimont,
+(WB6LLO), Steve Wilmet (WB6BDY), Harry Bluestein (N6TE), Ross
+Forbes (WB6GFJ), John Fail (KL7GRF), Glenn Moody (N4OUL), Vern
+Hajek (K6UGS), Chuck Dowling (KI6TG), Graham Ratcliff (VK5AGR),
+Steve Roberts (N4RVE), Courtney Duncan (N5BF), Ron Broadbent
+(G3AAJ), Tom Lafleur (KA6IQA). Steve wrote a review of
+InstantTrack in the November 89 issue of 73 magazine.
+
+Paul Williamson (KB5MU) is now the primary maintainer of
+InstantTrack and has created this new release version. The voice
+"I" in this document is usually Franklin, but sometimes Paul.
+
+
+
+Appendix 1 -- Example Satellite Element File Formats
+
+
+
+NASA Format
+
+This is the format used by NASA to distribute satellite elements
+in their "NASA Prediction Bulletin". The origin of the format is
+unknown. Some old NORAD reports refer to this as T-card format.
+NASA documents often call it the "2-line" format.
+
+InstantTrack expects a file which contains groups of 3 lines: One
+line containing the satellite's name, followed by the NASA 2
+lines of numbers.
+
+Files of this format are distributed by T.S.Kelso to nationwide
+computer networks, and end up on BBS's and electronic mail
+systems around the country. You can find T.S.Kelso's element sets
+on http://www.celestrak.com.
+
+NASA leaves some fields out of some element sets. The
+"international designators" for example are often missing.
+InstantTrack checks for this, and uses the new designator only if
+it's really there. (If there's a nonblank character in line 2
+column 10, I assume the designator is valid, and read it in.)
+
+NASA format files look like this...
+
+OSCAR 10
+1 14129U          88230.56274695 0.00000042           10000-3 0  3478
+2 14129  27.2218 308.9614 6028281 329.3891   6.4794  2.05877164 10960
+GPS-0008
+1 14189U          88230.24001475 0.00000013                   0  5423
+2 14189  63.0801 108.8864 0128028 212.9347 146.3600  2.00555575 37348
+
+Each number is in a specified fixed column. Spaces are
+significant. The last digit on each line is a mod-10 check digit,
+which is checked by the program. The program also checks the
+sequence numbers (first column), and checks each orbital element
+for reasonable range. This is a very good set of checks, so this
+format is very safe, and robust.
+
+I have noticed recently files of "almost NASA format" elements on
+some BBSs. Specifically, some people have been leaving off the
+check digits, and adding commentary to the first line. There is
+no excuse for this. We can only exchange data if we adhere to
+standards. An almost NASA format file is no better than a
+diskette that's "almost" the right size to fit in that little
+slot in the front of your computer.
+
+The following description, which I obtained from T.S.Kelso,
+describes the NASA format in detail:
+
+Data for each satellite consists of three lines in the following
+format:
+
+AAAAAAAAAAA
+1 NNNNNU NNNNNAAA NNNNN.NNNNNNNN +.NNNNNNNN +NNNNN-N +NNNNN-N N NNNNN
+2 NNNNN NNN.NNNN NNN.NNNN NNNNNNN NNN.NNNN NNN.NNNN NN.NNNNNNNNNNNNNN
+
+Line 1 is a eleven-character name.
+
+Lines 2 and 3 are the standard Two-Line Orbital Element Set
+Format identical to that used by NASA and NORAD. The format
+description is:
+
+Line 2
+Column     Description
+ 01-01     Line Number of Element Data
+ 03-07     Satellite Number
+ 10-11     International Designator (Last two digits of launch
+           year)
+ 12-14     International Designator (Launch number of the year)
+ 15-17     International Designator (Piece of launch)
+ 19-20     Epoch Year (Last two digits of year)
+ 21-32     Epoch (Julian Day and fractional portion of the day)
+ 34-43     First Time Derivative of the Mean Motion divided by 2.
+        or Ballistic Coefficient (Depending of ephemeris type)
+ 45-52     Second Time Derivative of Mean Motion divided by 6.
+           (Blank if N/A)
+ 54-61     BSTAR drag term if GP4 general perturbation theory was used.
+           Otherwise, radiation pressure coefficient.
+ 63-63     Ephemeris type
+ 65-68     Element number
+ 69-69     Check Sum (Modulo 10)
+           (Letters, blanks, periods = 0; minus sign = 1; plus sign = 2)
+
+
+Line 3
+Column     Description
+ 01-01     Line Number of Element Data
+ 03-07     Satellite Number
+ 09-16     Inclination [Degrees]
+ 18-25     Right Ascension of the Ascending Node [Degrees]
+ 27-33     Eccentricity (decimal point assumed)
+ 35-42     Argument of Perigee [Degrees]
+ 44-51     Mean Anomaly [Degrees]
+ 53-63     Mean Motion [Revs per day]
+ 64-68     Revolution number at epoch [Revs]
+ 69-69     Check Sum (Modulo 10)
+
+All other columns are blank or fixed. Note that the International
+Designator fields are usually blank, as issued in the NASA
+Prediction Bulletins.
+
+
+AMSAT Format
+
+There are several very similar formats generated by several
+different people that seem to be called "AMSAT" format. I have
+tried to make InstantTrack compatible with all of them. This
+format is very user-friendly, and can be easily read and/or
+edited by humans. Spaces are not significant. Each orbital
+element must appear on a separate line. The order in which
+orbital elements appear is not significant, except that each
+element set should begin with a line containing the word
+"satellite". This file format optionally contains a checksum as a
+separate line at the end of each element set.
+
+InstantTrack searches each line of the file for several possible
+keywords, and a correctly formatted number. One nice implication
+of this is that additional information, as long as it is carried
+on additional lines (commentary, information about satellite
+schedule, etc.) can be added to these files, and it will not
+bother InstantTrack. Each orbital element is checked for correct
+range, and element sets containing out-of-range elements are
+discarded.
+
+InstantTrack expects a blank line to appear between the
+information for each satellite and the next satellite. That's how
+it knows when the information for each satellite is finished.
+
+First example AMSAT format, as distributed by Conrad Kirksey
+W5BWF:
+
+   Satellite: AO-10
+   Int'l Object Number: 14129
+   NASA Designation: 1983-058B
+   Epoch Time, T0: 88239.30510271
+     Fri Aug 26, 1988.
+   Epoch Rev, K0: 1114
+   Mean Anomaly, M0: 6.0030 deg
+   Mean Motion, N0: 2.05882335 rev/day
+   Inclination, I0: 27.1492 deg
+   Eccentricity, E0: 0.6027104
+   Arg Perigee, W0: 331.5568 deg
+   RAAN, O0: 307.6972 deg
+   Period:  699.428632 min/rev
+   Increment:  174.857158 deg/rev
+   Beacon, F1: 145.8100 MHz
+   Decay, N1: -1.38E-06 rev/day^2
+   Element Set: 352
+
+Second example AMSATish format, as distributed in an ARRL
+bulletin...
+
+   KEPLERIAN BULLETIN 77   ARLK077
+   FROM ARRL HEADQUARTERS
+   NEWINGTON CT  SEPTEMBER 24, 1988
+   TO ALL RADIO AMATEURS
+
+   Satellite: oscar-10
+
+   Catalog number: 14129
+   Epoch time:      88248.53312992
+   Element set:     353
+   Inclination:       27.1605 deg
+   RA of node:       306.2255 deg
+   Eccentricity:    0.6029797
+   Arg of perigee:   333.9978 deg
+   Mean anomaly:       5.4273 deg
+   Mean motion:    2.05877131 rev/day
+   Decay rate:        4.4e-07 rev/day sq
+   Epoch rev:            3933
+
+Both of these formats, and many other similar ones, will be read
+correctly. Since the AMSAT format is not precisely defined,
+however, I cannot guarantee that everything anyone might call
+"AMSAT" format in the future will work.
+
+
+
+Appendix 2 -- Bugs, Problems and Futures
+
+
+AT&T 6300 Computers:
+
+Users of AT&T DOS 3.2 have noticed that when they use
+InstantTrack to set DOS time from NIST, time may be incorrect by
+up to one minute. This is due to a bug in AT&T DOS. The DOS
+function which sets DOS time ignores the "seconds" field, and
+always sets seconds to 00.
+
+STB VGA Cards:
+
+Some users of STB VGA cards have had a problem where the map
+screens appear to overwrite the menu screens. They've reported
+that the problem can be solved by obtaining an upgraded version
+of the VGA BIOS EPROM chip from STB.
+
+Microsoft Mouse Driver version 7
+
+See discussion in the Questions and Answers chapter.
+
+Logitech Mouse Drivers
+
+See discussion in the Questions and Answers chapter.
+
+Mouse vs. DESQView
+
+Some users have had trouble running InstantTrack under certain
+versions of DESQView, wherein multiple applications fight over
+the mouse. If you do have this problem, you tell InstantTrack to
+ignore the mouse by starting IT up with the /M switch, i.e., IT
+/M or ITNCP /M .
+
+See ITUPDATE.TXT for information about recent changes, etc.
+
+As with any project this large, the product is never complete.
+There are more good ideas than time to implement them. I had to
+stop somewhere, and the result is the present release.
+
+I make no commitment about future versions, however I do have a
+long wish list of ideas which I hope can be implemented in future
+versions of InstantTrack. Users have provided me with a long list
+of things I could have done better. Fixing isn't as much fun as
+implementing new features, but some of this work might happen
+too.
+
+Stay tuned.
+
+
+
+Appendix 3 -- Video Adapters (MDA/CGA/HGC/EGA/VGA)
+
+
+There are many different video adapter boards used in PCs these
+days. Here is a discussion of how InstantTrack supports each of
+these. InstantTrack automatically detects which kind of display
+you have, so can usually run InstantTrack without worrying about
+what kind of display you have. There are a few exceptions, and
+these are noted below.
+
+MDA -- Monochrome Display Adapter
+
+This is the oldest and simplest, and doesn't support graphics.
+You can use InstantTrack in any of the text screens, but you
+won't get maps. You might consider upgrading to an HGC or clone
+of same.
+
+CGA -- Color Graphics Adapter
+
+This is the oldest kind of color graphics board for the PC.
+InstantTrack does display maps on a CGA, but they appear in a
+single color. You can also use InstantTrack in any of the text
+screens. If you have one of the old CGA boards that makes "snow"
+when a program writes to it quickly, be prepared for snow with
+InstantTrack.
+
+HGC -- Hercules Graphics Card (HGC or HGC+)
+
+This is a monochrome graphics card. (Clones of the Hercules card
+are sometimes called MGC's in fact.) InstantTrack supports
+Hercules cards. You will get all the text, and all the maps, but,
+of course, you won't get any color.
+
+To use InstantTrack with a Hercules card, you must first load
+Microsoft's Hercules graphics driver program MSHERC.COM, which is
+provided with InstantTrack. MSHERC is a TSR, i.e., a program that
+stays resident, so you need only load it once, each time you
+reboot your computer. You may wish to load it from within your
+AUTOEXEC.BAT file.
+
+Because of a quirk in MSHERC.COM, it must be loaded after your
+mouse driver (if you have a mouse, that is).
+
+InstantTrack was designed assuming a color display, and the
+documentation repeatedly refers to the colors of various objects
+on maps. If you are using a monochrome card, you'll have to
+simply ignore the references to color. More difficult to ignore,
+InstantTrack relies heavily on color to help you distinguish
+various objects on map screens, so InstantTrack is more difficult
+to use on a monochrome display.
+
+I urge you to try InstantTrack on a color display, if you have a
+chance, because the difference is like the difference between
+night and day!
+
+EGA -- Extended Graphics Adapter
+
+This is the display which InstantTrack was originally designed
+for. Everything works. Maps are displayed using the 350x640 16-
+color graphics mode.
+
+This mode may cause compatibility problems on newer computers,
+since support for EGA modes is not high on the priority list for
+hardware designers anymore. There is a setting in the IT.INI
+configuration file that will solve some of these problems, by
+forcing InstantTrack to use the BIOS for character output. If you
+have trouble with text on the map displays, see the ITINIDOC.TXT
+file for information on the force_bios_chargen_g setting in
+IT.INI.
+
+VGA -- Video Graphics Array
+
+The VGA can do everything the EGA can do, and a little more.
+InstantTrack will display maps using the 480x640 16-color
+graphics mode. However, you have the option of switching to a
+lower resolution map mode if you want.
+
+You can (optionally) change graphics resolution by modifying a
+parameter in the IT.INI file. The parameter is named
+vga_resolution. Set it to 1 for 350x640, and to 2 for 480x640.
+This parameter has no effect if you do not have a VGA. See the
+file ITINIDOC.TXT for more on the IT.INI configuration file.
+
+In addition, you can force the VGA to display everything in
+shades of gray, and you can control exactly which shades of gray
+are used. This can be useful for a monochrome display, such as an
+older laptop LCD. See the file ITINIDOC.TXT for information on
+changing this parameter in the IT.INI configuration file.
+
+And, if you have problems with text on the map screens, you can
+try the force_bios_chargen_g setting in the IT.INI configuration
+file. See the file ITINIDOC.TXT for details.
+
+Advantages: 480x640 resolution maps look nicer.
+
+Disadvantages: 480x640 resolution maps are a bit slower to draw,
+and they require about 32K more memory. If you have a slow
+computer, or are short of memory, you might want to stick with
+the lower resolution maps.
+
+
+
+Bibliography...
+
+
+The Radio Amateur's Satellite Handbook, by Martin R. Davidoff,
+     K2UBC 1998, published by ARRL, 225 Main St., Newington, CT
+     06111 This is an excellent introduction to amateur radio
+     satellites, basic orbital mechanics, operating procedure,
+     etc., and is highly recommended.
+
+Methods of Orbit Determination, by Pedro Escobal, 1965, corrected
+     reprint 1973, published by Krieger Publishing, and John
+     Wiley & Sons. ISBN 0-88275-319-3. This is the best orbit
+     mechanics book I have found. Fairly technical and expensive,
+     but logically organized, understandable, and complete. This
+     book piqued my interest in Celestial Mechanics again, after
+     many years of neglect.
+
+Celestial Mechanics: A Computational Guide for the Practitioner
+     by Laurence J. Taff, 1985, published by John Wiley & Sons.
+     ISBN 0-471-89316-1 This book provides a refreshingly candid
+     assessment of computational techniques. Taff makes his
+     opinions clearly known, in a style atypical of most
+     textbooks. Lots of good material here. Not suggested as a
+     first text on the subject, however.
+
+"Bahn Coordinates Guide -- Satellite Orbits", by Phil Karn
+     (KA9Q), AMSAT Satellite Journal, Jan-Feb 1986, pp 8-11.
+     Describes the coordinate system that AMSAT uses to describe
+     satellite attitude.
+
+"Conversion Between Geodetic and Grid Locator Systems", by Edmund
+     T. Tyson, QST Magazine, January 1989. This article gives a
+     clear explanation of the grid locator system.
+
+"The Satellite Sky", published by Air & Space, Smithsonian
+     Institution, Washington DC, 20560, ISSN-0886-2257. This is a
+     21" x 34" poster, listing over 250 satellites, and their
+     name, purpose, owning nation, launch site, launch date,
+     altitude, etc. Communications, Weather, Photo Recon,
+     Electronic Surveillance, Navigation, Earth Sensor, and
+     Research satellites are listed. Amateur radio satellites are
+     not.
+
+The RAE Table of Earth Satellites 1957-1986, compiled at The
+     Royal Aircraft Establishment, Farnborough, Hants, England,
+     by D.G. King-Hele, et al. Published in the U.S. by Stockton
+     Press, New York. ISBN 0-333-39275-2. I've also seen it
+     listed as ISBN 0-935859-05-5. This book lists 17000 objects
+     from 2869 launches (many of the objects are fragments), with
+     name, designation, launch date, estimated lifetime, mass,
+     shape, dimensions, and basic orbital parameters. Expensive!
+     Probably can be found in the reference section of your local
+     college library.
+
+Observing Earth Satellites, by Desmond King-Hele, 1966,
+     MacMillan. Available from Sky Publishing Co. (the people who
+     publish Sky & Telescope magazine) This 200 page book tells
+     you all about visually observing satellites. Somewhat dated
+     but the basic ideas are still correct.
+
+Artificial Satellite Observing, by Howard Miles, 1974, American
+     Elsevier. Contains information similar to that in King-
+     Hele's book.
+
+"Your Window for Visually Observing Satellites" by Vern
+     Riportella, WA2LQQ, in QEX magazine, #77, July 1988,
+     published by American Radio Relay League, 225 Main St.,
+     Newington, CT 06111. Nice introductory article on criteria
+     for visual observability of satellites.
+
+Artificial Space Debris, by Nicholas L. Johnson & Darren S.
+     McKnight, 1987, Orbit Book Co., Inc, Krieger Publishing Co.,
+     Melbourne FL, 111 pages, ISBN 0-89464-012-7, $34.50 "Only 5
+     % of the 7,000 trackable objects in orbit are functioning
+     satellites." Nifty book on the debris pollution of near-
+     Earth space.
+
+"A Non-Cosmetic Improvement to the W3IWI Tracking Algorithm" by
+     Bob McGwier, N4HY, in AMSAT-NA Technical Journal, V1 #1,
+     Summer 1987. (Available from AMSAT-NA) Describes a
+     computational technique for quickly finding a satellite's
+     rise time. Strong mathematical content.
+
+AMSAT-NA -->   The Radio Amateur Satellite Corporation (AMSAT)
+               850 Sligo Avenue, Suite 600
+               Silver Spring, MD  20910-4703
+               Phone: +1(301) 589-6062
+     This is a North American non-profit group that builds and
+     launches amateur satellites. They have a variety of
+     materials useful to anyone learning about amateur radio
+     satellite operation. They publish the bimonthly "AMSAT
+     Journal". Please consider becoming a member of AMSAT-NA.
+
+AMSAT-UK -->   AMSAT-UK
+               40 Downsview
+               Small Dole
+               West Sussex BN5 9YB
+               U.K.
+               Phone: +44(0)1273 495733
+     This is a U.K. non-profit group similar in purpose to AMSAT-
+     NA. They publish a very good newsletter "OSCAR News" once
+     every two months, and publish other material useful to
+     beginners.
+
+AMSAT-Australia ->  AMSAT-Australia
+               G.P.O. Box 2141
+               Adelaide 5001
+               AUSTRALIA
+               Phone: (08) 297 5104
+     This is an Australian non-profit group similar in purpose to
+     AMSAT-NA.
+
+Project OSCAR -->   Project OSCAR
+               P.O. Box 6700
+               San Mateo, CA  94403
+     This group publishes "The OSCAR Letter", containing
+     information about amateur radio satellites, and also
+     distributes amateur satellite related software written by
+     hams in other countries. Subscribe by sending $10. and six
+     #10 SASE to Project OSCAR.
+
+OSR   -->      Harlan Technologies
+               5931 Alma Dr.
+               Rockford, IL  61108-2409
+     These folks publish "OSCAR Satellite Report", a four page
+     newsletter which comes out every two weeks. Best print
+     source for up-to-the-minute information about status of
+     Amateur Radio satellites.
+
+NIST  -->      NIST-ACTS
+               National Institute of Standards & Technology
+               Time and Frequency Division
+     
+          Mail Stop 52
+               325 Broadway
+               Boulder, CO  80303
+     These people run the NIST ACTS telephone time service. Send
+     any questions or comments about that service to them. These
+     folks used to be known as the "National Bureau of
+     Standards".
+
+KCT  -->       L. L. Grace Communications Products
+               P.O. Box 1345
+               Voorhees, NJ 08043
+               (609) 751-1018
+     This company manufactures the "Kansas City Tracker". I have
+     no affiliation with L.L.Grace. Send any questions regarding
+     the KCT to them.
+
+Authors-->     Franklin Antonio, N6NKF
+               2765 Cordoba Cove
+               Del Mar, CA  92014
+               n6nkf@amsat.org
+
+
+               Paul Williamson, KB5MU
+               5331 Channing Street
+               San Diego, CA  92117-3206
+               kb5mu@amsat.org
+
+InstantTrack was originally written by Franklin Antonio, and this
+     update was prepared by Paul Williamson. Both authors welcome
+     your constructive comments about this software. Make sure
+     you've read this manual before you write! If you write to
+     us, please use email if at all possible. If you can't do
+     that, please write a (paper) letter. If you would like a
+     response, please enclose a self-addressed stamped envelope.
+     We get lots of letters & phone calls from users of
+     InstantTrack. I would much rather receive a letter from you
+     than a phone call, and I am much more likely to reply to a
+     letter if you've enclosed a SASE. But email is best of all.
+
+
+
+                           finis

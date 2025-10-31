@@ -1,0 +1,218 @@
+ITSORT - Reordering Tool for the InstantTrack Satellite Database
+================================================================
+
+Revised 3/4/93
+Revised 3/1/02 (contact info only)
+
+Copyright 1990 Paul Williamson.  All rights reserved.
+
+You may use this program for non-commercial purposes.
+Licensed users of InstantTrack are hereby granted the right to use
+this program under the same conditions as the InstantTrack programs.
+Unlicensed users of InstantTrack should repent and send money to
+AMSAT-NA, AMSAT-UK, or AMSAT-Australia for a licensed copy.
+
+
+Introduction
+============
+InstantTrack has a zillion features.  One feature it doesn't have is
+a convenient way to rearrange the satellites in its database.  This
+little program provides a way to do just that.  This isn't the really
+fancy database editor that I initially wanted to see added to IT.
+Instead, this is a tool that you use with a text editor to move
+satellites around in the IT database.
+
+The InstantTrack Database
+=========================
+InstantTrack keeps everything it knows about satellites in a file
+called IT.ORB.  When you run IT, this file must be either in the
+current directory or in a place specified by the DOS environment
+variable INSTANTTRACK.  (See IT.DOC for further explanation.)
+This program uses the same rules.
+
+This file has a very simple format, at least for our purposes.  After
+a five character version identifier, each of the 200 satellites in
+InstantTrack's database (including the Sun and the Moon, which are
+special objects) is defined by a fixed size block of information. 
+This block contains essentially the information you see on the
+"Manual Edit Satellite Elements" screen in InstantTrack. In addition
+to the orbital elements you could read in from a file, it contains
+the information you have to enter manually (like Attitude, Diameter,
+Groups, and Schedule).
+
+You've gone to a lot of work to create this file.  You've read in
+current elements, and you've tweaked the manually entered parameters
+until you're happy with them.  Now they've gone and launched another
+satellite (or six!) and you need to insert some new ones.  Or maybe
+another satellite has reentered and you want to delete it.  But you
+absolutely don't want to spend a lot of time reentering all the other
+data.
+
+You want to be able to move satellites around in all kinds of ways. 
+You'd like to insert new ones, delete old ones, and cut and paste
+existing satellites into new locations in the database.  Sounds a lot
+like a text editor (or word processor), doesn't it?  You probably
+already have a favorite text editor that you know and love.  ITSORT
+takes advantage of the power of your existing text editor to make
+rearranging the InstantTrack database easy.
+
+How ITSORT Works
+================
+You rearrange the InstantTrack database in three steps:
+
+	1.  Run ITSORT.  ITSORT reads the old IT database, and
+	    creates a simple text file called SATNAMES.LST.
+
+	2.  Edit SATNAMES.LST using your favorite text editor.
+
+	3.  Run ITSORT again.  ITSORT will read your edited
+	    SATNAMES.LST, and use that information to make a
+	    rearranged version of IT.ORB.
+
+The file SATNAMES.LST is the key to the whole scheme.  ITSORT creates
+this file for you.  It contains the name of every satellite in the
+InstantTrack database, one name per line, in the order they occur in
+the database.  This is a simple ASCII text file.  Use your text
+editor (or word processor in ASCII or "non-document" mode) to modify
+this file.  If you want to move a satellite in the database, just
+move the name in the text file.  If you want to delete a satellite,
+delete that line from the text file.  If you want to insert a
+satellite that's not in the database, just insert a new line in the
+file with the new name on it.  Make sure that there's still one name
+per line when you're done.
+
+When you're satisfied with the new order, save the file (use the same
+name, SATNAMES.LST) and exit your text editor.  Up to now, you
+haven't made any changes to the actual database.  If you decide not
+to make any changes to the database, or if you make a terrible
+mistake and destroy SATNAMES.LST, it's no problem.  Just delete the
+SATNAMES.LST file and everything will be unchanged.  If you DO want
+the changes you've made to SATNAMES.LST to be incorporated into the
+IT database, just run ITSORT again.  ITSORT will notice that there is
+already a file named SATNAMES.LST.  It reads SATNAMES.LST for the new
+order, and creates a new IT.ORB file with the satellites in that
+order.  Then it deletes SATNAMES.LST, since you're done with it.
+(If you want SATNAMES.LST back for reference, you can just run ITSORT
+a third time and it will regenerate the list file.)
+
+If you delete a name from SATNAMES.LST entirely, that satellite will
+NOT appear in the new IT.ORB.  If you make up a name that isn't in
+the old IT.ORB, ITSORT will put a dummy satellite into the database
+for you.  It will have the name you specify, but all the other data
+will be garbage.  ITSORT doesn't provide any way for you to fill in
+that data, since InstantTrack already provides a nice variety of ways
+to do so.  Note that you will have to fill in the data before running
+any orbit predictions on that satellite.  Also note that since the
+dummy satellite entry doesn't have an Object Number, reading
+Keplerian elements for this satellite from a file won't work.  You'll
+have to go into InstantTrack and either enter an object number and
+update from a file, or else enter all the elements manually.  If you
+try to track the dummy satellite using InstantTrack without filling
+in the elements, you will get meaningless results.
+
+You may put multiple instances of a given satellite name in SATNAMES.LST.
+If the name is not in the old IT.ORB, ITSORT just creates multiple
+dummy satellites as described above.  If the name IS in the old IT.ORB,
+ITSORT makes multiple copies of the old satellite, with one exception.
+Only the first copy of the satellite will contain the Object Number from
+the old satellite.  The second and subsequent satellites will have a
+blank Object Number.  This is necessary because InstantTrack relies on
+Object Numbers being unique.  In particular, it means that automatic
+entry of Keplerian elements in InstantTrack will update ONLY the first
+copy of the satellite, since InstantTrack recognizes satellites by
+Object Number.
+
+The names you put in SATNAMES.LST are compared to names in the
+database without distinguishing uppercase and lowercase letters. That
+is, "Oscar-13" matches "OSCAR-13" and "oscar-13".  Punctuation and
+spacing IS significant, so "Oscar-13" does NOT match "Oscar 13".  
+This is the same way InstantTrack compares satellites names.  You can
+change the capitalization of an existing satellite name by changing
+it in SATNAMES.LST, but you can't change the punctuation or spacing. 
+When you create a new satellite, it is entered into the database
+exactly as you type it.  You can use the satellite data editor in
+InstantTrack to change the punctuation or spelling of a satellite
+name.
+
+If you find that you don't like the changes that have been made to
+the database, there is a safety net.  When ITSORT created the new
+database file, IT.ORB, it kept the old one around under the name
+ITORB.BAK.  It will be in the same directory it started out in: the
+current directory or the directory specified by the environment
+variable INSTANTTRACK.  To go back to the old database, just delete
+or rename IT.ORB, and then rename ITORB.BAK to IT.ORB and you'll be
+in business.  This backup scheme means that you need enough free
+space on the disk that contains IT.ORB to hold a second copy of
+IT.ORB (about 32K for IT 1.00).
+
+You may notice that SATNAMES.LST doesn't include the Sun or the Moon,
+which appear as objects number 1 and 2 in the database.  That's
+because these objects aren't really satellites.  They are special
+objects, and InstantTrack insists that they be the first two objects
+in the database.  So really when you edit SATNAMES.LST, you are only
+rearranging objects 3 through 200 in the database.
+
+
+Versions of InstantTrack
+========================
+This version of ITSORT should work with any version of InstantTrack
+that supports 200 satellites in the database.  Some very early beta
+test versions supported fewer satellites, and this program is not
+compatible with those versions.  New versions of InstantTrack may
+support more or fewer satellites; there's no telling.  Moreover,
+there is no guarantee that the file format assumed by ITSORT will be
+unchanged in future versions of InstantTrack.  So, if you switch to
+a new version of IT, you may need to switch to a new version of
+ITSORT too.
+
+
+A Note to Novice Users
+======================
+If anything I've said in this file so far doesn't make sense to you,
+or if you don't yet understand how to use ITSORT, you have some
+catching up to do.  Find a more knowledgeable user in your area who
+can help you, or go to a good bookstore and pick up an introductory
+book about MS-DOS computers.  You'll find it easy to pick up the
+fundamentals of computer use if you give it a try.  I'd like to give
+you detailed step-by-step instructions here, but computers are just
+too complicated.
+
+
+DesqView and Multi-Tasking
+==========================
+If you run under DesqView or similar environment that lets you run
+more than one program at once, be careful.  If you run ITSORT and
+InstantTrack simultaneously, you can end up losing satellite data. 
+InstantTrack reads the elements file once on startup, but it may
+write out a modified elements file whenever you make any changes on
+any of the Update Satellite Elements screens.  If you have made
+changes using ITSORT in the meantime, they will be lost.  The safest
+rule is to avoid running the two programs simultaneously.
+
+Source Code
+===========
+Notice that I've provided you with the source code to this program in
+C.  I used the Microsoft C 5.1 compiler, and I've also included the
+very few conditional compilation directives to make it work on
+Borland's Turbo C 2.0.  (The included executable is the Microsoft
+version, since it turns out to be substantially faster.)  The program
+should be fairly easy to port to any modern PC C compiler.  If you
+make any changes to the code, please don't distribute your version
+without clearly labelling it as modified.  Don't distribute it at all
+without my copyright notice and this .DOC file.
+
+
+Credit and Blame
+================
+I am always interested in comments and bug reports.  However, this is
+just a hobby for me.  I can't promise to provide any support, and
+this software is provided with absolutely NO WARRANTY.
+
+I can be reached via email:
+
+                kb5mu@amsat.org
+
+---------------------------------------------------------------------
+
+For more information on InstantTrack, see
+http://www.amsat.org/amsat/instanttrack/

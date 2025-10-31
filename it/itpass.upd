@@ -1,0 +1,130 @@
+ISPASS - InstantTrack AOS/LOS Finder
+====================================
+
+Known Bugs/Wishlist:
+1. Make it report whether the azimuth passes through the rotor stops
+   (usually at 180 degrees) during the pass, so the user can command
+   the rotors to flip on their backs.  Waiting for mathemagic from
+   Franklin.
+
+2. Make it only report the LOS date if it differs from the AOS date.
+   (WB6GJF)
+
+3. Improve the computer-face.  Maybe pass in a pointer to a buffer to
+   be filled with an array of pre-parsed info.  (N6NKF)
+
+4. Reduce memory requirements by having it scan IT.ORB instead of
+   reading it into a buffer.  This will slow it down, but since it is
+   intended to be spawned from inside an application, size is more
+   important than speed.
+
+5. Provide an example program demonstrating how to run ITPASS from
+   within a C program.
+
+6. Provide a way for human user to specify starting date/time.
+
+Release History:
+
+0.1	Created 2/6/90
+
+0.2	2/?/90
+	Changed decimal output to floating Julian date.  Still don't
+	know if this is the right thing.
+	Now it knows how to display every satellite in a group.
+	Added local timezone.
+
+0.3	2/19/90
+	Added * and % groups to the group support.
+	Now can display a group AND specified satellites.
+	More than one satellite can now be specified.
+	A station can now be specified.
+	-d mode reports for 48-hour timeouts are now numeric.
+	DOC file now exists.
+
+0.4	2/19/90
+	Fixed "Up Now!" logic to only look at the first pass. (N6NKF)
+	Fixed iteration logic to stop iterating if an error occurs. (N6NKF)
+	Changed "Julian date" to "modified Julian date" in documentation.
+	(N6NKF)
+
+0.41	3/11/90
+	Made flags not case-sensitive. (WB6GFJ)
+	Compiled to allow running on 8087-less machine! (WB6LLO)
+
+0.5	4/22/90
+	Added minutes mode.
+
+0.6	4/23/90
+	Finished minutes mode, added current time to banner.
+
+0.61	1/25/91
+	Incorporated new InstantTrack source files.  Switched to
+	version 6 of Microsoft C.
+
+0.7     9/07/92
+	Added minutes mode to the usage message and the doc file.
+	Added station identification (for non-default station) to the
+	introductory banner.
+	Added -L flag for minimum pass duration in minutes. (W6TNS)
+
+0.8     03/04/93
+        Added maximum elevation to the output in both modes.
+        Added -E flag for minimum elevation angle in degrees.
+
+0.81    03/07/93
+        Make group ID match case-insensitive.  (WB9RKN)
+
+0.82    12/09/93
+        Changed banner for minutes to mode to omit timezone.
+        Corrected a problem with error handling: if an unknown satellite
+        name was specified on the command line, it would only be reported
+        as an error if it was the *first* named satellite.  Otherwise, it
+        would be treated as a duplicate of the previous satellite.
+        Ported to 32-bit OS/2 using IBM C/Set++ Version 2.0
+
+0.83    6/19/94
+        Corrected a bug with the LOS finding algorithm.  This bug could
+        be tickled when starting the search just before LOS, or by a
+        pass that was very short.  It resulted in the next pass being
+        missed entirely!  (WA6ZVP)
+        
+(Versions after this point not built for 32-bit OS/2)
+        
+0.84    11/16/2001
+        Removed error checking on the Bahn attitude field when reading in
+        the IT.ORB file. This checking would reject an IT.ORB file from
+        InstantTrack 1.51 or later, if the new Bahn attitude features had
+        been used. (ON4KVI)
+        
+0.85    03/13/2002
+        Updated date/time routines from InstantTrack 1.54. This has several
+        consequences:
+        1. Fixes a problem where the "-z" flag for local timezones would
+           give nonsense dates and times. This bug was introduced in 0.82
+           (in the DOS version) by an ill-considered workaround for a
+           difference between the DOS and OS/2 compilers. (KL7QR)
+        2. ITPASS now honors the "timezone" and "timezone_offset_seconds"
+           variables from the IT.INI configuration file, if found.
+
+0.86    07/17/2002
+        Modified a constant in the LOS-finding routine to allow for the
+        very slow elevation changes of AO-40 in its accidentally high
+        orbit. This prevents ITPASS from failing with a message like
+        "Something bogus happened with AO-40 for 100 passes." under
+        certain geometric conditions. (WA4SXM)
+
+0.87    04/21/2004
+        Added 1 second to the new start time after discarding an
+        almost-pass that was too short to find. This prevents ITPASS
+        from getting stuck on the same almost-pass and failing with
+        a message like "Something bogus happened with ISS for 100
+        passes." when the satellite comes up almost to the horizon.
+        (LU7ABF)
+
+0.88    04/25/2004
+        Added the -o switch to change the 48-hour limit on pass searches
+        to any number of days. This is useful if searching for passes of
+        a near-equatorial LEO satellite at a high-latitude location, such
+        that the satellite is only visible occasionally at that location.
+        (LU7ABF)
+		

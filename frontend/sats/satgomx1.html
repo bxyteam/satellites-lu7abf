@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<title>Satellite Data</title>
+<style type="text/css">BODY {margin-left:2px; margin-right:2px; margin-top:0; margin-bottom:0;} H2 {margin-top:-2px;margin-bottom:-7px;} H1 {line-height:30px;margin-top:-4px;margin-bottom:-4px;} P {margin-top:8px;margin-bottom:8px;line-height:16px;}</style>
+</head>
+<body bgcolor="#E0FFFF">
+ 
+<table border="0" cellpadding=0 cellspacing=0><tr>
+<td><img border=0 src="https://i.postimg.cc/B6XpgLgz/amsatbluetras.gif" alt="AMSAT-LU" width="70" height="70"></td>
+<td nowrap><h1>&nbsp;AMSAT-LU<br>Satellite Data</td>
+<td>&nbsp;<img src=satgomx1.jpg border=2 alt="Satellite" style="border-color:#ffffff;"></td>
+</tr></table>
+ 
+<h2>GOMX-1 (GomSpace)</h2>
+<p>Catalog number: 39430<br>
+Launch Date: November 21, 2013<br>
+Status: Operational.</p>
+ 
+<table border="0" cellpadding=0 cellspacing=0>
+  <tr>
+    <td valign="top">Downlink/Beacon:&nbsp;&nbsp;</td>
+    <td>437.250 MHz, 1W CW + 4800 Baud FM </td></tr>
+<tr><td>Callsign:</td><td>GOMX-1</td></tr>
+</table>
+<p>GOMX-1 is a 2U cubesat mission developed in collaboration between GomSpace, DSE Airport Solutions and Aalborg University to perform research and experimentation in space related to Software Defined Radio (SDR) with emphasis on receiving ADS-B signal from commercial aircraft over oceanic areas. As a secondary payload the satellite flies a NanoCam C1U colour camera for Earth observation experimentation. The projected is financially supported by the Danish National Advanced Technology Foundation.</p> 
+<p>GOMX-1 is now fully commissioned. The attitude control system has detumbled the spacraft from rather high tip-off rates, and all deployables including the helical antenna are deployed. Both payloads are in full operational state. The primary payload - a software defined ADS-B receiver - has received a large amount of aircraft signals indicating a better than expected link-budget on the helical antenna.</p>
+
+<p>Radio Amateur Information:</p>
+<p>GomX-1 is using a radio amateur frequency, which makes it possible for any radio amateur to receive the satellite telemetry. GomSpace does not use the standard AX.25 or AFSK format used for packet communication. This page will however explain the differences and how to receive the telemetry. The info box to the left contains a summary of the specifications of the transmitted data beacon.</p>
+<p>Antenna</p>
+In order to receive the signal you need an antenna gain of around 10 dB. A crossed yagi with options for both left and right hand circular polarisation is good. Otherwise a linear antenna can also be used at the sacrifice of some dB signal.</p>
+<p>Radio</p>
+<p>The radio must be capable of receiving a UHF signal on 437.250 MHz +- 10KHz doppler shift. The NanoCom uses analog FM modulation with a frequency deviation of 2.5 kHz. The 98% power bandwidth of the received signal is within 15 kHz. Receiving the signal require a doppler shift tracing application.</p>
+<p>Modem</p>
+<p>GomX-1 uses 4800 baud MSK modulation at the two tones 2400 and 4800. This mode is not supported by most major TNC providers. So the recommended receiving option is to record the audio from the entire pass, using the line-in port on a PC with correctly adjusted amplitude. These recordings can then be software demodulated by gomspace.</p>
+<p>Frame Format - The packet consists of:</p>
+<ul>
+<li>Preamble: 50 ms of 0x55 transmitted only when the radio keys up. There is no gap between packets.</li>
+<li>Sync word: 4 bytes: 0xC3AA6655 - Unencoded and unscambled</li>
+<li>Length field: 3 bytes: The first 12 bits are golay encoded parity, and the final 12 bits contain 8 bits length field and a 4 bit optional FEC field</li>
+<li>Data field: CCSDS scrambled, Viterbi encoded and/or Reed-solomon checksum added - For more information on decoding the FEC format please contact gomspace for source code: info@gomspace.com </li>
+</ul>
+More Information: <a href=http://gomspace.com/index.php?p=gomx1 target=_blank>http://gomspace.com/index.php?p=gomx1</a>
+<p><i>[11212013]</i><fr>437.2515,0,0,CW-N,CW-N</fr></p>
+</body>
+</html>
+

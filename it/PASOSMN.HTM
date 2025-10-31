@@ -1,0 +1,1480 @@
+<head><META HTTP-EQUIV='EXPIRES' CONTENT='+4 days'><META HTTP-EQUIV='Pragma' CONTENT='no-cache'><META HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
+<style type='text/css'>.txt {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;}
+A:visited {color:#000000}A:link{color:#000000}A:hover{color:#ff0000}A:active{color:#000000}
+.yel1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#ffff00;}
+.mag1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#00ffff;}
+.red1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#00ff00;}
+.titg {font-family:Courier New,Courier;font-size:17;font-weight:bold;line-height:17px;color:#ffffff;background:#6789bc;}
+.txt {margin-left:3;margin-right:1;margin-top:1;left-margin:3;right-margin:1;border:0;font-weight:bold;}
+.pnk1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#ffe5c0;}</style>
+<title>Pasos Satelites Amsat Argentina</title>
+<script language=javascript>
+var ayuda='       Asegura que este bien\n       el dia y hora en tu PC\n\n  Estos pasos funcionan aunque\n  no estes conectado a Internet\n\nAMSAT Argentina agradece tu visita y\nte desea buenos contactos satelitales!';
+function mouseDown(e){
+if (parseInt(navigator.appVersion)>3) {var clickType=1;
+if (navigator.appName=='Netscape') clickType=e.which;
+else clickType=event.button;
+if (clickType!=1){alert(ayuda);return false;}}return true;}
+if (parseInt(navigator.appVersion)>3){document.onmousedown=mouseDown;
+if (navigator.appName=='Netscape') document.captureEvents(Event.MOUSEDOWN);}
+var pwin;var swin;var owin;function ver(sat){if (pwin != null) {pwin.close();}
+var ira="http://www.amsat.org.ar/sat"+sat+".htm";
+preferences = "toolbar=no,width=440,height=360,center,margintop=0,marginleft=0,marginright=0,top=0,left=300,status=no,scrollbars=yes,resizable=yes,dependent=yes,z-lock=yes" ;
+pwin = window.open (ira,"pasoswin",preferences) ;
+if (owin != null) {owin.close();}
+preferences = "toolbar=no,width=162,height=162,center,margintop=0,marginleft=0,marginright=0,top=404,left=494,status=no,scrollbars=no,resizable=no,dependent=yes,z-lock=yes" ;
+owin = window.open ("http://lu7aa.org.ar/sp.asp?l=e&F=mn&s="+sat,"orbwin",preferences) ;
+}</script>
+</head><body BACKGROUND=fondo1.gif onUnload='pwin.close();owin.close();swin.close();self.close();' class=txt 
+><DIV ID=top NAME=top>Pasos satelites amateur por</DIV>
+Memphis, TN en hora local<br>
+<DIV NAME=LT ID=LT>&nbsp;</DIV>
+ <font class=red1> <u><A HREF=#PX>Pass</A></u> </font>  <font class=mag1> <u><A HREF=#PX>Atenc</A></u> </font>  <font class=yel1> <u><A HREF=#PX>Prox</A></u> </font> <A HREF=# title=' refresh ' onclick='rst()' class=pnk1>@@</A><br><br>
+<A ID='iss1' NAME='iss1' onclick=ver('iss') HREF=#iss   >ISS   </A>  <A ID='ao-71' NAME='ao-71' onclick=ver('ao-7') HREF=#ao-07>AO-07</A>  <A ID='uo-111' NAME='uo-111' onclick=ver('uo-11') HREF=#uo-11>UO-11</A>  <A ID='lo-191' NAME='lo-191' onclick=ver('lo-19') HREF=#lo-19>LO-19</A><BR>
+<A ID='ao-271' NAME='ao-271' onclick=ver('ao-27') HREF=#ao-27>AO-27</A>  <A ID='fo-291' NAME='fo-291' onclick=ver('fo-29') HREF=#fo-29>FO-29</A>  <A ID='go-321' NAME='go-321' onclick=ver('go-32') HREF=#go-32>GO-32</A>  <A ID='no-441' NAME='no-441' onclick=ver('no-44') HREF=#no-44>NO-44</A><BR>
+<A ID='so-501' NAME='so-501' onclick=ver('so-50') HREF=#so-50>SO-50</A>  <A ID='co-551' NAME='co-551' onclick=ver('co-55') HREF=#co-55>CO-55</A>  <A ID='co-571' NAME='co-571' onclick=ver('co-57') HREF=#co-57>CO-57</A>  <A ID='co-581' NAME='co-581' onclick=ver('co-58') HREF=#co-58>CO-58</A><BR>
+<A ID='co-651' NAME='co-651' onclick=ver('co-65') HREF=#co-65>CO-65</A>  <A ID='co-661' NAME='co-661' onclick=ver('co-66') HREF=#co-66>CO-66</A>  <A ID='ho-681' NAME='ho-681' onclick=ver('ho-68') HREF=#ho-68>HO-68</A>  <A ID='ao-731' NAME='ao-731' onclick=ver('ao-73') HREF=#ao-73>AO-73</A><BR>
+<A ID='lo-741' NAME='lo-741' onclick=ver('lo-74') HREF=#lo-74>LO-74</A>  <A ID='eo-791' NAME='eo-791' onclick=ver('eo-79') HREF=#eo-79>EO-79</A>  <A ID='eo-801' NAME='eo-801' onclick=ver('eo-80') HREF=#eo-80>EO-80</A>  <A ID='ao-851' NAME='ao-851' onclick=ver('ao-85') HREF=#ao-85>AO-85</A><BR>
+<A ID='io-861' NAME='io-861' onclick=ver('io-86') HREF=#io-86>IO-86</A>  <A ID='ao-911' NAME='ao-911' onclick=ver('ao-91') HREF=#ao-91>AO-91</A>  <A ID='ao-951' NAME='ao-951' onclick=ver('ao-95') HREF=#ao-95>AO-95</A>  <A ID='po1011' NAME='po1011' onclick=ver('po101') HREF=#po101>PO101</A><BR>
+<A ID='ao1091' NAME='ao1091' onclick=ver('ao109') HREF=#ao109>AO109</A>  <A ID='so1151' NAME='so1151' onclick=ver('so115') HREF=#so115>SO115</A>  <A ID='fo1181' NAME='fo1181' onclick=ver('fo118') HREF=#fo118>FO118</A>  <A ID='so1211' NAME='so1211' onclick=ver('so121') HREF=#so121>SO121</A><BR>
+<A ID='rs-151' NAME='rs-151' onclick=ver('rs-15') HREF=#rs-15>RS-15</A>  <A ID='rs-221' NAME='rs-221' onclick=ver('rs-22') HREF=#rs-22>RS-22</A>  <A ID='rs-301' NAME='rs-301' onclick=ver('rs-30') HREF=#rs-30>RS-30</A>  <A ID='rs-401' NAME='rs-401' onclick=ver('rs-40') HREF=#rs-40>RS-40</A><BR>
+<A ID='rs-441' NAME='rs-441' onclick=ver('rs-44') HREF=#rs-44>RS-44</A>  <A ID='rs-481' NAME='rs-481' onclick=ver('rs-48') HREF=#rs-48>RS-48</A>  <A ID='kks-11' NAME='kks-11' onclick=ver('kks-1') HREF=#kks-1>KKS-1</A>  <A ID='swiss1' NAME='swiss1' onclick=ver('swiss') HREF=#swiss>SWISS</A><BR>
+<A ID='itups1' NAME='itups1' onclick=ver('itups') HREF=#itups>ITUPS</A>  <A ID='sprou1' NAME='sprou1' onclick=ver('sprou') HREF=#sprou>SPROU</A>  <A ID='tita1' NAME='tita1' onclick=ver('tita') HREF=#tita >TITA </A>  <A ID='tigri1' NAME='tigri1' onclick=ver('tigri') HREF=#tigri>TIGRI</A><BR>
+<A ID='ukube1' NAME='ukube1' onclick=ver('ukube') HREF=#ukube>UKUBE</A>  <A ID='xw-2b1' NAME='xw-2b1' onclick=ver('xw-2b') HREF=#xw-2b>XW-2B</A>  <A ID='xw-2c1' NAME='xw-2c1' onclick=ver('xw-2c') HREF=#xw-2c>XW-2C</A>  <A ID='xw-2d1' NAME='xw-2d1' onclick=ver('xw-2d') HREF=#xw-2d>XW-2D</A><BR>
+<A ID='xw-2e1' NAME='xw-2e1' onclick=ver('xw-2e') HREF=#xw-2e>XW-2E</A>  <A ID='xw-2f1' NAME='xw-2f1' onclick=ver('xw-2f') HREF=#xw-2f>XW-2F</A>  <A ID='xw-31' NAME='xw-31' onclick=ver('xw-3') HREF=#xw-3 >XW-3 </A>  <A ID='cas4a1' NAME='cas4a1' onclick=ver('cas4a') HREF=#cas4a>CAS4A</A><BR>
+<A ID='cas4b1' NAME='cas4b1' onclick=ver('cas4b') HREF=#cas4b>CAS4B</A>  <A ID='cas2t1' NAME='cas2t1' onclick=ver('cas2t') HREF=#cas2t>CAS2T</A>  <A ID='lilac1' NAME='lilac1' onclick=ver('lilac') HREF=#lilac>LILAC</A>  <A ID='na-151' NAME='na-151' onclick=ver('na-15') HREF=#na-15>NA-15</A><BR>
+<A ID='na-181' NAME='na-181' onclick=ver('na-18') HREF=#na-18>NA-18</A>  <A ID='na-191' NAME='na-191' onclick=ver('na-19') HREF=#na-19>NA-19</A>  <A ID='metoa1' NAME='metoa1' onclick=ver('metoa') HREF=#metoa>METOA</A>  <A ID='metob1' NAME='metob1' onclick=ver('metob') HREF=#metob>METOB</A><BR>
+<A ID='metoc1' NAME='metoc1' onclick=ver('metoc') HREF=#metoc>METOC</A>  <A ID='metm21' NAME='metm21' onclick=ver('metm2') HREF=#metm2>METM2</A>  <A ID='lapan1' NAME='lapan1' onclick=ver('lapan') HREF=#lapan>LAPAN</A>  <A ID='maxva1' NAME='maxva1' onclick=ver('maxva') HREF=#maxva>MAXVA</A><BR>
+<A ID='norbi1' NAME='norbi1' onclick=ver('norbi') HREF=#norbi>NORBI</A>  <A ID='china1' NAME='china1' onclick=ver('china') HREF=#china>CHINA</A>  <A ID='teve21' NAME='teve21' onclick=ver('teve2') HREF=#teve2>TEVE2</A>  <A ID='teve31' NAME='teve31' onclick=ver('teve3') HREF=#teve3>TEVE3</A><BR>
+<A ID='teve41' NAME='teve41' onclick=ver('teve4') HREF=#teve4>TEVE4</A>  <A ID='teve51' NAME='teve51' onclick=ver('teve5') HREF=#teve5>TEVE5</A>  <A ID='teve61' NAME='teve61' onclick=ver('teve6') HREF=#teve6>TEVE6</A>  <A ID='teve71' NAME='teve71' onclick=ver('teve7') HREF=#teve7>TEVE7</A><BR><BR>
+<DIV ID=iss NAME=iss><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x0 NAME=x0>iss    8 May 03:38 03:47 14<br></DIV>
+<DIV ID=x1 NAME=x1>iss          05:14 05:25 80<br></DIV>
+<DIV ID=x2 NAME=x2>iss          06:52 06:59  5<br></DIV>
+<DIV ID=x3 NAME=x3>iss          20:18 20:28 16<br></DIV>
+<DIV ID=x4 NAME=x4>iss          21:54 22:05 40<br></DIV>
+<DIV ID=x5 NAME=x5>iss          23:33 23:41  9<br></DIV>
+<DIV ID=x6 NAME=x6>iss    9 May 01:12 01:18  4<br></DIV>
+<DIV ID=x7 NAME=x7>iss          02:49 02:58 10<br></DIV>
+<DIV ID=x8 NAME=x8>iss          04:25 04:36 52<br></DIV>
+<DIV ID=x9 NAME=x9>iss          06:02 06:11 12<br></DIV>
+<DIV ID=x10 NAME=x10>iss          19:30 19:38  8<br></DIV>
+<DIV ID=x11 NAME=x11>iss          21:05 21:16 76<br></DIV>
+<DIV ID=x12 NAME=x12>iss          22:43 22:52 12<br></DIV>
+<DIV ID=x13 NAME=x13>iss   10 May 00:23 00:29  4<br></DIV>
+<DIV ID=x14 NAME=x14>iss          02:00 02:08  7<br></DIV>
+<DIV ID=x15 NAME=x15>iss          03:37 03:47 29<br></DIV>
+<DIV ID=x16 NAME=x16>iss          05:13 05:23 23<br></DIV>
+<DIV ID=x17 NAME=x17>iss          18:43 18:48  3<br></DIV>
+<DIV ID=x18 NAME=x18>iss          20:16 20:27 53<br></DIV>
+<DIV ID=x19 NAME=x19>iss          21:54 22:04 17<br></DIV>
+<DIV ID=x20 NAME=x20>iss          23:33 23:40  5<br></DIV>
+<DIV ID=x21 NAME=x21>iss   11 May 01:11 01:19  5<br></DIV>
+</A><br>
+<DIV ID=ao-07 NAME=ao-07><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x22 NAME=x22>AO-07  8 May 05:05 05:22 12<br></DIV>
+<DIV ID=x23 NAME=x23>AO-07        06:56 07:19 80<br></DIV>
+<DIV ID=x24 NAME=x24>AO-07        08:50 09:09 21<br></DIV>
+<DIV ID=x25 NAME=x25>AO-07        16:02 16:20 17<br></DIV>
+<DIV ID=x26 NAME=x26>AO-07        17:51 18:14 83<br></DIV>
+<DIV ID=x27 NAME=x27>AO-07        19:47 20:05 17<br></DIV>
+<DIV ID=x28 NAME=x28>AO-07  9 May 05:57 06:18 32<br></DIV>
+<DIV ID=x29 NAME=x29>AO-07        07:49 08:11 50<br></DIV>
+<DIV ID=x30 NAME=x30>AO-07        09:44 09:58  9<br></DIV>
+<DIV ID=x31 NAME=x31>AO-07        15:07 15:18  5<br></DIV>
+<DIV ID=x32 NAME=x32>AO-07        16:52 17:13 36<br></DIV>
+<DIV ID=x33 NAME=x33>AO-07        18:44 19:06 47<br></DIV>
+<DIV ID=x34 NAME=x34>AO-07        20:45 20:55  3<br></DIV>
+<DIV ID=x35 NAME=x35>AO-07 10 May 04:59 05:14 10<br></DIV>
+<DIV ID=x36 NAME=x36>AO-07        06:49 07:11 72<br></DIV>
+<DIV ID=x37 NAME=x37>AO-07        08:43 09:02 24<br></DIV>
+<DIV ID=x38 NAME=x38>AO-07        10:40 10:44  1<br></DIV>
+<DIV ID=x39 NAME=x39>AO-07        15:55 16:13 15<br></DIV>
+<DIV ID=x40 NAME=x40>AO-07        17:44 18:06 76<br></DIV>
+<DIV ID=x41 NAME=x41>AO-07        19:39 19:58 20<br></DIV>
+<DIV ID=x42 NAME=x42>AO-07 11 May 05:50 06:10 29<br></DIV>
+<DIV ID=x43 NAME=x43>AO-07        07:42 08:04 56<br></DIV>
+<DIV ID=x44 NAME=x44>AO-07        09:37 09:51 10<br></DIV>
+</A><br>
+<DIV ID=uo-11 NAME=uo-11><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x45 NAME=x45>UO-11  8 May 03:59 04:11 35<br></DIV>
+<DIV ID=x46 NAME=x46>UO-11        05:35 05:46 16<br></DIV>
+<DIV ID=x47 NAME=x47>UO-11        14:48 14:59 18<br></DIV>
+<DIV ID=x48 NAME=x48>UO-11        16:23 16:35 32<br></DIV>
+<DIV ID=x49 NAME=x49>UO-11  9 May 02:39 02:41  0<br></DIV>
+<DIV ID=x50 NAME=x50>UO-11        04:10 04:23 49<br></DIV>
+<DIV ID=x51 NAME=x51>UO-11        05:47 05:57 12<br></DIV>
+<DIV ID=x52 NAME=x52>UO-11        14:59 15:11 23<br></DIV>
+<DIV ID=x53 NAME=x53>UO-11        16:35 16:46 23<br></DIV>
+<DIV ID=x54 NAME=x54>UO-11 10 May 02:48 02:54  3<br></DIV>
+<DIV ID=x55 NAME=x55>UO-11        04:21 04:34 68<br></DIV>
+<DIV ID=x56 NAME=x56>UO-11        05:58 06:07  9<br></DIV>
+<DIV ID=x57 NAME=x57>UO-11        15:10 15:22 31<br></DIV>
+<DIV ID=x58 NAME=x58>UO-11        16:46 16:57 18<br></DIV>
+<DIV ID=x59 NAME=x59>UO-11 11 May 02:58 03:06  5<br></DIV>
+<DIV ID=x60 NAME=x60>UO-11        04:32 04:45 86<br></DIV>
+<DIV ID=x61 NAME=x61>UO-11        06:10 06:17  6<br></DIV>
+<DIV ID=x62 NAME=x62>UO-11        13:51 13:54  1<br></DIV>
+<DIV ID=x63 NAME=x63>UO-11        15:21 15:33 41<br></DIV>
+<DIV ID=x64 NAME=x64>UO-11        16:58 17:08 13<br></DIV>
+<DIV ID=x65 NAME=x65>UO-11 12 May 03:09 03:18  8<br></DIV>
+<DIV ID=x66 NAME=x66>UO-11        04:43 04:56 63<br></DIV>
+<DIV ID=x67 NAME=x67>UO-11        06:21 06:28  3<br></DIV>
+</A><br>
+<DIV ID=lo-19 NAME=lo-19><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x68 NAME=x68>LO-19  8 May 05:51 06:04 16<br></DIV>
+<DIV ID=x69 NAME=x69>LO-19        07:30 07:45 52<br></DIV>
+<DIV ID=x70 NAME=x70>LO-19        09:11 09:19  4<br></DIV>
+<DIV ID=x71 NAME=x71>LO-19        17:05 17:18 18<br></DIV>
+<DIV ID=x72 NAME=x72>LO-19        18:43 18:58 48<br></DIV>
+<DIV ID=x73 NAME=x73>LO-19        20:28 20:33  1<br></DIV>
+<DIV ID=x74 NAME=x74>LO-19  9 May 05:20 05:29  5<br></DIV>
+<DIV ID=x75 NAME=x75>LO-19        06:57 07:12 74<br></DIV>
+<DIV ID=x76 NAME=x76>LO-19        08:37 08:49 12<br></DIV>
+<DIV ID=x77 NAME=x77>LO-19        16:34 16:44  8<br></DIV>
+<DIV ID=x78 NAME=x78>LO-19        18:10 18:25 79<br></DIV>
+<DIV ID=x79 NAME=x79>LO-19        19:52 20:03  9<br></DIV>
+<DIV ID=x80 NAME=x80>LO-19 10 May 06:24 06:39 34<br></DIV>
+<DIV ID=x81 NAME=x81>LO-19        08:04 08:17 25<br></DIV>
+<DIV ID=x82 NAME=x82>LO-19        16:05 16:09  1<br></DIV>
+<DIV ID=x83 NAME=x83>LO-19        17:38 17:52 37<br></DIV>
+<DIV ID=x84 NAME=x84>LO-19        19:17 19:31 22<br></DIV>
+<DIV ID=x85 NAME=x85>LO-19 11 May 05:52 06:05 16<br></DIV>
+<DIV ID=x86 NAME=x86>LO-19        07:30 07:45 52<br></DIV>
+<DIV ID=x87 NAME=x87>LO-19        09:12 09:20  4<br></DIV>
+<DIV ID=x88 NAME=x88>LO-19        17:06 17:19 18<br></DIV>
+<DIV ID=x89 NAME=x89>LO-19        18:44 18:58 48<br></DIV>
+<DIV ID=x90 NAME=x90>LO-19        20:29 20:33  1<br></DIV>
+</A><br>
+<DIV ID=ao-27 NAME=ao-27><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x91 NAME=x91>AO-27  8 May 10:10 10:24 35<br></DIV>
+<DIV ID=x92 NAME=x92>AO-27        11:50 12:03 24<br></DIV>
+<DIV ID=x93 NAME=x93>AO-27        19:51 19:57  2<br></DIV>
+<DIV ID=x94 NAME=x94>AO-27        21:24 21:39 39<br></DIV>
+<DIV ID=x95 NAME=x95>AO-27        23:05 23:18 21<br></DIV>
+<DIV ID=x96 NAME=x96>AO-27  9 May 09:41 09:54 18<br></DIV>
+<DIV ID=x97 NAME=x97>AO-27        11:19 11:34 46<br></DIV>
+<DIV ID=x98 NAME=x98>AO-27        13:02 13:08  3<br></DIV>
+<DIV ID=x99 NAME=x99>AO-27        20:56 21:09 21<br></DIV>
+<DIV ID=x100 NAME=x100>AO-27        22:34 22:49 42<br></DIV>
+<DIV ID=x101 NAME=x101>AO-27 10 May 00:21 00:22  0<br></DIV>
+<DIV ID=x102 NAME=x102>AO-27        09:12 09:22  8<br></DIV>
+<DIV ID=x103 NAME=x103>AO-27        10:50 11:05 87<br></DIV>
+<DIV ID=x104 NAME=x104>AO-27        12:30 12:41 10<br></DIV>
+<DIV ID=x105 NAME=x105>AO-27        20:27 20:38 11<br></DIV>
+<DIV ID=x106 NAME=x106>AO-27        22:04 22:19 84<br></DIV>
+<DIV ID=x107 NAME=x107>AO-27        23:47 23:57  7<br></DIV>
+<DIV ID=x108 NAME=x108>AO-27 11 May 08:45 08:48  0<br></DIV>
+<DIV ID=x109 NAME=x109>AO-27        10:20 10:35 44<br></DIV>
+<DIV ID=x110 NAME=x110>AO-27        12:00 12:13 20<br></DIV>
+<DIV ID=x111 NAME=x111>AO-27        20:00 20:07  4<br></DIV>
+<DIV ID=x112 NAME=x112>AO-27        21:34 21:49 49<br></DIV>
+<DIV ID=x113 NAME=x113>AO-27        23:15 23:28 17<br></DIV>
+</A><br>
+<DIV ID=fo-29 NAME=fo-29><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x114 NAME=x114>FO-29  8 May 02:41 02:42  0<br></DIV>
+<DIV ID=x115 NAME=x115>FO-29        09:18 09:28  7<br></DIV>
+<DIV ID=x116 NAME=x116>FO-29        10:59 11:15 74<br></DIV>
+<DIV ID=x117 NAME=x117>FO-29        12:47 12:58  9<br></DIV>
+<DIV ID=x118 NAME=x118>FO-29        22:11 22:24 10<br></DIV>
+<DIV ID=x119 NAME=x119>FO-29        23:55 00:12 76<br></DIV>
+<DIV ID=x120 NAME=x120>FO-29  9 May 01:41 01:54 12<br></DIV>
+<DIV ID=x121 NAME=x121>FO-29        10:05 10:19 23<br></DIV>
+<DIV ID=x122 NAME=x122>FO-29        11:49 12:04 35<br></DIV>
+<DIV ID=x123 NAME=x123>FO-29        23:00 23:17 31<br></DIV>
+<DIV ID=x124 NAME=x124>FO-29 10 May 00:45 01:02 35<br></DIV>
+<DIV ID=x125 NAME=x125>FO-29        02:34 02:39  1<br></DIV>
+<DIV ID=x126 NAME=x126>FO-29        09:13 09:22  6<br></DIV>
+<DIV ID=x127 NAME=x127>FO-29        10:54 11:09 68<br></DIV>
+<DIV ID=x128 NAME=x128>FO-29        12:41 12:53 11<br></DIV>
+<DIV ID=x129 NAME=x129>FO-29        22:06 22:19 10<br></DIV>
+<DIV ID=x130 NAME=x130>FO-29        23:49 00:07 75<br></DIV>
+<DIV ID=x131 NAME=x131>FO-29 11 May 01:36 01:49 14<br></DIV>
+<DIV ID=x132 NAME=x132>FO-29        10:00 10:14 21<br></DIV>
+<DIV ID=x133 NAME=x133>FO-29        11:44 11:59 38<br></DIV>
+<DIV ID=x134 NAME=x134>FO-29        22:54 23:11 29<br></DIV>
+<DIV ID=x135 NAME=x135>FO-29 12 May 00:39 00:56 39<br></DIV>
+<DIV ID=x136 NAME=x136>FO-29        02:28 02:34  2<br></DIV>
+</A><br>
+<DIV ID=go-32 NAME=go-32><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x137 NAME=x137>GO-32  8 May 04:37 04:51 34<br></DIV>
+<DIV ID=x138 NAME=x138>GO-32        06:17 06:31 26<br></DIV>
+<DIV ID=x139 NAME=x139>GO-32        14:20 14:26  3<br></DIV>
+<DIV ID=x140 NAME=x140>GO-32        15:54 16:09 42<br></DIV>
+<DIV ID=x141 NAME=x141>GO-32        17:35 17:48 20<br></DIV>
+<DIV ID=x142 NAME=x142>GO-32  9 May 04:13 04:27 20<br></DIV>
+<DIV ID=x143 NAME=x143>GO-32        05:53 06:08 42<br></DIV>
+<DIV ID=x144 NAME=x144>GO-32        07:36 07:42  3<br></DIV>
+<DIV ID=x145 NAME=x145>GO-32        15:31 15:45 26<br></DIV>
+<DIV ID=x146 NAME=x146>GO-32        17:11 17:25 35<br></DIV>
+<DIV ID=x147 NAME=x147>GO-32 10 May 03:51 04:03 11<br></DIV>
+<DIV ID=x148 NAME=x148>GO-32        05:29 05:45 72<br></DIV>
+<DIV ID=x149 NAME=x149>GO-32        07:11 07:21  7<br></DIV>
+<DIV ID=x150 NAME=x150>GO-32        15:09 15:21 16<br></DIV>
+<DIV ID=x151 NAME=x151>GO-32        16:47 17:02 60<br></DIV>
+<DIV ID=x152 NAME=x152>GO-32        18:31 18:39  3<br></DIV>
+<DIV ID=x153 NAME=x153>GO-32 11 May 03:28 03:37  5<br></DIV>
+<DIV ID=x154 NAME=x154>GO-32        05:06 05:21 68<br></DIV>
+<DIV ID=x155 NAME=x155>GO-32        06:47 06:59 14<br></DIV>
+<DIV ID=x156 NAME=x156>GO-32        14:47 14:57  9<br></DIV>
+<DIV ID=x157 NAME=x157>GO-32        16:23 16:39 81<br></DIV>
+<DIV ID=x158 NAME=x158>GO-32        18:06 18:17 10<br></DIV>
+<DIV ID=x159 NAME=x159>GO-32 12 May 04:42 04:57 39<br></DIV>
+</A><br>
+<DIV ID=no-44 NAME=no-44><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x160 NAME=x160>NO-44  8 May 02:21 02:35 20<br></DIV>
+<DIV ID=x161 NAME=x161>NO-44        04:12 04:15  0<br></DIV>
+<DIV ID=x162 NAME=x162>NO-44        07:47 07:52  1<br></DIV>
+<DIV ID=x163 NAME=x163>NO-44        09:27 09:42 23<br></DIV>
+<DIV ID=x164 NAME=x164>NO-44        11:10 11:26 44<br></DIV>
+<DIV ID=x165 NAME=x165>NO-44        12:58 13:02  1<br></DIV>
+<DIV ID=x166 NAME=x166>NO-44  9 May 00:05 00:20 37<br></DIV>
+<DIV ID=x167 NAME=x167>NO-44        01:48 02:03 27<br></DIV>
+<DIV ID=x168 NAME=x168>NO-44        03:37 03:44  2<br></DIV>
+<DIV ID=x169 NAME=x169>NO-44        08:55 09:09 17<br></DIV>
+<DIV ID=x170 NAME=x170>NO-44        10:38 10:54 66<br></DIV>
+<DIV ID=x171 NAME=x171>NO-44        12:24 12:32  5<br></DIV>
+<DIV ID=x172 NAME=x172>NO-44        23:33 23:47 25<br></DIV>
+<DIV ID=x173 NAME=x173>NO-44 10 May 01:16 01:31 38<br></DIV>
+<DIV ID=x174 NAME=x174>NO-44        03:04 03:13  5<br></DIV>
+<DIV ID=x175 NAME=x175>NO-44        08:23 08:36 12<br></DIV>
+<DIV ID=x176 NAME=x176>NO-44        10:06 10:22 85<br></DIV>
+<DIV ID=x177 NAME=x177>NO-44        11:51 12:02 10<br></DIV>
+<DIV ID=x178 NAME=x178>NO-44        23:02 23:15 17<br></DIV>
+<DIV ID=x179 NAME=x179>NO-44 11 May 00:43 00:59 54<br></DIV>
+<DIV ID=x180 NAME=x180>NO-44        02:30 02:41  8<br></DIV>
+<DIV ID=x181 NAME=x181>NO-44        07:52 08:03  8<br></DIV>
+<DIV ID=x182 NAME=x182>NO-44        09:34 09:49 59<br></DIV>
+</A><br>
+<DIV ID=so-50 NAME=so-50><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x183 NAME=x183>SO-50  8 May 05:14 05:21  3<br></DIV>
+<DIV ID=x184 NAME=x184>SO-50        06:50 07:03 65<br></DIV>
+<DIV ID=x185 NAME=x185>SO-50        08:31 08:42 13<br></DIV>
+<DIV ID=x186 NAME=x186>SO-50        13:44 13:49  2<br></DIV>
+<DIV ID=x187 NAME=x187>SO-50        15:22 15:35 25<br></DIV>
+<DIV ID=x188 NAME=x188>SO-50        17:02 17:15 33<br></DIV>
+<DIV ID=x189 NAME=x189>SO-50  9 May 05:30 05:41 13<br></DIV>
+<DIV ID=x190 NAME=x190>SO-50        07:09 07:22 51<br></DIV>
+<DIV ID=x191 NAME=x191>SO-50        08:52 09:01  6<br></DIV>
+<DIV ID=x192 NAME=x192>SO-50        14:02 14:11  7<br></DIV>
+<DIV ID=x193 NAME=x193>SO-50        15:40 15:54 52<br></DIV>
+<DIV ID=x194 NAME=x194>SO-50        17:21 17:33 15<br></DIV>
+<DIV ID=x195 NAME=x195>SO-50 10 May 05:48 06:01 30<br></DIV>
+<DIV ID=x196 NAME=x196>SO-50        07:28 07:41 24<br></DIV>
+<DIV ID=x197 NAME=x197>SO-50        09:14 09:19  1<br></DIV>
+<DIV ID=x198 NAME=x198>SO-50        14:20 14:32 14<br></DIV>
+<DIV ID=x199 NAME=x199>SO-50        15:59 16:13 69<br></DIV>
+<DIV ID=x200 NAME=x200>SO-50        17:42 17:49  5<br></DIV>
+<DIV ID=x201 NAME=x201>SO-50 11 May 04:31 04:38  4<br></DIV>
+<DIV ID=x202 NAME=x202>SO-50        06:07 06:20 75<br></DIV>
+<DIV ID=x203 NAME=x203>SO-50        07:48 07:59 12<br></DIV>
+<DIV ID=x204 NAME=x204>SO-50        13:00 13:07  3<br></DIV>
+<DIV ID=x205 NAME=x205>SO-50        14:39 14:52 28<br></DIV>
+</A><br>
+<DIV ID=co-55 NAME=co-55><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x206 NAME=x206>CO-55  8 May 05:51 06:03 12<br></DIV>
+<DIV ID=x207 NAME=x207>CO-55        07:30 07:45 71<br></DIV>
+<DIV ID=x208 NAME=x208>CO-55        09:11 09:21  7<br></DIV>
+<DIV ID=x209 NAME=x209>CO-55        17:09 17:22 15<br></DIV>
+<DIV ID=x210 NAME=x210>CO-55        18:47 19:03 61<br></DIV>
+<DIV ID=x211 NAME=x211>CO-55        20:32 20:40  4<br></DIV>
+<DIV ID=x212 NAME=x212>CO-55  9 May 05:29 05:38  5<br></DIV>
+<DIV ID=x213 NAME=x213>CO-55        07:07 07:22 69<br></DIV>
+<DIV ID=x214 NAME=x214>CO-55        08:47 09:00 14<br></DIV>
+<DIV ID=x215 NAME=x215>CO-55        16:48 16:58  9<br></DIV>
+<DIV ID=x216 NAME=x216>CO-55        18:24 18:40 80<br></DIV>
+<DIV ID=x217 NAME=x217>CO-55        20:07 20:18 10<br></DIV>
+<DIV ID=x218 NAME=x218>CO-55 10 May 06:44 06:59 40<br></DIV>
+<DIV ID=x219 NAME=x219>CO-55        08:24 08:38 22<br></DIV>
+<DIV ID=x220 NAME=x220>CO-55        16:26 16:34  4<br></DIV>
+<DIV ID=x221 NAME=x221>CO-55        18:01 18:16 47<br></DIV>
+<DIV ID=x222 NAME=x222>CO-55        19:42 19:56 18<br></DIV>
+<DIV ID=x223 NAME=x223>CO-55 11 May 06:21 06:35 24<br></DIV>
+<DIV ID=x224 NAME=x224>CO-55        08:00 08:15 36<br></DIV>
+<DIV ID=x225 NAME=x225>CO-55        09:44 09:49  1<br></DIV>
+<DIV ID=x226 NAME=x226>CO-55        17:39 17:53 29<br></DIV>
+<DIV ID=x227 NAME=x227>CO-55        19:18 19:33 30<br></DIV>
+<DIV ID=x228 NAME=x228>CO-55 12 May 05:58 06:11 14<br></DIV>
+</A><br>
+<DIV ID=co-57 NAME=co-57><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x229 NAME=x229>CO-57  8 May 05:56 06:09 13<br></DIV>
+<DIV ID=x230 NAME=x230>CO-57        07:35 07:50 63<br></DIV>
+<DIV ID=x231 NAME=x231>CO-57        09:17 09:26  6<br></DIV>
+<DIV ID=x232 NAME=x232>CO-57        17:15 17:28 17<br></DIV>
+<DIV ID=x233 NAME=x233>CO-57        18:53 19:08 54<br></DIV>
+<DIV ID=x234 NAME=x234>CO-57        20:38 20:45  2<br></DIV>
+<DIV ID=x235 NAME=x235>CO-57  9 May 05:35 05:45  7<br></DIV>
+<DIV ID=x236 NAME=x236>CO-57        07:13 07:28 79<br></DIV>
+<DIV ID=x237 NAME=x237>CO-57        08:54 09:05 12<br></DIV>
+<DIV ID=x238 NAME=x238>CO-57        16:53 17:05 10<br></DIV>
+<DIV ID=x239 NAME=x239>CO-57        18:30 18:46 88<br></DIV>
+<DIV ID=x240 NAME=x240>CO-57        20:13 20:24  8<br></DIV>
+<DIV ID=x241 NAME=x241>CO-57 10 May 05:14 05:19  1<br></DIV>
+<DIV ID=x242 NAME=x242>CO-57        06:50 07:05 47<br></DIV>
+<DIV ID=x243 NAME=x243>CO-57        08:31 08:44 20<br></DIV>
+<DIV ID=x244 NAME=x244>CO-57        16:33 16:41  5<br></DIV>
+<DIV ID=x245 NAME=x245>CO-57        18:08 18:23 56<br></DIV>
+<DIV ID=x246 NAME=x246>CO-57        19:50 20:02 15<br></DIV>
+<DIV ID=x247 NAME=x247>CO-57 11 May 06:28 06:42 28<br></DIV>
+<DIV ID=x248 NAME=x248>CO-57        08:08 08:22 31<br></DIV>
+<DIV ID=x249 NAME=x249>CO-57        09:53 09:54  0<br></DIV>
+<DIV ID=x250 NAME=x250>CO-57        16:13 16:17  1<br></DIV>
+<DIV ID=x251 NAME=x251>CO-57        17:46 18:01 34<br></DIV>
+</A><br>
+<DIV ID=co-58 NAME=co-58><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x252 NAME=x252>CO-58  8 May 01:44 01:50  3<br></DIV>
+<DIV ID=x253 NAME=x253>CO-58        03:16 03:30 57<br></DIV>
+<DIV ID=x254 NAME=x254>CO-58        04:55 05:05 11<br></DIV>
+<DIV ID=x255 NAME=x255>CO-58        15:13 15:24 15<br></DIV>
+<DIV ID=x256 NAME=x256>CO-58        16:49 17:02 41<br></DIV>
+<DIV ID=x257 NAME=x257>CO-58        18:29 18:33  1<br></DIV>
+<DIV ID=x258 NAME=x258>CO-58  9 May 02:11 02:21 10<br></DIV>
+<DIV ID=x259 NAME=x259>CO-58        03:45 03:59 65<br></DIV>
+<DIV ID=x260 NAME=x260>CO-58        05:26 05:32  3<br></DIV>
+<DIV ID=x261 NAME=x261>CO-58        15:41 15:54 32<br></DIV>
+<DIV ID=x262 NAME=x262>CO-58        17:18 17:30 21<br></DIV>
+<DIV ID=x263 NAME=x263>CO-58 10 May 02:38 02:50 21<br></DIV>
+<DIV ID=x264 NAME=x264>CO-58        04:15 04:27 30<br></DIV>
+<DIV ID=x265 NAME=x265>CO-58        14:36 14:43  3<br></DIV>
+<DIV ID=x266 NAME=x266>CO-58        16:10 16:23 70<br></DIV>
+<DIV ID=x267 NAME=x267>CO-58        17:48 17:58 10<br></DIV>
+<DIV ID=x268 NAME=x268>CO-58 11 May 01:35 01:40  1<br></DIV>
+<DIV ID=x269 NAME=x269>CO-58        03:06 03:20 43<br></DIV>
+<DIV ID=x270 NAME=x270>CO-58        04:44 04:56 14<br></DIV>
+<DIV ID=x271 NAME=x271>CO-58        15:03 15:14 12<br></DIV>
+<DIV ID=x272 NAME=x272>CO-58        16:39 16:52 54<br></DIV>
+<DIV ID=x273 NAME=x273>CO-58        18:18 18:25  3<br></DIV>
+<DIV ID=x274 NAME=x274>CO-58 12 May 02:01 02:10  8<br></DIV>
+</A><br>
+<DIV ID=co-65 NAME=co-65><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x275 NAME=x275>CO-65  8 May 03:46 03:56 15<br></DIV>
+<DIV ID=x276 NAME=x276>CO-65        05:20 05:32 33<br></DIV>
+<DIV ID=x277 NAME=x277>CO-65        14:30 14:37  5<br></DIV>
+<DIV ID=x278 NAME=x278>CO-65        16:02 16:14 86<br></DIV>
+<DIV ID=x279 NAME=x279>CO-65        17:39 17:46  4<br></DIV>
+<DIV ID=x280 NAME=x280>CO-65  9 May 03:42 03:53 13<br></DIV>
+<DIV ID=x281 NAME=x281>CO-65        05:17 05:28 37<br></DIV>
+<DIV ID=x282 NAME=x282>CO-65        14:27 14:34  4<br></DIV>
+<DIV ID=x283 NAME=x283>CO-65        15:58 16:11 78<br></DIV>
+<DIV ID=x284 NAME=x284>CO-65        17:36 17:43  5<br></DIV>
+<DIV ID=x285 NAME=x285>CO-65 10 May 03:39 03:49 12<br></DIV>
+<DIV ID=x286 NAME=x286>CO-65        05:13 05:25 40<br></DIV>
+<DIV ID=x287 NAME=x287>CO-65        06:52 06:54  0<br></DIV>
+<DIV ID=x288 NAME=x288>CO-65        14:24 14:30  4<br></DIV>
+<DIV ID=x289 NAME=x289>CO-65        15:55 16:07 70<br></DIV>
+<DIV ID=x290 NAME=x290>CO-65        17:32 17:40  6<br></DIV>
+<DIV ID=x291 NAME=x291>CO-65 11 May 03:36 03:46 11<br></DIV>
+<DIV ID=x292 NAME=x292>CO-65        05:10 05:22 44<br></DIV>
+<DIV ID=x293 NAME=x293>CO-65        06:48 06:51  1<br></DIV>
+<DIV ID=x294 NAME=x294>CO-65        14:21 14:27  3<br></DIV>
+<DIV ID=x295 NAME=x295>CO-65        15:52 16:04 63<br></DIV>
+<DIV ID=x296 NAME=x296>CO-65        17:29 17:37  7<br></DIV>
+<DIV ID=x297 NAME=x297>CO-65 12 May 03:33 03:43 10<br></DIV>
+</A><br>
+<DIV ID=co-66 NAME=co-66><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x298 NAME=x298>CO-66  8 May 03:51 03:58  4<br></DIV>
+<DIV ID=x299 NAME=x299>CO-66        05:23 05:35 82<br></DIV>
+<DIV ID=x300 NAME=x300>CO-66        06:59 07:05  4<br></DIV>
+<DIV ID=x301 NAME=x301>CO-66        16:00 16:11 27<br></DIV>
+<DIV ID=x302 NAME=x302>CO-66        17:34 17:44 15<br></DIV>
+<DIV ID=x303 NAME=x303>CO-66  9 May 03:37 03:40  0<br></DIV>
+<DIV ID=x304 NAME=x304>CO-66        05:07 05:19 57<br></DIV>
+<DIV ID=x305 NAME=x305>CO-66        06:42 06:51  8<br></DIV>
+<DIV ID=x306 NAME=x306>CO-66        15:44 15:55 17<br></DIV>
+<DIV ID=x307 NAME=x307>CO-66        17:18 17:29 25<br></DIV>
+<DIV ID=x308 NAME=x308>CO-66 10 May 04:51 05:03 34<br></DIV>
+<DIV ID=x309 NAME=x309>CO-66        06:26 06:35 13<br></DIV>
+<DIV ID=x310 NAME=x310>CO-66        15:29 15:38 11<br></DIV>
+<DIV ID=x311 NAME=x311>CO-66        17:01 17:13 40<br></DIV>
+<DIV ID=x312 NAME=x312>CO-66 11 May 04:35 04:46 21<br></DIV>
+<DIV ID=x313 NAME=x313>CO-66        06:09 06:20 20<br></DIV>
+<DIV ID=x314 NAME=x314>CO-66        15:14 15:22  6<br></DIV>
+<DIV ID=x315 NAME=x315>CO-66        16:45 16:57 70<br></DIV>
+<DIV ID=x316 NAME=x316>CO-66        18:23 18:28  2<br></DIV>
+<DIV ID=x317 NAME=x317>CO-66 12 May 04:20 04:30 13<br></DIV>
+<DIV ID=x318 NAME=x318>CO-66        05:53 06:04 32<br></DIV>
+<DIV ID=x319 NAME=x319>CO-66        14:59 15:05  3<br></DIV>
+<DIV ID=x320 NAME=x320>CO-66        16:29 16:41 68<br></DIV>
+</A><br>
+<DIV ID=ho-68 NAME=ho-68><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x321 NAME=x321>HO-68 08 May 01:31 01:37  2<br></DIV>
+<DIV ID=x322 NAME=x322>HO-68  8 May 03:12 03:32 46<br></DIV>
+<DIV ID=x323 NAME=x323>HO-68        05:00 05:18 30<br></DIV>
+<DIV ID=x324 NAME=x324>HO-68        06:52 06:58  2<br></DIV>
+<DIV ID=x325 NAME=x325>HO-68        12:01 12:03  0<br></DIV>
+<DIV ID=x326 NAME=x326>HO-68        13:38 13:56 26<br></DIV>
+<DIV ID=x327 NAME=x327>HO-68        15:24 15:44 55<br></DIV>
+<DIV ID=x328 NAME=x328>HO-68        17:18 17:28  5<br></DIV>
+<DIV ID=x329 NAME=x329>HO-68  9 May 02:56 03:14 34<br></DIV>
+<DIV ID=x330 NAME=x330>HO-68        04:43 05:02 40<br></DIV>
+<DIV ID=x331 NAME=x331>HO-68        06:34 06:43  4<br></DIV>
+<DIV ID=x332 NAME=x332>HO-68        13:22 13:38 20<br></DIV>
+<DIV ID=x333 NAME=x333>HO-68        15:07 15:27 73<br></DIV>
+<DIV ID=x334 NAME=x334>HO-68        16:59 17:12  9<br></DIV>
+<DIV ID=x335 NAME=x335>HO-68 10 May 02:39 02:57 25<br></DIV>
+<DIV ID=x336 NAME=x336>HO-68        04:26 04:45 53<br></DIV>
+<DIV ID=x337 NAME=x337>HO-68        06:16 06:28  7<br></DIV>
+<DIV ID=x338 NAME=x338>HO-68        13:06 13:21 14<br></DIV>
+<DIV ID=x339 NAME=x339>HO-68        14:50 15:10 86<br></DIV>
+<DIV ID=x340 NAME=x340>HO-68        16:41 16:56 14<br></DIV>
+<DIV ID=x341 NAME=x341>HO-68 11 May 02:22 02:39 18<br></DIV>
+<DIV ID=x342 NAME=x342>HO-68        04:09 04:29 70<br></DIV>
+<DIV ID=x343 NAME=x343>HO-68        05:58 06:12 11<br></DIV>
+</A><br>
+<DIV ID=ao-73 NAME=ao-73><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x344 NAME=x344>AO-73  8 May 02:53 03:02  8<br></DIV>
+<DIV ID=x345 NAME=x345>AO-73        04:27 04:39 52<br></DIV>
+<DIV ID=x346 NAME=x346>AO-73        06:05 06:09  1<br></DIV>
+<DIV ID=x347 NAME=x347>AO-73        13:40 13:44  2<br></DIV>
+<DIV ID=x348 NAME=x348>AO-73        15:10 15:22 54<br></DIV>
+<DIV ID=x349 NAME=x349>AO-73        16:47 16:56  9<br></DIV>
+<DIV ID=x350 NAME=x350>AO-73  9 May 02:52 03:01  8<br></DIV>
+<DIV ID=x351 NAME=x351>AO-73        04:26 04:38 54<br></DIV>
+<DIV ID=x352 NAME=x352>AO-73        06:04 06:08  2<br></DIV>
+<DIV ID=x353 NAME=x353>AO-73        13:39 13:43  2<br></DIV>
+<DIV ID=x354 NAME=x354>AO-73        15:09 15:21 52<br></DIV>
+<DIV ID=x355 NAME=x355>AO-73        16:46 16:55  9<br></DIV>
+<DIV ID=x356 NAME=x356>AO-73 10 May 02:52 03:00  7<br></DIV>
+<DIV ID=x357 NAME=x357>AO-73        04:25 04:37 56<br></DIV>
+<DIV ID=x358 NAME=x358>AO-73        06:03 06:07  2<br></DIV>
+<DIV ID=x359 NAME=x359>AO-73        13:38 13:42  2<br></DIV>
+<DIV ID=x360 NAME=x360>AO-73        15:08 15:20 51<br></DIV>
+<DIV ID=x361 NAME=x361>AO-73        16:45 16:54  9<br></DIV>
+<DIV ID=x362 NAME=x362>AO-73 11 May 02:51 02:59  7<br></DIV>
+<DIV ID=x363 NAME=x363>AO-73        04:24 04:36 58<br></DIV>
+<DIV ID=x364 NAME=x364>AO-73        06:02 06:07  2<br></DIV>
+<DIV ID=x365 NAME=x365>AO-73        13:37 13:41  1<br></DIV>
+<DIV ID=x366 NAME=x366>AO-73        15:07 15:19 49<br></DIV>
+</A><br>
+<DIV ID=lo-74 NAME=lo-74><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x367 NAME=x367>LO-74  8 May 02:50 03:03 65<br></DIV>
+<DIV ID=x368 NAME=x368>LO-74        04:27 04:37 10<br></DIV>
+<DIV ID=x369 NAME=x369>LO-74        13:38 13:51 30<br></DIV>
+<DIV ID=x370 NAME=x370>LO-74        15:14 15:26 19<br></DIV>
+<DIV ID=x371 NAME=x371>LO-74  9 May 01:27 01:35  5<br></DIV>
+<DIV ID=x372 NAME=x372>LO-74        03:00 03:14 83<br></DIV>
+<DIV ID=x373 NAME=x373>LO-74        04:38 04:47  7<br></DIV>
+<DIV ID=x374 NAME=x374>LO-74        12:19 12:22  1<br></DIV>
+<DIV ID=x375 NAME=x375>LO-74        13:49 14:01 39<br></DIV>
+<DIV ID=x376 NAME=x376>LO-74        15:25 15:36 15<br></DIV>
+<DIV ID=x377 NAME=x377>LO-74 10 May 01:37 01:46  8<br></DIV>
+<DIV ID=x378 NAME=x378>LO-74        03:11 03:24 69<br></DIV>
+<DIV ID=x379 NAME=x379>LO-74        04:49 04:56  5<br></DIV>
+<DIV ID=x380 NAME=x380>LO-74        12:28 12:34  3<br></DIV>
+<DIV ID=x381 NAME=x381>LO-74        13:59 14:12 53<br></DIV>
+<DIV ID=x382 NAME=x382>LO-74        15:36 15:47 11<br></DIV>
+<DIV ID=x383 NAME=x383>LO-74 11 May 01:47 01:58 11<br></DIV>
+<DIV ID=x384 NAME=x384>LO-74        03:22 03:35 52<br></DIV>
+<DIV ID=x385 NAME=x385>LO-74        05:00 05:06  3<br></DIV>
+<DIV ID=x386 NAME=x386>LO-74        12:37 12:45  5<br></DIV>
+<DIV ID=x387 NAME=x387>LO-74        14:10 14:23 71<br></DIV>
+<DIV ID=x388 NAME=x388>LO-74        15:48 15:57  8<br></DIV>
+<DIV ID=x389 NAME=x389>LO-74 12 May 01:57 02:09 15<br></DIV>
+</A><br>
+<DIV ID=eo-79 NAME=eo-79><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x390 NAME=x390>EO-79  8 May 03:47 03:51  2<br></DIV>
+<DIV ID=x391 NAME=x391>EO-79        05:18 05:30 67<br></DIV>
+<DIV ID=x392 NAME=x392>EO-79        06:54 07:02  7<br></DIV>
+<DIV ID=x393 NAME=x393>EO-79        15:58 16:09 24<br></DIV>
+<DIV ID=x394 NAME=x394>EO-79        17:33 17:43 20<br></DIV>
+<DIV ID=x395 NAME=x395>EO-79  9 May 05:09 05:21 50<br></DIV>
+<DIV ID=x396 NAME=x396>EO-79        06:45 06:54 10<br></DIV>
+<DIV ID=x397 NAME=x397>EO-79        15:50 16:00 19<br></DIV>
+<DIV ID=x398 NAME=x398>EO-79        17:24 17:35 25<br></DIV>
+<DIV ID=x399 NAME=x399>EO-79 10 May 05:01 05:12 37<br></DIV>
+<DIV ID=x400 NAME=x400>EO-79        06:36 06:46 13<br></DIV>
+<DIV ID=x401 NAME=x401>EO-79        15:41 15:51 15<br></DIV>
+<DIV ID=x402 NAME=x402>EO-79        17:15 17:26 33<br></DIV>
+<DIV ID=x403 NAME=x403>EO-79 11 May 04:52 05:04 29<br></DIV>
+<DIV ID=x404 NAME=x404>EO-79        06:27 06:37 16<br></DIV>
+<DIV ID=x405 NAME=x405>EO-79        15:33 15:43 12<br></DIV>
+<DIV ID=x406 NAME=x406>EO-79        17:06 17:18 43<br></DIV>
+<DIV ID=x407 NAME=x407>EO-79 12 May 04:44 04:55 22<br></DIV>
+<DIV ID=x408 NAME=x408>EO-79        06:18 06:29 21<br></DIV>
+<DIV ID=x409 NAME=x409>EO-79        15:25 15:33  9<br></DIV>
+<DIV ID=x410 NAME=x410>EO-79        16:57 17:09 58<br></DIV>
+<DIV ID=x411 NAME=x411>EO-79        18:36 18:39  1<br></DIV>
+<DIV ID=x412 NAME=x412>EO-79 13 May 04:35 04:46 17<br></DIV>
+</A><br>
+<DIV ID=eo-80 NAME=eo-80><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x413 NAME=x413>EO-80  8 May 03:31 03:40  9<br></DIV>
+<DIV ID=x414 NAME=x414>EO-80        05:04 05:16 47<br></DIV>
+<DIV ID=x415 NAME=x415>EO-80        06:42 06:45  1<br></DIV>
+<DIV ID=x416 NAME=x416>EO-80        14:14 14:19  2<br></DIV>
+<DIV ID=x417 NAME=x417>EO-80        15:44 15:56 57<br></DIV>
+<DIV ID=x418 NAME=x418>EO-80        17:21 17:30  8<br></DIV>
+<DIV ID=x419 NAME=x419>EO-80  9 May 03:24 03:33  7<br></DIV>
+<DIV ID=x420 NAME=x420>EO-80        04:57 05:09 59<br></DIV>
+<DIV ID=x421 NAME=x421>EO-80        06:34 06:40  2<br></DIV>
+<DIV ID=x422 NAME=x422>EO-80        14:09 14:12  1<br></DIV>
+<DIV ID=x423 NAME=x423>EO-80        15:38 15:50 46<br></DIV>
+<DIV ID=x424 NAME=x424>EO-80        17:14 17:23 10<br></DIV>
+<DIV ID=x425 NAME=x425>EO-80 10 May 03:18 03:26  5<br></DIV>
+<DIV ID=x426 NAME=x426>EO-80        04:51 05:03 73<br></DIV>
+<DIV ID=x427 NAME=x427>EO-80        06:27 06:34  4<br></DIV>
+<DIV ID=x428 NAME=x428>EO-80        15:31 15:43 37<br></DIV>
+<DIV ID=x429 NAME=x429>EO-80        17:07 17:17 12<br></DIV>
+<DIV ID=x430 NAME=x430>EO-80 11 May 03:12 03:18  4<br></DIV>
+<DIV ID=x431 NAME=x431>EO-80        04:44 04:56 87<br></DIV>
+<DIV ID=x432 NAME=x432>EO-80        06:20 06:28  5<br></DIV>
+<DIV ID=x433 NAME=x433>EO-80        15:25 15:36 31<br></DIV>
+<DIV ID=x434 NAME=x434>EO-80        17:00 17:10 15<br></DIV>
+<DIV ID=x435 NAME=x435>EO-80 12 May 03:06 03:11  2<br></DIV>
+</A><br>
+<DIV ID=ao-85 NAME=ao-85><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x436 NAME=x436>AO-85 08 May 01:31 01:42 12<br></DIV>
+<DIV ID=x437 NAME=x437>AO-85  8 May 03:10 03:23 62<br></DIV>
+<DIV ID=x438 NAME=x438>AO-85        04:53 04:58  2<br></DIV>
+<DIV ID=x439 NAME=x439>AO-85        15:38 15:48  7<br></DIV>
+<DIV ID=x440 NAME=x440>AO-85        17:14 17:30 77<br></DIV>
+<DIV ID=x441 NAME=x441>AO-85        18:56 19:09 15<br></DIV>
+<DIV ID=x442 NAME=x442>AO-85  9 May 00:10 00:14  1<br></DIV>
+<DIV ID=x443 NAME=x443>AO-85        01:47 01:59 22<br></DIV>
+<DIV ID=x444 NAME=x444>AO-85        03:27 03:39 26<br></DIV>
+<DIV ID=x445 NAME=x445>AO-85        15:53 16:05 18<br></DIV>
+<DIV ID=x446 NAME=x446>AO-85        17:31 17:46 53<br></DIV>
+<DIV ID=x447 NAME=x447>AO-85        19:14 19:25  8<br></DIV>
+<DIV ID=x448 NAME=x448>AO-85 10 May 00:25 00:33  5<br></DIV>
+<DIV ID=x449 NAME=x449>AO-85        02:03 02:16 46<br></DIV>
+<DIV ID=x450 NAME=x450>AO-85        03:44 03:54 11<br></DIV>
+<DIV ID=x451 NAME=x451>AO-85        16:08 16:22 36<br></DIV>
+<DIV ID=x452 NAME=x452>AO-85        17:48 18:02 28<br></DIV>
+<DIV ID=x453 NAME=x453>AO-85        19:33 19:40  3<br></DIV>
+<DIV ID=x454 NAME=x454>AO-85 11 May 00:40 00:51 11<br></DIV>
+<DIV ID=x455 NAME=x455>AO-85        02:20 02:32 66<br></DIV>
+<DIV ID=x456 NAME=x456>AO-85        04:02 04:08  2<br></DIV>
+<DIV ID=x457 NAME=x457>AO-85        14:48 14:57  7<br></DIV>
+<DIV ID=x458 NAME=x458>AO-85        16:24 16:39 73<br></DIV>
+</A><br>
+<DIV ID=io-86 NAME=io-86><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x459 NAME=x459>IO-86 won't bp for ys.<br></DIV>
+</A><br>
+<DIV ID=ao-91 NAME=ao-91><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x460 NAME=x460>AO-91  8 May 07:54 08:03  7<br></DIV>
+<DIV ID=x461 NAME=x461>AO-91        09:26 09:39 79<br></DIV>
+<DIV ID=x462 NAME=x462>AO-91        11:04 11:12  5<br></DIV>
+<DIV ID=x463 NAME=x463>AO-91        21:07 21:19 17<br></DIV>
+<DIV ID=x464 NAME=x464>AO-91        22:42 22:54 36<br></DIV>
+<DIV ID=x465 NAME=x465>AO-91  9 May 00:20 00:23  1<br></DIV>
+<DIV ID=x466 NAME=x466>AO-91        07:51 08:00  6<br></DIV>
+<DIV ID=x467 NAME=x467>AO-91        09:23 09:36 77<br></DIV>
+<DIV ID=x468 NAME=x468>AO-91        11:00 11:09  6<br></DIV>
+<DIV ID=x469 NAME=x469>AO-91        21:04 21:15 15<br></DIV>
+<DIV ID=x470 NAME=x470>AO-91        22:38 22:51 39<br></DIV>
+<DIV ID=x471 NAME=x471>AO-91 10 May 00:16 00:20  1<br></DIV>
+<DIV ID=x472 NAME=x472>AO-91        07:48 07:56  6<br></DIV>
+<DIV ID=x473 NAME=x473>AO-91        09:19 09:32 72<br></DIV>
+<DIV ID=x474 NAME=x474>AO-91        10:57 11:06  7<br></DIV>
+<DIV ID=x475 NAME=x475>AO-91        21:01 21:12 14<br></DIV>
+<DIV ID=x476 NAME=x476>AO-91        22:35 22:47 42<br></DIV>
+<DIV ID=x477 NAME=x477>AO-91 11 May 00:12 00:17  2<br></DIV>
+<DIV ID=x478 NAME=x478>AO-91        07:45 07:52  5<br></DIV>
+<DIV ID=x479 NAME=x479>AO-91        09:16 09:29 67<br></DIV>
+<DIV ID=x480 NAME=x480>AO-91        10:53 11:02  9<br></DIV>
+<DIV ID=x481 NAME=x481>AO-91        20:57 21:08 12<br></DIV>
+<DIV ID=x482 NAME=x482>AO-91        22:31 22:44 46<br></DIV>
+</A><br>
+<DIV ID=ao-95 NAME=ao-95><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x483 NAME=x483>AO-95  8 May 05:45 17:59 55<br></DIV>
+<DIV ID=x484 NAME=x484>AO-95  9 May 06:08 18:21 55<br></DIV>
+<DIV ID=x485 NAME=x485>AO-95 10 May 06:30 18:44 55<br></DIV>
+<DIV ID=x486 NAME=x486>AO-95 11 May 06:53 19:06 55<br></DIV>
+<DIV ID=x487 NAME=x487>AO-95 12 May 07:15 15:31 55<br></DIV>
+<DIV ID=x488 NAME=x488>AO-95 13 May 05:32 17:46 55<br></DIV>
+<DIV ID=x489 NAME=x489>AO-95 14 May 05:55 18:09 55<br></DIV>
+<DIV ID=x490 NAME=x490>AO-95 15 May 06:17 18:31 55<br></DIV>
+<DIV ID=x491 NAME=x491>AO-95 16 May 06:40 18:54 55<br></DIV>
+<DIV ID=x492 NAME=x492>AO-95 17 May 07:03 19:16 55<br></DIV>
+<DIV ID=x493 NAME=x493>AO-95 18 May 07:25 19:39 55<br></DIV>
+<DIV ID=x494 NAME=x494>AO-95 19 May 07:48 20:01 55<br></DIV>
+<DIV ID=x495 NAME=x495>AO-95 20 May 08:10 20:24 55<br></DIV>
+<DIV ID=x496 NAME=x496>AO-95 21 May 08:33 20:47 55<br></DIV>
+<DIV ID=x497 NAME=x497>AO-95 22 May 08:55 21:09 55<br></DIV>
+<DIV ID=x498 NAME=x498>AO-95 23 May 09:18 17:34 55<br></DIV>
+<DIV ID=x499 NAME=x499>AO-95 24 May 07:34 19:48 55<br></DIV>
+<DIV ID=x500 NAME=x500>AO-95 25 May 07:57 20:11 55<br></DIV>
+<DIV ID=x501 NAME=x501>AO-95 26 May 08:20 20:33 55<br></DIV>
+<DIV ID=x502 NAME=x502>AO-95 27 May 08:42 20:56 55<br></DIV>
+<DIV ID=x503 NAME=x503>AO-95 28 May 09:05 21:19 55<br></DIV>
+<DIV ID=x504 NAME=x504>AO-95 29 May 09:27 21:41 55<br></DIV>
+<DIV ID=x505 NAME=x505>AO-95 30 May 09:50 22:04 55<br></DIV>
+</A><br>
+<DIV ID=po101 NAME=po101><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x506 NAME=x506>PO101  8 May 04:38 04:49 16<br></DIV>
+<DIV ID=x507 NAME=x507>PO101        06:12 06:24 32<br></DIV>
+<DIV ID=x508 NAME=x508>PO101        17:55 18:07 38<br></DIV>
+<DIV ID=x509 NAME=x509>PO101        19:31 19:41 14<br></DIV>
+<DIV ID=x510 NAME=x510>PO101  9 May 04:40 04:51 17<br></DIV>
+<DIV ID=x511 NAME=x511>PO101        06:15 06:27 30<br></DIV>
+<DIV ID=x512 NAME=x512>PO101        17:58 18:10 41<br></DIV>
+<DIV ID=x513 NAME=x513>PO101        19:33 19:44 13<br></DIV>
+<DIV ID=x514 NAME=x514>PO101 10 May 04:43 04:54 18<br></DIV>
+<DIV ID=x515 NAME=x515>PO101        06:18 06:29 28<br></DIV>
+<DIV ID=x516 NAME=x516>PO101        18:00 18:12 44<br></DIV>
+<DIV ID=x517 NAME=x517>PO101        19:36 19:46 13<br></DIV>
+<DIV ID=x518 NAME=x518>PO101 11 May 04:45 04:57 19<br></DIV>
+<DIV ID=x519 NAME=x519>PO101        06:20 06:32 26<br></DIV>
+<DIV ID=x520 NAME=x520>PO101        18:03 18:15 47<br></DIV>
+<DIV ID=x521 NAME=x521>PO101        19:39 19:49 12<br></DIV>
+<DIV ID=x522 NAME=x522>PO101 12 May 04:48 04:59 21<br></DIV>
+<DIV ID=x523 NAME=x523>PO101        06:23 06:34 24<br></DIV>
+<DIV ID=x524 NAME=x524>PO101        16:35 16:36  0<br></DIV>
+<DIV ID=x525 NAME=x525>PO101        18:05 18:18 50<br></DIV>
+<DIV ID=x526 NAME=x526>PO101        19:41 19:51 11<br></DIV>
+<DIV ID=x527 NAME=x527>PO101 13 May 04:50 05:02 22<br></DIV>
+<DIV ID=x528 NAME=x528>PO101        06:25 06:37 23<br></DIV>
+</A><br>
+<DIV ID=ao109 NAME=ao109><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x529 NAME=x529>AO109 has crad! <br></DIV>
+</A><br>
+<DIV ID=so115 NAME=so115><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x530 NAME=x530>SO115        d! <br></DIV>
+</A><br>
+<DIV ID=fo118 NAME=fo118><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x531 NAME=x531>FO118        d! <br></DIV>
+</A><br>
+<DIV ID=so121 NAME=so121><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x532 NAME=x532>SO121        d! <br></DIV>
+</A><br>
+<DIV ID=rs-15 NAME=rs-15><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x533 NAME=x533>RS-15  8 May 03:07 03:36 76<br></DIV>
+<DIV ID=x534 NAME=x534>RS-15        05:23 05:48 22<br></DIV>
+<DIV ID=x535 NAME=x535>RS-15        07:44 08:05 11<br></DIV>
+<DIV ID=x536 NAME=x536>RS-15        10:00 10:26 27<br></DIV>
+<DIV ID=x537 NAME=x537>RS-15        12:12 12:42 87<br></DIV>
+<DIV ID=x538 NAME=x538>RS-15        14:26 14:49 18<br></DIV>
+<DIV ID=x539 NAME=x539>RS-15  9 May 00:23 00:46 17<br></DIV>
+<DIV ID=x540 NAME=x540>RS-15        02:31 02:59 84<br></DIV>
+<DIV ID=x541 NAME=x541>RS-15        04:46 05:12 28<br></DIV>
+<DIV ID=x542 NAME=x542>RS-15        07:06 07:28 11<br></DIV>
+<DIV ID=x543 NAME=x543>RS-15        09:23 09:49 21<br></DIV>
+<DIV ID=x544 NAME=x544>RS-15        11:36 12:05 73<br></DIV>
+<DIV ID=x545 NAME=x545>RS-15        13:49 14:15 27<br></DIV>
+<DIV ID=x546 NAME=x546>RS-15        23:50 00:08 10<br></DIV>
+<DIV ID=x547 NAME=x547>RS-15 10 May 01:55 02:23 66<br></DIV>
+<DIV ID=x548 NAME=x548>RS-15        04:09 04:36 35<br></DIV>
+<DIV ID=x549 NAME=x549>RS-15        06:29 06:50 12<br></DIV>
+<DIV ID=x550 NAME=x550>RS-15        08:47 09:11 17<br></DIV>
+<DIV ID=x551 NAME=x551>RS-15        11:00 11:29 57<br></DIV>
+<DIV ID=x552 NAME=x552>RS-15        13:13 13:40 37<br></DIV>
+<DIV ID=x553 NAME=x553>RS-15        23:17 23:30  4<br></DIV>
+<DIV ID=x554 NAME=x554>RS-15 11 May 01:19 01:47 49<br></DIV>
+<DIV ID=x555 NAME=x555>RS-15        03:32 04:00 45<br></DIV>
+</A><br>
+<DIV ID=rs-22 NAME=rs-22><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x556 NAME=x556>RS-22  8 May 04:08 04:19 17<br></DIV>
+<DIV ID=x557 NAME=x557>RS-22        05:44 05:57 38<br></DIV>
+<DIV ID=x558 NAME=x558>RS-22        16:06 16:10  1<br></DIV>
+<DIV ID=x559 NAME=x559>RS-22        17:39 17:52 52<br></DIV>
+<DIV ID=x560 NAME=x560>RS-22        19:16 19:27 13<br></DIV>
+<DIV ID=x561 NAME=x561>RS-22  9 May 04:35 04:48 33<br></DIV>
+<DIV ID=x562 NAME=x562>RS-22        06:12 06:24 19<br></DIV>
+<DIV ID=x563 NAME=x563>RS-22        16:31 16:41  8<br></DIV>
+<DIV ID=x564 NAME=x564>RS-22        18:06 18:20 74<br></DIV>
+<DIV ID=x565 NAME=x565>RS-22        19:45 19:53  5<br></DIV>
+<DIV ID=x566 NAME=x566>RS-22 10 May 03:29 03:37  5<br></DIV>
+<DIV ID=x567 NAME=x567>RS-22        05:02 05:15 69<br></DIV>
+<DIV ID=x568 NAME=x568>RS-22        06:41 06:51  8<br></DIV>
+<DIV ID=x569 NAME=x569>RS-22        16:58 17:10 17<br></DIV>
+<DIV ID=x570 NAME=x570>RS-22        18:34 18:47 35<br></DIV>
+<DIV ID=x571 NAME=x571>RS-22 11 May 03:55 04:05 12<br></DIV>
+<DIV ID=x572 NAME=x572>RS-22        05:30 05:43 56<br></DIV>
+<DIV ID=x573 NAME=x573>RS-22        07:11 07:16  2<br></DIV>
+<DIV ID=x574 NAME=x574>RS-22        17:25 17:38 35<br></DIV>
+<DIV ID=x575 NAME=x575>RS-22        19:02 19:14 18<br></DIV>
+<DIV ID=x576 NAME=x576>RS-22 12 May 04:21 04:34 24<br></DIV>
+<DIV ID=x577 NAME=x577>RS-22        05:58 06:10 27<br></DIV>
+<DIV ID=x578 NAME=x578>RS-22        16:18 16:26  4<br></DIV>
+</A><br>
+<DIV ID=rs-30 NAME=rs-30><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x579 NAME=x579>RS-30  8 May 01:58 02:21 56<br></DIV>
+<DIV ID=x580 NAME=x580>RS-30        03:56 04:17 28<br></DIV>
+<DIV ID=x581 NAME=x581>RS-30        12:12 12:33 23<br></DIV>
+<DIV ID=x582 NAME=x582>RS-30        14:09 14:32 67<br></DIV>
+<DIV ID=x583 NAME=x583>RS-30        16:08 16:23  9<br></DIV>
+<DIV ID=x584 NAME=x584>RS-30  9 May 01:10 01:31 29<br></DIV>
+<DIV ID=x585 NAME=x585>RS-30        03:05 03:28 53<br></DIV>
+<DIV ID=x586 NAME=x586>RS-30        05:09 05:23  6<br></DIV>
+<DIV ID=x587 NAME=x587>RS-30        11:24 11:40 10<br></DIV>
+<DIV ID=x588 NAME=x588>RS-30        13:19 13:42 68<br></DIV>
+<DIV ID=x589 NAME=x589>RS-30        15:17 15:36 22<br></DIV>
+<DIV ID=x590 NAME=x590>RS-30 10 May 00:23 00:40 14<br></DIV>
+<DIV ID=x591 NAME=x591>RS-30        02:15 02:39 86<br></DIV>
+<DIV ID=x592 NAME=x592>RS-30        04:15 04:34 17<br></DIV>
+<DIV ID=x593 NAME=x593>RS-30        10:37 10:45  2<br></DIV>
+<DIV ID=x594 NAME=x594>RS-30        12:29 12:52 36<br></DIV>
+<DIV ID=x595 NAME=x595>RS-30        14:26 14:48 43<br></DIV>
+<DIV ID=x596 NAME=x596>RS-30        16:28 16:36  2<br></DIV>
+<DIV ID=x597 NAME=x597>RS-30        23:38 23:48  3<br></DIV>
+<DIV ID=x598 NAME=x598>RS-30 11 May 01:26 01:49 46<br></DIV>
+<DIV ID=x599 NAME=x599>RS-30        03:23 03:45 34<br></DIV>
+<DIV ID=x600 NAME=x600>RS-30        05:31 05:37  1<br></DIV>
+<DIV ID=x601 NAME=x601>RS-30        11:40 12:00 18<br></DIV>
+</A><br>
+<DIV ID=rs-40 NAME=rs-40><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x602 NAME=x602>RS-40  8 May 05:58 06:16 15<br></DIV>
+<DIV ID=x603 NAME=x603>RS-40        07:51 08:15 89<br></DIV>
+<DIV ID=x604 NAME=x604>RS-40        09:51 10:10 16<br></DIV>
+<DIV ID=x605 NAME=x605>RS-40        16:12 16:22  3<br></DIV>
+<DIV ID=x606 NAME=x606>RS-40        18:06 18:28 39<br></DIV>
+<DIV ID=x607 NAME=x607>RS-40        20:03 20:25 40<br></DIV>
+<DIV ID=x608 NAME=x608>RS-40        22:05 22:11  1<br></DIV>
+<DIV ID=x609 NAME=x609>RS-40  9 May 05:14 05:25  4<br></DIV>
+<DIV ID=x610 NAME=x610>RS-40        07:02 07:25 50<br></DIV>
+<DIV ID=x611 NAME=x611>RS-40        09:00 09:22 32<br></DIV>
+<DIV ID=x612 NAME=x612>RS-40        11:09 11:13  0<br></DIV>
+<DIV ID=x613 NAME=x613>RS-40        17:17 17:37 20<br></DIV>
+<DIV ID=x614 NAME=x614>RS-40        19:13 19:37 74<br></DIV>
+<DIV ID=x615 NAME=x615>RS-40        21:12 21:28 11<br></DIV>
+<DIV ID=x616 NAME=x616>RS-40 10 May 06:15 06:36 26<br></DIV>
+<DIV ID=x617 NAME=x617>RS-40        08:10 08:33 59<br></DIV>
+<DIV ID=x618 NAME=x618>RS-40        10:13 10:28  8<br></DIV>
+<DIV ID=x619 NAME=x619>RS-40        16:29 16:45  9<br></DIV>
+<DIV ID=x620 NAME=x620>RS-40        18:24 18:47 62<br></DIV>
+<DIV ID=x621 NAME=x621>RS-40        20:22 20:42 24<br></DIV>
+<DIV ID=x622 NAME=x622>RS-40 11 May 05:29 05:45 12<br></DIV>
+<DIV ID=x623 NAME=x623>RS-40        07:21 07:44 79<br></DIV>
+<DIV ID=x624 NAME=x624>RS-40        09:20 09:40 19<br></DIV>
+</A><br>
+<DIV ID=rs-44 NAME=rs-44><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x625 NAME=x625>RS-44 08 May 01:31 01:42 23<br></DIV>
+<DIV ID=x626 NAME=x626>RS-44  8 May 03:16 03:36 50<br></DIV>
+<DIV ID=x627 NAME=x627>RS-44        05:16 05:27  4<br></DIV>
+<DIV ID=x628 NAME=x628>RS-44        11:20 11:33  6<br></DIV>
+<DIV ID=x629 NAME=x629>RS-44        13:11 13:33 50<br></DIV>
+<DIV ID=x630 NAME=x630>RS-44        15:05 15:26 32<br></DIV>
+<DIV ID=x631 NAME=x631>RS-44  9 May 00:03 00:07  0<br></DIV>
+<DIV ID=x632 NAME=x632>RS-44        01:47 02:06 41<br></DIV>
+<DIV ID=x633 NAME=x633>RS-44        03:41 03:59 30<br></DIV>
+<DIV ID=x634 NAME=x634>RS-44        11:42 12:00 13<br></DIV>
+<DIV ID=x635 NAME=x635>RS-44        13:34 13:58 77<br></DIV>
+<DIV ID=x636 NAME=x636>RS-44        15:29 15:48 19<br></DIV>
+<DIV ID=x637 NAME=x637>RS-44 10 May 00:22 00:34  7<br></DIV>
+<DIV ID=x638 NAME=x638>RS-44        02:10 02:30 69<br></DIV>
+<DIV ID=x639 NAME=x639>RS-44        04:06 04:23 18<br></DIV>
+<DIV ID=x640 NAME=x640>RS-44        12:05 12:26 22<br></DIV>
+<DIV ID=x641 NAME=x641>RS-44        13:58 14:21 70<br></DIV>
+<DIV ID=x642 NAME=x642>RS-44        15:54 16:09 10<br></DIV>
+<DIV ID=x643 NAME=x643>RS-44 11 May 00:43 00:59 16<br></DIV>
+<DIV ID=x644 NAME=x644>RS-44        02:34 02:54 72<br></DIV>
+<DIV ID=x645 NAME=x645>RS-44        04:32 04:46  9<br></DIV>
+<DIV ID=x646 NAME=x646>RS-44        10:40 10:48  2<br></DIV>
+<DIV ID=x647 NAME=x647>RS-44        12:29 12:51 36<br></DIV>
+</A><br>
+<DIV ID=rs-48 NAME=rs-48><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x648 NAME=x648>RS-48  8 May 02:18 02:20  2<br></DIV>
+<DIV ID=x649 NAME=x649>RS-48        12:50 12:54 20<br></DIV>
+<DIV ID=x650 NAME=x650>RS-48  9 May 01:34 01:38 36<br></DIV>
+<DIV ID=x651 NAME=x651>RS-48        13:29 13:32  5<br></DIV>
+<DIV ID=x652 NAME=x652>RS-48 10 May 02:13 02:16  3<br></DIV>
+<DIV ID=x653 NAME=x653>RS-48        12:45 12:49 11<br></DIV>
+<DIV ID=x654 NAME=x654>RS-48 11 May 01:29 01:33 16<br></DIV>
+<DIV ID=x655 NAME=x655>RS-48        13:23 13:26  8<br></DIV>
+<DIV ID=x656 NAME=x656>RS-48 12 May 02:06 02:10  6<br></DIV>
+<DIV ID=x657 NAME=x657>RS-48        12:39 12:42  6<br></DIV>
+<DIV ID=x658 NAME=x658>RS-48 13 May 01:22 01:26  8<br></DIV>
+<DIV ID=x659 NAME=x659>RS-48        13:15 13:19 15<br></DIV>
+<DIV ID=x660 NAME=x660>RS-48 14 May 01:59 02:03 11<br></DIV>
+<DIV ID=x661 NAME=x661>RS-48        12:31 12:34  3<br></DIV>
+<DIV ID=x662 NAME=x662>RS-48 15 May 01:14 01:18  4<br></DIV>
+<DIV ID=x663 NAME=x663>RS-48        13:07 13:11 57<br></DIV>
+<DIV ID=x664 NAME=x664>RS-48 16 May 01:50 01:54 29<br></DIV>
+<DIV ID=x665 NAME=x665>RS-48        12:23 12:25  0<br></DIV>
+<DIV ID=x666 NAME=x666>RS-48        13:44 13:46  1<br></DIV>
+<DIV ID=x667 NAME=x667>RS-48 17 May 01:06 01:08  1<br></DIV>
+<DIV ID=x668 NAME=x668>RS-48        02:27 02:29  1<br></DIV>
+<DIV ID=x669 NAME=x669>RS-48        12:58 13:02 21<br></DIV>
+<DIV ID=x670 NAME=x670>RS-48 18 May 01:40 01:44 31<br></DIV>
+</A><br>
+<DIV ID=kks-1 NAME=kks-1><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x671 NAME=x671>KKS-1  8 May 02:58 03:02  1<br></DIV>
+<DIV ID=x672 NAME=x672>KKS-1        10:36 10:46  8<br></DIV>
+<DIV ID=x673 NAME=x673>KKS-1        12:10 12:23 77<br></DIV>
+<DIV ID=x674 NAME=x674>KKS-1        13:50 13:57  4<br></DIV>
+<DIV ID=x675 NAME=x675>KKS-1  9 May 00:01 00:13 23<br></DIV>
+<DIV ID=x676 NAME=x676>KKS-1        01:37 01:49 25<br></DIV>
+<DIV ID=x677 NAME=x677>KKS-1        10:54 11:05 14<br></DIV>
+<DIV ID=x678 NAME=x678>KKS-1        12:29 12:42 45<br></DIV>
+<DIV ID=x679 NAME=x679>KKS-1 10 May 00:20 00:32 38<br></DIV>
+<DIV ID=x680 NAME=x680>KKS-1        01:56 02:07 16<br></DIV>
+<DIV ID=x681 NAME=x681>KKS-1        11:12 11:24 22<br></DIV>
+<DIV ID=x682 NAME=x682>KKS-1        12:48 13:00 27<br></DIV>
+<DIV ID=x683 NAME=x683>KKS-1        23:05 23:11  2<br></DIV>
+<DIV ID=x684 NAME=x684>KKS-1 11 May 00:38 00:51 64<br></DIV>
+<DIV ID=x685 NAME=x685>KKS-1        02:15 02:25 10<br></DIV>
+<DIV ID=x686 NAME=x686>KKS-1        11:30 11:43 34<br></DIV>
+<DIV ID=x687 NAME=x687>KKS-1        13:07 13:18 17<br></DIV>
+<DIV ID=x688 NAME=x688>KKS-1        23:22 23:31  7<br></DIV>
+<DIV ID=x689 NAME=x689>KKS-1 12 May 00:57 01:10 76<br></DIV>
+<DIV ID=x690 NAME=x690>KKS-1        02:35 02:43  5<br></DIV>
+<DIV ID=x691 NAME=x691>KKS-1        10:17 10:23  3<br></DIV>
+<DIV ID=x692 NAME=x692>KKS-1        11:48 12:01 57<br></DIV>
+<DIV ID=x693 NAME=x693>KKS-1        13:26 13:36 10<br></DIV>
+</A><br>
+<DIV ID=swiss NAME=swiss><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x694 NAME=x694>SWISS 08 May 01:31 01:32  1<br></DIV>
+<DIV ID=x695 NAME=x695>SWISS  8 May 09:11 09:18  4<br></DIV>
+<DIV ID=x696 NAME=x696>SWISS        10:44 10:58 61<br></DIV>
+<DIV ID=x697 NAME=x697>SWISS        12:23 12:34 11<br></DIV>
+<DIV ID=x698 NAME=x698>SWISS        22:45 22:57 19<br></DIV>
+<DIV ID=x699 NAME=x699>SWISS  9 May 00:22 00:35 37<br></DIV>
+<DIV ID=x700 NAME=x700>SWISS        02:03 02:06  1<br></DIV>
+<DIV ID=x701 NAME=x701>SWISS        09:47 09:58 15<br></DIV>
+<DIV ID=x702 NAME=x702>SWISS        11:23 11:36 49<br></DIV>
+<DIV ID=x703 NAME=x703>SWISS        13:06 13:09  1<br></DIV>
+<DIV ID=x704 NAME=x704>SWISS        21:50 21:53  1<br></DIV>
+<DIV ID=x705 NAME=x705>SWISS        23:23 23:37 49<br></DIV>
+<DIV ID=x706 NAME=x706>SWISS 10 May 01:01 01:13 15<br></DIV>
+<DIV ID=x707 NAME=x707>SWISS        08:53 08:56  0<br></DIV>
+<DIV ID=x708 NAME=x708>SWISS        10:24 10:37 36<br></DIV>
+<DIV ID=x709 NAME=x709>SWISS        12:02 12:14 19<br></DIV>
+<DIV ID=x710 NAME=x710>SWISS        22:25 22:36 11<br></DIV>
+<DIV ID=x711 NAME=x711>SWISS 11 May 00:02 00:15 62<br></DIV>
+<DIV ID=x712 NAME=x712>SWISS        01:41 01:49  5<br></DIV>
+<DIV ID=x713 NAME=x713>SWISS        09:27 09:37  9<br></DIV>
+<DIV ID=x714 NAME=x714>SWISS        11:02 11:16 84<br></DIV>
+<DIV ID=x715 NAME=x715>SWISS        12:43 12:51  6<br></DIV>
+<DIV ID=x716 NAME=x716>SWISS        23:03 23:16 29<br></DIV>
+</A><br>
+<DIV ID=itups NAME=itups><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x717 NAME=x717>ITUPS  8 May 01:53 01:58  2<br></DIV>
+<DIV ID=x718 NAME=x718>ITUPS        09:38 09:49 12<br></DIV>
+<DIV ID=x719 NAME=x719>ITUPS        11:14 11:27 62<br></DIV>
+<DIV ID=x720 NAME=x720>ITUPS        12:56 13:02  3<br></DIV>
+<DIV ID=x721 NAME=x721>ITUPS        23:15 23:29 40<br></DIV>
+<DIV ID=x722 NAME=x722>ITUPS  9 May 00:53 01:05 18<br></DIV>
+<DIV ID=x723 NAME=x723>ITUPS        10:17 10:30 31<br></DIV>
+<DIV ID=x724 NAME=x724>ITUPS        11:55 12:07 22<br></DIV>
+<DIV ID=x725 NAME=x725>ITUPS        22:19 22:29  9<br></DIV>
+<DIV ID=x726 NAME=x726>ITUPS        23:55 00:09 72<br></DIV>
+<DIV ID=x727 NAME=x727>ITUPS 10 May 01:35 01:43  6<br></DIV>
+<DIV ID=x728 NAME=x728>ITUPS        09:22 09:32  7<br></DIV>
+<DIV ID=x729 NAME=x729>ITUPS        10:57 11:11 85<br></DIV>
+<DIV ID=x730 NAME=x730>ITUPS        12:37 12:46  7<br></DIV>
+<DIV ID=x731 NAME=x731>ITUPS        22:58 23:12 26<br></DIV>
+<DIV ID=x732 NAME=x732>ITUPS 11 May 00:36 00:49 27<br></DIV>
+<DIV ID=x733 NAME=x733>ITUPS        10:01 10:13 21<br></DIV>
+<DIV ID=x734 NAME=x734>ITUPS        11:37 11:51 34<br></DIV>
+<DIV ID=x735 NAME=x735>ITUPS        22:03 22:11  4<br></DIV>
+<DIV ID=x736 NAME=x736>ITUPS        23:38 23:53 73<br></DIV>
+<DIV ID=x737 NAME=x737>ITUPS 12 May 01:17 01:28 10<br></DIV>
+<DIV ID=x738 NAME=x738>ITUPS        09:07 09:14  4<br></DIV>
+<DIV ID=x739 NAME=x739>ITUPS        10:40 10:54 55<br></DIV>
+</A><br>
+<DIV ID=sprou NAME=sprou><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x740 NAME=x740>SPROU has crad! <br></DIV>
+</A><br>
+<DIV ID=tita  NAME=tita ><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x741 NAME=x741>TITA   8 May 10:23 10:34 24<br></DIV>
+<DIV ID=x742 NAME=x742>TITA         11:58 12:08 18<br></DIV>
+<DIV ID=x743 NAME=x743>TITA         21:04 21:13 10<br></DIV>
+<DIV ID=x744 NAME=x744>TITA         22:36 22:48 49<br></DIV>
+<DIV ID=x745 NAME=x745>TITA   9 May 10:14 10:25 19<br></DIV>
+<DIV ID=x746 NAME=x746>TITA         11:48 11:59 23<br></DIV>
+<DIV ID=x747 NAME=x747>TITA         20:55 21:03  7<br></DIV>
+<DIV ID=x748 NAME=x748>TITA         22:27 22:39 67<br></DIV>
+<DIV ID=x749 NAME=x749>TITA  10 May 00:06 00:10  2<br></DIV>
+<DIV ID=x750 NAME=x750>TITA         10:05 10:15 14<br></DIV>
+<DIV ID=x751 NAME=x751>TITA         11:39 11:50 29<br></DIV>
+<DIV ID=x752 NAME=x752>TITA         20:47 20:54  5<br></DIV>
+<DIV ID=x753 NAME=x753>TITA         22:18 22:30 88<br></DIV>
+<DIV ID=x754 NAME=x754>TITA         23:56 00:02  4<br></DIV>
+<DIV ID=x755 NAME=x755>TITA  11 May 09:56 10:06 11<br></DIV>
+<DIV ID=x756 NAME=x756>TITA         11:30 11:41 39<br></DIV>
+<DIV ID=x757 NAME=x757>TITA         20:39 20:44  3<br></DIV>
+<DIV ID=x758 NAME=x758>TITA         22:09 22:21 66<br></DIV>
+<DIV ID=x759 NAME=x759>TITA         23:46 23:54  6<br></DIV>
+<DIV ID=x760 NAME=x760>TITA  12 May 09:48 09:56  8<br></DIV>
+<DIV ID=x761 NAME=x761>TITA         11:21 11:32 53<br></DIV>
+<DIV ID=x762 NAME=x762>TITA         12:58 13:02  1<br></DIV>
+<DIV ID=x763 NAME=x763>TITA         20:31 20:34  1<br></DIV>
+</A><br>
+<DIV ID=tigri NAME=tigri><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x764 NAME=x764>TIGRI  8 May 03:25 03:36 18<br></DIV>
+<DIV ID=x765 NAME=x765>TIGRI        05:00 05:12 33<br></DIV>
+<DIV ID=x766 NAME=x766>TIGRI        15:17 15:22  2<br></DIV>
+<DIV ID=x767 NAME=x767>TIGRI        16:50 17:03 56<br></DIV>
+<DIV ID=x768 NAME=x768>TIGRI        18:27 18:37 12<br></DIV>
+<DIV ID=x769 NAME=x769>TIGRI  9 May 03:41 03:54 27<br></DIV>
+<DIV ID=x770 NAME=x770>TIGRI        05:18 05:29 21<br></DIV>
+<DIV ID=x771 NAME=x771>TIGRI        15:33 15:41  6<br></DIV>
+<DIV ID=x772 NAME=x772>TIGRI        17:07 17:21 87<br></DIV>
+<DIV ID=x773 NAME=x773>TIGRI        18:45 18:54  8<br></DIV>
+<DIV ID=x774 NAME=x774>TIGRI 10 May 02:28 02:32  1<br></DIV>
+<DIV ID=x775 NAME=x775>TIGRI        03:58 04:11 43<br></DIV>
+<DIV ID=x776 NAME=x776>TIGRI        05:36 05:46 13<br></DIV>
+<DIV ID=x777 NAME=x777>TIGRI        15:49 16:00 11<br></DIV>
+<DIV ID=x778 NAME=x778>TIGRI        17:24 17:38 57<br></DIV>
+<DIV ID=x779 NAME=x779>TIGRI        19:03 19:10  4<br></DIV>
+<DIV ID=x780 NAME=x780>TIGRI 11 May 02:43 02:51  5<br></DIV>
+<DIV ID=x781 NAME=x781>TIGRI        04:16 04:29 71<br></DIV>
+<DIV ID=x782 NAME=x782>TIGRI        05:54 06:03  7<br></DIV>
+<DIV ID=x783 NAME=x783>TIGRI        16:06 16:18 18<br></DIV>
+<DIV ID=x784 NAME=x784>TIGRI        17:42 17:55 36<br></DIV>
+<DIV ID=x785 NAME=x785>TIGRI        19:22 19:24  0<br></DIV>
+<DIV ID=x786 NAME=x786>TIGRI 12 May 02:59 03:09  9<br></DIV>
+</A><br>
+<DIV ID=ukube NAME=ukube><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x787 NAME=x787>UKUBE  8 May 03:20 03:31 24<br></DIV>
+<DIV ID=x788 NAME=x788>UKUBE        04:55 05:06 20<br></DIV>
+<DIV ID=x789 NAME=x789>UKUBE        14:03 14:12 11<br></DIV>
+<DIV ID=x790 NAME=x790>UKUBE        15:36 15:48 47<br></DIV>
+<DIV ID=x791 NAME=x791>UKUBE  9 May 03:16 03:27 22<br></DIV>
+<DIV ID=x792 NAME=x792>UKUBE        04:51 05:02 22<br></DIV>
+<DIV ID=x793 NAME=x793>UKUBE        13:59 14:09 10<br></DIV>
+<DIV ID=x794 NAME=x794>UKUBE        15:32 15:44 54<br></DIV>
+<DIV ID=x795 NAME=x795>UKUBE        17:12 17:15  0<br></DIV>
+<DIV ID=x796 NAME=x796>UKUBE 10 May 03:12 03:23 19<br></DIV>
+<DIV ID=x797 NAME=x797>UKUBE        04:47 04:58 25<br></DIV>
+<DIV ID=x798 NAME=x798>UKUBE        13:56 14:05  8<br></DIV>
+<DIV ID=x799 NAME=x799>UKUBE        15:28 15:40 62<br></DIV>
+<DIV ID=x800 NAME=x800>UKUBE        17:08 17:12  1<br></DIV>
+<DIV ID=x801 NAME=x801>UKUBE 11 May 03:09 03:19 17<br></DIV>
+<DIV ID=x802 NAME=x802>UKUBE        04:43 04:54 28<br></DIV>
+<DIV ID=x803 NAME=x803>UKUBE        13:52 14:01  7<br></DIV>
+<DIV ID=x804 NAME=x804>UKUBE        15:24 15:37 72<br></DIV>
+<DIV ID=x805 NAME=x805>UKUBE        17:03 17:08  2<br></DIV>
+<DIV ID=x806 NAME=x806>UKUBE 12 May 03:05 03:15 15<br></DIV>
+<DIV ID=x807 NAME=x807>UKUBE        04:39 04:51 31<br></DIV>
+<DIV ID=x808 NAME=x808>UKUBE        13:49 13:57  6<br></DIV>
+<DIV ID=x809 NAME=x809>UKUBE        15:20 15:33 82<br></DIV>
+</A><br>
+<DIV ID=xw-2b NAME=xw-2b><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x810 NAME=x810>XW-2B has crad! <br></DIV>
+</A><br>
+<DIV ID=xw-2c NAME=xw-2c><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x811 NAME=x811>XW-2C        d! <br></DIV>
+</A><br>
+<DIV ID=xw-2d NAME=xw-2d><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x812 NAME=x812>XW-2D        d! <br></DIV>
+</A><br>
+<DIV ID=xw-2e NAME=xw-2e><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x813 NAME=x813>XW-2E        d! <br></DIV>
+</A><br>
+<DIV ID=xw-2f NAME=xw-2f><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x814 NAME=x814>XW-2F        d! <br></DIV>
+</A><br>
+<DIV ID=xw-3  NAME=xw-3 ><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x815 NAME=x815>XW-3   8 May 11:48 12:01 25<br></DIV>
+<DIV ID=x816 NAME=x816>XW-3         13:26 13:40 32<br></DIV>
+<DIV ID=x817 NAME=x817>XW-3         22:58 23:11 24<br></DIV>
+<DIV ID=x818 NAME=x818>XW-3   9 May 00:36 00:50 33<br></DIV>
+<DIV ID=x819 NAME=x819>XW-3         11:09 11:20  9<br></DIV>
+<DIV ID=x820 NAME=x820>XW-3         12:47 13:01 81<br></DIV>
+<DIV ID=x821 NAME=x821>XW-3         14:27 14:37  8<br></DIV>
+<DIV ID=x822 NAME=x822>XW-3         22:20 22:31 10<br></DIV>
+<DIV ID=x823 NAME=x823>XW-3         23:56 00:11 85<br></DIV>
+<DIV ID=x824 NAME=x824>XW-3  10 May 01:38 01:48  7<br></DIV>
+<DIV ID=x825 NAME=x825>XW-3         12:07 12:22 39<br></DIV>
+<DIV ID=x826 NAME=x826>XW-3         13:47 13:59 21<br></DIV>
+<DIV ID=x827 NAME=x827>XW-3         21:45 21:49  1<br></DIV>
+<DIV ID=x828 NAME=x828>XW-3         23:17 23:32 38<br></DIV>
+<DIV ID=x829 NAME=x829>XW-3  11 May 00:57 01:10 21<br></DIV>
+<DIV ID=x830 NAME=x830>XW-3         11:29 11:41 15<br></DIV>
+<DIV ID=x831 NAME=x831>XW-3         13:07 13:21 50<br></DIV>
+<DIV ID=x832 NAME=x832>XW-3         14:48 14:55  4<br></DIV>
+<DIV ID=x833 NAME=x833>XW-3         22:39 22:52 16<br></DIV>
+<DIV ID=x834 NAME=x834>XW-3  12 May 00:16 00:31 53<br></DIV>
+<DIV ID=x835 NAME=x835>XW-3         02:01 02:06  2<br></DIV>
+<DIV ID=x836 NAME=x836>XW-3         10:51 10:59  4<br></DIV>
+<DIV ID=x837 NAME=x837>XW-3         12:27 12:42 63<br></DIV>
+</A><br>
+<DIV ID=cas4a NAME=cas4a><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x838 NAME=x838>CAS4A  8 May 02:04 02:14 19<br></DIV>
+<DIV ID=x839 NAME=x839>CAS4A        03:41 03:52 35<br></DIV>
+<DIV ID=x840 NAME=x840>CAS4A        05:18 05:28 36<br></DIV>
+<DIV ID=x841 NAME=x841>CAS4A        06:57 07:02  3<br></DIV>
+<DIV ID=x842 NAME=x842>CAS4A        20:18 20:21  1<br></DIV>
+<DIV ID=x843 NAME=x843>CAS4A        21:51 22:01 28<br></DIV>
+<DIV ID=x844 NAME=x844>CAS4A        23:28 23:38 41<br></DIV>
+<DIV ID=x845 NAME=x845>CAS4A  9 May 01:05 01:15 19<br></DIV>
+<DIV ID=x846 NAME=x846>CAS4A        02:42 02:52 25<br></DIV>
+<DIV ID=x847 NAME=x847>CAS4A        04:19 04:29 74<br></DIV>
+<DIV ID=x848 NAME=x848>CAS4A        05:56 06:04  9<br></DIV>
+<DIV ID=x849 NAME=x849>CAS4A        20:52 21:01 14<br></DIV>
+<DIV ID=x850 NAME=x850>CAS4A        22:28 22:38 72<br></DIV>
+<DIV ID=x851 NAME=x851>CAS4A 10 May 00:05 00:15 22<br></DIV>
+<DIV ID=x852 NAME=x852>CAS4A        01:43 01:53 20<br></DIV>
+<DIV ID=x853 NAME=x853>CAS4A        03:20 03:30 58<br></DIV>
+<DIV ID=x854 NAME=x854>CAS4A        04:57 05:06 18<br></DIV>
+<DIV ID=x855 NAME=x855>CAS4A        19:54 20:01  6<br></DIV>
+<DIV ID=x856 NAME=x856>CAS4A        21:29 21:39 57<br></DIV>
+<DIV ID=x857 NAME=x857>CAS4A        23:06 23:16 28<br></DIV>
+<DIV ID=x858 NAME=x858>CAS4A 11 May 00:43 00:53 19<br></DIV>
+<DIV ID=x859 NAME=x859>CAS4A        02:20 02:30 35<br></DIV>
+<DIV ID=x860 NAME=x860>CAS4A        03:57 04:07 36<br></DIV>
+</A><br>
+<DIV ID=cas4b NAME=cas4b><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x861 NAME=x861>CAS4B  8 May 02:18 02:28 19<br></DIV>
+<DIV ID=x862 NAME=x862>CAS4B        03:55 04:06 37<br></DIV>
+<DIV ID=x863 NAME=x863>CAS4B        05:32 05:42 35<br></DIV>
+<DIV ID=x864 NAME=x864>CAS4B        07:11 07:16  3<br></DIV>
+<DIV ID=x865 NAME=x865>CAS4B        20:33 20:37  2<br></DIV>
+<DIV ID=x866 NAME=x866>CAS4B        22:06 22:16 30<br></DIV>
+<DIV ID=x867 NAME=x867>CAS4B        23:42 23:53 39<br></DIV>
+<DIV ID=x868 NAME=x868>CAS4B  9 May 01:20 01:30 19<br></DIV>
+<DIV ID=x869 NAME=x869>CAS4B        02:57 03:07 26<br></DIV>
+<DIV ID=x870 NAME=x870>CAS4B        04:34 04:45 69<br></DIV>
+<DIV ID=x871 NAME=x871>CAS4B        06:12 06:20  8<br></DIV>
+<DIV ID=x872 NAME=x872>CAS4B        21:08 21:18 16<br></DIV>
+<DIV ID=x873 NAME=x873>CAS4B        22:44 22:55 66<br></DIV>
+<DIV ID=x874 NAME=x874>CAS4B 10 May 00:22 00:32 21<br></DIV>
+<DIV ID=x875 NAME=x875>CAS4B        01:59 02:09 21<br></DIV>
+<DIV ID=x876 NAME=x876>CAS4B        03:36 03:47 64<br></DIV>
+<DIV ID=x877 NAME=x877>CAS4B        05:13 05:23 17<br></DIV>
+<DIV ID=x878 NAME=x878>CAS4B        20:11 20:19  8<br></DIV>
+<DIV ID=x879 NAME=x879>CAS4B        21:46 21:56 66<br></DIV>
+<DIV ID=x880 NAME=x880>CAS4B        23:23 23:33 27<br></DIV>
+<DIV ID=x881 NAME=x881>CAS4B 11 May 01:01 01:11 19<br></DIV>
+<DIV ID=x882 NAME=x882>CAS4B        02:38 02:48 38<br></DIV>
+<DIV ID=x883 NAME=x883>CAS4B        04:15 04:25 32<br></DIV>
+</A><br>
+<DIV ID=cas2t NAME=cas2t><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x884 NAME=x884>CAS2T  8 May 09:41 09:50  4<br></DIV>
+<DIV ID=x885 NAME=x885>CAS2T        11:17 11:33 53<br></DIV>
+<DIV ID=x886 NAME=x886>CAS2T        12:56 13:10 21<br></DIV>
+<DIV ID=x887 NAME=x887>CAS2T        20:51 21:00  5<br></DIV>
+<DIV ID=x888 NAME=x888>CAS2T        22:25 22:41 47<br></DIV>
+<DIV ID=x889 NAME=x889>CAS2T  9 May 00:05 00:19 20<br></DIV>
+<DIV ID=x890 NAME=x890>CAS2T        10:36 10:50 22<br></DIV>
+<DIV ID=x891 NAME=x891>CAS2T        12:14 12:30 45<br></DIV>
+<DIV ID=x892 NAME=x892>CAS2T        13:54 14:04  5<br></DIV>
+<DIV ID=x893 NAME=x893>CAS2T        21:44 21:59 21<br></DIV>
+<DIV ID=x894 NAME=x894>CAS2T        23:22 23:38 50<br></DIV>
+<DIV ID=x895 NAME=x895>CAS2T 10 May 01:05 01:13  3<br></DIV>
+<DIV ID=x896 NAME=x896>CAS2T        09:55 10:06  7<br></DIV>
+<DIV ID=x897 NAME=x897>CAS2T        11:32 11:48 68<br></DIV>
+<DIV ID=x898 NAME=x898>CAS2T        13:11 13:24 15<br></DIV>
+<DIV ID=x899 NAME=x899>CAS2T        21:04 21:16  9<br></DIV>
+<DIV ID=x900 NAME=x900>CAS2T        22:39 22:56 63<br></DIV>
+<DIV ID=x901 NAME=x901>CAS2T 11 May 00:20 00:33 15<br></DIV>
+<DIV ID=x902 NAME=x902>CAS2T        10:50 11:05 29<br></DIV>
+<DIV ID=x903 NAME=x903>CAS2T        12:28 12:44 34<br></DIV>
+<DIV ID=x904 NAME=x904>CAS2T        14:10 14:16  2<br></DIV>
+<DIV ID=x905 NAME=x905>CAS2T        20:27 20:31  1<br></DIV>
+<DIV ID=x906 NAME=x906>CAS2T        21:58 22:13 28<br></DIV>
+</A><br>
+<DIV ID=lilac NAME=lilac><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x907 NAME=x907>LILAC  8 May 07:03 07:12 12<br></DIV>
+<DIV ID=x908 NAME=x908>LILAC        08:36 08:46 27<br></DIV>
+<DIV ID=x909 NAME=x909>LILAC        17:36 17:38  0<br></DIV>
+<DIV ID=x910 NAME=x910>LILAC        19:03 19:14 50<br></DIV>
+<DIV ID=x911 NAME=x911>LILAC        20:38 20:45  6<br></DIV>
+<DIV ID=x912 NAME=x912>LILAC  9 May 06:30 06:35  2<br></DIV>
+<DIV ID=x913 NAME=x913>LILAC        08:01 08:12 85<br></DIV>
+<DIV ID=x914 NAME=x914>LILAC        09:35 09:41  4<br></DIV>
+<DIV ID=x915 NAME=x915>LILAC        18:29 18:39 17<br></DIV>
+<DIV ID=x916 NAME=x916>LILAC        20:02 20:12 21<br></DIV>
+<DIV ID=x917 NAME=x917>LILAC 10 May 07:26 07:37 25<br></DIV>
+<DIV ID=x918 NAME=x918>LILAC        08:59 09:09 14<br></DIV>
+<DIV ID=x919 NAME=x919>LILAC        17:56 18:03  5<br></DIV>
+<DIV ID=x920 NAME=x920>LILAC        19:26 19:37 70<br></DIV>
+<DIV ID=x921 NAME=x921>LILAC        21:04 21:07  1<br></DIV>
+<DIV ID=x922 NAME=x922>LILAC 11 May 06:52 07:01  8<br></DIV>
+<DIV ID=x923 NAME=x923>LILAC        08:24 08:35 40<br></DIV>
+<DIV ID=x924 NAME=x924>LILAC        18:52 19:03 33<br></DIV>
+<DIV ID=x925 NAME=x925>LILAC        20:26 20:35 10<br></DIV>
+<DIV ID=x926 NAME=x926>LILAC 12 May 07:49 08:00 56<br></DIV>
+<DIV ID=x927 NAME=x927>LILAC        09:23 09:31  6<br></DIV>
+<DIV ID=x928 NAME=x928>LILAC        18:18 18:27 12<br></DIV>
+<DIV ID=x929 NAME=x929>LILAC        19:50 20:01 30<br></DIV>
+</A><br>
+<DIV ID=na-15 NAME=na-15><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x930 NAME=x930>NA-15  8 May 07:15 07:28 17<br></DIV>
+<DIV ID=x931 NAME=x931>NA-15        08:54 09:09 49<br></DIV>
+<DIV ID=x932 NAME=x932>NA-15        10:36 10:44  4<br></DIV>
+<DIV ID=x933 NAME=x933>NA-15        18:32 18:45 20<br></DIV>
+<DIV ID=x934 NAME=x934>NA-15        20:10 20:25 44<br></DIV>
+<DIV ID=x935 NAME=x935>NA-15        21:57 22:00  0<br></DIV>
+<DIV ID=x936 NAME=x936>NA-15  9 May 06:50 07:01  8<br></DIV>
+<DIV ID=x937 NAME=x937>NA-15        08:28 08:43 88<br></DIV>
+<DIV ID=x938 NAME=x938>NA-15        10:09 10:20 10<br></DIV>
+<DIV ID=x939 NAME=x939>NA-15        18:07 18:18 11<br></DIV>
+<DIV ID=x940 NAME=x940>NA-15        19:44 19:59 81<br></DIV>
+<DIV ID=x941 NAME=x941>NA-15        21:27 21:37  7<br></DIV>
+<DIV ID=x942 NAME=x942>NA-15 10 May 06:26 06:32  2<br></DIV>
+<DIV ID=x943 NAME=x943>NA-15        08:02 08:17 50<br></DIV>
+<DIV ID=x944 NAME=x944>NA-15        09:42 09:55 18<br></DIV>
+<DIV ID=x945 NAME=x945>NA-15        17:43 17:51  5<br></DIV>
+<DIV ID=x946 NAME=x946>NA-15        19:18 19:33 56<br></DIV>
+<DIV ID=x947 NAME=x947>NA-15        20:59 21:12 15<br></DIV>
+<DIV ID=x948 NAME=x948>NA-15 11 May 07:36 07:50 28<br></DIV>
+<DIV ID=x949 NAME=x949>NA-15        09:16 09:30 31<br></DIV>
+<DIV ID=x950 NAME=x950>NA-15        18:53 19:07 31<br></DIV>
+<DIV ID=x951 NAME=x951>NA-15        20:32 20:47 27<br></DIV>
+<DIV ID=x952 NAME=x952>NA-15 12 May 07:11 07:23 15<br></DIV>
+</A><br>
+<DIV ID=na-18 NAME=na-18><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x953 NAME=x953>NA-18  8 May 10:41 10:53 14<br></DIV>
+<DIV ID=x954 NAME=x954>NA-18        12:20 12:36 63<br></DIV>
+<DIV ID=x955 NAME=x955>NA-18        14:03 14:12  7<br></DIV>
+<DIV ID=x956 NAME=x956>NA-18        22:03 22:17 20<br></DIV>
+<DIV ID=x957 NAME=x957>NA-18        23:43 23:58 48<br></DIV>
+<DIV ID=x958 NAME=x958>NA-18  9 May 01:29 01:35  2<br></DIV>
+<DIV ID=x959 NAME=x959>NA-18        10:28 10:40 10<br></DIV>
+<DIV ID=x960 NAME=x960>NA-18        12:07 12:23 83<br></DIV>
+<DIV ID=x961 NAME=x961>NA-18        13:49 14:00 10<br></DIV>
+<DIV ID=x962 NAME=x962>NA-18        21:51 22:04 16<br></DIV>
+<DIV ID=x963 NAME=x963>NA-18        23:30 23:46 64<br></DIV>
+<DIV ID=x964 NAME=x964>NA-18 10 May 01:15 01:24  5<br></DIV>
+<DIV ID=x965 NAME=x965>NA-18        10:16 10:26  6<br></DIV>
+<DIV ID=x966 NAME=x966>NA-18        11:54 12:10 74<br></DIV>
+<DIV ID=x967 NAME=x967>NA-18        13:36 13:48 13<br></DIV>
+<DIV ID=x968 NAME=x968>NA-18        21:39 21:51 12<br></DIV>
+<DIV ID=x969 NAME=x969>NA-18        23:17 23:33 85<br></DIV>
+<DIV ID=x970 NAME=x970>NA-18 11 May 01:01 01:11  8<br></DIV>
+<DIV ID=x971 NAME=x971>NA-18        10:04 10:12  3<br></DIV>
+<DIV ID=x972 NAME=x972>NA-18        11:42 11:57 56<br></DIV>
+<DIV ID=x973 NAME=x973>NA-18        13:23 13:36 17<br></DIV>
+<DIV ID=x974 NAME=x974>NA-18        21:27 21:38  8<br></DIV>
+<DIV ID=x975 NAME=x975>NA-18        23:04 23:20 74<br></DIV>
+</A><br>
+<DIV ID=na-19 NAME=na-19><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x976 NAME=x976>NA-19  8 May 09:03 09:10  3<br></DIV>
+<DIV ID=x977 NAME=x977>NA-19        10:41 10:56 55<br></DIV>
+<DIV ID=x978 NAME=x978>NA-19        12:22 12:35 17<br></DIV>
+<DIV ID=x979 NAME=x979>NA-19        20:26 20:37  8<br></DIV>
+<DIV ID=x980 NAME=x980>NA-19        22:03 22:19 75<br></DIV>
+<DIV ID=x981 NAME=x981>NA-19        23:46 23:58 11<br></DIV>
+<DIV ID=x982 NAME=x982>NA-19  9 May 08:53 08:55  0<br></DIV>
+<DIV ID=x983 NAME=x983>NA-19        10:28 10:43 42<br></DIV>
+<DIV ID=x984 NAME=x984>NA-19        12:09 12:23 23<br></DIV>
+<DIV ID=x985 NAME=x985>NA-19        20:14 20:23  5<br></DIV>
+<DIV ID=x986 NAME=x986>NA-19        21:51 22:06 57<br></DIV>
+<DIV ID=x987 NAME=x987>NA-19        23:33 23:46 16<br></DIV>
+<DIV ID=x988 NAME=x988>NA-19 10 May 10:15 10:30 31<br></DIV>
+<DIV ID=x989 NAME=x989>NA-19        11:56 12:11 29<br></DIV>
+<DIV ID=x990 NAME=x990>NA-19        20:03 20:10  3<br></DIV>
+<DIV ID=x991 NAME=x991>NA-19        21:38 21:53 43<br></DIV>
+<DIV ID=x992 NAME=x992>NA-19        23:20 23:34 21<br></DIV>
+<DIV ID=x993 NAME=x993>NA-19 11 May 10:03 10:17 24<br></DIV>
+<DIV ID=x994 NAME=x994>NA-19        11:43 11:58 38<br></DIV>
+<DIV ID=x995 NAME=x995>NA-19        13:27 13:33  2<br></DIV>
+<DIV ID=x996 NAME=x996>NA-19        19:53 19:56  1<br></DIV>
+<DIV ID=x997 NAME=x997>NA-19        21:26 21:41 33<br></DIV>
+<DIV ID=x998 NAME=x998>NA-19        23:07 23:21 28<br></DIV>
+</A><br>
+<DIV ID=metoa NAME=metoa><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x999 NAME=x999>METOA  8 May 11:06 11:16  7<br></DIV>
+<DIV ID=x1000 NAME=x1000>METOA        12:41 12:55 79<br></DIV>
+<DIV ID=x1001 NAME=x1001>METOA        14:19 14:29 10<br></DIV>
+<DIV ID=x1002 NAME=x1002>METOA        22:03 22:11  4<br></DIV>
+<DIV ID=x1003 NAME=x1003>METOA        23:36 23:50 53<br></DIV>
+<DIV ID=x1004 NAME=x1004>METOA  9 May 01:14 01:25 13<br></DIV>
+<DIV ID=x1005 NAME=x1005>METOA        11:31 11:43 15<br></DIV>
+<DIV ID=x1006 NAME=x1006>METOA        13:07 13:21 49<br></DIV>
+<DIV ID=x1007 NAME=x1007>METOA        14:46 14:53  4<br></DIV>
+<DIV ID=x1008 NAME=x1008>METOA        22:27 22:38 10<br></DIV>
+<DIV ID=x1009 NAME=x1009>METOA 10 May 00:02 00:16 76<br></DIV>
+<DIV ID=x1010 NAME=x1010>METOA        01:42 01:50  6<br></DIV>
+<DIV ID=x1011 NAME=x1011>METOA        11:57 12:10 28<br></DIV>
+<DIV ID=x1012 NAME=x1012>METOA        13:33 13:47 27<br></DIV>
+<DIV ID=x1013 NAME=x1013>METOA        22:52 23:05 19<br></DIV>
+<DIV ID=x1014 NAME=x1014>METOA 11 May 00:28 00:42 41<br></DIV>
+<DIV ID=x1015 NAME=x1015>METOA        10:49 10:55  2<br></DIV>
+<DIV ID=x1016 NAME=x1016>METOA        12:23 12:37 53<br></DIV>
+<DIV ID=x1017 NAME=x1017>METOA        14:00 14:12 15<br></DIV>
+<DIV ID=x1018 NAME=x1018>METOA        21:47 21:51  1<br></DIV>
+<DIV ID=x1019 NAME=x1019>METOA        23:18 23:31 34<br></DIV>
+<DIV ID=x1020 NAME=x1020>METOA 12 May 00:55 01:08 22<br></DIV>
+<DIV ID=x1021 NAME=x1021>METOA        11:14 11:24  8<br></DIV>
+</A><br>
+<DIV ID=metob NAME=metob><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1022 NAME=x1022>METOB  8 May 09:31 09:46 27<br></DIV>
+<DIV ID=x1023 NAME=x1023>METOB        11:11 11:26 32<br></DIV>
+<DIV ID=x1024 NAME=x1024>METOB        12:56 12:58  0<br></DIV>
+<DIV ID=x1025 NAME=x1025>METOB        19:17 19:20  0<br></DIV>
+<DIV ID=x1026 NAME=x1026>METOB        20:50 21:05 33<br></DIV>
+<DIV ID=x1027 NAME=x1027>METOB        22:30 22:45 27<br></DIV>
+<DIV ID=x1028 NAME=x1028>METOB  9 May 09:11 09:24 17<br></DIV>
+<DIV ID=x1029 NAME=x1029>METOB        10:50 11:05 51<br></DIV>
+<DIV ID=x1030 NAME=x1030>METOB        12:33 12:41  4<br></DIV>
+<DIV ID=x1031 NAME=x1031>METOB        20:30 20:44 21<br></DIV>
+<DIV ID=x1032 NAME=x1032>METOB        22:09 22:24 42<br></DIV>
+<DIV ID=x1033 NAME=x1033>METOB        23:57 23:59  0<br></DIV>
+<DIV ID=x1034 NAME=x1034>METOB 10 May 08:51 09:02 10<br></DIV>
+<DIV ID=x1035 NAME=x1035>METOB        10:29 10:45 80<br></DIV>
+<DIV ID=x1036 NAME=x1036>METOB        12:11 12:22  9<br></DIV>
+<DIV ID=x1037 NAME=x1037>METOB        20:10 20:23 14<br></DIV>
+<DIV ID=x1038 NAME=x1038>METOB        21:48 22:04 69<br></DIV>
+<DIV ID=x1039 NAME=x1039>METOB        23:32 23:41  5<br></DIV>
+<DIV ID=x1040 NAME=x1040>METOB 11 May 08:31 08:40  4<br></DIV>
+<DIV ID=x1041 NAME=x1041>METOB        10:09 10:24 65<br></DIV>
+<DIV ID=x1042 NAME=x1042>METOB        11:50 12:02 15<br></DIV>
+<DIV ID=x1043 NAME=x1043>METOB        19:51 20:01  8<br></DIV>
+<DIV ID=x1044 NAME=x1044>METOB        21:27 21:43 76<br></DIV>
+</A><br>
+<DIV ID=metoc NAME=metoc><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1045 NAME=x1045>METOC  8 May 08:46 08:52  2<br></DIV>
+<DIV ID=x1046 NAME=x1046>METOC        10:22 10:37 51<br></DIV>
+<DIV ID=x1047 NAME=x1047>METOC        12:03 12:16 18<br></DIV>
+<DIV ID=x1048 NAME=x1048>METOC        20:05 20:14  6<br></DIV>
+<DIV ID=x1049 NAME=x1049>METOC        21:41 21:56 62<br></DIV>
+<DIV ID=x1050 NAME=x1050>METOC        23:23 23:35 14<br></DIV>
+<DIV ID=x1051 NAME=x1051>METOC  9 May 10:01 10:16 32<br></DIV>
+<DIV ID=x1052 NAME=x1052>METOC        11:42 11:56 28<br></DIV>
+<DIV ID=x1053 NAME=x1053>METOC        19:46 19:52  2<br></DIV>
+<DIV ID=x1054 NAME=x1054>METOC        21:20 21:35 39<br></DIV>
+<DIV ID=x1055 NAME=x1055>METOC        23:01 23:15 22<br></DIV>
+<DIV ID=x1056 NAME=x1056>METOC 10 May 09:41 09:55 20<br></DIV>
+<DIV ID=x1057 NAME=x1057>METOC        11:21 11:36 43<br></DIV>
+<DIV ID=x1058 NAME=x1058>METOC        13:04 13:10  3<br></DIV>
+<DIV ID=x1059 NAME=x1059>METOC        21:00 21:14 25<br></DIV>
+<DIV ID=x1060 NAME=x1060>METOC        22:40 22:55 35<br></DIV>
+<DIV ID=x1061 NAME=x1061>METOC 11 May 09:21 09:33 12<br></DIV>
+<DIV ID=x1062 NAME=x1062>METOC        11:00 11:15 68<br></DIV>
+<DIV ID=x1063 NAME=x1063>METOC        12:42 12:52  7<br></DIV>
+<DIV ID=x1064 NAME=x1064>METOC        20:40 20:53 17<br></DIV>
+<DIV ID=x1065 NAME=x1065>METOC        22:19 22:34 57<br></DIV>
+<DIV ID=x1066 NAME=x1066>METOC 12 May 00:04 00:11  3<br></DIV>
+<DIV ID=x1067 NAME=x1067>METOC        09:01 09:11  6<br></DIV>
+</A><br>
+<DIV ID=metm2 NAME=metm2><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1068 NAME=x1068>METM2  8 May 04:38 04:52 18<br></DIV>
+<DIV ID=x1069 NAME=x1069>METM2        06:18 06:33 47<br></DIV>
+<DIV ID=x1070 NAME=x1070>METM2        08:00 08:08  3<br></DIV>
+<DIV ID=x1071 NAME=x1071>METM2        15:57 16:11 23<br></DIV>
+<DIV ID=x1072 NAME=x1072>METM2        17:37 17:52 40<br></DIV>
+<DIV ID=x1073 NAME=x1073>METM2  9 May 04:18 04:30 11<br></DIV>
+<DIV ID=x1074 NAME=x1074>METM2        05:57 06:12 75<br></DIV>
+<DIV ID=x1075 NAME=x1075>METM2        07:39 07:49  8<br></DIV>
+<DIV ID=x1076 NAME=x1076>METM2        15:38 15:50 15<br></DIV>
+<DIV ID=x1077 NAME=x1077>METM2        17:16 17:31 64<br></DIV>
+<DIV ID=x1078 NAME=x1078>METM2        19:00 19:09  4<br></DIV>
+<DIV ID=x1079 NAME=x1079>METM2 10 May 03:59 04:08  5<br></DIV>
+<DIV ID=x1080 NAME=x1080>METM2        05:37 05:52 70<br></DIV>
+<DIV ID=x1081 NAME=x1081>METM2        07:18 07:30 13<br></DIV>
+<DIV ID=x1082 NAME=x1082>METM2        15:19 15:29  9<br></DIV>
+<DIV ID=x1083 NAME=x1083>METM2        16:55 17:11 82<br></DIV>
+<DIV ID=x1084 NAME=x1084>METM2        18:38 18:50 10<br></DIV>
+<DIV ID=x1085 NAME=x1085>METM2 11 May 03:41 03:44  1<br></DIV>
+<DIV ID=x1086 NAME=x1086>METM2        05:16 05:31 44<br></DIV>
+<DIV ID=x1087 NAME=x1087>METM2        06:57 07:10 21<br></DIV>
+<DIV ID=x1088 NAME=x1088>METM2        15:00 15:08  4<br></DIV>
+<DIV ID=x1089 NAME=x1089>METM2        16:35 16:50 52<br></DIV>
+<DIV ID=x1090 NAME=x1090>METM2        18:17 18:30 17<br></DIV>
+</A><br>
+<DIV ID=lapan NAME=lapan><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1091 NAME=x1091>Lapan  8 May 06:18 06:28 19<br></DIV>
+<DIV ID=x1092 NAME=x1092>Lapan        07:51 08:01 20<br></DIV>
+<DIV ID=x1093 NAME=x1093>Lapan        16:52 16:58  3<br></DIV>
+<DIV ID=x1094 NAME=x1094>Lapan        18:22 18:33 82<br></DIV>
+<DIV ID=x1095 NAME=x1095>Lapan        19:59 20:04  3<br></DIV>
+<DIV ID=x1096 NAME=x1096>Lapan  9 May 05:52 06:00  8<br></DIV>
+<DIV ID=x1097 NAME=x1097>Lapan        07:24 07:35 46<br></DIV>
+<DIV ID=x1098 NAME=x1098>Lapan        09:02 09:03  0<br></DIV>
+<DIV ID=x1099 NAME=x1099>Lapan        17:56 18:06 32<br></DIV>
+<DIV ID=x1100 NAME=x1100>Lapan        19:30 19:39 11<br></DIV>
+<DIV ID=x1101 NAME=x1101>Lapan 10 May 05:27 05:31  1<br></DIV>
+<DIV ID=x1102 NAME=x1102>Lapan        06:57 07:09 69<br></DIV>
+<DIV ID=x1103 NAME=x1103>Lapan        08:32 08:39  6<br></DIV>
+<DIV ID=x1104 NAME=x1104>Lapan        17:30 17:39 15<br></DIV>
+<DIV ID=x1105 NAME=x1105>Lapan        19:02 19:13 25<br></DIV>
+<DIV ID=x1106 NAME=x1106>Lapan 11 May 06:31 06:42 28<br></DIV>
+<DIV ID=x1107 NAME=x1107>Lapan        08:04 08:14 14<br></DIV>
+<DIV ID=x1108 NAME=x1108>Lapan        17:04 17:12  6<br></DIV>
+<DIV ID=x1109 NAME=x1109>Lapan        18:35 18:46 62<br></DIV>
+<DIV ID=x1110 NAME=x1110>Lapan        20:14 20:15  0<br></DIV>
+<DIV ID=x1111 NAME=x1111>Lapan 12 May 06:04 06:14 12<br></DIV>
+<DIV ID=x1112 NAME=x1112>Lapan        07:37 07:48 30<br></DIV>
+<DIV ID=x1113 NAME=x1113>Lapan        16:41 16:43  0<br></DIV>
+</A><br>
+<DIV ID=maxva NAME=maxva><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1114 NAME=x1114>MAXVA has crad! <br></DIV>
+</A><br>
+<DIV ID=norbi NAME=norbi><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1115 NAME=x1115>NORBI  8 May 05:11 05:22 44<br></DIV>
+<DIV ID=x1116 NAME=x1116>NORBI        06:45 06:53  9<br></DIV>
+<DIV ID=x1117 NAME=x1117>NORBI        15:43 15:52 12<br></DIV>
+<DIV ID=x1118 NAME=x1118>NORBI        17:15 17:26 33<br></DIV>
+<DIV ID=x1119 NAME=x1119>NORBI  9 May 04:43 04:53 18<br></DIV>
+<DIV ID=x1120 NAME=x1120>NORBI        06:16 06:26 21<br></DIV>
+<DIV ID=x1121 NAME=x1121>NORBI        15:17 15:23  4<br></DIV>
+<DIV ID=x1122 NAME=x1122>NORBI        16:47 16:58 89<br></DIV>
+<DIV ID=x1123 NAME=x1123>NORBI        18:23 18:29  3<br></DIV>
+<DIV ID=x1124 NAME=x1124>NORBI 10 May 04:16 04:24  7<br></DIV>
+<DIV ID=x1125 NAME=x1125>NORBI        05:48 05:59 49<br></DIV>
+<DIV ID=x1126 NAME=x1126>NORBI        07:24 07:27  1<br></DIV>
+<DIV ID=x1127 NAME=x1127>NORBI        16:19 16:30 33<br></DIV>
+<DIV ID=x1128 NAME=x1128>NORBI        17:53 18:02 11<br></DIV>
+<DIV ID=x1129 NAME=x1129>NORBI 11 May 03:51 03:52  0<br></DIV>
+<DIV ID=x1130 NAME=x1130>NORBI        05:20 05:31 59<br></DIV>
+<DIV ID=x1131 NAME=x1131>NORBI        06:54 07:02  7<br></DIV>
+<DIV ID=x1132 NAME=x1132>NORBI        15:52 16:01 15<br></DIV>
+<DIV ID=x1133 NAME=x1133>NORBI        17:24 17:35 26<br></DIV>
+<DIV ID=x1134 NAME=x1134>NORBI 12 May 04:52 05:02 23<br></DIV>
+<DIV ID=x1135 NAME=x1135>NORBI        06:25 06:35 16<br></DIV>
+<DIV ID=x1136 NAME=x1136>NORBI        15:25 15:32  6<br></DIV>
+<DIV ID=x1137 NAME=x1137>NORBI        16:55 17:07 68<br></DIV>
+</A><br>
+<DIV ID=china NAME=china><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1138 NAME=x1138>CHINA  8 May 05:45 17:59 55<br></DIV>
+<DIV ID=x1139 NAME=x1139>CHINA  9 May 06:08 18:21 55<br></DIV>
+<DIV ID=x1140 NAME=x1140>CHINA 10 May 06:30 18:44 55<br></DIV>
+<DIV ID=x1141 NAME=x1141>CHINA 11 May 06:53 19:06 55<br></DIV>
+<DIV ID=x1142 NAME=x1142>CHINA 12 May 07:15 15:31 55<br></DIV>
+<DIV ID=x1143 NAME=x1143>CHINA 13 May 05:32 17:46 55<br></DIV>
+<DIV ID=x1144 NAME=x1144>CHINA 14 May 05:55 18:09 55<br></DIV>
+<DIV ID=x1145 NAME=x1145>CHINA 15 May 06:17 18:31 55<br></DIV>
+<DIV ID=x1146 NAME=x1146>CHINA 16 May 06:40 18:54 55<br></DIV>
+<DIV ID=x1147 NAME=x1147>CHINA 17 May 07:03 19:16 55<br></DIV>
+<DIV ID=x1148 NAME=x1148>CHINA 18 May 07:25 19:39 55<br></DIV>
+<DIV ID=x1149 NAME=x1149>CHINA 19 May 07:48 20:01 55<br></DIV>
+<DIV ID=x1150 NAME=x1150>CHINA 20 May 08:10 20:24 55<br></DIV>
+<DIV ID=x1151 NAME=x1151>CHINA 21 May 08:33 20:47 55<br></DIV>
+<DIV ID=x1152 NAME=x1152>CHINA 22 May 08:55 21:09 55<br></DIV>
+<DIV ID=x1153 NAME=x1153>CHINA 23 May 09:18 17:34 55<br></DIV>
+<DIV ID=x1154 NAME=x1154>CHINA 24 May 07:34 19:48 55<br></DIV>
+<DIV ID=x1155 NAME=x1155>CHINA 25 May 07:57 20:11 55<br></DIV>
+<DIV ID=x1156 NAME=x1156>CHINA 26 May 08:20 20:33 55<br></DIV>
+<DIV ID=x1157 NAME=x1157>CHINA 27 May 08:42 20:56 55<br></DIV>
+<DIV ID=x1158 NAME=x1158>CHINA 28 May 09:05 21:19 55<br></DIV>
+<DIV ID=x1159 NAME=x1159>CHINA 29 May 09:27 21:41 55<br></DIV>
+<DIV ID=x1160 NAME=x1160>CHINA 30 May 09:50 22:04 55<br></DIV>
+</A><br>
+<DIV ID=teve2 NAME=teve2><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1161 NAME=x1161>TEVE2 has crad! <br></DIV>
+</A><br>
+<DIV ID=teve3 NAME=teve3><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1162 NAME=x1162>TEVE3        d! <br></DIV>
+</A><br>
+<DIV ID=teve4 NAME=teve4><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1163 NAME=x1163>TEVE4        d! <br></DIV>
+</A><br>
+<DIV ID=teve5 NAME=teve5><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1164 NAME=x1164>TEVE5        d! <br></DIV>
+</A><br>
+<DIV ID=teve6 NAME=teve6><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1165 NAME=x1165>TEVE6        d! <br></DIV>
+</A><br>
+<DIV ID=teve7 NAME=teve7><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br></DIV>
+===== ====== ===== ===== ==<br>
+<DIV ID=x1166 NAME=x1166>TEVE7        d! <br></DIV>
+<DIV ID=RESU NAME=RESU></DIV>
+<script language=javascript>
+tmr=setInterval("hilite()",60000);
+var pd=new Array();var pdt=new Array();var pdi=0;var montharray=new Array('','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+function setred(cual) {if(cual=='ao-071'){cual='ao-71'};document.getElementById(cual).style.background ='#00ff00';}
+function setmag(cual) {if(cual=='ao-071'){cual='ao-71'};document.getElementById(cual).style.background ='#00ffff';}
+function setyel(cual) {if(cual=='ao-071'){cual='ao-71'};document.getElementById(cual).style.background ='#ffff00';}
+function setwht(cual) {if(cual=='ao-071'){cual='ao-71'};document.getElementById(cual).style.background ='#f4f4f4';}
+hilite();
+function rst(){clearInterval(tmr);
+for (k=0;k<=1166;k++){setwht("x"+k);
+linea=document.getElementById("x"+k).innerHTML ;
+linea=linea.replace(/&nbsp;/g, " ");
+var msat=linea.substr(0,5).replace(/ /g,'').replace(/ /g,'').toLowerCase();if (msat.substr(0,3)=='iss') {msat = 'iss';};msat=msat+'1';
+setwht(msat);}
+hilite();tmr=setInterval("hilite()",60000);}
+var mdi;var mdf;var mdl;
+function hilite() {
+mydate=new Date();var mdl=Date.parse(mydate);var k;pdi=0;
+lh=mydate.getHours();if(lh<10){lh='0'+lh};lm=mydate.getMinutes();if(lm<10){lm='0'+lm};
+ldt='Hora en tu PC: '+mydate.getDate()+' '+montharray[mydate.getUTCMonth()+1]+' '+lh+':'+lm;
+document.getElementById("LT").innerHTML=ldt;
+lti=lh+":"+lm ;
+document.getElementById("RESU").innerHTML="<hr size=3><br><DIV ID=PX NAME=PX><font class=titg> Pasos a las "+lti+"</font><br><br></DIV>";
+document.getElementById("RESU").innerHTML=document.getElementById("RESU").innerHTML+" <font class=red1> Pass </font>  <font class=mag1> Atenc </font>  ";
+document.getElementById("RESU").innerHTML=document.getElementById("RESU").innerHTML+" <font class=yel1> Prox </font><br><br><A HREF=#top class=pnk1>UP</A>Sat&nbsp;DiaMes  Sale  Cae  El<br>===== ====== ===== ===== ==<br>";
+for (k=0;k<=1166;k++){
+linea=document.getElementById("x"+k).innerHTML ;
+linea=linea.replace(/&nbsp;/g, " ");
+for (t=1;t<13;t++){
+if (montharray[t]==linea.substr(9,3)){m=t;mname=montharray[t];}};var diai;var diaj
+if (linea.substr(6,2)!="  "){diai=linea.substr(6,2);diaj=diai;if (diai.substr(0,1)==' '){diaj=diai.substr(1,1);}}
+mdi=Date.parse(mydate.getFullYear()+" "+montharray[m]+" "+diaj+" "+linea.substr(13,5));
+mdf=Date.parse(mydate.getFullYear()+" "+montharray[m]+" "+diaj+" "+linea.substr(19,5));
+if (linea.substr(19,2)<linea.substr(13,2)){mdf=mdf+86400000};
+var msat=linea.substr(0,5).replace(/ /g,'').replace(/ /g,'').toLowerCase();if (msat.substr(0,3)=='iss') {msat = 'iss';};msat=msat+'1';
+if (msat=='ao-071'){msat='ao-71'};
+if ((mdl > mdf) && ((mdl-mdf) < 180000)) {setwht("x"+k); setwht(msat);}
+if ((mdi-mdl)< 1800000 && (mdi-mdl) > 599000) {setyel("x"+k); setyel(msat);bot(msat,mname,diai,mdi,linea,'yel');}
+if ((mdi-mdl)< 600000 && (mdi-mdl) > 1000) {setmag("x"+k); setmag(msat);bot(msat,mname,diai,mdi,linea,'mag');}
+if ((mdl>=mdi) && (mdl<=mdf)) {setred("x"+k); setred(msat);bot(msat,mname,diai,mdi,linea,'red');}
+}sortpasos();}
+function bot(msat,mname,diai,mdi,linea,color) {
+if (msat=='ao-071'){msat='ao-71'};
+var linmod=linea.substr(0,6)+diai+" "+mname+" "+linea.substr(13,18);
+pdt[pdi]=mdi;pd[pdi]="<A HREF=#PX onclick=ver('"+msat.substr(0,msat.length-1).toLowerCase()+"')><font class="+color+"1>"+linmod+"</a>";
+pdi=pdi+1;
+}
+function sortpasos(){
+pdi=pdi-1;for (s=0;s<pdi;s++) {for (t=(s+1);t<=pdi;t++){
+if (pdt[s]>pdt[t]){pdsave=pd[s];pd[s]=pd[t];pd[t]=pdsave;ptsave=pdt[s];pdt[s]=pdt[t];pdt[t]=ptsave;}
+}
+}var chg='';
+for (s=0;s<=pdi;s++){
+if (pd[s].substr(pd[s].length-36,6)==chg) {pd[s]=pd[s].substr(0,pd[s].length-37)+"       "+pd[s].substr(pd[s].length-30,20);} else {chg=pd[s].substr(pd[s].length-36,6);}
+document.getElementById("RESU").innerHTML=document.getElementById("RESU").innerHTML+pd[s];}
+}
+function favorito(){window.external.addFavorite(window.location.href,'Pasos Satelites')};
+</script>
+KB5MU itpass + LU7ABF wwasp<br>
+&copy; AMSAT Argentina&nbsp;<a href='javascript:favorito()' class=mag1 title='Al salvar podra seguir los pasos sin estar conectado'> SALVE </a></body></html>

@@ -1,0 +1,12 @@
+'			amateur = getURL("http://celestrak.org/NORAD/elements/gp.php?GROUP=amateur&FORMAT=tle") 'Amateur
+'            Response.write amateur & "<hr>"
+'			education = getURL("http://celestrak.org/NORAD/elements/gp.php?GROUP=education&FORMAT=tle") 'Education
+'            Response.write education & "<hr>"
+'			cubesat = getURL("http://celestrak.org/NORAD/elements/gp.php?GROUP=cubesat&FORMAT=tle") 'Cubesat
+'            Response.write cubesat & "<hr>"
+'			weather = getURL("http://celestrak.org/NORAD/elements/gp.php?GROUP=weather&FORMAT=tle") 'Weather
+'            Response.write weather & "<hr>"
+'			newsat = getURL("http://celestrak.org/NORAD/elements/gp.php?GROUP=last-30-days&FORMAT=tle") 'New
+'            Response.write newsat & "<hr>"
+'			weather1 = getURL("http://celestrak.org/NORAD/elements/gp.php?GROUP=noaa&FORMAT=tle") 'Weather1
+'            Response.write weather1 & "<hr>"

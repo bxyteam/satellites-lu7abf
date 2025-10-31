@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<title>Satellite Data</title>
+<style type="text/css">BODY {margin-left:2px; margin-right:2px; margin-top:0; margin-bottom:0;} H2 {margin-top:-2px;margin-bottom:-7px;} H1 {line-height:30px;margin-top:-4px;margin-bottom:-4px;} P {margin-top:8px;margin-bottom:8px;line-height:16px;}</style>
+</head>
+<body bgcolor="#E0FFFF">
+ 
+<table border="0" cellpadding=0 cellspacing=0><tr>
+<td><img border=0 src="https://i.postimg.cc/B6XpgLgz/amsatbluetras.gif" alt="AMSAT-LU" width="70" height="70"></td>
+<td nowrap><h1>AMSAT-LU<br>Satellite Data</td>
+<td>&nbsp;&nbsp;<img src=satmove1.gif alt="Satellite" height=90px></td>
+</tr>
+</table>
+ 
+<h2>MOVE-1 First-Move</h2>
+<p>Catalog number: 39439<br>
+Launch Date: November 21, 2013<br>
+Status: Operational.</p>
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<table border="0" cellpadding=0 cellspacing=0>
+<tr><td valign="top" style="margin-top:8px;margin-bottom:8px;line-height:16px;">Packet Downlink:&nbsp;</td>
+    <td style="margin-top:8px;margin-bottom:8px;line-height:16px;">145.970 MHz 1200bps BPSK AX.25</td></tr>
+<tr><td style="margin-top:8px;margin-bottom:8px;line-height:16px;">Beacon:</td>
+<td style="margin-top:8px;margin-bottom:8px;line-height:16px;">145.970 CW every 60 seconds</td>
+  </tr>
+<tr><td style="margin-top:8px;margin-bottom:8px;line-height:16px;">Callsign:</td>
+<td style="margin-top:8px;margin-bottom:8px;line-height:16px;">MOVE1</td>
+  </tr>
+</table>
+<p>Dear radio amateurs,</p>
+<p>Our satellite transmits signals using the amateur radio frequency of 145.970 MHz and due to its polar orbit can be received by radio amateurs around the world. We would appreciate it if some of you listened for a transmission from our 'little guy' to help us keep track of the satellite's status. Some further information:</p>
+<ul><li>The on-board transceiver transmits at 145.970 MHz.</li>
+<li>Due to the nature of the transmit antenna, the signal has no polarisation</li>
+<li>The satellite alternates between beacon modes every 60 seconds. One beacon is a CW beacon of the satellites designation in morse code ('MOVE1'), the second mode is an AX.25 package containing a few telemetry items.</li>
+<li>The AX.25 beacon is modulated using Raised Cosine-BPSK.</li>
+<li>The downlink data rate is 1200 baud.</li>
+<li>We have a small software tool that can decode the AX.25 beacon and show you the telemetry values contained in the signal. The part of the software that decodes the audio signal was provided by our transceiver vendor ISIS.</li>
+<li>To receive the beacons set the receiver or transceiver to USB (Upper Side Band) mode.</li>
+<li>The software expects a BPSK signal with a center frequency of 1600 Hz. Therefore, when using an Upper Side Band (USB) receiver, you must tune 1600 Hz below the actual downlink frequency.</li>
+<li>The software can only compensate an offset of +/- 700 Hz, so the doppler shift has to be compensated with other means, manually or automatic.</li></ul>
+<p>The program MOVE Telemetry Receiver can be downloaded <a href=http://movepass.lrt.mw.tum.de/MoveTelemetryReceiver_1.0.jar>here</a></p>
+<p>To use the software Java Runtime Version 6 or higher needs to be installed. To decode the AX.25 packets, connect the speaker output of your transceiver to the microphone or line-in jack of your computer. If you have any questions or comments regarding the software, just write us an e-mail to the following address: move-amateur-radio@lrt.mw.tum.de</p>
+<p>As soon as the software has successfully decoded a packet, the raw values will be written to a text files. The text file will be placed into the users main directory (i.e. Windows: C:/Users// ) and the file name has the following format: move_YYYY-MM-DD.txt. If you receive and decode signals from First-MOVE we would greatly appreciate it, if you could send us the text file or an audio recording by e-mail.</p>
+<p>For those interested you can download our telemetry items list here which also includes the conversion formulas for the raw values.</p>
+<p><i>[131121]</i><fr>145.970,0,0,FM-N</fr></p>
+</body>
+</html>
+

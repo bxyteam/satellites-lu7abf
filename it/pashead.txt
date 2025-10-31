@@ -1,0 +1,25 @@
+<head><META HTTP-EQUIV='EXPIRES' CONTENT='+4 days'><META HTTP-EQUIV='Pragma' CONTENT='no-cache'><META HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
+<style type='text/css'>.txt {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;}
+A:visited {color:#000000}A:link{color:#000000}A:hover{color:#ff0000}A:active{color:#000000}
+.yel1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#ffff00;}
+.mag1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#00ffff;}
+.red1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#00ff00;}
+.titg {font-family:Courier New,Courier;font-size:17;font-weight:bold;line-height:17px;color:#ffffff;background:#6789bc;}
+.txt {margin-left:3;margin-right:1;margin-top:1;left-margin:3;right-margin:1;border:0;}
+.pnk1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#ffe5c0;}</style>
+<title>Pasos Satelites Amsat Argentina</title>
+<script language=javascript>
+var ayuda='       Asegura que este bien\n       el dia y hora en tu PC\n\n  Estos pasos funcionan aunque\n  no estes conectado a Internet\n\nAMSAT Argentina agradece tu visita y\nte desea buenos contactos satelitales!';
+var pwin;var swin;var owin;function ver(sat){if (pwin != null) {pwin.close();}
+var ira="http://www.amsat.org.ar/sat"+sat+".htm";
+preferences = "toolbar=no,width=440,height=360,center,margintop=0,marginleft=0,marginright=0,top=0,left=300,status=no,scrollbars=yes,resizable=yes,dependent=yes,z-lock=yes" ;
+pwin = window.open (ira,"pasoswin",preferences) ;
+if (owin != null) {owin.close();}
+preferences = "toolbar=no,width=162,height=162,center,margintop=0,marginleft=0,marginright=0,top=404,left=494,status=no,scrollbars=no,resizable=no,dependent=yes,z-lock=yes" ;
+owin = window.open ("http://lu7aa.org.ar/sp.asp?l=e&F=bb&s="+sat,"orbwin",preferences) ;
+}</script>
+</head><body BACKGROUND=fondo1.gif onUnload='pwin.close();owin.close();swin.close();self.close();' class=txt 
+><DIV ID=top NAME=top>Pasos satelites amateur por</DIV>
+B.Blanca Arg. en hora local<br>
+<DIV NAME=LT ID=LT>&nbsp;</DIV>
+ <font class=red1> <u><A HREF=#PX>Pass</A></u> </font>  <font class=mag1> <u><A HREF=#PX>Atenc</A></u> </font>  <font class=yel1> <u><A HREF=#PX>Prox</A></u> </font> <A HREF=# title=' refresh ' onclick='rst()' class=pnk1>@@</A><br><br>

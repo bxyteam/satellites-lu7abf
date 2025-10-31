@@ -1,0 +1,79 @@
+<script src="jquery-1.11.1.min.js"></script>
+<script language="javascript" type="text/javascript">
+//$.get("http://ip-api.com/csv/200.49.106.15", function(data, status){
+//        alert("Data: " + data + "\nStatus: " + status);
+//    });
+    
+    
+// call with your url (with parameters) 
+// 2nd param is your callback function (which will be passed the json DATA back)
+var ip = "<?php = $_SERVER['REMOTE_ADDR']?>";
+crossDomainAjax('http://ip-api.com/csv/'+ip, function (data) {
+    alert(data)
+});
+$.getJSON("http://jsonip.com?callback=?", function (data) {
+    alert("Your ip: " + data.ip);
+});
+function crossDomainAjax (url, successCallback) {
+
+    // IE8 & 9 only Cross domain JSON GET request
+    if ('XDomainRequest' in window && window.XDomainRequest !== null) {
+
+        var xdr = new XDomainRequest(); // Use Microsoft XDR
+        xdr.open('get', url);
+        xdr.onload = function () {
+            var dom  = new ActiveXObject('Microsoft.XMLDOM'),
+                JSON = $.parseJSON(xdr.responseText);
+
+            dom.async = false;
+
+            if (JSON == null || typeof (JSON) == 'undefined') {
+                JSON = $.parseJSON(data.firstChild.textContent);
+            }
+
+            successCallback(JSON); // internal function
+        };
+
+        xdr.onerror = function() {
+            _result = false;  
+        };
+
+        xdr.send();
+    } 
+
+    // IE7 and lower can't do cross domain
+    else if (navigator.userAgent.indexOf('MSIE') != -1 &&
+             parseInt(navigator.userAgent.match(/MSIE ([\d.]+)/)[1], 10) < 8) {
+       return false;
+    }    
+
+    // Do normal jQuery AJAX for everything else          
+    else {
+        $.ajax({
+            url: url,
+            cache: false,
+            dataType: 'json',
+            type: 'GET',
+            async: false, // must be set to false
+            success: function (data, success) {
+                successCallback(data);
+            }
+        });
+    }
+}    
+    
+    
+    
+    
+    
+</script>     
+<?php
+      // Prepare & write logfile
+/*      $urldata = geturl("http://ip-api.com/csv/" . $_SERVER['REMOTE_ADDR'] ) */
+      $logentry = date("M-d H:m", time()) . "-" . $_REQUEST['hi'] . " " . $_REQUEST['TZ']. "\\\\" . $_REQUEST['datos'] . "\\\\" . $_SERVER['REMOTE_ADDR'] . "\\\\" . $_SERVER['HTTP_USER_AGENT'] . "\\\\" . urldata . "//\n" ;    
+      $logFile = './text/' . 'sat.log';
+      $flogFile = fopen($logFile, 'a') or die("No puedo grabar logfile");
+      fwrite($flogFile, $logentry) ;
+      fclose($flogFile);
+   header( 'Location: http://lu7aa.org.ar/satlog.asp?datos=' . $_REQUEST['datos'] . '&hi=' . $_REQUEST['hi']. '&TZ=' .  $_REQUEST['TZ'] ) ;
+?>

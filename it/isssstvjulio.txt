@@ -1,0 +1,20 @@
+ISS-SSTV Jul-29/30 y CAS-7B activo
+Amigos,
+
+El 25-Jul China lanzo el CAS-7B que por su bajo perigeo reingresara en un mes.
+Ya esta activa su repe FM-Voz de VHF a UHF y telemetria en CW.
+Reportes: http://amsat.org.ar?f=z
+Pasos y frecuencias: http://amsat.org.ar/pass?satx=cas7b
+
+ARISS emitira SSTV modo PD120 desde la ISS en 145.800 KHz:
+Del 29-Jul-13hs al 30-Jul-20hs GMT Inter-MAI-75 (Lun/Mar)
+Pasos: http://amsat.org.ar/pass?satx=iss
+
+Oportunidad para completar diploma SSTV http://amsat.org.ar?f=6
+
+Agradecemos, de ser posible, la difusion de esta informacion.
+
+73, LU7AA, AMSAT Argentina
+http://amsat.org.ar
+https://facebook.com/AMSAT.LU
++Info: https://ariss-sstv.blogspot.com/

@@ -1,0 +1,3 @@
+echo Ahora se calculan nuevos pasos
+cd \Program Files (x86)\DOSBox-0.74-2\
+DOSBOX -c "cycles=max" -c "mount c c:\IT" -c "c:" -c "subepaso.bat" -c "exit"

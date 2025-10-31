@@ -1,0 +1,93 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>LU7AA Amsat Argentina Site</title>
+<meta name="TITLE" content="AMSAT Argentina provides usefull info for radio amateurs interested in the amateur satellite program, latest AMSAT bulletins, keps and Argentina AMSAT and LUSAT history.">
+<meta name="GENERATOR" content="Amsat Argentina AMSAT-LU Site">
+<meta name="AUTHOR" content="Amsat Argentina WebMasters lw7dxf">
+<meta name="rating" content="General">
+<meta name="DESCRIPTION" content="AMSAT-LU is the organisation representing Argentina radio operators interests in design, build, launch and communicate through amateur satellites orbiting the earth. Amsat Argentina es una organizacion orientada a proyectar, armar, lanzar y operar satelites y comunicaciones espaciales. Ha lanzado el LUSAT y proximamente el VoxSat y el Lusac.">
+<meta name="abstract" content="Amsat Argentina Radio Amateur Satellites site: LUSAT, VoxSat, Experiments, Ballons, Space Comms, Diagrams, Circuits, Operation, Education">
+<meta name="KEYWORDS" content="AMSAT Argentina,AMSAT-LU,AMSAT,Argentina,Amateur Satellites,satelites,Amateur Radio,Space,LUSAT,LUSAT-1,VOXSAT,LUSAC,Telemetry,Telemetria,CW,telegraphy,telegrafia,morse,Globos,Ballons,Diagrams,Diagramas,Circuits,Circuitos,CETRA,Experiments,Experimentos,CONEA,Retina,Tracking,Orbits,Orbita,Orbitas,South,Sud,Shuttle,ISS,AO-19,Oscar,Rocket,Packet,downlink,uplink,frecuency,antenna,equipment,kepler,keplerian,iaru,wireless,repeater,transponder,digital,education,hsg,speed,projects,launch,satellite,ham,amsat-na,amsat-dl,amsat-uk,amsat-ce,amsat-ea,amsat-i,amsat-france,amsat-zl,jamsat,sa-amsat,surrey,sweeting,jan king,uosat,surrey,echo,microsat,nanosat,lu7aa,kb5mu,a0-40,pcsat,weber,pacsat,lu1esy,lw7dxf,lu7dsu,lu2amw,lw2dtz,lu7abf,lu7jcn,lu6dyd,lu6elo,lu4enq,carou,lu6dwc,lu8dyf,lu7xac,lu2aoq,lu5abm,lu4aey,lu3agj,rca,lu2fhe,lu2fcy,lu1sm,lu8yyn,lu1vd,lu2fgn,lu6eeg,aluar,ibm,showlog,sunsat,itrack,gridsquare,locator,gateway,ans,ariss,cubesat,amrad,g3ruh,Buenos Aires">
+<meta name="COPYRIGHT" content="Copyright 1985-2004 Amsat Argentina on amsat.org.ar www.amsat.org.ar All rights Reserved. Todos los derechos Reservados">
+<meta NAME="Robots" content="Index,Follow">
+<meta name="revisit-after" content="1 days">
+<meta HTTP-EQUIV="Expires" CONTENT="Fri, Jun 12 1981 08:20:00 GMT">
+<meta http-equiv="Page-Enter" content="revealTrans(Duration=0.0,Transition=0)">
+<meta http-equiv="Page-Exit" content="revealTrans(Duration=2.0,Transition=1)">
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<style type="text/css">
+.letra {font-family:Times New Roman,Tahoma,Arial;font-size:38px;font-weight:bold;line-height:38px;color:#07ace0;}
+.letrach {font-family:Tahoma,Arial;font-size:13px;font-weight:bold; color:#a7defe;}
+</style>
+<script language="JavaScript" type="text/javascript">
+var z = 50 ;
+var q = window.screen.height-260 ;
+var muevo ; 
+var muevolus ;
+var muevoshu ;
+var lusswitch = "0" ;
+var shuswitch = "0" ;
+function mover() {
+document.getElementById("iss").style.visibility = "visible" ;
+muevo = setInterval("mostrar()",10) ;
+}
+
+function mostrar() {
+if (z<window.screen.width-70){
+z = z + 1 ;
+document.getElementById("iss").style.left = z ;
+document.getElementById("iss").style.top = window.screen.height-z/2-300
+}
+else
+{clearInterval(muevo);document.getElementById("iss").style.visibility = "hidden"; 
+document.getElementById("lus").style.visibility = "visible"; z=window.screen.width-70; muevolus = setInterval("mostrarlus()",12);
+}
+}
+
+function mostrarlus() {
+if (z>-80){
+z = z - 1 ;
+document.getElementById("lus").style.left = z+60 ;
+document.getElementById("lus").style.top = z/2
+}
+else
+{clearInterval(muevolus);document.getElementById("lus").style.visibility = "hidden" ; 
+document.getElementById("shu").style.left = (screen.width)/2-20 ; document.getElementById("shu").style.visibility = "visible"; muevoshu = setInterval("mostrarshu()",12); }
+}
+
+function mostrarshu() {
+if (q>-150){
+q = q - 1 ;
+document.getElementById("shu").style.top = q ;
+}
+else
+{clearInterval(muevoshu);document.getElementById("shu").style.visibility = "hidden" 
+document.getElementById("shu").style.visibility = "hidden" ;
+document.getElementById("shu").style.left = 0; 
+document.getElementById("shu").style.top = window.screen.availHeight/2-240;
+document.getElementById("shu").style.left = window.screen.availWidth/2-400;
+document.getElementById("shu").innerHTML = "<img src='images/lusexi.gif' border='0'>";
+document.getElementById("shu").style.zIndex = -1;
+document.getElementById("shu").style.visibility = "visible" ;
+}
+}
+</script>
+</head>
+<body bgcolor="#345678" background="images/stars.gif" onload="mover();">
+<a href="http://validator.w3.org/check?uri=referer">
+<img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Transitional" height="31" width="88"></a>
+<center>
+<table border="0" cellpadding="0" cellspacing="0" style="height:100%;" class="letra"><tr><td class="letra"><center>
+<strong>BIENVENIDO A LU7AA</strong><br>
+<img src="images/amsa.gif" alt="Amsat Argentina" border="0" WIDTH="178" HEIGHT="178"><br>
+AMSAT ARGENTINA
+<p class="letrach"><em>Teletransporte a:&nbsp;&nbsp;<a class="letrach" href="http://www.amsat.org.ar" target="_self">www.amsat.org.ar</a></em></p>
+</center>
+</td></tr></table></center>
+<div id="iss" style="visibility:hidden;position:absolute;top:50;left:50"><img src="images/issch.gif" alt="ISS" border="0" WIDTH="82" HEIGHT="87"></div>
+<div id="lus" style="visibility:hidden;position:absolute;top:50;left:50"><img src="images/anilusatch1.gif" alt="LUSAT" border="0" WIDTH="70" HEIGHT="70"></div>
+<div id="shu" style="visibility:hidden;position:absolute;top:50;left:50"><img src="images/Shuttle.gif" alt="SHUTTLE" border="0" width="50"></div>
+</body>
+</html>

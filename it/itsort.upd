@@ -1,0 +1,52 @@
+ITSORT - Reordering Tool for the InstantTrack Satellite Database
+================================================================
+
+Known Bugs/Wishlist:
+2. Command line switch to make it preserve blank entries in IT.ORB
+   as blank lines in SATNAMES.LST. (KB5MU)
+3. Command line switch to make it not delete SATNAMES.LST when done.
+   (KB5MU)
+4. Command line switch to make it recognize a slushpile file, where
+   deleted satellites are placed and satellites not found in IT.ORB
+   are searched for.  This would not only be a good backup mechanism,
+   but it would also help solve the problem described by one IT user
+   of keeping an enormous database of satellites and choosing a
+   working subset.  (KB5MU)
+6. Command line switch to make it require exact case-sensitive match
+   when comparing satellite names. (KB5MU)
+7. Command line switch to make it more permissive about spacing and
+   punctuation in the satellite name when comparing them. (KB5MU)
+
+
+Release History:
+1.0	Created 2/2/90
+
+1.01	2/4/90
+	1. Added a check to see if there's enough disk space
+	   to create the new IT.ORB, BEFORE renaming the old
+	   one.
+	2. Added support for Turbo C compiler.  Microsoft version
+	   is 3 times faster!  Why?
+	3. Added words to the DOC file about dangers of
+	   multitasking (N6NKF) and various other stuff.
+
+1.02	2/7/90
+	1. Fixed check for long lines. (WB6HHV)
+	2. Trim trailing whitespace from lines read from SATNAMES.LST.
+           InstantTrack doesn't do this, but I do.
+
+1.03	2/17/90
+	1. Added messages about deleted and duplicated satellites.
+	2. Made it honor capitalization changes made in SATNAMES.LST.
+
+1.04	3/11/90
+	1. Added a hack to make dummy satellite records acceptable to
+	   version 1.00 of InstantTrack.  They get silly answers, but
+	   at least they don't crash InstantTrack.
+	2. Cleared object number of non-first copies of duplicated
+	   objects, to avoid having an object number duplicated in
+	   InstantTrack's database.
+	3. Dummy satellite records now have "None Set" for attitude
+	   instead of 0, 0.  These three changes all mean that ITSORT
+	   is more dependent on satellite record format than before.
+

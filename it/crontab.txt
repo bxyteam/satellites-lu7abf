@@ -1,0 +1,24 @@
+# This is a sample crontab file. This file must be copied to the same directory as cron.exe
+# A log is written to cron.log
+
+* * * * *
+| | | | |
+| | | | +----- Day of the Week   (range: 1-7, where 1 is Monday)
+| | | +------- Month of the Year (range: 1-12)
+| | +--------- Day of the Month  (range: 1-31)
+| +----------- Hour              (range: 0-23)
++------------- Minute            (range: 0-59)
+
+# This is a comment. In fact, every line not starting with a number is treated as a comment.
+
+# start a backup every day at midnight
+#0 0 * * * backup.bat >backup.log      
+
+# copy a file every half hour
+#0,30 * * * * copy c:\important.txt y:\
+                 
+# scan a drive for viruses on the 1st of every month at 14:00 p.m.
+#0 14 1 * * scan c:
+
+# At 19:15 start pasos.bat
+45 19 * * * pasos.bat

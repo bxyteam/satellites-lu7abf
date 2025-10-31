@@ -1,0 +1,339 @@
+<%@ Language=VBScript %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="wap.css" rel="stylesheet" type="text/css" />
+
+<title>Pasos</title>
+
+</head>
+<body bgcolor=#123467 class=pasos>
+<img src=amsatlu.gif border=0>
+<p align=left class="pasos">
+<%
+'Set the server locale
+Session.LCID = 11274
+'
+function JulianDate(datDate)
+    Dim GGG, DD, MM, YY, S, A, JD, J1
+    MM=Month(datDate):DD=Day(datDate):YY=Year(datDate):GGG=1
+    HO=hour(datDate):MI=minute(datDate):SE=second(datDate)
+    If (YY <= 1585) Then GGG=0
+    JD=-1*Int(7*(Int((MM+9)/12)+YY)/4):S=1
+    If ((MM-9)<0) Then S=-1
+    A=Abs(MM-9):J1=Int(YY+S*Int(A/7)):J1=-1*Int((Int(J1/100)+1)*3/4)
+    JD=JD+Int(275*MM/9)+DD+(GGG*J1):JD=JD+1721027+2*GGG+367*YY
+    If ((DD=0) And (MM=0) And (YY=0)) Then
+   '   MsgBox "Please enter a meaningful date!"
+    Else
+        JulianDate = right(JD,5)+HO/24+MI/1440+SE/86400
+    End If
+end function
+'
+function CheckDayLightSavings(dtDateTime)
+	Dim retVal, x, sTempDate
+	'if the Date time has the milliseconds, clean them off
+	if InStr(1,CStr(dtDateTime),".") <> 0 Then
+		dtDateTime = Left(dtDateTime, Len(dtDateTime) - 4)
+	End if
+	
+	'If the passed String is a valid date, let's begin checking, otherwise
+	'just return False.
+	if IsDate(dtDateTime) Then
+		'We know what To Do With any dates within these months
+		if Month(dtDateTime) <> 10 And Month(dtDateTime) <> 4 Then
+			Select Case Month(dtDateTime)
+				'Jan
+				Case 1
+					retVal = False
+				'Feb
+				Case 2
+					retVal = False
+				'Mar
+				Case 3
+					RetVal = False
+				'May
+				Case 5 
+					retVal = True
+				'Jun
+				Case 6
+					retVal = True
+				'Jul
+				Case 7
+					retVal = True
+				'Aug
+				Case 8
+					retVal = True
+				'Sep
+				Case 9
+					retVal = True
+				'Nov
+				Case 11
+					retVal = False
+				'Dec
+				Case 12
+					retVal = False
+			End Select	
+		Else
+			'If the month is April, let's check To see if the Date is before or after
+			'2 AM On the first Sunday of the month
+			if Month(dtDateTime) = 4 Then
+				if Day(dtDateTime) < 8 Then
+					For x = 1 To Day(dtDateTime)
+						sTempDate = CStr(Month(dtDateTime)) & "/" & x & "/" & CStr(Year(dtDateTime))
+						if Weekday(sTempDate) = 1 Then
+							if Day(sTempDate) < Day(dtDateTime) Then
+								'First sunday In April has already passed, so we are now in DST
+								retVal = True
+								Exit For
+							Else
+								'It's the first Sunday In April!
+								'Let's see if it's past 2 AM. If there is no time part In dtDateTime (time part = "00:00:00"), 
+								'we are going To assume it's past 2 AM
+								if (Hour(dtDateTime) >= 2) Or (Hour(dtDateTime) = 0 And Minute(dtDateTime) = 0 And Second(dtDateTime) = 0) Then
+									retVal = True
+									Exit For
+								Else
+									retVal = False
+								End if
+							End if
+						Else 
+							retVal = False
+						End if 
+					Next
+				Else
+					'we know what To Do if the day is equal to or greater than the 8th
+					retval = True
+				End if
+			'If the month is October, let's check to see if Date is before or after
+			'2 AM On the last Sunday of the month
+			ElseIf Month(dtDateTime) = 10 Then
+				'We know what To Do if the day is less than Then 25th
+				if Day(dtDateTime) < 25 Then
+					retval = True
+				Else
+					For x = 25 To Day(dtDateTime)
+						sTempDate = CStr(Month(dtDateTime)) & "/" & x & "/" & CStr(Year(dtDateTime))
+						if Weekday(sTempDate) = 1 Then
+							if Day(sTempDate) < Day(dtDateTime) Then
+								'last sunday In oct has already passed, so we aren't in DST anymore
+								retVal = False
+								Exit For
+							Else
+								'It's the last Sunday In October!
+								'Let's see if it's past 2 AM. If there is no time part In dtDateTime (time part = "00:00:00"), 
+								'we are going To assume it's past 2 AM
+								if (Hour(dtDateTime) >= 2) Or (Hour(dtDateTime) = 0 And Minute(dtDateTime) = 0 And Second(dtDateTime) = 0) Then
+									retVal = False
+									Exit For
+								Else
+									retVal = True
+								End if
+							End if
+						Else 
+							retVal =True
+						End if 
+					Next
+				End if
+			End if
+		End if
+	Else 
+		'if the String passed To the function is Not a valid date, let's return false.
+		retVal = False	
+	End if
+	CheckDayLightSavings = retVal
+End function
+'
+Comienzo = JulianDate(Now())-2/24
+dim archivo(5000),diasemana(7),meses(12)
+if Request("lang")="es" then 
+diasemana(1)="Domin":diasemana(2)="Lunes":diasemana(3)="Marte":diasemana(4)="Mierc":diasemana(5)="Jueve":diasemana(6)="Viern":diasemana(7)="Sabad"
+meses(1)="Ene":Meses(2)="Feb":meses(3)="Mar":meses(4)="Abr":meses(5)="May":meses(6)="Jun":meses(7)="Jul":meses(8)="Ago":meses(9)="Set":meses(10)="Oct":meses(11)="Nov":meses(12)="Dic"
+Legend = "Frec.de Satelites"
+%>
+* lu7aa.org.ar *<br>
+* Sats hora local<br>
+<%else
+diasemana(1)="Sunda":diasemana(2)="Monda":diasemana(3)="Tuesd":diasemana(4)="Wedns":diasemana(5)="Thurs":diasemana(6)="Frida":diasemana(7)="Satur"
+meses(1)="Jan":Meses(2)="Feb":meses(3)="Mar":meses(4)="Apr":meses(5)="May":meses(6)="Jun":meses(7)="Jul":meses(8)="Aug":meses(9)="Sep":meses(10)="Oct":meses(11)="Nov":meses(12)="Dec"
+Legend = "Sats Frequencies"
+%>
+* lu7aa.org.ar *<br>
+ Sats @ localtime<br>
+<%end if%>
+<% 
+if Request("loc")="ba" then loc="Buenos Aires,Arg."
+if Request("loc")="mp" then loc="Mar del Plata,Arg"
+if Request("loc")="bb" then loc="Bahia Blanca,Arg."
+if Request("loc")="re" then loc="Chaco, Argentina "
+if Request("loc")="ig" then loc="Misiones ,Argent."
+if Request("loc")="st" then loc="Tucuman,Argentina"
+if Request("loc")="co" then loc="Cordoba,Argentina"
+if Request("loc")="sf" then loc="Santa Fe, Argent."
+if Request("loc")="ju" then loc="Jujuy, Argentina."
+if Request("loc")="me" then loc="Mendoza,Argentina"
+if Request("loc")="cr" then loc="C.Rivadavia, Arg."
+if Request("loc")="rg" then loc="Santa Cruz,Argen."
+if Request("loc")="nq" then loc="Neuquen,Argentina"
+if Request("loc")="sc" then loc="Rio Negro, Argent"
+if Request("loc")="sr" then loc="La Pampa, Argent."
+if Request("loc")="mv" then loc="Montevideo,Uruguy":TZ="CXT3" 
+if Request("loc")="ri" then loc="San Pablo/Rio, Br":TZ="EST3" 
+if Request("loc")="li" then loc="Lima, Peru":TZ="EST5"
+if Request("loc")="bo" then loc="Bogotá, Colombia":TZ="EST5" 
+if Request("loc")="ca" then loc="Caracas,Venezuela":TZ="EST4" 
+if Request("loc")="mx" then loc="México DF, Mexico":TZ="CST6CDT" 
+if Request("loc")="mi" then loc="Miami,Florida USA":TZ="EST5EDT" 
+if Request("loc")="ny" then loc="New York, USA":TZ="EST5EDT" 
+if Request("loc")="ho" then loc="Houston,Texas,USA":TZ="CST6CDT" 
+if Request("loc")="at" then loc="Atlanta,Georg.USA":TZ="EST5EDT"
+if Request("loc")="fr" then loc="San Francisco,USA":TZ="PST8PDT" 
+if Request("loc")="la" then loc="Los Angeles,CAUSA":TZ="PST8PDT"
+if Request("loc")="ph" then loc="Phoenix, Ariz,USA":TZ="PST8PDT" 
+if Request("loc")="ch" then loc="Chicago & Toronto":TZ="EST6EDT" 
+if Request("loc")="va" then loc="Vancouver, Canada":TZ="PST8PDT" 
+if Request("loc")="mo" then loc="Montreal, Canada.":TZ="EST5EDT" 
+if Request("loc")="ma" then loc="Madrid, España":TZ="CST-1CDT" 
+if Request("loc")="lo" then loc="London, England":TZ="CST0CDT" 
+if Request("loc")="pa" then loc="Paris, France":TZ="CST-1CDT" 
+if Request("loc")="ro" then loc="Roma, Italy":TZ="CST-1CDT" 
+if Request("loc")="su" then loc="Stutgart, Germany":TZ="CST-1CDT" 
+if Request("loc")="sk" then loc="Stockholm, Sweden":TZ="CST-1CDT" 
+if Request("loc")="sp" then loc="S.Petesburg, Rus.":TZ="CST-3CDT" 
+if Request("loc")="mw" then loc="Moscow, Russia":TZ="CST-3CDT" 
+if Request("loc")="is" then loc="Istambul, Turkey":TZ="CST-2CDT"
+if Request("loc")="te" then loc="Teheran, Ir&aacute;n":TZ="-12600" 
+if Request("loc")="de" then loc="New Delhi, India":TZ="-19800" 
+if Request("loc")="by" then loc="Bombay, India":TZ="-19800" 
+if Request("loc")="bj" then loc="Beijing, China":TZ="EST-8"
+if Request("loc")="tk" then loc="Tokyo, Japan":TZ="EST-9" 
+if Request("loc")="hk" then loc="Hong Kong":TZ="EST-8"
+if Request("loc")="ml" then loc="Manila, Phillipin":TZ="EST-8" 
+if Request("loc")="ja" then loc="Jakarta,Indonesia":TZ="EST-7" 
+if Request("loc")="pt" then loc="Pert, Australia":TZ="EST-8"
+if Request("loc")="mb" then loc="Melbourne,Austral":TZ="EST-10EDT" 
+if Request("loc")="sd" then loc="Sidney, Australia":TZ="EST-10EDT" 
+if Request("loc")="aq" then loc="El Cairo, Egypt":TZ="EST-2CDT" 
+if Request("loc")="jo" then loc="Johanesburg,S.Afr":TZ="EST-2" 
+if Request("loc")="lg" then loc="Lagos, Nigeria":TZ="EST-1" 
+if Request("loc")="ry" then loc="Riayadh,SaudiArab":TZ="EST-3" 
+if Request("loc")="sl" then loc="Seoul, Korea":TZ="EST-9" 
+if Request("loc")="we" then loc="Wellington, Austr":TZ="EST-12EDT" 
+if Request("loc")="sg" then loc="Santiago de Chile":TZ="EST4EDT"
+'
+T=0:Deviated=false:usedeviated=false:first=false
+if TZ="" then 
+    T=-3/24
+else
+    if right(TZ,2)="DT" then Deviated=true
+    if len(TZ)<6 then
+        TC=right(TZ,len(TZ)-3)
+        T=(TC*-1)/24
+    else
+        if right(TZ,1)="0" then
+            T=TZ/86400
+        else
+            TC=MID(TZ,4,len(TZ)-6)
+            T=(TC*-1)/24
+            usedeviated=true
+        end if
+    end if
+end if    
+Response.Write loc & "<br>"
+'Abre archivo pasosc xx .txt (xx letras de la localidad o ciudad) 
+	thisfile = server.mappath(Request.ServerVariables("PATH_INFO"))
+	thepath = mid(thisfile, 1, instrrev(thisfile, "\")) & "pasos\"
+	thefile = thepath & "pasosc" & Request("loc") & ".txt"
+	Set MyFileObject=Server.CreateObject("Scripting.FileSystemObject")
+ 	Set MyTextFile=MyFileObject.OpenTextFile(thefile)
+ 	k = 0	
+ 	While not MyTextFile.AtEndOfStream
+ 	    linea = MyTextFile.Readline
+        Sale = mid(linea,22,14)/100000000-15018
+       if not first and CheckDayLightSavings(Cdate(Sale)) and usedeviated and deviated then 
+            T=T+1/24
+            first=true
+       end if     
+'        Response.Write Sale & " " & Comienzo-15018 & "<br>"
+        if (Sale-4.5/24) > (Comienzo-15019) then
+            Cae = mid(linea,37,14)/100000000-15018
+            Tarda = int((Cdate(Cae)-Cdate(Sale))*1440+.5)
+            Tarda = right(" "&Tarda,2)
+            linea = linea & " " & right("0" & hour(Cdate(Sale+T)),2) & ":" & right("0" &  minute(Cdate(Sale+T)),2) & " " & Tarda
+            linea = linea & " " & diasemana(weekday(Cdate(Sale+T))) & " " & day(Cdate(Sale+T))&"-"&meses(month(Cdate(Sale+T)))&"-"&year(Cdate(Sale+T))
+ 	        archivo(k) = linea
+    '		Response.Write replace(archivo(k)," ","&nbsp;",1,100,1) & "<br>"
+		    k = k + 1
+		end if    	
+ 	Wend
+ 	MyTextFile.Close
+    k = k - 1
+	'Sort
+		for i = 0 to k - 1
+			for j = i + 1 to k
+				if mid(archivo(i),22,14) > mid(archivo(j),22,14) then 
+					salvar = archivo(j)
+					archivo(j) = archivo(i)
+					archivo(i) = salvar
+				end if
+			next
+		next
+    for i = 0 to k		
+ 	    archivo(i)=replace(archivo(i),"NOAA","NA",1,200,1)
+ 	    archivo(i)=replace(archivo(i),"ISS","ISS--",1,200,1)
+        archivo(i)=replace(archivo(i),"  "," ",1,200,1)
+        archivo(i)=replace(archivo(i),"  "," ",1,200,1)
+    next    
+		for i = 0 to 71
+		    line=archivo(i)
+		    line=replace(line,"  "," ",1,200,1)
+		    line=replace(line,"  "," ",1,200,1)
+		    line=replace(line,"  "," ",1,200,1)
+		    linemat = split(line," ",200,1)
+'		    Response.Write archivo(i) & "<br>"
+            if int(i/12)=i/12 then
+            if i>=0 then 
+                Response.Write "<br>"
+                Response.Write linemat(6)&" "&linemat(7)&"<br>"
+            end if
+            Response.Write "SATEL.HH:MM&nbsp;Du&nbsp;El<br>"
+             Response.Write "===== ===== == ==<br>"
+            end if
+		    Response.Write ucase(linemat(0)) & "&nbsp;" & linemat(4) & "&nbsp;" & replace(right(" " & linemat(5),2)," ","&nbsp;",1,3) & "&nbsp;" & replace(right(" " & linemat(3),2)," ","&nbsp;",1,3) & "<br>" & vbCrLf
+	    next
+	    Response.Write "<br>" & vbCfLf
+	    Response.Write Legend & "<br>" & vbCrLf
+	    Response.Write "ISS PK:145.825 FM" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp; DU:145.800 FM" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp; DU:437.800 FM" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp; PK:145.99-.80" & "<br>" & vbCrLf
+	    Response.Write "AO-07 U:145.85-95" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D:29.4-29.5" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B:29.502   " & "<br>" & vbCrLf 
+	    Response.Write "AO-07 U:432.12-17" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D:145.97-92" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B:145.9775 " & "<br>" & vbCrLf
+	    Response.Write "LO-19 B:437.125CW" & "<br>" & vbCrLf
+	    Response.Write "RS-22 B:435.352CW" & "<br>" & vbCrLf
+	    Response.Write "FO-29 U:145.9-146" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D:435.8-900" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B:435.795CW" & "<br>" & vbCrLf
+	    Response.Write "SO-50 U:145.85 67" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D:436.7950" & "<br>" & vbCrLf
+	    Response.Write "AO-51 U:145.880" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D:435.150" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; U:145.920" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D:435.300" & "<br>" & vbCrLf
+	    Response.Write "VO-52 U:435.22-27" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D:145.87-82" & "<br>" & vbCrLf
+	    Response.Write "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B:145.860CW" & "<br>" & vbCrLf
+	    Response.Write "NA-15 D:137.500" & "<br>" & vbCrLf
+	    Response.Write "NA-17 D:137.620" & "<br>" & vbCrLf
+	    Response.Write "NA-18 D:137.100" & "<br>" & vbCrLf
+	    Response.Write "NA-19 D:137.9125" & "<br>" & vbCrLf	    	    	    
+        Response.Write "</p>" & vbCrLf	    
+%>
+</body>
+</html>

@@ -1,0 +1,223 @@
+		-- AboutTime Help --
+
+AboutTime is (c) Copyright 1998, P. Lutus. All Rights Reserved.
+
+AboutTime is CareWare. Please visit the CareWare Home Page at http://www.arachnoid.com/careware, and the AboutTime Home Page at http://www.arachnoid.com/abouttime.
+
+If you are using Notepad to read this file, be sure that Word Wrap is turned on.
+Use Edit ... Word Wrap to accomplish this.
+
+AboutTime is both a time client and server -- it will acquire a time value from the Internet, set your computer's clock, and it will act as a timeserver as well -- it will provide time signals to your local network using four time protocols. Additional copies of AboutTime can be installed to provide time synchronization on each machine of your local network.
+
+AboutTime uses advanced techniques and protocols to permit clock setting accuracies of +- 50 milliseconds in most cases, using only a modem connection to the Internet. A complete explanation of the methods is provided below.
+
+These instructions assume you have installed TCP/IP capabilities on each machine that will host AboutTime. TCP/IP installation is beyond the scope of this document, please see your network administrator for assistance with this.
+
+		-- Installation --
+
+Download the AboutTime ZIP file, unZIP it, and run the provided Setup program. You will be asked which directory you want to use for installation. The default is generally preferred.
+
+If AboutTime will not run, it is usually because of the absence of one or more DLL (Dynamic Linking Library) files. If your system complains about an absent DLL file, please visit the AboutTime Home Page (http://www.arachnoid.com/abouttime) to acquire them.
+
+-- Control/Time Client --
+
+When first installed and run, AboutTime creates a short list of Internet time servers that you may use to acquire accurate time. Because Internet conditions differ from place to place, and because Internet information goes out of date rather quickly, you should perform this initialization step:
+
+1. Log onto the Internet.
+2. Select the "Time Hosts" tab.
+3. Press "Verify All."
+4. AboutTime will verify the accuracy of the default host entries and acquire an IP address for each entry.
+
+The accuracy of the entries is confirmed by the replacement of a question mark "?" with an asterisk "*" in the left column of the host list.
+
+To acquire time and reset your computer's clock, log onto the Internet and press "Set Time" on the "Control/Time Client" tab. If you are not logged onto the Internet, Windows may ask if you want to log on.
+
+You may choose to automatically log on each time you set your computer's time. To do this, select the "Options" tab and click "Log on if required." This will allow AboutTime to automatically log on in order to acquire time, even if no operator is available at the computer.
+
+The auto-logon option will only work if:
+
+1. You have a relatively recent Windows 95/98/NT install, and
+2. You have chosen "Connect to the Internet using a modem" in your Internet account setup.
+
+After the time synchronization, you may want to examine the "Control/Time Client" display. The "ping" value is the Internet round-trip time for your request for time and the server's reply. The "error" value is the difference between the server's time and your computer's time in milliseconds (1/1000 of a second).
+
+If you are using SNTP (Simple Network Time Protocol), the error values will be rather low, especially if you resynchronize. This is because, after the first contact with the timeserver, the Internet knows how to route your request more efficiently and the network delays tend to be smaller and more consistent.
+
+AboutTime uses an advanced strategy to assure maximum time-setting accuracy. The program measures the time required to contact the server and for the server to reply (the "ping" time), takes half this delay time and adds it to the received time signal. This is because there is a finite time delay between the moment the server transmits its reply and the moment the reply arrives at your computer. This time delay is about half the total round-trip time. Or, in mathematical form:
+
+Computer Time = Server Time + (Internet round-trip time / 2)
+
+If you choose a protocol other than SNTP, the highest obtainable accuracy is one second, which is why the SNTP protocol is favored over the others.
+
+-- Log to File --
+
+This option creates a log file in the AboutTime Program Directory named "abouttime.log." The log file will contain an entry with date, time and description for each AboutTime event. If you enable this option, be sure to delete the log file from time to time, as it will otherwise grow quite large.
+
+-- Time Hosts --
+
+You may want to add or remove Internet time servers from AboutTime's list of hosts. This is accomplished using the "Time Hosts" tab.
+
+To add a server, press "Add" and a dialog will appear. You enter a name for the server, the Internet Domain Name, the desired protocol, and the timeout value (there is a list of time hosts at the bottom of this file).
+
+Here is an example:
+
+Site Name:             U.S. Naval Observatory
+Host Name or addr.:    tick.usno.navy.mil
+Protocol:              SNTP
+Timeout:               10
+
+The Site Name is a formal, human-readable name for the server. Your computer uses the host name to locate the actual server, so it must be entered accurately. It doesn't matter if you enter a correct Site Name, but you must enter an accurate Host Name. At the bottom of the file you will find a list of Internet timeservers to experiment with.
+
+The protocol choice is rather important. If at all possible, select SNTP (Simple Network Time Protocol), because this protocol provides time to the nearest millisecond or better - the other protocols only provide one-second accuracy.
+
+The Timeout value is used to terminate a connection attempt.
+
+IMPORTANT: Before exiting the "Time Hosts" page, be sure to log on and press "Verify All" to establish the accuracy of your host list.
+
+-- Time Servers --
+
+While it is running, AboutTime provides four timeservers so other computers on your network can be synchronized to a machine that has Internet access (the "server machine"). Simply install copies of AboutTime on each machine in the network. On these client machines, select "Time Hosts", "Add" and type in the name or address of the server machine. Move this entry to the top of the list (or delete the other entries) before exiting.
+
+When you select the "Time Servers" tab, you will see a traffic light for each server protocol. If the light is red, this means that server protocol could not be established. This usually means the machine already has a server running that protocol.
+
+If the light is green, this means the server protocol has been enabled and the program is awaiting requests.
+
+If the light is yellow, this means the server is answering a request for time from another machine.
+
+-- Options --
+
+Several automation choices appear under the "options" tab.
+
+You may choose to resynchronize your computer with an Internet time source, or with another computer on your network, at set time intervals. To do this, enable "Set Time ..." and select a time interval in minutes.
+
+You may choose to attempt a connection only with the currently selected time host, or you may want to attempt a connection with all of them until one is successful. If the latter, choose "Try All Hosts." This option is valid for both automatic and manual time setting operations.
+
+You may want AboutTime to set your computer's time immediately on starting. For this option, enable "Set Time when starting."
+
+You may not want AboutTime to continue to run after it has initially set your system's time, for example when you first turn on your computer. To allow AboutTime to exit after setting the time, enable "Exit after setting time." If this option is enabled, AboutTime will exit 15 seconds after completing time synchronization. This delay allows adequate time for you to switch off this option later, if you decide to change it.
+
+If you want AboutTime to start hidden, that is, to run without taking up desktop space, select "Start hidden." With this option selected, AboutTime will appear on the desktop for a moment if it must acquire a time, then it is hidden. You may reactivate it by clicking its icon on the System Tray (the right end of the Windows system tray).
+
+NOTE: the following two options are only available on the "Requires MSIE 4.0+" version.
+
+If you want AboutTime to log on by itself to acquire time, select "Log on if required." AboutTime will test whether there is an Internet connection and log on if it needs to.
+
+If you want AboutTime to log off after acquiring time, select "Log off after getting time." This option will only be exercised if AboutTime also logged on -- AboutTime will only hang up a connection that it created. This means AboutTime can acquire time in the "background" without disturbing your other Internet activities, but if you permit it to log on in the middle of the night, it will also hang up.
+
+-- Proxy/Firewall Options --
+
+AboutTime can use any selected ports to acquire time from the Internet or a proxy server/firewall. To change the default port values, simply acquire the correct port values from your network administrator and type them into the "Options ... Proxy/Firewall Service Ports" area. Be sure to press "Apply" after making your entries.
+
+-- Help/About --
+
+Please refer to this help file first if you have any questions. If you need further information, or you want to read about CareWare, please press the "Go To Home Page" button on the "Help/About" tab. This button will take you to http://www.arachnoid.com, the parent site for AboutTime.
+
+Please do not contact the author to ask how to set up a network. Please DO write to report any bugs you find in AboutTime.
+
+		-- Protocols --
+
+AboutTime uses three, and provides four, time protocols. Here is a brief description of each:
+
+Daytime/TCP, port 13. Surely the worst time protocol ever devised. Provides a simple ASCII representation of date and time, usually in local time. Not very useful except on a local network. Accurate to one second.
+
+Time/TCP, port 37. A four-byte representation of the number of seconds elapsed since January 1, 1900, in UTC time. Accurate to one second.
+
+Time/UDP, port 37. Like the TCP version, a four-byte representation of the number of seconds elapsed since January 1, 1900, in UTC time. Accurate to one second.
+
+SNTP (Simple Network Time Protocol), port 123. A very sophisticated protocol, not at all simple. When I first read the specification, I said, "Simple compared to what?" But it provides excellent results - in principle, it can deliver accuracies of one millisecond or better. Because of limitations of the Intel platform, you can expect to achieve maximum resolutions of about + - 50 milliseconds on most machines.
+
+AboutTime does not fulfill the entire SNTP protocol, which runs to twenty single-spaced pages. AboutTime can acquire very accurate time from existing SNTP servers, and can provide accurate time to other copies of AboutTime, but it cannot provide SNTP time to other SNTP client programs.
+
+		-- Common Problems --
+
+I have gotten a rash of e-mail from people who run AboutTime and then find that their local time is not being displayed correctly. This happens on machines that have not, and may never have been, set up correctly.
+
+Let me explain. All accurate Internet time sources provide time in the "time zone" of GMT (UTC to be more precise, but no matter). This is so Internet timeservers do not have to know where you are located to deliver accurate time signals. It is up to you to choose a time zone so your time display corresponds to your locale.
+
+The way you do this is to go to the Windows Control Panel and select the Date/Time applet. Choose your correct time zone. Now allow AboutTime to set your computer's clock again. Once you have done this, your local time display will correspond to reality.
+
+As to Daylight Time, there are any number of regional problems and conflicts that are best resolved by either using the Windows default, or turning off the Windows Daylight Time option and simply changing your selected time zone for that part of the year on which Daylight Time is in effect.
+
+The important point to remember is this - AboutTime obtains correct time in GMT from the Internet. Any problems that come up in setting the correct local time are because of individual choices in the Control Panel Date/Time applet.
+
+		-- AboutTime as a service under Windows NT --
+
+AboutTime may be run as a service under Windows NT. Simply identify AboutTime to the system using SRVANY, a component of the Windows NT resource Kit.
+
+You may want to disable the system tray icon for this kind of service. To do so, select "Options ... Put Icon on system tray" and disable it.
+
+		-- Copying Settings from one machine to another --
+
+On large networks it is more convenient to set up a single copy of AboutTime and copy its initialization file to other machines. To do this, set up AboutTime once, exit the program, then copy the file "AboutTime.ini" from the AboutTime program directory to the other machines.
+
+		-- Internet Time Servers --
+
+This list will undoubtedly go out of date quickly. There are many timeserver lists posted on the World Wide Web. These names are entered in the "Host name or address" location when you are adding a new server. Remember: be sure to use the SNTP protocol if at all possible. 
+
+bigben.cac.washington.edu
+bitsy.mit.edu
+canon.inria.fr
+chronos.univ-rennes1.fr
+clock.cmc.ec.gc.ca
+clock.isc.org
+clock.llnl.gov
+clock.nc.fukuoka-u.ac.jp
+clock.osf.org
+clock.tl.fukuoka-u.ac.jp
+fuzzy.nta.no
+jamtepat.singnet.com.sg
+lerc-dns.lerc.nasa.gov
+mizbeaver.udel.edu
+navobs1.gatech.edu
+navobs1.usnogps.navy.mil
+navobs1.wustl.edu
+navobs2.usnogps.navy.mil
+ncar.ucar.edu
+ncnoc.ncren.net
+ntp.cc.utexas.edu
+ntp.cs.mu.OZ.AU
+ntp.dgf.uchile.cl
+ntp.ml.csiro.au
+ntp.nasa.gov
+ntp.syd.dms.csiro.au
+ntp0.ja.net
+ntp0.nl.net
+ntp0.sdd.hp.com
+ntp1.delmarva.com
+ntp1.nss.udel.edu
+ntp1.sony.com
+ntp2.usno.navy.mil
+ntps1-0.cs.tu-berlin.de
+ntps1-0.uni-erlangen.de
+ntps1-1.cs.tu-berlin.de
+ntps1-1.rz.Uni-Osnabrueck.DE
+ntps1-1.uni-erlangen.de
+ntps1-2.uni-erlangen.de
+otc1.psu.edu
+rackety.udel.edu
+swisstime.ethz.ch
+tempo.cstv.to.cnr.it
+tick.mit.edu
+tick.ucla.edu
+tick.uh.edu
+tick.usask.ca
+tick.usno.navy.mil
+time.ien.it
+time.nist.gov
+time.service.uit.no
+Time1.Stupi.SE
+time-a.nist.gov
+time-a.timefreq.bldrdoc.gov
+time-b.nist.gov
+time-b.timefreq.bldrdoc.gov
+tock.usask.ca
+tock.usno.navy.mil
+truechimer.cso.uiuc.edu
+umd1.umd.edu
+usno.pa-x.dec.com
+utcnist.microsoft.com
+utcnist1.reston.mci.net
+wave.mbari.org
+wwvb.erg.sri.com
+wwvb.isi.edu
+

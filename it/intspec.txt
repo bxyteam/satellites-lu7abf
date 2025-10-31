@@ -1,0 +1,322 @@
+Interrupt Interface to InstantTrack Orbit Driver
+================================================
+
+Copyright 1989 Paul Williamson, KB5MU
+last revised 10/24/1999 PTW
+
+The InstantTrack Orbit Driver (OrbitDRV) tracks a single satellite in real
+time.  It controls the antennas through a Rotor Driver (RotorDRV) and/or
+sends range/rate information to a Radio Driver (RadioDRV).
+
+This file documents the interrupt calling conventions used.
+This file does not attempt to explain the relationship among the
+various drivers and between the drivers and InstantTrack.
+
+The information in this file is intended to be sufficient for a programmer
+attempting to write a program that converses with OrbitDRV.  If you are
+writing such a program and need further information, please contact KB5MU.
+
+
+Interrupts to Orbit Driver
+==========================
+
+The InstantTrack Orbit Driver (OrbitDRV) hooks into the same user
+interrupt vector as the Rotor Driver, 0x63 by default.  OrbitDRV
+must be installed after the Rotor Driver, and passes through any
+calls to the Rotor Driver without change.  Programs wishing to
+locate the original RotorDRV may find its address at an offset of
+4 from the interrupt handler entry point.
+
+Applications may test for the presence of OrbitDRV by looking for
+the string "RotorDRV+OrbitDRV" at an offset of 0x0A from the
+interrupt handler entry point.  Note that the beginning of this
+string is identical to the Rotor Driver signature, so that programs
+that look for the Rotor Driver will still find it.  Immediately 
+following this signature is a null-terminated string of not more
+than 40 characters containing version and release information.
+User programs may wish to display this string.
+
+OrbitDRV uses its own internal stack space, even when called by a
+user program.  There is no need to allocate extra space on the user's
+stack when calling OrbitDRV.  When making calls to RotorDRV through
+OrbitDRV, the usual rules for RotorDRV (whatever they may be) apply.
+
+The function performed by the interrupt is controlled by the value in
+the AH register on entry.  AH values of 00 to 7F are reserved for the
+Rotor Driver.  AH values of 80 to FF are assumed to be intended for
+OrbitDRV.  The following functions are defined:
+
+	AH	Function
+	==	========
+	FF	Get Status Only
+	FE	Enable/Disable Tracking
+	FD	Enable/Disable Tuning
+	FC	Set Station Elements
+	FB	Set Satellite Elements
+	FA	Set Time
+	F9	Get Pointers
+
+All functions return the status word in AX.  The bits of the status
+word have the following definitions:
+
+	0001	Station elements are missing or bad.  Make a new call
+		to Function FC with good elements.
+	0002	Satellite elements are missing or bad.  Make a new call
+		to Function FB with good elements.
+	0004	Tracking is currently disabled.  This could be a result
+		of a command or an error.  It is also the default
+		condition on loading the Orbit Driver.
+	0008	Tuning is currently disabled.  This could be a result
+		of a command or an error.  It is also the default
+		condition on loading the Orbit Driver.
+	0010	An arithmetic error has occurred.  No computations will
+		be done until a new Enable call is made.  Error code is
+		in BL.
+	0020	The satellite is not currently in view.  This bit is
+		only valid if tracking is enabled.
+	0040	The satellite's position has not been recomputed since
+		the last parameter change.
+	0080	(spare)
+	...
+        4000	This command had a bad function code in AH.
+	8000	This command had a bad subfunction code in AL.
+
+If the arithmetic error bit is set in the status word, then BL contains
+an error code as follows:
+
+	01	C Math library: argument domain error
+	02	C Math library: argument singularity
+	03	C Math library: overflow range error
+	04	C Math library: underflow range error
+	05	C Math library: total loss of precision
+	06	C Math library: partial loss of precision
+	40	Integer divide by zero
+	41	Internal error: degenerate orbit
+	42	Internal error: negative time
+	81	Floating point exception: invalid operation
+	82	Floating point exception: denormalized operand
+	83	Floating point exception: divide by zero
+	84	Floating point exception: overflow
+	87	Floating point exception: instruction not emulated
+	88	Floating point exception: square root of negative number
+	8A	Floating point exception: 8087 stack overflow
+	8B	Floating point exception: 8087 stack underflow
+
+Other codes are undefined.
+
+All functions also return an interface version number in BH.  This is
+a number that changes whenever the interface definition of OrbitDRV
+undergoes incompatible changes.  The interface described by this version
+of this document returns 01 in BH.
+
+Function FF: Get Status Only
+----------------------------
+This function enables the user program to ask OrbitDRV for its current
+status without making any other changes.
+
+On Entry:
+	AH = FF
+
+Function FE: Enable/Disable Tracking
+------------------------------------
+This function allows the user program to control whether OrbitDRV
+tries to use the Rotor Driver to follow the satellite with the
+antennas.  Enabling tracking resets any existing arithmetic error
+conditions.  The enable call will be ignored if the station or
+satellite parameters have not been set.
+
+When enabling tracking, the user program should issue Clear Table and
+Enable Tracking calls to RotorDRV as well as an Enable Tracking call
+to OrbitDRV.  When disabling tracking, the user program may want to
+issue a Disable Tracking call to RotorDRV.  OrbitDRV makes none of
+these calls automatically.
+
+On Entry:
+	AH = FE
+	AL = 00		to disable tracking
+	     01		to enable tracking
+
+Function FD: Enable/Disable Tuning
+----------------------------------
+This function allows the user program to control whether OrbitDRV
+provides range rate (Doppler shift) updates to the Radio Driver.
+The Radio Driver must be installed and available before making this
+call.
+
+On Entry:
+	AH = FD
+	AL = 00		Disable tuning.
+	     01		Enable tuning.
+
+Function FC: Set Station Elements
+---------------------------------
+This function allows the user program to tell OrbitDRV the relevant
+information about the station location.  The information is passed in 
+a block of memory, which OrbitDRV copies and then forgets about.  The
+data format in the block is just the first part of InstantTrack's
+sta_elements data structure.
+
+The local station information is required.
+
+On Entry:
+	AH	= FC
+
+	DS:DX	= address of a sta_elements struct, defined as:
+		struct sta_elements {
+		  char call[20];	/*callsign or city (unused)*/
+		  double lat,lon,H;     /*geodetic position*/
+		  /* other unused items */ };
+
+Function FB: Set Satellite Elements
+-----------------------------------
+This function allows the user program to tell OrbitDRV the necessary
+information about the satellite's orbit.  The information is passed
+in a block of memory, which OrbitDRV copies and then forgets about. 
+The data format in the block is just the first part of InstantTrack's
+sat_elements data structure.
+
+ On Entry:
+	AH	= FB
+	DS:DX	= address of a sat_elements struct, defined as:
+		struct sat_elements {
+		  char name[20];        /*(unused)*/
+		  char objt[20];	/*(unused)*/
+		  char desi[20];	/*(unused)*/
+		  double T0,M0,N0;	/*epoch, meananomaly, meanmotion*/
+		  double I0,E0,W0;	/*inclination, eccentricity, arg perigee*/
+		  double O0;		/*Right Asc. Ascending Node*/
+		  float F1;		/*(unused) */
+		  float N1;		/*decay*/
+		/* other unused items */
+		  };
+
+Function FA: Set Time
+---------------------
+This function allows the user program to update OrbitDRV's idea of
+what time it is.  OrbitDRV normally keeps time based on the DOS clock
+at the time of installation.  If the user has adjusted the time since
+then, this function should be called to update OrbitDRV.
+
+A word of explanation: OrbitDRV has to keep its own internal clock.
+It would be preferable to obtain the time from DOS on each
+calculation cycle, to avoid the need for this function.  However, a
+TSR function like OrbitDRV may not call DOS whenever it wants to.
+The cleanest solution is for OrbitDRV to keep track of time
+internally using the timer tick interrupt (which is the same thing
+DOS uses).  Unfortunately, this means that OrbitDRV won't find out
+about changes in the DOS time.  That is, unless you tell it by
+calling this function.
+
+On Entry:
+	AH	= FA
+
+	DS:DX	= address of the current time as a (double) in
+			days (Modified Julian Date).
+
+Function F9: Get Pointers
+-------------------------
+This function allows the user program to obtain pointers to OrbitDRV's
+internal Station and Satellite structures.  These pointers may be
+obtained once and are guaranteed never to change during a given run
+of OrbitDRV.  The Station and Satellite structures are defined as
+in the Set Station Elements and Set Satellite Elements functions.
+In particular, nothing is guaranteed about the contents of memory
+after the elements of the struct defined in this document.
+
+It also returns a pointer to a satinfo data structure, defined as
+	struct satinfo {
+	   double T;		/*latest updated thru topo angles time*/
+	   float azim,elev;	/*Computed Topo Angles from base station*/
+	};
+This structure is updated with current OrbitDRV time and pointing angles
+to the satellite every time OrbitDRV recomputes the satellite position.
+It is intended to be used for realtime display of OrbitDRV's results.
+
+On Entry:
+	AH	= F9
+On Exit:
+	AX	= status word
+	SI:CX	= far pointer to the Station struct
+	DI:DX	= far pointer to the Satellite struct
+	DI:ES	= far pointer to the satinfo struct (yecch!)
+
+**********************************************************************
+
+Interrupts from Orbit Driver to Rotor Driver
+============================================
+The Orbit Driver assumes that the Rotor Driver implements the Set
+Target Position call from the Kansas City Tracker's interface. 
+OrbitDRV never makes any other calls to RotorDRV.  The definition of
+this call is derived from DRVSVC.DOC, dated 6/21/88, by Brooks Van
+Pelt, KB2CST, the author of the Kansas City Tracker software.  That
+file should be consulted for further details on the KCT Rotor Driver
+TSR.
+
+Useful information can be obtained by making calls directly to the
+Rotor Driver, even if the Orbit Driver is installed.  Since OrbitDRV
+does not make these calls to RotorDRV, they are not described here.
+Consult DRVSVC.DOC or the equivalent file for your Rotor Driver for
+details.
+
+Certain RotorDRV calls should be made when enabling and possibly
+disabling OrbitDRV.  Since OrbitDRV does not enable RotorDRV, the
+calling program should do so when enabling OrbitDRV.  It is suggested
+that the calling program also issue the Clear Table (AH=5, no
+arguments) call to RotorDRV in case RotorDRV is a Kansas City Tracker
+that has been programmed to point antennas according to its internal
+table.  If the table is not cleared, it could end up fighting with
+OrbitDRV for control of the antennas.
+
+The default interrupt is INT 63H.  OrbitDRV tests for the presence of
+RotorDRV by looking for the string "RotorDRV" (but not "RotorDRV+OrbitDRV")
+at an offset of 0x0A from the interrupt handler entry point. Programs
+that go looking for the string "RotorDRV" will find OrbitDRV, and
+OrbitDRV will pass through calls to RotorDRV unchanged. 
+
+There is one special case: if OrbitDRV passes through a Table Load
+(AH=7) call to RotorDRV, OrbitDRV disables itself.  The assumption is
+that if the user is loading KCT tables, he doesn't want OrbitDRV to
+control the antennas anymore.
+
+
+Function 04: Set Target position
+--------------------------------
+This function is used by the Orbit Driver to tell the Rotor Driver where to
+point the antennas.  It is called on each calculation cycle.
+
+    At Entry: AH=4
+              CX - target ELEV value in degrees (-90 to 269, signed binary)
+              DX - target AZIM value in degrees (0-359, binary)
+              Note: If either value is invalid the entire command will
+                    be ignored.
+
+
+
+
+
+Interrupts from Orbit Driver to Radio Driver
+============================================
+The Orbit Driver knows as little as possible about the Radio Driver.
+If the Radio Driver is present when tuning is enabled in the Orbit
+Driver, OrbitDRV sends range rate updates to RadioDRV on each
+calculation cycle.
+
+The default interrupt is INT 64H.  The Orbit Driver tests for the
+presence of the Radio Driver by looking for the string "RadioDRV"
+at an offset of 0x0A from the interrupt handler entry point.
+
+
+Function 03: Set Range Rate
+---------------------------
+This function is used to tell the Radio Driver how fast the satellite
+is moving relative to the station.  This is a frequency-independent
+value so the Radio Driver can do the right thing relative to the
+uplink and downlink frequencies.
+
+    At Entry: AH = 3
+	      DS:DX = address of velocity as a (double) in units
+			of the speed of light.
+
+Note that the value pointed to by DS:DX is only valid for the duration
+of this call. The Radio Driver must not access this value after it
+returns from servicing this call.

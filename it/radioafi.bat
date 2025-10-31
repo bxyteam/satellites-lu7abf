@@ -1,0 +1,2 @@
+downloader.exe -download http://www.cnc.gob.ar/multimedia/archivos/radioaficionados.xls D:\webs\lu7aa.org.ar\dbbackup\radioaficionados.xls
+downloader.exe -download http://localhost/lu7aa.org.ar/bajarexcel.asp

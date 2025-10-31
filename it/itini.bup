@@ -1,0 +1,88 @@
+#  InstantTrack Parameter Initialization File
+#  Copyright (c) 1990, 1992  Franklin Antonio.  All Rights Reserved.
+#  Copyright (c) 2000 Paul Williamson. All Rights Reserved.
+#  *** Read the file ITINIDOC.TXT before you edit anything here! ***
+
+
+
+#  Parameters for NIST time service...
+
+nist_port = COM2
+nist_port_address = 0
+nist_port_irq = 0
+nist_baud = 1200
+nist_hangup = ATH
+nist_maxtime = 0
+nist_dial = ATDT1-303-494-4774
+
+# Alternate number in Hawaii:
+#nist_dial = ATDT1-808-335-4721
+
+
+#  Parameters affecting how we talk to video adapter...
+
+vga_resolution = 2
+cga_mapcolors = 0
+hgc_mapcolors = 0
+
+force_bios_chargen_g = 0
+
+force_greyscale = 0
+greyscale = 0,5,34,29,13,25,30,42,21,20,46,50,40,38,55,63
+
+
+
+#  Parameters affecting rotor control TSRs...
+
+kct_int_number = 63
+radiodrv_int_number = 64
+
+
+
+#  Parameters affecting how we read element sets from files...
+
+nasa_checksum_type = 4
+check_amsat_checksum = 1
+
+#  Uncomment this setting to automatically read in a Keplerian elements file
+#  (in Update mode) when InstantTrack starts up. Substitute the file name you
+#  want it to read, up to 40 characters. If the file isn't found, InstantTrack
+#  will just start up normally.
+#  auto_read_kepsfile = C:\DOWNLOAD\NASA.ALL
+
+#  Parameters affecting fast-forward mode...
+
+fast_forward_delay = 100
+
+
+#  Parameters affecting how we use the printer...
+
+printer_lines_per_page = 59
+printer_formfeed_at_end = 1
+
+
+#  Parameters affecting time...
+
+# Uncomment one of these, or make your own:
+# timezone = PST8PDT
+# timezone = PST8
+# timezone = MST7MDT
+# timezone = MST7
+# timezone = CST6CDT
+# timezone = CST6
+# timezone = EST5EDT
+# timezone = EST5
+timezone = LUT3
+# timezone = UTC0
+# timezone = HST-8
+# timezone = KST-8KDT
+
+# Uncomment this setting if your local timezone requires it (see ITINI.DOC):
+# timezone_offset_seconds = -34200
+
+
+# Parameters affecting how the maps are drawn...
+
+orthographic_latlon = 1
+win98_idledetect_workaround = 20
+

@@ -1,0 +1,49 @@
+<head><META HTTP-EQUIV='EXPIRES' CONTENT='+4 days'><META HTTP-EQUIV='Pragma' CONTENT='no-cache'><META HTTP-EQUIV='Cache-Control' CONTENT='no-cache'>
+<style type='text/css'>.txt {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;}
+A:visited {color:#000000}A:link{color:#000000}A:hover{color:#ff0000}A:active{color:#000000}
+.yel1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#ffff00;}
+.mag1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#00ffff;}
+.red1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#00ff00;}
+.titg {font-family:Courier New,Courier;font-size:17;font-weight:bold;line-height:17px;color:#ffffff;background:#6789bc;}
+.txt {margin-left:3;margin-right:1;margin-top:1;left-margin:3;right-margin:1;border:0;font-weight:bold;}
+.pnk1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#ffe5c0;}</style>
+<title>Pasos Satelites Amsat Argentina</title>
+<script language=javascript>
+var ayuda='       Asegura que este bien\n       el dia y hora en tu PC\n\n  Estos pasos funcionan aunque\n  no estes conectado a Internet\n\nAMSAT Argentina agradece tu visita y\nte desea buenos contactos satelitales!';
+function mouseDown(e){
+if (parseInt(navigator.appVersion)>3) {var clickType=1;
+if (navigator.appName=='Netscape') clickType=e.which;
+else clickType=event.button;
+if (clickType!=1){alert(ayuda);return false;}}return true;}
+if (parseInt(navigator.appVersion)>3){document.onmousedown=mouseDown;
+if (navigator.appName=='Netscape') document.captureEvents(Event.MOUSEDOWN);}
+var pwin;var swin;var owin;function ver(sat){if (pwin != null) {pwin.close();}
+var ira="http://www.amsat.org.ar/sat"+sat+".htm";
+preferences = "toolbar=no,width=440,height=360,center,margintop=0,marginleft=0,marginright=0,top=0,left=300,status=no,scrollbars=yes,resizable=yes,dependent=yes,z-lock=yes" ;
+pwin = window.open (ira,"pasoswin",preferences) ;
+if (owin != null) {owin.close();}
+preferences = "toolbar=no,width=162,height=162,center,margintop=0,marginleft=0,marginright=0,top=404,left=494,status=no,scrollbars=no,resizable=no,dependent=yes,z-lock=yes" ;
+owin = window.open ("http://lu7aa.org.ar/sp.asp?l=e&F=by&s="+sat,"orbwin",preferences) ;
+}</script>
+</head><body BACKGROUND=fondo1.gif onUnload='pwin.close();owin.close();swin.close();self.close();' class=txt 
+><DIV ID=top NAME=top>Pasos satelites amateur por</DIV>
+Bombay, India en hora local<br>
+<DIV NAME=LT ID=LT>&nbsp;</DIV>
+ <font class=red1> <u><A HREF=#PX>Pass</A></u> </font>  <font class=mag1> <u><A HREF=#PX>Atenc</A></u> </font>  <font class=yel1> <u><A HREF=#PX>Prox</A></u> </font> <A HREF=# title=' refresh ' onclick='rst()' class=pnk1>@@</A><br><br>
+<A ID='iss1' NAME='iss1' onclick=ver('iss') HREF=#iss   >ISS   </A>  <A ID='ao-71' NAME='ao-71' onclick=ver('ao-7') HREF=#ao-07>AO-07</A>  <A ID='uo-111' NAME='uo-111' onclick=ver('uo-11') HREF=#uo-11>UO-11</A>  <A ID='lo-191' NAME='lo-191' onclick=ver('lo-19') HREF=#lo-19>LO-19</A><BR>
+<A ID='ao-271' NAME='ao-271' onclick=ver('ao-27') HREF=#ao-27>AO-27</A>  <A ID='fo-291' NAME='fo-291' onclick=ver('fo-29') HREF=#fo-29>FO-29</A>  <A ID='go-321' NAME='go-321' onclick=ver('go-32') HREF=#go-32>GO-32</A>  <A ID='no-441' NAME='no-441' onclick=ver('no-44') HREF=#no-44>NO-44</A><BR>
+<A ID='so-501' NAME='so-501' onclick=ver('so-50') HREF=#so-50>SO-50</A>  <A ID='co-551' NAME='co-551' onclick=ver('co-55') HREF=#co-55>CO-55</A>  <A ID='co-571' NAME='co-571' onclick=ver('co-57') HREF=#co-57>CO-57</A>  <A ID='co-581' NAME='co-581' onclick=ver('co-58') HREF=#co-58>CO-58</A><BR>
+<A ID='co-651' NAME='co-651' onclick=ver('co-65') HREF=#co-65>CO-65</A>  <A ID='co-661' NAME='co-661' onclick=ver('co-66') HREF=#co-66>CO-66</A>  <A ID='ho-681' NAME='ho-681' onclick=ver('ho-68') HREF=#ho-68>HO-68</A>  <A ID='ao-731' NAME='ao-731' onclick=ver('ao-73') HREF=#ao-73>AO-73</A><BR>
+<A ID='lo-741' NAME='lo-741' onclick=ver('lo-74') HREF=#lo-74>LO-74</A>  <A ID='eo-791' NAME='eo-791' onclick=ver('eo-79') HREF=#eo-79>EO-79</A>  <A ID='eo-801' NAME='eo-801' onclick=ver('eo-80') HREF=#eo-80>EO-80</A>  <A ID='ao-851' NAME='ao-851' onclick=ver('ao-85') HREF=#ao-85>AO-85</A><BR>
+<A ID='io-861' NAME='io-861' onclick=ver('io-86') HREF=#io-86>IO-86</A>  <A ID='ao-911' NAME='ao-911' onclick=ver('ao-91') HREF=#ao-91>AO-91</A>  <A ID='ao-951' NAME='ao-951' onclick=ver('ao-95') HREF=#ao-95>AO-95</A>  <A ID='po1011' NAME='po1011' onclick=ver('po101') HREF=#po101>PO101</A><BR>
+<A ID='ao1091' NAME='ao1091' onclick=ver('ao109') HREF=#ao109>AO109</A>  <A ID='so1151' NAME='so1151' onclick=ver('so115') HREF=#so115>SO115</A>  <A ID='fo1181' NAME='fo1181' onclick=ver('fo118') HREF=#fo118>FO118</A>  <A ID='so1211' NAME='so1211' onclick=ver('so121') HREF=#so121>SO121</A><BR>
+<A ID='rs-151' NAME='rs-151' onclick=ver('rs-15') HREF=#rs-15>RS-15</A>  <A ID='rs-221' NAME='rs-221' onclick=ver('rs-22') HREF=#rs-22>RS-22</A>  <A ID='rs-301' NAME='rs-301' onclick=ver('rs-30') HREF=#rs-30>RS-30</A>  <A ID='rs-401' NAME='rs-401' onclick=ver('rs-40') HREF=#rs-40>RS-40</A><BR>
+<A ID='rs-441' NAME='rs-441' onclick=ver('rs-44') HREF=#rs-44>RS-44</A>  <A ID='rs-481' NAME='rs-481' onclick=ver('rs-48') HREF=#rs-48>RS-48</A>  <A ID='kks-11' NAME='kks-11' onclick=ver('kks-1') HREF=#kks-1>KKS-1</A>  <A ID='swiss1' NAME='swiss1' onclick=ver('swiss') HREF=#swiss>SWISS</A><BR>
+<A ID='itups1' NAME='itups1' onclick=ver('itups') HREF=#itups>ITUPS</A>  <A ID='sprou1' NAME='sprou1' onclick=ver('sprou') HREF=#sprou>SPROU</A>  <A ID='tita1' NAME='tita1' onclick=ver('tita') HREF=#tita >TITA </A>  <A ID='tigri1' NAME='tigri1' onclick=ver('tigri') HREF=#tigri>TIGRI</A><BR>
+<A ID='ukube1' NAME='ukube1' onclick=ver('ukube') HREF=#ukube>UKUBE</A>  <A ID='xw-2b1' NAME='xw-2b1' onclick=ver('xw-2b') HREF=#xw-2b>XW-2B</A>  <A ID='xw-2c1' NAME='xw-2c1' onclick=ver('xw-2c') HREF=#xw-2c>XW-2C</A>  <A ID='xw-2d1' NAME='xw-2d1' onclick=ver('xw-2d') HREF=#xw-2d>XW-2D</A><BR>
+<A ID='xw-2e1' NAME='xw-2e1' onclick=ver('xw-2e') HREF=#xw-2e>XW-2E</A>  <A ID='xw-2f1' NAME='xw-2f1' onclick=ver('xw-2f') HREF=#xw-2f>XW-2F</A>  <A ID='xw-31' NAME='xw-31' onclick=ver('xw-3') HREF=#xw-3 >XW-3 </A>  <A ID='cas4a1' NAME='cas4a1' onclick=ver('cas4a') HREF=#cas4a>CAS4A</A><BR>
+<A ID='cas4b1' NAME='cas4b1' onclick=ver('cas4b') HREF=#cas4b>CAS4B</A>  <A ID='cas2t1' NAME='cas2t1' onclick=ver('cas2t') HREF=#cas2t>CAS2T</A>  <A ID='lilac1' NAME='lilac1' onclick=ver('lilac') HREF=#lilac>LILAC</A>  <A ID='na-151' NAME='na-151' onclick=ver('na-15') HREF=#na-15>NA-15</A><BR>
+<A ID='na-181' NAME='na-181' onclick=ver('na-18') HREF=#na-18>NA-18</A>  <A ID='na-191' NAME='na-191' onclick=ver('na-19') HREF=#na-19>NA-19</A>  <A ID='metoa1' NAME='metoa1' onclick=ver('metoa') HREF=#metoa>METOA</A>  <A ID='metob1' NAME='metob1' onclick=ver('metob') HREF=#metob>METOB</A><BR>
+<A ID='metoc1' NAME='metoc1' onclick=ver('metoc') HREF=#metoc>METOC</A>  <A ID='metm21' NAME='metm21' onclick=ver('metm2') HREF=#metm2>METM2</A>  <A ID='lapan1' NAME='lapan1' onclick=ver('lapan') HREF=#lapan>LAPAN</A>  <A ID='maxva1' NAME='maxva1' onclick=ver('maxva') HREF=#maxva>MAXVA</A><BR>
+<A ID='norbi1' NAME='norbi1' onclick=ver('norbi') HREF=#norbi>NORBI</A>  <A ID='china1' NAME='china1' onclick=ver('china') HREF=#china>CHINA</A>  <A ID='teve21' NAME='teve21' onclick=ver('teve2') HREF=#teve2>TEVE2</A>  <A ID='teve31' NAME='teve31' onclick=ver('teve3') HREF=#teve3>TEVE3</A><BR>
+<A ID='teve41' NAME='teve41' onclick=ver('teve4') HREF=#teve4>TEVE4</A>  <A ID='teve51' NAME='teve51' onclick=ver('teve5') HREF=#teve5>TEVE5</A>  <A ID='teve61' NAME='teve61' onclick=ver('teve6') HREF=#teve6>TEVE6</A>  <A ID='teve71' NAME='teve71' onclick=ver('teve7') HREF=#teve7>TEVE7</A><BR><BR>

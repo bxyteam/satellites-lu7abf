@@ -1,0 +1,671 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="TITLE" content="AMSAT Argentina provides usefull info for radio amateurs interested in the amateur satellite program, latest AMSAT bulletins, keps and Argentina AMSAT and LUSAT history.">
+<meta name="DESCRIPTION" content="AMSAT-LU is the organisation representing Argentina radio operators interests in design, build, launch and communicate through amateur satellites orbiting the earth. Amsat Argentina es una organizacion orientada a proyectar, armar, lanzar y operar satelites y comunicaciones espaciales. Ha lanzado el LUSAT y proximamente el VoxSat y el Lusac.">
+<meta name="AUTHOR" content="Amsat Argentina WebMaster lu7abf">
+<meta name="abstract" content="Amateur Satellite Predictions Worldwide by Amsat Argentina">
+<meta name="KEYWORDS" content="AMSAT Argentina,AMSAT-LU,AMSAT,Argentina,Amateur Satellites,satelites,Amateur Radio,Space,LUSAT,LUSAT-1,VOXSAT,LUSAC,Telemetry,Telemetria,CW,telegraphy,telegrafia,morse,Globos,Ballons,Diagrams,Diagramas,Circuits,Circuitos,CETRA,Experiments,Experimentos,CONEA,Retina,Tracking,Orbits,Orbita,Orbitas,South,Sud,Shuttle,ISS,AO-19,Oscar,Rocket,Packet,downlink,uplink,frecuency,antenna,equipment,kepler,keplerian,iaru,wireless,repeater,transponder,digital,education,hsg,speed,projects,launch,satellite,ham,amsat-na,amsat-dl,amsat-uk,amsat-ce,amsat-ea,amsat-i,amsat-france,amsat-zl,jamsat,sa-amsat,surrey,sweeting,jan king,uosat,surrey,echo,microsat,nanosat,lu7aa,kb5mu,a0-40,pcsat,weber,pacsat,lu1esy,lw7dxf,lu7dsu,lu2amw,lw2dtz,lu7abf,lu7jcn,lu6dyd,lu6elo,lu4enq,carou,lu6dwc,lu8dyf,lu7xac,lu2aoq,lu5abm,lu4aey,lu3agj,rca,lu2fhe,lu2fcy,lu1sm,lu8yyn,lu1vd,lu2fgn,lu6eeg,aluar,ibm,showlog,sunsat,itrack,gridsquare,locator,gateway,ans,ariss,cubesat,amrad,g3ruh,Buenos Aires">
+<meta NAME="Robots" content="Index,Follow">
+<meta name="revisit-after" content="1 days">
+<meta HTTP-EQUIV="Expires" CONTENT="Fri, Jun 12 1981 08:20:00 GMT">
+<meta name="COPYRIGHT" content="Copyright 1985-2016 Amsat Argentina on amsat.org.ar www.amsat.org.ar All rights Reserved. Todos los derechos Reservados">
+<title>Sats Predictions</title>
+<script src="sat.js" type="text/javascript"></script>
+<script src="satellite-js.js" type="text/javascript"></script>
+<script src="jsDraw2DX.js" type="text/javascript"></script>
+<script src="suncalc.js" type="text/javascript"></script>
+<script language=javascript type="text/javascript">
+var m; var pwin; var swin; var owin; var cty; var sat; var catalognumber; var satnombre; var cookieloc; var cookiesat; var cookieGloc; var savesat; var saveque = 0; var que = 0; var loc; var icon; var log; var activity; var horainicio; var huso; var keps; var Image1; var Image2; var Image3; var fullsatname; var L1; var L2; var latcity; var loncity; var showazel = true; var fruplink; var frdownlink; var fdolink; var fuplink; var frbeacon; var fbeacon; var satfr; var umode; var dmode; var loque; var sunmoonswitch; var revolutionnumber; var originallocator; var cookieRig; var cookieRotor; var cookieCom; var RigRotorCom;
+sunmoonswitch = false;
+//Preload Images
+Image1 = new Image(554,103);
+Image1.src = "images/keps.gif";
+Image2 = new Image(70,70);
+Image2.src = "amsatbluetras.gif";
+Image3 = new Image(13,13);
+Image3.src = "fu.png";
+Image4 = new Image(1,13);
+Image4.src = "fondo1.gif";
+//
+Date.prototype.addHours= function(h){
+    this.setHours(this.getHours()+h);
+    return this;
+}
+husohoras =  new Date().getTimezoneOffset() / 60;
+var ahora = new Date().addHours(husohoras); 
+var ahora = ahora.addHours(-3);
+if (ahora.getHours() < 10) {hora = "0"+ahora.getHours();} else {hora = ahora.getHours();}
+if (ahora.getMinutes() < 10) {min = "0"+ahora.getMinutes();} else {min = ahora.getMinutes();}
+horainicio=hora+":"+min;
+huso = (husohoras*-1).toString();
+if (huso.substring(0,1) != "-"){huso="%2B"+huso}
+//
+if(gqs("loc")){
+for (h=0;h<loca.length;h++){if (gqs("loc")==loca[h][0]){loc=loca[h][0];saveque=h; que=h; activity = sacarcoma(loca[h][1])+";"+"ISS"+"/";
+}}}
+
+if (!gqs("loc")){
+loadMapState();
+
+if (cookieloc && cookiesat){
+    var loc=loca[cookieloc][0]; 
+    var sat=cookiesat; 
+    activity=sacarcoma(loca[cookieloc][1])+";"+sat.toUpperCase()+"/";
+    if (cookieGloc){
+        if (cookieGloc.substr(0,5)==" Loc:"){
+        newlocator = cookieGloc.substr(6,6);
+        loca[cookieloc][1] = cookieGloc;
+        newlat=loc2latlon(newlocator).loclat; 
+        loca[que][3] = newlat ;
+        newlon=loc2latlon(newlocator).loclon; 
+        loca[que][4] = newlon ;
+               } 
+                    }
+                            }
+else{loc=0;saveque=0;sat="iss";activity=sacarcoma(loca[loc][1])+";"+sat.toUpperCase()+"/"}
+}
+if (!sat){sat="iss"}
+if (sat=="iss"){icon="iss"}else{icon="default"}
+
+function sacarcoma(valor) {
+valors = valor.split(",");
+if (valors.length > 0){return valors[0];}else{return valor}
+}
+function reloadsatdata(){loadsatdata(savesat)}
+function loadsatdata(sat){
+sunmoonswitch = false;
+showazel = true; document.getElementById("azel").style.visibility="visible";
+document.getElementById("graphics").style.visibility="visible";
+if (!sat){sat="iss"}
+savesat=sat;
+gethtml("sat"+sat+".htm")
+var data = xmlHttp.responseText;
+    document.getElementById("satdata").style.top = Math.floor((document.documentElement.clientWidth-314)/3) + "px";
+    var n = data.search("Catalog number: ");
+    catalognumber = data.substring(n+15,n+21)
+    catalognumber = catalognumber.replace(" ", "", "gi");
+    satnombre = sat;
+    var satfrei = data.search("<fr>");
+    var satfref = data.search("<\/fr>");
+    if (satfrei>0 && satfref>0){
+        var satfredata = data.substring(satfrei+4,satfref);
+        var satfrem = satfredata.split(",")
+        if (satfrem.length>0)
+            {frdownlink = satfrem[0]; fruplink = satfrem[1];  frbeacon = satfrem[2];}
+         else {fruplink=0;frdownlink=0;frbeacon=0;} }  
+    else {fruplink=0;frdownlink=0;frbeacon=0;}
+    if (satfrem[3]){umode=satfrem[3].toUpperCase();}else{umode="FM-N"}
+    if (satfrem[4]){dmode=satfrem[4].toUpperCase();}else{dmode="FM-N"} 
+    document.getElementById("satdata").style.fontFamily = "Times New Roman" 
+    document.getElementById("satdata").style.fontSize = "15px";
+    document.getElementById("satdata").style.lineHeight = "15px";
+    document.getElementById("satdata").style.fontWeight = "normal";
+    document.getElementById("satdata").className = "#h1style"
+    data = data.replace(/ alt=/g, " Title=");
+    data = data.replace(/\<td>\<img/g, "<td><a href=http:\/\/amsat.org.ar target=_blank><img")
+    data = data.replace(/70\"><\/td>/g, "70\"><\/a><\/td>");
+    document.getElementById("satdata").innerHTML = data ;
+    document.getElementById("satdata").scrollTop = 0;
+    loadazeltest();
+    saveMap()
+}
+function showhelp(){
+showazel = false;
+document.getElementById("azel").style.visibility="hidden";
+document.getElementById("graphics").style.visibility="hidden";
+helptext = "<center><img src=controls.gif border=0 width='"+(document.documentElement.clientWidth-234) + "' Alt='Controls' Title='Controls' onclick=\"javascript:document.location.href='Satrack.htm'\"><br>Satrack could command transceiver for doppler automatic correction<br>"
+helptext = helptext + "To allow this operation download and install application at <a href=Satrack.htm target=_blank>Satrack.htm<\/a><br>"
+helptext = helptext + "Program uses a standard COM or COM thru USB to Serial Adapter<br>"
+helptext = helptext + "Connections suggested from COM Port to transceiver shown below<br>"
+helptext = helptext + "Note that FT-736 CAT requires 5V inverted RS-232 levels.<br>"
+helptext = helptext + "Support for several azimuth/elevation rotors @4800 baud is included.<br>"
+helptext = helptext + "<em>Comments/Suggestions to lu7abf (at) amsat.org.ar<\/em><br><br>"
+helptext = helptext + "<img src=cat3.gif border=0 alt=\"Show Help\" width='"+(document.documentElement.clientWidth-240) + "'>";
+document.getElementById("satdata").innerHTML = helptext;
+}
+function loadpasos(loc){
+showazel = true; document.getElementById("azel").style.visibility="visible";
+document.getElementById("graphics").style.visibility="visible";
+if (!loc){loc="ba"}
+gethtml("pasos"+loc+".htm")
+var datos = escape(xmlHttp.responseText);
+        datos = datos.replace(/\%uFFFF/g, "\%26\%6E\%62\%73\%70\%3B");
+        datos = datos.replace(/\%uFFFD/g, "\%26\%6E\%62\%73\%70\%3B");
+        datos = unescape(datos);
+        datos = datos.replace(/ class=pnk1>UP/g,"><img src=fu.png border=0 Alt='UP'>");
+        datos = datos.replace(/@@<\/A><br><br>/g,"@@<\/A><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=# onclick=\"loadsatdata('sun');sunmoon('Sun');\">SUN<\/a>&nbsp;&nbsp;&nbsp;<a href=# onclick=\"loadsatdata('moon');sunmoon('Moon');\">MOON<\/a><br>");
+        document.getElementById("sidebar-left").innerHTML = datos ;
+//      document.getElementById("sidebar-left").scrollTop = 0;
+        for (r=0;r<loca.length;r++){if (loca[r][0]==loc){document.getElementById('ciudad').innerHTML = loca[r][1];}}
+        saveMap()
+}
+function loadorbit(){
+var orbitmode="A";
+if (catalognumber=="40272"||catalognumber=="14129"){orbitmode="N"}
+var urlo="<img src = \"http://www.heavens-above.com/orbitdisplay.aspx?icon="+icon+"&mode="+orbitmode+"&amp;width=";
+urlo = urlo + Math.floor((document.documentElement.clientWidth-314)/3);
+urlo = urlo + "&amp;height="
+urlo = urlo + Math.floor((document.documentElement.clientWidth-314)/3);
+//if (catalognumber>"90719"){catalognumber="40661"}
+//{urlo = urlo + "&amp;Line1="+L1+"&amp;Line2="+L2+"&amp;rnd="+Math.floor((Math.random()* 1000) + 1)+"\">";}
+//else
+urlo = urlo + "&amp;satid="+catalognumber+"&amp;rnd="+Math.floor((Math.random()* 1000) + 1)+"\">";
+document.getElementById("orbit").style.width = Math.floor((document.documentElement.clientWidth-314)/3*2) + "px";
+document.getElementById("orbit").style.height = Math.floor((document.documentElement.clientWidth-314)/3) + "px";
+document.getElementById("orbit").innerHTML = urlo + "<div id=qm style=\"position:absolute;top:3px;left:3px;\"><img src=qm.gif border=0 onclick=\"showhelp()\"><\/div>"
+}
+function loadworldmap(){
+var urlw="<img src = \"http://www.heavens-above.com/orbitdisplay.aspx?icon="+icon+"&mode=M&amp;width=";
+urlw = urlw + Math.floor((document.documentElement.clientWidth-314)/3*2);
+urlw = urlw + "&amp;height="
+urlw = urlw + Math.floor((document.documentElement.clientWidth-314)/3);
+//if (catalognumber>"90719"){catalognumber="40661"}
+//{urlw = urlw + "&amp;Line1="+L1+"&amp;Line2="+L2+"&amp;rnd="+Math.floor((Math.random()* 1000) + 1)+"\">";}
+//else
+urlw = urlw + "&amp;satid="+catalognumber+"&amp;rnd="+Math.floor((Math.random()* 1000) + 1)+"\">";
+document.getElementById("worldmap").style.width = Math.floor((document.documentElement.clientWidth-314)/3*2) + "px";
+document.getElementById("worldmap").style.height = Math.floor((document.documentElement.clientWidth-314)/3) + "px";
+document.getElementById("worldmap").innerHTML =  (urlw);
+}
+function sunmoon(which){
+loque = which;
+var timeAndDate = new Date(); //var latitude=latcity; var longitude=loncity;
+if(!latitude){var latitude=latcity}if(!longitude){var longitude=loncity}
+if (loque=="Sun"){var Calco = SunCalc.getPosition(/*Date*/ timeAndDate, /*Number*/ latitude, /*Number*/ longitude)}
+    else {var Calco = SunCalc.getMoonPosition(/*Date*/ timeAndDate, /*Number*/ latitude, /*Number*/ longitude)}
+Calco.azimuth=((Math.PI+Calco.azimuth)*(180/Math.PI)).toFixed(2); Calco.altitude=(Calco.altitude*180/Math.PI).toFixed(2);
+//alert (loque+" Az:"+Calco.azimuth+" El:"+Calco.altitude);
+if (Calco.altitude<0){setcolor="<font style=\"color:#ff3333;\">"; setcolorend="<\/font>";}else{setcolor=''; setcolorend='';}
+datosazel=loque+" Tracking<br>"+"Azim: "+Calco.azimuth+"&#176;<br>"+setcolor+"Elev:&nbsp;&nbsp;"+Calco.altitude+"&#176"+setcolorend;
+if (loque=="Moon"){
+var Ilumin = SunCalc.getMoonIllumination(/*Date*/ timeAndDate)
+datosazel=datosazel+"<br>"+(Calco.distance/1000).toFixed(3)+" Km"
+datosazel=datosazel+"<br>Ilumin: "+(Ilumin.fraction*100).toFixed(0)+"%";
+}
+sunmoonswitch = true;
+Draw(Calco.azimuth,Calco.altitude);
+document.getElementById("azel").innerHTML = datosazel;
+
+var gets = getazel(L1.substr(1),L2.substr(1),latcity,loncity,frdownlink,fruplink,frbeacon,umode,dmode)
+satfr = "SN"+savesat.replace(/ /g, "_").toUpperCase() +" AZ"+Calco.azimuth + " EL"+Calco.altitude + " DN";
+if(frdownlink==0){satfr=satfr+((frbeacon)*1000000).toFixed(0)+ " UP";}else{satfr=satfr+((frdownlink)*1000000).toFixed(0)+ " UP";}
+if(fruplink==0){satfr=satfr+((frbeacon)*1000000).toFixed(0);}else{satfr=satfr+((fruplink)*1000000).toFixed(0);}
+satfr = satfr + " UM"+umode+" DM"+dmode;
+
+//satfr=satfr + "1000 UP1000";
+//if(fuplink==0){satfr=satfr+(((1-doppler_factor)*fbeacon)*1000000).toFixed(0);}else{satfr=satfr+(((1-doppler_factor)*fuplink)*1000000).toFixed(0);}
+//satfr = satfr + " UM"+umode+" DM"+dmode;
+document.getElementById("frecdoppler").innerHTML = satfr;
+ahora = new Date () ;
+if (ahora.getHours() < 10) {hour = "0"+ahora.getHours();} else {hour =  ahora.getHours();}
+if (ahora.getMinutes() < 10) {min = "0"+ahora.getMinutes();} else {min = ahora.getMinutes();}
+document.getElementById("hora").innerHTML = which.toUpperCase() + " @ " + hour + ":" + min ;
+}
+</script>
+<script language=javascript type="text/javascript">
+var urlm="<center><table border=0 cellpadding=0 cellspacing=0><tr><td align=center><center><img src = 'http://www.heavens-above.com/PassGTrackLargeGraphic.aspx?icon="+icon+"&lat=-34.613&lng=-58.470&TZ=SAT&loc=Buenos+Aires&amp;satid=25544&date=56860.92797453704'><\/center><\/td><\/tr><\/table><\/center>"
+</script>
+<style type="text/css"> 
+body
+	{
+    margin: 0; /* margin and padding only necessary to cater for Mac IE5 */
+    padding: 0;
+    overflow: hidden; /* because Mac IE5 don't understand */
+    border:0; margin-left:0; margin-right:0; overflow-x:hidden; overflow-y:hidden; scroll:no;
+    }
+#sidebar-left
+	{
+	position: absolute;	top: 0;	bottom: 0; left: 0; right:0; width: 214px; overflow: auto; margin-right:0; margin-left:0;
+    }
+#orbit
+	{
+	position: absolute;	top: 0;
+	/*\*/right: 355px;
+	left: 214px;   /* Exclude right and left props for Mac IE5 */
+	margin: 0 355px 0 214px;
+	/*\*/ margin: 0; /* */
+    overflow: hidden;
+	}
+#worldmap
+	{
+	position: absolute; top: 0; right: 100px; width: 390px; overflow: hidden;
+	}
+#botones
+	{
+	position: absolute;	top:  0; right: 0px; height: *; width: 100px; overflow: hidden;
+	}
+#satdata
+	{
+	position: absolute; top: *; height: *; right: 0px; bottom: 0px; left: 214px; border: 0; border-width: 0;
+	/* Exclude all previous props for Mac IE5 */
+/*	margin: 125px 305px 5px 214px; /* Cater for Mac IE5 */
+	/*\*/ margin: 0; /* Put back for all the rest */
+	}
+/* settings for appearance alone */
+#satdata { background: #E0FFFF;}
+#sidebar-left {background: #f4f4f4; }
+#worldmap { background: #111111; }
+#botones { background: #111111; }
+#orbit { background: #111111; }
+#satscreen {
+{font-family:Times New Roman; font-size:15px; line-height:15px; font-weight:normal; overflow:auto;}
+h2 { margin-bottom:-6px; line-height:22px; margin-top:-4px; }
+h1 { line-height:33px; margin-top:4px; margin-bottom:6px;}
+P {margin-top:6px;margin-bottom:6px;line-height:15px;}
+TABLE {border:0px;cellpadding:0px;cellspacing:0px;}
+TD {margin-top:-3px;margin-bottom:-3px;}
+}
+.txt {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;}
+A:visited {color:#000000}A:link{color:#000000}A:hover{color:#ff0000}A:active{color:#000000}
+.yel1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#ffff00;}
+.mag1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#00ffff;}
+.red1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#00ff00;}
+.titg {font-family:Courier New,Courier;font-size:17;font-weight:bold;line-height:17px;color:#ffffff;background:#6789bc;}
+.pnk1 {font-family:Courier New,Courier;font-size:12;font-weight:bold;line-height:13px;background:#ffe5c0;}
+h1 {line-height:33px; margin-top:4px; margin-bottom:6px;}
+h2 { margin-bottom:-6px; line-height:22px; margin-top:-4px; }
+hr {margin-top:3px;margin-bottom:3px;}
+</style>
+</head>
+<body scroll=no>
+<div id="sidebar-left" style="font-size:12px;font-family:Courier New,Courier;line-height:13px;font-weigth:bold;background-image:url('fondo1.gif');">
+</div><!-- close div#sidebar-left -->
+<div id="satdata" class="satscreen" style="font-family:Times New Roman; font-size:15px; line-height:15px; font-weight:normal;overflow:auto;h2 {margin-top:-10px;margin-bottom:-12px;line-height:20px;} h1 {line-height:30px; margin-top:4px; margin-bottom:6px; line-height:30px;} P {margin-top:6px;margin-bottom:6px;line-height:15px;} TABLE {border:0px;cellpadding:0px;cellspacing:0px;} TD {margin-top:-3px;margin-bottom:-3px;}">
+</div><!-- close div#satdata -->
+<div id="orbit">
+</div><!-- close div#orbit -->
+<div id="worldmap">
+</div><!-- close div#worldmap -->
+<div id="botones" style="background-color:#111111;color:#ffffee;font-family:Tahoma;font-size:12px;line-height:14px;">
+<center>
+<br style="line-height:15px;">
+<input type=button id="bLocation" value="Location" onclick="loadlocations();" style="font-weight:bold;width:78px;height:23px;color:#1111FF;cursor:hand;" title="Set/Change your Location"><br><br>
+<input type=button id="bKeplers" value="Keplers" onclick="showkeps();" style="font-weight:bold;width:78px;height:23px;color:#1111FF;cursor:hand;" title="Keplers of this Sat"><br><br>
+<input type=button id="bBigMap" value="BigMap" onclick="bigmap();" style="font-weight:bold;width:78px;height:23px;color:#1111FF;cursor:hand;" title="Show Big-Map"><br><br>
+<input type=button id="bSat-Info" value="Sat-Info" onclick="reloadsatdata();" style="font-weight:bold;width:78px;height:23px;color:#1111FF;cursor:hand;" title="This Sat Information">
+</center>
+</div><!-- close div#botones -->
+<div id="hora" title="Sat & Local Time" style="position:absolute;width:100px;color:#000000;margin-top:0;margin-bottom:0;border:0;position:absolute;width:100px;height:15px;top:170px;left:674px;font-family:Arial;font-weight:bold;font-size:12px;line-height:14px;color:#ffffff;text-align:center;cursor:hand;">
+</div><!-- close div#hora -->
+<div id="ciudad" title="Selected City" style="position:absolute;width:100px;color:#ffffff;line-height:18px;font-weight:bold;border:0;width:100px;font-family:Arial;font-weight:bold;font-size:12px;line-height:14px;text-align:center;cursor:hand;">
+</div><!-- close div#ciudad -->
+<div id="azel" style="position:absolute;color:#000000;line-height:18px;font-weight:bold;border:0;font-family:Arial;font-weight:bold;font-size:12px;line-height:14px;text-align:center;">
+</div><!-- close div#azel -->
+<div id="graphics" style="position:absolute;color:#000000;line-height:18px;font-weight:bold;border:0;font-family:Arial;font-weight:bold;font-size:12px;line-height:14px;text-align:center;">
+</div><!-- close div#graphics -->
+<div id="frecdoppler" name="frecdoppler" style="visibility:hidden;"></div>
+<script language=javascript type="text/javascript">
+document.getElementById("botones").style.width = "100px";
+document.getElementById("botones").style.height = Math.floor((document.documentElement.clientWidth-314)/3) + "px";
+document.getElementById("bLocation").style.height = (document.documentElement.clientWidth-337)/20+"px";
+document.getElementById("bKeplers").style.height = (document.documentElement.clientWidth-337)/20+"px";
+document.getElementById("bBigMap").style.height = (document.documentElement.clientWidth-337)/20+"px";
+document.getElementById("bSat-Info").style.height = (document.documentElement.clientWidth-337)/20+"px";
+document.getElementById("hora").style.left = document.documentElement.clientWidth-106+"px";
+document.getElementById("hora").style.top = Math.floor((document.documentElement.clientWidth-357)/3)+"px";
+document.getElementById("ciudad").style.left = document.documentElement.clientWidth-106+"px";
+document.getElementById("ciudad").style.top = 1+"px";
+document.getElementById("azel").style.left= document.documentElement.clientWidth-105+"px";
+document.getElementById("azel").style.top = Math.floor((document.documentElement.clientWidth-307)/3)+"px";
+document.getElementById("graphics").style.left= document.documentElement.clientWidth-200+"px";
+document.getElementById("graphics").style.top = Math.floor((document.documentElement.clientWidth-337)/3)+"px";
+document.getElementById("graphics").style.width="120px";
+document.getElementById("graphics").style.height="120px";
+//
+function loadazeltest(){
+if (!sunmoonswitch){loadazel()}
+else {sunmoon(loque)}
+}
+function loadazel(){
+    localizar=catalognumber+"U";
+    var localizar=catalognumber+"U";
+        localizar = localizar.replace(/ /g, "");
+        localizar = localizar.replace(/\x0A/g, "");
+        localizar = localizar.replace(/\x0D/g, "");
+        localizar = localizar.replace(/\x09/g, "");
+        localizar = localizar.replace(/\x20/g, "");
+        localizar = localizar.replace(/\xA0/g, "");
+    kepsm = keps.split("<br>");
+    for (k=0;k<kepsm.length;k++){
+      var argu=kepsm[k].substring(2,10);
+        argu = argu.replace(/ /g, "");
+        argu = argu.replace(/\x0A/g, "");
+        argu = argu.replace(/\x0D/g, "");
+        argu = argu.replace(/\x09/g, "");
+        argu = argu.replace(/\x20/g, "");
+        argu = argu.replace(/\xA0/g, "");
+    if (argu==localizar)
+        {fullsatname = kepsm[k-1];L1 = kepsm[k];L2 = kepsm[k+1];}}
+for (r=0;r<loca.length;r++){if (loca[r][0]==loc){saveque=r;latcity=loca[r][3];loncity=loca[r][4]}}
+if(L1.substring(54,55)=="-"){L11=L1.substring(0,54)+" "+L1.substring(55);L1=L11;};
+var gets = getazel(L1.substr(1),L2.substr(1),latcity,loncity,frdownlink,fruplink,frbeacon,umode,dmode)
+Draw(gets.azazi,gets.azele);
+//alert (latcity+" "+loncity+"\n"+L1.substr(1)+"\n"+L2.substr(1));
+if (gets.azele<0){coloron="<font color=#ff0000>";coloroff="<\/font>"}else{coloron="";coloroff="";}
+datosazel="Azimuth: " + gets.azazi + "&#176;<br>"+coloron+"Elevation: " + gets.azele + "&#176;"+coloroff+"<br>"
+datosazel=datosazel+"Dist: " + gets.azran + "Km"+"<br>"
+datosazel=datosazel+"Heig: " + gets.azhei + "Km"
+if (gets.azdou>0){datosazel=datosazel+"<br>Ulink: " + gets.azdou;}
+if (gets.azdod>0){datosazel=datosazel+"<br>Dlink: " + gets.azdod;}
+if (gets.azbea>0){datosazel=datosazel+"<br>Beac: "  + gets.azbea;}
+if (savesat.toUpperCase()=="LO-19" || savesat.toUpperCase()=="UO-11" || savesat.toUpperCase()=="AO-07" || savesat.toUpperCase()=="AO-7" || savesat.toUpperCase()=="AO-27"){revolutionnumber=revolutionnumber+100000}
+if (revolutionnumber>0){datosazel=datosazel+"<br>Orbit #: "+revolutionnumber;}
+//datosazel=datosazel+"<br><br>"+satfr;
+document.getElementById("frecdoppler").innerText = satfr;
+document.getElementById("azel").innerHTML = datosazel;
+if (showazel){document.getElementById("azel").style.visibility="visible";document.getElementById("graphics").style.visibility="visible";}else{document.getElementById("azel").style.visibility="hidden";document.getElementById("graphics").style.visibility="hidden";}
+//if (gets.azele*1>0){document.getElementById("azel").style.visibility = "visible";}
+//else {document.getElementById("azel").style.visibility = "hidden";}
+}
+function loadlocations(){
+showazel = false; document.getElementById("azel").style.visibility="hidden";
+document.getElementById("graphics").style.visibility="hidden";
+document.getElementById("satdata").innerHTML = cities ;
+for (r=0;r<loca.length;r++){if (loca[r][0]==loc){saveque=r;latcity=loca[r][3];loncity=loca[r][4]}}
+document.getElementById("u"+saveque).style.backgroundColor = "#FFFF99";
+loclat=parseFloat(loca[saveque][3]);loclon=parseFloat(loca[saveque][4])
+document.getElementById("Glocator").value = (latlon2loc(loclat,loclon).locator)
+originallocator = document.getElementById("Glocator").value;
+}
+function setlocation(que) {
+if (saveque!=que){newlocation=true}else{newlocation=false}
+document.getElementById("u"+saveque).style.backgroundColor = "";
+saveque = que;
+activity = activity + sacarcoma(loca[que][1]) + ";" + sat.toUpperCase() + "/";
+loc=loca[que][0];
+loadpasos(loc);
+hilite();
+loclat=parseFloat(loca[que][3]);loclon=parseFloat(loca[que][4]);originallocator=latlon2loc(loclat,loclon).locator;
+latitude=loclat;longitude=loclon;
+document.getElementById("u"+que).style.backgroundColor = "#FFFF99";
+showazel = false; document.getElementById("azel").style.visibility="hidden";
+document.getElementById("graphics").style.visibility="hidden";
+var newlocator=document.getElementById("Glocator").value;
+document.getElementById("Glocator").value = originallocator
+//document.getElementById("Glocator").value = originallocator
+if (newlocator!=originallocator&&!newlocation&&loc2latlon(newlocator).loclat){
+newlat=loc2latlon(newlocator).loclat; loca[que][3] = newlat ;
+newlon=loc2latlon(newlocator).loclon; loca[que][4] = newlon ;
+latitude=newlat; longitude=newlon;
+loca[que][1]=" Loc: " + newlocator.toUpperCase();
+document.getElementById("ciudad").innerHTML = " Loc: " + newlocator.toUpperCase(); 
+alert("New Lat/Lon set for:\n    "+loca[que][1]+"\n "+newlat.toFixed(4)+" "+newlon.toFixed(4)+"\nLoc shown top/right");
+document.getElementById("Glocator").value = newlocator;
+}
+//loca[que][1]= "My Place";
+}
+function bigmap(){
+showazel = true; document.getElementById("azel").style.visibility="visible";
+document.getElementById("graphics").style.visibility="visible";
+tz="SAT";
+que = saveque;
+lat=loca[que][3];lng=loca[que][4];tz=loca[que][5];cty=loca[que][1];lang=loca[que][2];
+ancho=(document.documentElement.clientWidth -237)+"px";
+if (lang=="es")
+{var leye1="<b>C&iacute;rculo<\/b> marca<br>10º elevaci&oacute;n<br><br><b>&nbsp;&nbsp;Track<\/b><br><u>&nbsp;Con SOL&nbsp;<\/u><br><span style='text-decoration:none; border-bottom: 2px dotted #ffffff;'>&nbsp;Sin SOL&nbsp;<br><\/span>";}
+else {var leye1="<b>Circle<\/b> shows<br>elevation 10º<br><br><b>&nbsp;&nbsp;&nbsp;&nbsp;Track<\/b><br>&nbsp;<u>&nbsp;With SUN&nbsp;<\/u><br><span style='text-decoration:none; border-bottom: 2px dotted #ffffff;'>&nbsp;Without SUN&nbsp;<\/span>";}
+var leyenda = "<div border='2' width='96px' height='146px' style='position:absolute;width:96px;height:18px;top:6px;left:6px;color:#ffffff;font-family:Arial;font-size:14px;'><b>"+leye1+"<\/span><\/div>";
+var urlm="<img name=gtrack id=gtrack src = \"http://www.heavens-above.com/PassGTrackLargeGraphic.aspx?lat="+lat+"&amp;lng="+lng+"&amp;TZ="+tz+"&amp;loc="+cty;
+if (catalognumber=="99993")
+{urlm=urlm+"&amp;Line1="+L1+"&amp;Line2="+L2;}
+else
+{urlm=urlm+"&amp;satid="+catalognumber;}
+urlm=urlm+"&amp;date="+Julian()+"\" width="+ancho+">";
+document.getElementById("satdata").innerHTML = urlm+leyenda;
+}
+</script>
+<!-- close div#worldmap -->
+<script language=javascript type="text/javascript">
+loadsatdata(sat); 
+loadpasos(loc);
+loadorbit();
+loadworldmap();
+tmr=setInterval("hilite()",30000);
+var pd=new Array();var pdt=new Array();var pdi=0;var montharray=new Array('','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec');
+function setred(cual) {if(cual=='ao-071'){cual='ao-71'};document.getElementById(cual).style.background ='#00ff00';}
+function setmag(cual) {if(cual=='ao-071'){cual='ao-71'};document.getElementById(cual).style.background ='#00ffff';}
+function setyel(cual) {if(cual=='ao-071'){cual='ao-71'};document.getElementById(cual).style.background ='#ffff00';}
+function setwht(cual) {if(cual=='ao-071'){cual='ao-71'};document.getElementById(cual).style.background ='#f4f4f4';}
+hilite();
+function rst(){
+clearInterval(tmr);
+for (k=0;k<=1900;k++)
+{ele="x"+k.toString();
+if (document.getElementById(ele)){
+setwht(ele);
+linea=document.getElementById(ele).innerHTML ;
+linea=linea.replace(/&nbsp;/g, " ");
+var msat=linea.substr(0,5).replace(/ /g,'').replace(/ /g,'').toLowerCase();if (msat.substr(0,3)=='iss') {msat = 'iss';};msat=msat+'1';
+setwht(msat);}}
+//
+hilite();tmr=setInterval("hilite()",60000);}
+tmr1=setInterval("loadazeltest()",1000);
+var mdi;var mdf;var mdl;
+function hilite() {
+if (document.getElementById("satdata").innerHTML){
+if (document.getElementById("satdata").innerHTML.length < 650){bigmap()}}
+mydate=new Date();var mdl=Date.parse(mydate);var k;pdi=0;
+lh=mydate.getHours();if(lh<10){lh='0'+lh};lm=mydate.getMinutes();if(lm<10){lm='0'+lm};
+if (loca[saveque][2]=="es"){ldt='Hora en tu PC: '+mydate.getDate()+' '+montharray[mydate.getUTCMonth()+1]+' '+lh+':'+lm;}
+else{ldt='Your PC Date: '+mydate.getDate()+' '+montharray[mydate.getUTCMonth()+1]+' '+lh+':'+lm;}
+document.getElementById("LT").innerHTML=ldt;
+ponehora();
+lti=lh+":"+lm ;
+if (loca[saveque][2]=="es"){document.getElementById("RESU").innerHTML="<hr size=3><DIV ID=PX><font class=titg style=\"font-size:17px;\"><center>&nbsp;Pasos a las "+lti+"&nbsp;<\/center><\/font><br><\/DIV>";}
+else{document.getElementById("RESU").innerHTML="<hr size=3><DIV ID=PX><font class=titg style=\"font-size:17px;\"><center>&nbsp;Passes at "+lti+"&nbsp;<\/center><\/font><br><\/DIV>";}
+if (loca[saveque][2]=="es"){document.getElementById("RESU").innerHTML=document.getElementById("RESU").innerHTML+" <font class=red1> Pasando <\/font>  <font class=mag1> Atenc <\/font>  ";}
+else{document.getElementById("RESU").innerHTML=document.getElementById("RESU").innerHTML+" <font class=red1> Passing <\/font>  <font class=mag1> Coming <\/font>  ";}
+if (loca[saveque][2]=="es"){document.getElementById("RESU").innerHTML=document.getElementById("RESU").innerHTML+"<font class=yel1> Prox <\/font><br><br><A HREF=#top class=pnk1><img src=fu.png border=0 alt='UP' title='UP'><\/A>Sat&nbsp;DiaMes  Sale  Cae  El<br>===== ====== ===== ===== ==<br>";}
+else{document.getElementById("RESU").innerHTML=document.getElementById("RESU").innerHTML+"<font class=yel1> Prox <\/font><br><br><A HREF=#top class=pnk1><img src=fu.png border=0 alt='UP' title='UP'><\/A>Sat&nbsp;DayMon  AOS   LOS  El<br>===== ====== ===== ===== ==<br>";}
+for (k=0;k<=1900;k++){
+ele="x"+k.toString();
+if (document.getElementById(ele)){
+linea=document.getElementById(ele).innerHTML ;
+linea=linea.replace(/&nbsp;/g, " ");
+for (t=1;t<13;t++){
+if (montharray[t]==linea.substr(9,3)){m=t;mname=montharray[t];
+}}}
+var diai;var diaj
+if (linea.substr(6,2)!="  "){diai=linea.substr(6,2);diaj=diai;if (diai.substr(0,1)==' '){diaj=diai.substr(1,1);}}
+mdi=Date.parse(mydate.getFullYear()+" "+montharray[m]+" "+diaj+" "+linea.substr(13,5));
+mdf=Date.parse(mydate.getFullYear()+" "+montharray[m]+" "+diaj+" "+linea.substr(19,5));
+if (linea.substr(19,2)<linea.substr(13,2)){mdf=mdf+86400000};
+var msat=linea.substr(0,5).replace(/ /g,'').replace(/ /g,'').toLowerCase();if (msat.substr(0,3)=='iss') {msat = 'iss';};msat=msat+'1';
+if (msat=='ao-071'){msat='ao-71'};
+if ((mdl > mdf) && ((mdl-mdf) < 180000)) {setwht("x"+k.toString()); setwht(msat);}
+if ((mdi-mdl)< 1800000 && (mdi-mdl) > 599000) {setyel("x"+k.toString()); setyel(msat);bot(msat,mname,diai,mdi,linea,'yel');}
+if ((mdi-mdl)< 600000 && (mdi-mdl) > 1000) {setmag("x"+k.toString()); setmag(msat);bot(msat,mname,diai,mdi,linea,'mag');}
+if ((mdl>=mdi) && (mdl<=mdf)) {setred("x"+k.toString()); setred(msat);bot(msat,mname,diai,mdi,linea,'red');}
+}sortpasos();}
+function bot(msat,mname,diai,mdi,linea,color) {
+if (msat=='ao-071'){msat='ao-71'};
+var linmod=linea.substr(0,6)+diai+" "+mname+" "+linea.substr(13,18);
+pdt[pdi]=mdi;pd[pdi]="<A HREF=#PX onclick=ver('"+msat.substr(0,msat.length-1).toLowerCase()+"')><font class="+color+"1>"+linmod+"<\/a>";
+pdi=pdi+1;
+}
+function sortpasos(){
+pdi=pdi-1;for (s=0;s<pdi;s++) {for (t=(s+1);t<=pdi;t++){
+if (pdt[s]>pdt[t]){pdsave=pd[s];pd[s]=pd[t];pd[t]=pdsave;ptsave=pdt[s];pdt[s]=pdt[t];pdt[t]=ptsave;}
+}
+}var chg='';
+for (s=0;s<=pdi;s++){
+if (pd[s].substr(pd[s].length-36,6)==chg) {pd[s]=pd[s].substr(0,pd[s].length-37)+"       "+pd[s].substr(pd[s].length-30,20);} else {chg=pd[s].substr(pd[s].length-36,6);}
+document.getElementById("RESU").innerHTML=document.getElementById("RESU").innerHTML+pd[s];}
+}
+function favorito(){window.external.addFavorite(window.location.href,'Pasos Satelites')};
+function versat(){
+ver (sat);
+}
+function showallkeps(){
+document.getElementById("satdata").style.fontFamily = "Courier New";
+document.getElementById("satdata").style.fontWeight = "normal";
+if (document.documentElement.clientWidth<900){
+    document.getElementById("satdata").style.fontSize = "13px";
+    document.getElementById("satdata").style.lineHeight = "12px";
+    }
+else {
+    document.getElementById("satdata").style.fontSize = "18px";
+    document.getElementById("satdata").style.lineHeight = "17px";
+}
+var newkeps = keps.replace(/ /gi,"&nbsp;")
+fullsatnameNew = fullsatname.replace(/ /gi,"&nbsp;")
+var newkeps = newkeps.replace(fullsatnameNew, "<span style=\"background-color:#ffff00;\">"+ fullsatnameNew);    
+L2New = L2.replace(/ /gi,"&nbsp;")
+var newkeps = newkeps.replace(L2New, L2New+"<\/span>"); 
+document.getElementById("satdata").innerHTML = "<center><table border=0 cellpadding=0 cellspacing=0><tr><td align=center><b>Keplerian Elements NASA Format<\/b><\/center><\/td><\/tr><tr><td align=left>"+newkeps+"<\/td><\/tr><\/table><\/center>";
+}
+function showkeps () {
+showazel = false; document.getElementById("azel").style.visibility="hidden";
+document.getElementById("graphics").style.visibility="hidden";
+localizar=catalognumber+"U";
+var localizar=catalognumber+"U";
+    localizar = localizar.replace(/ /g, "");
+    localizar = localizar.replace(/\x0A/g, "");
+    localizar = localizar.replace(/\x0D/g, "");
+    localizar = localizar.replace(/\x09/g, "");
+    localizar = localizar.replace(/\x20/g, "");
+    localizar = localizar.replace(/\xA0/g, "");
+kepsm = keps.split("<br>");
+for (k=0;k<kepsm.length;k++){
+  var argu=kepsm[k].substring(2,10);
+    argu = argu.replace(/ /g, "");
+    argu = argu.replace(/\x0A/g, "");
+    argu = argu.replace(/\x0D/g, "");
+    argu = argu.replace(/\x09/g, "");
+    argu = argu.replace(/\x20/g, "");
+    argu = argu.replace(/\xA0/g, "");
+if (argu==localizar)
+    {
+fullsatname = kepsm[k-1];
+L1 = kepsm[k];
+L2 = kepsm[k+1];
+    }
+}
+var totkep = fullsatname+L1+L2;
+var d="<br style='line-height:21px;'><table border=0 cellspacing=0 cellpadding=0 width=562px style='font-family:Courier;font-size:10pt;line-height:9pt;font-weight:normal;'><tr><td align=left bgcolor='#D5DFDA' width='52%'valign=top nowrap alt=' AMSAT format ' title=' AMSAT format '>Satellite: "+fullsatname+"<br>"; 
+d=d+"Catalog number: "+L1.substring(3,8)+"<br>";
+d=d+"Epoch time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+L1.substring(19,33)+"<br>";
+d=d+"Element set:&nbsp;&nbsp;&nbsp;&nbsp;"+L1.substring(65,69)+"<br>";
+//d=d+replace("Inclination:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&mid(L2,9,8)," ","&nbsp;",1,6,1)&"&nbsp;deg<br>"
+d=d+"Inclination:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+L2.substring(9,17)+"&nbsp;deg<br>";
+d=d+"RA of node:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+L2.substring(18,26)+"&nbsp;deg<br>";
+d=d+"Eccentricity:&nbsp;&nbsp;&nbsp;&nbsp;0."+L2.substring(27,34)+"<br>";
+d=d+"Arg of perigee:&nbsp;&nbsp;&nbsp;"+L2.substring(35,43)+"&nbsp;deg<br>";
+//d=d&replace("Mean anomaly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&mid(L2,44,8)," ","&nbsp;",1,5,1)&"&nbsp;deg<br>"
+d=d+"Mean anomaly:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+L2.substring(44,52)+"&nbsp;deg<br>";
+d=d+"Mean motion:&nbsp;&nbsp;&nbsp;"+L2.substring(53,64)+"&nbsp;rev/day<br>";
+d=d+"Decay rate:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+L1.substring(35,44)+"&nbsp;rev/day^2<br>";
+d=d+"Epoch rev:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+L2.substring(64,69)+"&nbsp;<br>";	
+var cksum=0;
+for (i=0;i<=totkep.length;i++){
+    if (totkep.substring(i,i+1) >= "0" && totkep.substring(i,i+1) <= "9")
+    {cksum=cksum + Number(totkep.substring(i,i+1))}
+    if (totkep.substring(i,i+1) == "-")
+    {cksum = cksum + 1}
+    if (totkep.substring(i,i+1) == "+")
+    {cksum = cksum + 2}
+}
+checksum = cksum.toString();
+checksum = checksum.replace(/ /g, ""); 
+d=d+"Checksum:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+checksum.substring(3,0)+"<\/td><td align=left width='48%'valign=top>"
+d = d + "<br style='line-height:4px;'>&nbsp;&nbsp;&nbsp;<input type='button' name='Launch' value='Launch info' style='font-size:12px;line-height:13px;' onclick='document.forms[0].submit();' alt=' More Information ' title=' More Information '>";
+d = d + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='button' name='allkeps' value='Show all Keps' style='font-size:12px;line-height:13px;' onclick='showallkeps();' alt=' Show all Keps ' title=' Show all Keps '>";
+d = d + "<hr align=left width='257px'>Note: You can mouse <font style='background:#316AC5;color:#ffffff;'>select<\/font> data<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;then Copy (Ctrl-C) making<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Paste (Ctrl-V) elsewhere.<hr align=left width='257px'>Nota: Podes <font style='background:#316AC5;color:#ffffff;'>seleccionar<\/font>, despu&eacute;s<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copiar (Ctrl-C) para luego<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pegar (Ctrl-V) estos datos<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;en cualquier otro programa<hr align=left width='257px'>";
+fecha = new Date ("20"+L1.substr(19,2), 0 ,(L1.substr(21,3)*1));
+fech = fecha + " ";
+d = d + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Keps-Dated: " + fech.substring(4,7) + "-" + fech.substring(8,10) + " " + "20" + L1.substr(19,2);
+d = d + "<\/td><\/tr><\/table>";
+chtml = "<form method=post action='http:\/\/www.celestrak.com\/cgi-bin/search.pl' target='swin' id=main name=main><span title=' NASA format ' alt=' NASA format '><br>";
+chtml = chtml + "<div style=\"position:absolute;top:0;left:0;border:0;\"><img src='images\/keps.gif' border='0'\><\/div>";
+chtml = chtml + "<br><font style=\"font-family:Courier New;font-size:14px;font-weight:bold;line-height:12px;\"\>";
+chtml = chtml + fullsatname + "<br>" ;
+chtml = chtml + L1.replace(/ /gi, "&nbsp;") + "<br>" ;
+chtml = chtml + L2.replace(/ /gi, "&nbsp;") ;
+chtml = chtml + "<br><\/span><br>";
+chtml = chtml+d;
+chtml = chtml + "<br><center>";
+chtml = chtml + "<\/center>" ;
+chtml = chtml + "<input type=hidden name='INTDES_TEXT' value='"+L1.substr(10,2)+"-"+L1.substr(12,3)+"'>";
+chtml = chtml + "<INPUT TYPE=hidden NAME='IDENT' VALUE='INTDES'>";
+chtml = chtml + "<INPUT TYPE=hidden NAME='MAX' VALUE='200'>";
+chtml = chtml + "<INPUT TYPE=hidden NAME='PAYLOADS' value='OFF'>";
+chtml = chtml + "<\/font><\/body><\/html>" ;
+document.getElementById("satdata").style.lineHeight = "15px";
+document.getElementById("satdata").innerHTML = (chtml) ;
+}
+function ver(sat){
+if(sat!="iss"){icon="default"}else{icon="iss"}
+activity = activity + sacarcoma(loca[saveque][1]) + ";" + sat.toUpperCase() + "/";
+loadsatdata(sat)
+loadorbit();
+loadworldmap();
+ponehora();
+}
+function ponehora(){
+loadorbit();
+loadazeltest()
+ahora = new Date () ;
+if (ahora.getHours() < 10) {hour = "0"+ahora.getHours();} else {hour =  ahora.getHours();}
+if (ahora.getMinutes() < 10) {min = "0"+ahora.getMinutes();} else {min = ahora.getMinutes();}
+document.getElementById("hora").innerHTML = satnombre.toUpperCase() + " @ " + hour + ":" + min ;
+loadworldmap();
+}
+// Draw function
+function Draw(angulo,elevacion) {
+if (!isNaN(angulo)){
+document.getElementById("graphics").style.left= document.documentElement.clientWidth-200+"px";
+document.getElementById("graphics").innerHTML = "";
+//Define pens to draw outline of the shapes
+    var gr = new jxGraphics(document.getElementById('graphics'));
+    var penRed = new jxPen(new jxColor('red'), '4px');
+    var penGreen = new jxPen(new jxColor('green'), '4px');
+    var penWhite = new jxPen(new jxColor('white'), '2px'); 
+    var penBlack = new jxPen(new jxColor('black'), '1px');
+    var penPink = new jxPen(new jxColor('#f5a267'), '4px');
+    var penBlue = new jxPen(new jxColor('blue'), '1px'); 
+    var penUp = new jxPen(new jxColor('#00CC66'), '4px');
+    var penDown = new jxPen(new jxColor('#FF9966'), '4px'); 
+    //Define brushes to fill the shapes 
+    var brushYellow = new jxBrush(new jxColor('yellow')); 
+    brushYellow.fillType = 'linear-gradient';
+    var brushBlue = new jxBrush(new jxColor('blue'));
+    brushBlue.fillType = 'linear-gradient';
+    var brushRed = new jxBrush(new jxColor('red'));
+    brushRed.fillType = 'linear-gradient';
+    var brushBlack = new jxBrush(new jxColor('black'));
+    var brushWhite = new jxBrush(new jxColor('white'));
+    var poselevacion = 50 - Math.sqrt(Math.abs(elevacion))* 3.4 ;
+    if (elevacion>-1){var penelevcolor=penUp;}else{penelevcolor=penDown;poselevacion=100-poselevacion;}
+    var eleline = new jxLine(new jxPoint (25, poselevacion) , new jxPoint (75,poselevacion) , penelevcolor); 
+    eleline.draw(gr);
+    //Define font to draw the text 
+    var font = new jxFont('Arial');
+    font.size = '11px';
+    font.weight = 'normal';    
+    var text = new jxText(new jxPoint (46, 17), 'N', font, penBlack, brushBlack, 0); 
+    text.draw(gr);
+    var text = new jxText(new jxPoint (46, 93), 'S', font, penBlack, brushBlack, 0); 
+    text.draw(gr);
+    var text = new jxText(new jxPoint (6, 55), 'W', font, penBlack, brushBlack, 0); 
+    text.draw(gr);
+    var text = new jxText(new jxPoint (84, 55), 'E', font, penBlack, brushBlack, 0); 
+    text.draw(gr);
+//    var VOR1 = new jxCircle(new jxPoint (V1x, V1y) , 7, penRed, brushYellow) 
+   var circulo = new jxCircle(new jxPoint (50, 50) ,32, penBlue) 
+    circulo.draw(gr);
+    // calculate point from azimuth
+    angulo = 180 - angulo
+    if (angulo<0){angulo=angulo+360}
+    angulo = angulo * deg2rad ;
+    var posix=Math.sin(angulo)*32+50; posiy=Math.cos(angulo)*32+50;
+    if (elevacion>-1){pencolor=penGreen}else{pencolor=penRed} 
+     var aziline = new jxLine(new jxPoint (50, 50) , new jxPoint (posix,posiy) , pencolor) 
+    aziline.draw(gr)
+   var circulo = new jxCircle(new jxPoint (50, 50) ,2, penBlue, brushWhite ) 
+    circulo.draw(gr);
+}
+else {alert("Select your Location\nClick on 'Location'");sat="iss";savesat="iss";loc=loca[0][0];}
+}
+</script>
+</body>
+</html>
