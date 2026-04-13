@@ -41,7 +41,7 @@ public class SpaceTrackReader {
 
 			// send request to get csfr_token needed to login
 			String loginPage = http.GetPageContent("https://www.space-track.org/auth/login");
-			String csfrToken = http.getStringBetweenTags(loginPage, "options.data += \"spacetrack_csrf_token=", "\";");
+            String csfrToken = http.extractCsrfToken(loginPage);
 
 			// send a post request to login to the site
 			String identity = System.getenv("SPACE_TRACK_IDENTITY");
@@ -50,9 +50,12 @@ public class SpaceTrackReader {
 					+ "&password=" + password + "&spacetrack_csrf_token=" + csfrToken);
 
 			// get page to obtain desired information
-			String result = http.GetPageContent(
-					"https://www.space-track.org/basicspacedata/query/class/tle_latest/ORDINAL/1/NORAD_CAT_ID/"
-							+ input);
+	        String safeInput = input.trim().replaceAll("\\s+", "");
+            String url = "https://www.space-track.org/basicspacedata/query/class/gp/NORAD_CAT_ID/"
+                    + safeInput
+                    + "/orderby/NORAD_CAT_ID%20asc,EPOCH%20desc/format/3le";
+
+            String result = http.GetPageContent(url);
 
 			// save results to file
 			http.saveStringToFile(SPACE_TRACK_OUTPUT_FILE, result);
@@ -160,6 +163,17 @@ public class SpaceTrackReader {
 		this.cookies = cookies;
 	}
 
+    private String extractCsrfToken(String html) {
+       Pattern pattern = Pattern.compile("name=\"spacetrack_csrf_token\" value=\"(.*?)\"");
+       Matcher matcher = pattern.matcher(html);
+
+       if (matcher.find()) {
+          return matcher.group(1);
+       } else {
+           throw new RuntimeException("CSRF token not found");
+       }
+    } 
+ 
 	private String getStringBetweenTags(String source, String startTag, String endTag) {
 		Pattern pattern = Pattern
 				.compile(escapeSpecialRegexChars(startTag) + "(.+?)" + escapeSpecialRegexChars(endTag));

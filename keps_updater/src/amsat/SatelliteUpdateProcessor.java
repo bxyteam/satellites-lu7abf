@@ -81,6 +81,42 @@ public class SatelliteUpdateProcessor {
     
     private void saveSpaceTrackUrls() {
         try {
+
+            List<String> addsat = AddSatProcessor.readAddSatStreams(basePath);
+
+            if (addsat.isEmpty()) {
+                System.err.println("No satellite IDs found");
+                 return;
+            }
+
+            String satelliteIds = addsat.stream()
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .distinct()
+                .collect(Collectors.joining(","));
+
+            String baseUrl = "https://www.space-track.org/basicspacedata/query/class/gp/NORAD_CAT_ID/";
+
+            String orderBy = "/orderby/NORAD_CAT_ID%20asc,EPOCH%20desc/format/3le";
+
+            String spaceTrackUrl = baseUrl + satelliteIds + orderBy;
+
+            String spaceTrack1 = satelliteIds;
+
+            fileWriter.setSpaceTrackUrl(spaceTrackUrl);
+            fileWriter.setSpaceTrack1Url(spaceTrack1);
+
+            fileWriter.saveSpaceTrackUrls();
+
+            System.out.println("Space-track URL: " + spaceTrackUrl);
+
+       } catch (Exception e) {
+        System.err.println("Error saving space-track URLs: " + e.getMessage());
+      }
+   }
+    
+   private void saveSpaceTrackUrls() {
+        try {
         	
          	List<String> addsat = AddSatProcessor.readAddSatStreams(basePath);
             String stfinal = "/orderby/TLE_LINE1 ASC/format/3le";
